@@ -65,9 +65,9 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        filtrador.setBackground(new java.awt.Color(153, 153, 255));
+        filtrador.setBackground(new java.awt.Color(0, 153, 153));
 
-        jPanel4.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel4.setBackground(new java.awt.Color(0, 153, 153));
         jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -118,7 +118,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel1.add(filtrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 620));
 
-        jPanel5.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel5MouseDragged(evt);
@@ -143,7 +143,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1040, 49));
 
-        jPanel7.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
