@@ -147,6 +147,9 @@
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseClicked"/>
                     <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseEntered"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new  javax.swing.JLabel()"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -164,6 +167,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BusquedaActionPerformed"/>
               </Events>
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new MiBoton()"/>
                 <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="GUI_Busqueda"/>
               </AuxValues>
             </Component>
