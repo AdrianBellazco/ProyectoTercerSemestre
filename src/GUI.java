@@ -49,6 +49,7 @@ public class GUI extends javax.swing.JFrame {
         filtrador = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        Busqueda = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -99,6 +100,15 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jLabel1))
         );
 
+        Busqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda.setContentAreaFilled(false);
+        Busqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Busqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout filtradorLayout = new javax.swing.GroupLayout(filtrador);
         filtrador.setLayout(filtradorLayout);
         filtradorLayout.setHorizontalGroup(
@@ -106,14 +116,20 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(filtradorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, filtradorLayout.createSequentialGroup()
+                .addContainerGap(231, Short.MAX_VALUE)
+                .addComponent(Busqueda)
+                .addGap(21, 21, 21))
         );
         filtradorLayout.setVerticalGroup(
             filtradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(filtradorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(571, Short.MAX_VALUE))
+                .addGap(76, 76, 76)
+                .addComponent(Busqueda)
+                .addContainerGap(456, Short.MAX_VALUE))
         );
 
         jPanel1.add(filtrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 620));
@@ -201,6 +217,10 @@ public class GUI extends javax.swing.JFrame {
         this.setLocation(x-mousex, y-mousey);
     }//GEN-LAST:event_jPanel5MouseDragged
 
+    private void BusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BusquedaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -237,6 +257,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Busqueda;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel filtrador;
     private javax.swing.JLabel jLabel1;
