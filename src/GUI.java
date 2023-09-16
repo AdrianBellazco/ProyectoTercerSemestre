@@ -44,13 +44,17 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         filtrador = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new  javax.swing.JLabel();
         Busqueda = new MiBoton();
+        Busqueda3 = new MiBoton();
+        Busqueda5 = new MiBoton();
+        Busqueda6 = new MiBoton();
+        Busqueda7 = new MiBoton();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new MiBoton();
         jPanel5 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
 
@@ -68,38 +72,6 @@ public class GUI extends javax.swing.JFrame {
 
         filtrador.setBackground(new java.awt.Color(0, 153, 153));
 
-        jPanel4.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("X");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel1MouseEntered(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1))
-        );
-
         Busqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda.setContentAreaFilled(false);
         Busqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -109,27 +81,100 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        Busqueda3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda3.setContentAreaFilled(false);
+        Busqueda3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Busqueda3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Busqueda3ActionPerformed(evt);
+            }
+        });
+
+        Busqueda5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda5.setContentAreaFilled(false);
+        Busqueda5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Busqueda5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Busqueda5ActionPerformed(evt);
+            }
+        });
+
+        Busqueda6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda6.setContentAreaFilled(false);
+        Busqueda6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Busqueda6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Busqueda6ActionPerformed(evt);
+            }
+        });
+
+        Busqueda7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda7.setContentAreaFilled(false);
+        Busqueda7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Busqueda7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Busqueda7ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setBackground(new java.awt.Color(255, 102, 0));
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel3.setText("Edu");
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerca (2).png"))); // NOI18N
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout filtradorLayout = new javax.swing.GroupLayout(filtrador);
         filtrador.setLayout(filtradorLayout);
         filtradorLayout.setHorizontalGroup(
             filtradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(filtradorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, filtradorLayout.createSequentialGroup()
-                .addContainerGap(231, Short.MAX_VALUE)
-                .addComponent(Busqueda)
+                .addGroup(filtradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(filtradorLayout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addGroup(filtradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(filtradorLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(filtradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Busqueda7)
+                                    .addComponent(Busqueda6)
+                                    .addComponent(Busqueda5)
+                                    .addComponent(Busqueda)))
+                            .addGroup(filtradorLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Busqueda3))))
+                    .addGroup(filtradorLayout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)))
                 .addGap(21, 21, 21))
         );
         filtradorLayout.setVerticalGroup(
             filtradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(filtradorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
+                .addGroup(filtradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(74, 74, 74)
                 .addComponent(Busqueda)
-                .addContainerGap(456, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addComponent(Busqueda3)
+                .addGap(61, 61, 61)
+                .addComponent(Busqueda5)
+                .addGap(61, 61, 61)
+                .addComponent(Busqueda6)
+                .addGap(61, 61, 61)
+                .addComponent(Busqueda7)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         jPanel1.add(filtrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 620));
@@ -146,15 +191,25 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setBackground(new java.awt.Color(0, 153, 153));
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel2.setText("Copu");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1040, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(281, 281, 281)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(629, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 4, Short.MAX_VALUE)
+                .addComponent(jLabel2))
         );
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1040, 49));
@@ -170,14 +225,16 @@ public class GUI extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 754, Short.MAX_VALUE)
+                .addGap(136, 136, 136)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(108, 108, 108)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(580, Short.MAX_VALUE))
+                .addContainerGap(472, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 760, 580));
@@ -198,14 +255,6 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1MouseEntered
-
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_jLabel1MouseClicked
-
     private void jPanel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MousePressed
        mousex=evt.getX();
        mousey = evt.getY();
@@ -220,6 +269,26 @@ public class GUI extends javax.swing.JFrame {
     private void BusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BusquedaActionPerformed
+
+    private void Busqueda5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Busqueda5ActionPerformed
+
+    private void Busqueda6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Busqueda6ActionPerformed
+
+    private void Busqueda7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Busqueda7ActionPerformed
+
+    private void Busqueda3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Busqueda3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,12 +327,16 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Busqueda;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton Busqueda3;
+    private javax.swing.JButton Busqueda5;
+    private javax.swing.JButton Busqueda6;
+    private javax.swing.JButton Busqueda7;
     private javax.swing.JPanel filtrador;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
