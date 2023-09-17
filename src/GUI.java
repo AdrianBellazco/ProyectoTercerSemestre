@@ -2,6 +2,12 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JSlider;
+import javax.swing.SwingConstants;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -105,7 +111,7 @@ public class GUI extends javax.swing.JFrame {
         jCheckBox18 = new javax.swing.JCheckBox();
         jCheckBox19 = new javax.swing.JCheckBox();
         jSeparator11 = new javax.swing.JSeparator();
-        jSlider1 = new javax.swing.JSlider();
+        Plectura = new javax.swing.JSlider();
         jSeparator12 = new javax.swing.JSeparator();
         jSlider2 = new javax.swing.JSlider();
         Busqueda14 = new MiBoton();
@@ -129,6 +135,7 @@ public class GUI extends javax.swing.JFrame {
         jSlider6 = new javax.swing.JSlider();
         Busqueda19 = new MiBoton();
         jSeparator17 = new javax.swing.JSeparator();
+        modo = new javax.swing.JToggleButton();
         Info = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -198,42 +205,50 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Busqueda6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda6.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda6.setContentAreaFilled(false);
         Busqueda6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1740, -1, -1));
 
         Busqueda7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda7.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda7.setContentAreaFilled(false);
         Busqueda7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
         Busqueda8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda8.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda8.setContentAreaFilled(false);
         Busqueda8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1520, -1, -1));
 
         Busqueda9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda9.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda9.setContentAreaFilled(false);
         Busqueda9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, -1, -1));
 
         Busqueda11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda11.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda11.setContentAreaFilled(false);
         Busqueda11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, -1));
 
         Busqueda12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda12.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda12.setContentAreaFilled(false);
         Busqueda12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 980, -1, -1));
 
         Busqueda13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda13.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda13.setContentAreaFilled(false);
         Busqueda13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2010, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/filtrar (3).png"))); // NOI18N
         jButton1.setText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>todos los  filtrados");
+        jButton1.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar todos los elementos<br>seleccionados");
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -247,11 +262,13 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 3260, 120, 170));
 
         Busqueda10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda10.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda10.setContentAreaFilled(false);
         Busqueda10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1860, -1, -1));
+        Filtrador.add(Busqueda10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1910, -1, -1));
 
         Busqueda15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda15.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda15.setContentAreaFilled(false);
         Busqueda15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1240, -1, -1));
@@ -300,7 +317,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 102, 0));
         jLabel9.setText("desempeño lectura");
-        Filtrador.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1900, 260, 50));
+        Filtrador.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 1940, 260, 50));
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 102, 0));
@@ -533,22 +550,31 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(jCheckBox19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1700, -1, -1));
         Filtrador.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1580, 260, 10));
-        Filtrador.add(jSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1870, 150, -1));
+
+        Plectura.setMajorTickSpacing(10); // Espaciado entre las marcas principales
+        Plectura.setPaintTicks(true); // Dibuja las marcas
+        Plectura.setPaintLabels(true);
+        Plectura.setValue(0);
+
+        Plectura.setMajorTickSpacing(10);
+        Filtrador.add(Plectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1870, 250, -1));
         Filtrador.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1810, 260, 10));
         Filtrador.add(jSlider2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2150, 150, -1));
 
         Busqueda14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda14.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda14.setContentAreaFilled(false);
         Busqueda14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2140, -1, -1));
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Filtrador.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1960, 100, -1));
+        Filtrador.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1990, 100, -1));
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Filtrador.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2240, 100, -1));
 
         Busqueda21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda21.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda21.setContentAreaFilled(false);
         Busqueda21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda21, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2290, -1, -1));
@@ -556,6 +582,7 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(jSlider3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2430, 150, -1));
 
         Busqueda16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda16.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda16.setContentAreaFilled(false);
         Busqueda16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2420, -1, -1));
@@ -564,6 +591,7 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2530, 100, -1));
 
         Busqueda22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda22.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda22.setContentAreaFilled(false);
         Busqueda22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda22, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2580, -1, -1));
@@ -571,6 +599,7 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(jSlider4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2730, 150, -1));
 
         Busqueda17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda17.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda17.setContentAreaFilled(false);
         Busqueda17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2720, -1, -1));
@@ -579,6 +608,7 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2830, 100, -1));
 
         Busqueda23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda23.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda23.setContentAreaFilled(false);
         Busqueda23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda23, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2880, -1, -1));
@@ -586,6 +616,7 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(jSlider5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 3030, 150, -1));
 
         Busqueda18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda18.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda18.setContentAreaFilled(false);
         Busqueda18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3020, -1, -1));
@@ -593,10 +624,26 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(jSlider6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 3160, 150, -1));
 
         Busqueda19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda19.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda19.setContentAreaFilled(false);
         Busqueda19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3150, -1, -1));
         Filtrador.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3090, 260, 10));
+
+        modo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar.png"))); // NOI18N
+        modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Varias opciones");
+        modo.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Convierte todas las casillas de<br>seleccion multiple en<br>radiobuttons");
+        modo.setContentAreaFilled(false);
+        modo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        modo.setHideActionText(true);
+        modo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        modo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        modo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modoActionPerformed(evt);
+            }
+        });
+        Filtrador.add(modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 150, -1));
 
         Filtr.setViewportView(Filtrador);
 
@@ -634,6 +681,7 @@ public class GUI extends javax.swing.JFrame {
         this.setLocation(x-mousex, y-mousey);
     }//GEN-LAST:event_Barra1MouseDragged
 
+    
     private void SalirBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirBotonActionPerformed
      System.exit(0);
     }//GEN-LAST:event_SalirBotonActionPerformed
@@ -714,6 +762,22 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox19ActionPerformed
 
+    private void modoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoActionPerformed
+        if (modo.isSelected()) {
+           ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender.png"));
+        modo.setIcon(img);
+        modo.setVerticalTextPosition(SwingConstants.BOTTOM);
+        modo.setHorizontalTextPosition(SwingConstants.CENTER); 
+        modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Unica opcion");
+        } else {
+             ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar.png"));
+        modo.setIcon(img);
+           modo.setVerticalTextPosition(SwingConstants.BOTTOM);
+        modo.setHorizontalTextPosition(SwingConstants.CENTER); 
+        modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Varias opciones");
+        }
+    }//GEN-LAST:event_modoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -771,6 +835,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane Filtr;
     private javax.swing.JPanel Filtrador;
     private javax.swing.JPanel Info;
+    private javax.swing.JSlider Plectura;
     private javax.swing.JButton SalirBoton;
     private javax.swing.JLabel Titulo1;
     private javax.swing.JLabel Titulo2;
@@ -830,12 +895,12 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSlider jSlider1;
     private javax.swing.JSlider jSlider2;
     private javax.swing.JSlider jSlider3;
     private javax.swing.JSlider jSlider4;
     private javax.swing.JSlider jSlider5;
     private javax.swing.JSlider jSlider6;
+    private javax.swing.JToggleButton modo;
     // End of variables declaration//GEN-END:variables
 public  void  grafica_barras_1(){
     
