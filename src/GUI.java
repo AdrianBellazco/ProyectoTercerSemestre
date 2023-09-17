@@ -44,6 +44,7 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupo1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         Barra1 = new javax.swing.JPanel();
         SalirBoton = new MiBoton();
@@ -58,8 +59,76 @@ public class GUI extends javax.swing.JFrame {
         Busqueda11 = new MiBoton();
         Busqueda12 = new MiBoton();
         Busqueda13 = new MiBoton();
-        Busqueda14 = new MiBoton();
         jButton1 = new MiBoton();
+        Busqueda10 = new MiBoton();
+        Busqueda15 = new MiBoton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
+        jSeparator5 = new javax.swing.JSeparator();
+        jCheckBox7 = new javax.swing.JCheckBox();
+        jCheckBox8 = new javax.swing.JCheckBox();
+        jCheckBox9 = new javax.swing.JCheckBox();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jCheckBox10 = new javax.swing.JCheckBox();
+        jCheckBox11 = new javax.swing.JCheckBox();
+        jCheckBox12 = new javax.swing.JCheckBox();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jSeparator8 = new javax.swing.JSeparator();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jCheckBox13 = new javax.swing.JCheckBox();
+        jCheckBox14 = new javax.swing.JCheckBox();
+        jCheckBox15 = new javax.swing.JCheckBox();
+        jCheckBox16 = new javax.swing.JCheckBox();
+        jSeparator10 = new javax.swing.JSeparator();
+        jCheckBox17 = new javax.swing.JCheckBox();
+        jCheckBox18 = new javax.swing.JCheckBox();
+        jCheckBox19 = new javax.swing.JCheckBox();
+        jSeparator11 = new javax.swing.JSeparator();
+        jSlider1 = new javax.swing.JSlider();
+        jSeparator12 = new javax.swing.JSeparator();
+        jSlider2 = new javax.swing.JSlider();
+        Busqueda14 = new MiBoton();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        Busqueda21 = new MiBoton();
+        jSeparator13 = new javax.swing.JSeparator();
+        jSlider3 = new javax.swing.JSlider();
+        Busqueda16 = new MiBoton();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        Busqueda22 = new MiBoton();
+        jSeparator14 = new javax.swing.JSeparator();
+        jSlider4 = new javax.swing.JSlider();
+        Busqueda17 = new MiBoton();
+        jComboBox7 = new javax.swing.JComboBox<>();
+        Busqueda23 = new MiBoton();
+        jSeparator15 = new javax.swing.JSeparator();
+        jSlider5 = new javax.swing.JSlider();
+        Busqueda18 = new MiBoton();
+        jSeparator16 = new javax.swing.JSeparator();
+        jSlider6 = new javax.swing.JSlider();
+        Busqueda19 = new MiBoton();
+        jSeparator17 = new javax.swing.JSeparator();
         Info = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -123,50 +192,47 @@ public class GUI extends javax.swing.JFrame {
 
         Filtrador.setBackground(new java.awt.Color(0, 102, 102));
         Filtrador.setForeground(new java.awt.Color(0, 102, 102));
-        Filtrador.setPreferredSize(new java.awt.Dimension(200, 1500));
+        Filtrador.setMinimumSize(new java.awt.Dimension(278, 3000));
+        Filtrador.setPreferredSize(new java.awt.Dimension(200, 3420));
+        Filtrador.setRequestFocusEnabled(false);
         Filtrador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Busqueda6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda6.setContentAreaFilled(false);
         Busqueda6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
+        Filtrador.add(Busqueda6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1740, -1, -1));
 
         Busqueda7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda7.setContentAreaFilled(false);
         Busqueda7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, -1));
+        Filtrador.add(Busqueda7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
         Busqueda8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda8.setContentAreaFilled(false);
         Busqueda8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, -1, -1));
+        Filtrador.add(Busqueda8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1520, -1, -1));
 
         Busqueda9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda9.setContentAreaFilled(false);
         Busqueda9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, -1, -1));
+        Filtrador.add(Busqueda9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, -1, -1));
 
         Busqueda11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda11.setContentAreaFilled(false);
         Busqueda11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, -1, -1));
+        Filtrador.add(Busqueda11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, -1));
 
         Busqueda12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda12.setContentAreaFilled(false);
         Busqueda12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 610, -1, -1));
+        Filtrador.add(Busqueda12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 980, -1, -1));
 
         Busqueda13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda13.setContentAreaFilled(false);
         Busqueda13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 700, -1, -1));
+        Filtrador.add(Busqueda13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2010, -1, -1));
 
-        Busqueda14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda14.setContentAreaFilled(false);
-        Busqueda14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda14, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 800, -1, -1));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/internet (1).png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/filtrar (3).png"))); // NOI18N
         jButton1.setText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>todos los  filtrados");
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
@@ -178,7 +244,359 @@ public class GUI extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        Filtrador.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 1290, 120, 170));
+        Filtrador.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 3260, 120, 170));
+
+        Busqueda10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda10.setContentAreaFilled(false);
+        Busqueda10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Filtrador.add(Busqueda10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1860, -1, -1));
+
+        Busqueda15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda15.setContentAreaFilled(false);
+        Busqueda15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Filtrador.add(Busqueda15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1240, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel1.setText("percentil");
+        Filtrador.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 3090, 260, 50));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel2.setText("Año");
+        Filtrador.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 260, 50));
+
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel3.setText("Genero");
+        Filtrador.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 550, 260, 50));
+
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel4.setText("Municipio");
+        Filtrador.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 790, 260, 50));
+
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel5.setText("Estracto");
+        Filtrador.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1050, 260, 50));
+
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel6.setText("Genero del colegio");
+        Filtrador.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1310, 260, 50));
+
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel7.setText("area del colegio");
+        Filtrador.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1580, 260, 50));
+
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel8.setText("puntaje lectura");
+        Filtrador.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1810, 260, 50));
+
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel9.setText("desempeño lectura");
+        Filtrador.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1900, 260, 50));
+
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel11.setText("puntaje matematica");
+        Filtrador.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2080, 260, 50));
+
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel12.setText("desempeño matematicas");
+        Filtrador.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2180, 260, 50));
+
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel13.setText("desempeño naturales");
+        Filtrador.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2470, 260, 50));
+
+        jLabel14.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel14.setText("puntaje naturales");
+        Filtrador.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2360, 260, 50));
+
+        jLabel15.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel15.setText("puntaje ingles");
+        Filtrador.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2650, 260, 50));
+
+        jLabel16.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel16.setText("desempeño ingles ");
+        Filtrador.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2770, 260, 50));
+
+        jLabel17.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel17.setText("puntaje gloval:");
+        Filtrador.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2950, 260, 50));
+
+        jLabel18.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel18.setText("Tipo de documento");
+        Filtrador.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 260, 50));
+
+        jCheckBox1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox1.setText("2020");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+
+        jCheckBox2.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox2.setText("2019");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+
+        jCheckBox4.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox4.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox4.setText("Masculino");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, -1, -1));
+
+        jCheckBox5.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox5.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox5.setText("2018");
+        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox5ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+
+        jCheckBox6.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox6.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox6.setText("Cedula");
+        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox6ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, -1, -1));
+        Filtrador.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1310, 260, 10));
+
+        jCheckBox7.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox7.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox7.setText("No identificado");
+        jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox7ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 700, -1, -1));
+
+        jCheckBox8.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox8.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox8.setText("Tarjeta de identidad}");
+        jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox8ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, -1, -1));
+
+        jCheckBox9.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox9.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox9.setText("Femenino");
+        jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox9ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 660, -1, -1));
+        Filtrador.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 260, 10));
+        Filtrador.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 260, 10));
+
+        jCheckBox10.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox10.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox10.setText("Todos");
+        jCheckBox10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox10ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1750, -1, -1));
+
+        jCheckBox11.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox11.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox11.setText("Todos");
+        jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox11ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+
+        jCheckBox12.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox12.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox12.setText("Todos");
+        jCheckBox12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox12ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Filtrador.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1130, 150, 30));
+        Filtrador.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 790, 260, 10));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Filtrador.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 860, 150, 30));
+
+        jCheckBox13.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox13.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox13.setText("Todos");
+        jCheckBox13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox13ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 740, -1, -1));
+
+        jCheckBox14.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox14.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox14.setText("Mixto");
+        jCheckBox14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox14ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox14, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1380, -1, -1));
+
+        jCheckBox15.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox15.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox15.setText("Femenino");
+        jCheckBox15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox15ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1430, -1, -1));
+
+        jCheckBox16.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox16.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox16.setText("Masculino");
+        jCheckBox16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox16ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1480, -1, -1));
+        Filtrador.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1050, 260, 10));
+
+        jCheckBox17.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox17.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox17.setText("Todos");
+        jCheckBox17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox17ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1530, -1, -1));
+
+        jCheckBox18.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox18.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox18.setText("Rural");
+        jCheckBox18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox18ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1650, -1, -1));
+
+        jCheckBox19.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jCheckBox19.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox19.setText("Urbana");
+        jCheckBox19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox19ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jCheckBox19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1700, -1, -1));
+        Filtrador.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1580, 260, 10));
+        Filtrador.add(jSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1870, 150, -1));
+        Filtrador.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1810, 260, 10));
+        Filtrador.add(jSlider2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2150, 150, -1));
+
+        Busqueda14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda14.setContentAreaFilled(false);
+        Busqueda14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Filtrador.add(Busqueda14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2140, -1, -1));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Filtrador.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1960, 100, -1));
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Filtrador.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2240, 100, -1));
+
+        Busqueda21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda21.setContentAreaFilled(false);
+        Busqueda21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Filtrador.add(Busqueda21, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2290, -1, -1));
+        Filtrador.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2080, 260, 10));
+        Filtrador.add(jSlider3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2430, 150, -1));
+
+        Busqueda16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda16.setContentAreaFilled(false);
+        Busqueda16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Filtrador.add(Busqueda16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2420, -1, -1));
+
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Filtrador.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2530, 100, -1));
+
+        Busqueda22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda22.setContentAreaFilled(false);
+        Busqueda22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Filtrador.add(Busqueda22, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2580, -1, -1));
+        Filtrador.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2360, 260, 10));
+        Filtrador.add(jSlider4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2730, 150, -1));
+
+        Busqueda17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda17.setContentAreaFilled(false);
+        Busqueda17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Filtrador.add(Busqueda17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2720, -1, -1));
+
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Filtrador.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2830, 100, -1));
+
+        Busqueda23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda23.setContentAreaFilled(false);
+        Busqueda23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Filtrador.add(Busqueda23, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2880, -1, -1));
+        Filtrador.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2650, 260, 10));
+        Filtrador.add(jSlider5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 3030, 150, -1));
+
+        Busqueda18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda18.setContentAreaFilled(false);
+        Busqueda18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Filtrador.add(Busqueda18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3020, -1, -1));
+        Filtrador.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2950, 260, 10));
+        Filtrador.add(jSlider6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 3160, 150, -1));
+
+        Busqueda19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busqueda19.setContentAreaFilled(false);
+        Busqueda19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Filtrador.add(Busqueda19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3150, -1, -1));
+        Filtrador.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3090, 260, 10));
 
         Filtr.setViewportView(Filtrador);
 
@@ -224,6 +642,78 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox5ActionPerformed
+
+    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox6ActionPerformed
+
+    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox7ActionPerformed
+
+    private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox8ActionPerformed
+
+    private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox9ActionPerformed
+
+    private void jCheckBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox10ActionPerformed
+
+    private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox11ActionPerformed
+
+    private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox12ActionPerformed
+
+    private void jCheckBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox13ActionPerformed
+
+    private void jCheckBox14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox14ActionPerformed
+
+    private void jCheckBox15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox15ActionPerformed
+
+    private void jCheckBox16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox16ActionPerformed
+
+    private void jCheckBox17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox17ActionPerformed
+
+    private void jCheckBox18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox18ActionPerformed
+
+    private void jCheckBox19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox19ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -261,10 +751,19 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Barra1;
+    private javax.swing.JButton Busqueda10;
     private javax.swing.JButton Busqueda11;
     private javax.swing.JButton Busqueda12;
     private javax.swing.JButton Busqueda13;
     private javax.swing.JButton Busqueda14;
+    private javax.swing.JButton Busqueda15;
+    private javax.swing.JButton Busqueda16;
+    private javax.swing.JButton Busqueda17;
+    private javax.swing.JButton Busqueda18;
+    private javax.swing.JButton Busqueda19;
+    private javax.swing.JButton Busqueda21;
+    private javax.swing.JButton Busqueda22;
+    private javax.swing.JButton Busqueda23;
     private javax.swing.JButton Busqueda6;
     private javax.swing.JButton Busqueda7;
     private javax.swing.JButton Busqueda8;
@@ -275,8 +774,68 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton SalirBoton;
     private javax.swing.JLabel Titulo1;
     private javax.swing.JLabel Titulo2;
+    private javax.swing.ButtonGroup grupo1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox10;
+    private javax.swing.JCheckBox jCheckBox11;
+    private javax.swing.JCheckBox jCheckBox12;
+    private javax.swing.JCheckBox jCheckBox13;
+    private javax.swing.JCheckBox jCheckBox14;
+    private javax.swing.JCheckBox jCheckBox15;
+    private javax.swing.JCheckBox jCheckBox16;
+    private javax.swing.JCheckBox jCheckBox17;
+    private javax.swing.JCheckBox jCheckBox18;
+    private javax.swing.JCheckBox jCheckBox19;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox jCheckBox7;
+    private javax.swing.JCheckBox jCheckBox8;
+    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSlider jSlider1;
+    private javax.swing.JSlider jSlider2;
+    private javax.swing.JSlider jSlider3;
+    private javax.swing.JSlider jSlider4;
+    private javax.swing.JSlider jSlider5;
+    private javax.swing.JSlider jSlider6;
     // End of variables declaration//GEN-END:variables
 public  void  grafica_barras_1(){
     
