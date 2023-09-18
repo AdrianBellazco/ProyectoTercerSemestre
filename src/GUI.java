@@ -51,6 +51,7 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         grupo1 = new javax.swing.ButtonGroup();
+        grupoAños = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         Barra1 = new javax.swing.JPanel();
         SalirBoton = new MiBoton();
@@ -85,10 +86,10 @@ public class GUI extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        año1 = new javax.swing.JCheckBox();
+        año2 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
+        año3 = new javax.swing.JCheckBox();
         jCheckBox6 = new javax.swing.JCheckBox();
         jSeparator5 = new javax.swing.JSeparator();
         jCheckBox7 = new javax.swing.JCheckBox();
@@ -97,7 +98,7 @@ public class GUI extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
+        todosaño = new javax.swing.JCheckBox();
         jCheckBox12 = new javax.swing.JCheckBox();
         jComboBox1 = new javax.swing.JComboBox<>();
         jSeparator8 = new javax.swing.JSeparator();
@@ -136,6 +137,10 @@ public class GUI extends javax.swing.JFrame {
         Busqueda19 = new MiBoton();
         jSeparator17 = new javax.swing.JSeparator();
         modo = new javax.swing.JToggleButton();
+        radioañostodos = new javax.swing.JRadioButton();
+        radioaño2 = new javax.swing.JRadioButton();
+        radioaño3 = new javax.swing.JRadioButton();
+        radioaño4 = new javax.swing.JRadioButton();
         Info = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -359,25 +364,25 @@ public class GUI extends javax.swing.JFrame {
         jLabel18.setText("Tipo de documento");
         Filtrador.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 260, 50));
 
-        jCheckBox1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText("2020");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        año1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        año1.setForeground(new java.awt.Color(255, 255, 255));
+        año1.setText("2020");
+        año1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                año1ActionPerformed(evt);
             }
         });
-        Filtrador.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+        Filtrador.add(año1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
 
-        jCheckBox2.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox2.setText("2019");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        año2.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        año2.setForeground(new java.awt.Color(255, 255, 255));
+        año2.setText("2019");
+        año2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                año2ActionPerformed(evt);
             }
         });
-        Filtrador.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+        Filtrador.add(año2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
         jCheckBox4.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jCheckBox4.setForeground(new java.awt.Color(255, 255, 255));
@@ -389,15 +394,15 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, -1, -1));
 
-        jCheckBox5.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        jCheckBox5.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox5.setText("2018");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+        año3.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        año3.setForeground(new java.awt.Color(255, 255, 255));
+        año3.setText("2018");
+        año3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
+                año3ActionPerformed(evt);
             }
         });
-        Filtrador.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+        Filtrador.add(año3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
 
         jCheckBox6.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jCheckBox6.setForeground(new java.awt.Color(255, 255, 255));
@@ -422,7 +427,7 @@ public class GUI extends javax.swing.JFrame {
 
         jCheckBox8.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jCheckBox8.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox8.setText("Tarjeta de identidad}");
+        jCheckBox8.setText("Tarjeta de identidad");
         jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox8ActionPerformed(evt);
@@ -452,15 +457,15 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(jCheckBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1750, -1, -1));
 
-        jCheckBox11.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        jCheckBox11.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox11.setText("Todos");
-        jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
+        todosaño.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        todosaño.setForeground(new java.awt.Color(255, 255, 255));
+        todosaño.setText("Todos");
+        todosaño.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox11ActionPerformed(evt);
+                todosañoActionPerformed(evt);
             }
         });
-        Filtrador.add(jCheckBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+        Filtrador.add(todosaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
         jCheckBox12.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jCheckBox12.setForeground(new java.awt.Color(255, 255, 255));
@@ -643,7 +648,45 @@ public class GUI extends javax.swing.JFrame {
                 modoActionPerformed(evt);
             }
         });
-        Filtrador.add(modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 150, -1));
+        Filtrador.add(modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 110, -1));
+
+        radioañostodos.setVisible(false);
+        radioañostodos.setBackground(new java.awt.Color(0, 102, 102));
+        grupoAños.add(radioañostodos);
+        radioañostodos.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        radioañostodos.setForeground(new java.awt.Color(255, 255, 255));
+        radioañostodos.setText("Todos");
+        radioañostodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioañostodosActionPerformed(evt);
+            }
+        });
+        Filtrador.add(radioañostodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+
+        radioañostodos.setVisible(false);
+        radioaño2.setBackground(new java.awt.Color(0, 102, 102));
+        grupoAños.add(radioaño2);
+        radioaño2.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        radioaño2.setForeground(new java.awt.Color(255, 255, 255));
+        radioaño2.setText("2020");
+        Filtrador.add(radioaño2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+
+        radioañostodos.setVisible(false);
+        radioaño3.setBackground(new java.awt.Color(0, 102, 102));
+        grupoAños.add(radioaño3);
+        radioaño3.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        radioaño3.setForeground(new java.awt.Color(255, 255, 255));
+        radioaño3.setText("2019");
+        Filtrador.add(radioaño3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+
+        radioañostodos.setVisible(false);
+        radioaño4.setBackground(new java.awt.Color(0, 102, 102));
+        grupoAños.add(radioaño4);
+        radioaño4.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        radioaño4.setForeground(new java.awt.Color(255, 255, 255));
+        radioaño4.setText("2018");
+        radioaño4.setToolTipText("");
+        Filtrador.add(radioaño4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
 
         Filtr.setViewportView(Filtrador);
 
@@ -690,21 +733,21 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void año1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_año1ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void año2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_año2ActionPerformed
 
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+    private void año3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
+    }//GEN-LAST:event_año3ActionPerformed
 
     private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
         // TODO add your handling code here:
@@ -726,9 +769,9 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox10ActionPerformed
 
-    private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
+    private void todosañoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosañoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox11ActionPerformed
+    }//GEN-LAST:event_todosañoActionPerformed
 
     private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
         // TODO add your handling code here:
@@ -769,14 +812,37 @@ public class GUI extends javax.swing.JFrame {
         modo.setVerticalTextPosition(SwingConstants.BOTTOM);
         modo.setHorizontalTextPosition(SwingConstants.CENTER); 
         modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Unica opcion");
+radioañostodos.setVisible(true);
+radioaño2.setVisible(true);
+radioaño3.setVisible(true);
+radioaño4.setVisible(true);
+
+        año1.setVisible(false);  
+        año2.setVisible(false);        
+       año3.setVisible(false);  
+       todosaño.setVisible(false);
+       
+       
         } else {
              ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar.png"));
         modo.setIcon(img);
            modo.setVerticalTextPosition(SwingConstants.BOTTOM);
         modo.setHorizontalTextPosition(SwingConstants.CENTER); 
         modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Varias opciones");
+         radioañostodos.setVisible(false);
+         radioaño2.setVisible(false);
+         radioaño3.setVisible(false);
+         radioaño4.setVisible(false);
+         año1.setVisible(true);  
+         año2.setVisible(true);  
+         año3.setVisible(true);  
+          todosaño.setVisible(true);
         }
     }//GEN-LAST:event_modoActionPerformed
+
+    private void radioañostodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioañostodosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioañostodosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -839,11 +905,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton SalirBoton;
     private javax.swing.JLabel Titulo1;
     private javax.swing.JLabel Titulo2;
+    private javax.swing.JCheckBox año1;
+    private javax.swing.JCheckBox año2;
+    private javax.swing.JCheckBox año3;
     private javax.swing.ButtonGroup grupo1;
+    private javax.swing.ButtonGroup grupoAños;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
     private javax.swing.JCheckBox jCheckBox12;
     private javax.swing.JCheckBox jCheckBox13;
     private javax.swing.JCheckBox jCheckBox14;
@@ -852,9 +920,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox17;
     private javax.swing.JCheckBox jCheckBox18;
     private javax.swing.JCheckBox jCheckBox19;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JCheckBox jCheckBox8;
@@ -901,6 +967,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JSlider jSlider5;
     private javax.swing.JSlider jSlider6;
     private javax.swing.JToggleButton modo;
+    private javax.swing.JRadioButton radioaño2;
+    private javax.swing.JRadioButton radioaño3;
+    private javax.swing.JRadioButton radioaño4;
+    private javax.swing.JRadioButton radioañostodos;
+    private javax.swing.JCheckBox todosaño;
     // End of variables declaration//GEN-END:variables
 public  void  grafica_barras_1(){
     
