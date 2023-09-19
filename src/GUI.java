@@ -23,7 +23,8 @@ import org.jfree.data.category.DefaultCategoryDataset;
  */
 
 public class GUI extends javax.swing.JFrame {
-          RegistrarVariables obj = new RegistrarVariables();
+          RegistrarVariablesCasillas obj = new RegistrarVariablesCasillas();
+          RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
        
     
    int mousex, mousey;
@@ -65,9 +66,9 @@ public class GUI extends javax.swing.JFrame {
         Filtr = new javax.swing.JScrollPane();
         Filtrador = new javax.swing.JPanel();
         Busqueda6 = new MiBoton();
-        Busqueda7 = new MiBoton();
+        BusquedaAños = new MiBoton();
         Busqueda8 = new MiBoton();
-        Busqueda9 = new MiBoton();
+        Busquedatipodocumento = new MiBoton();
         BotonGenero = new MiBoton();
         Busqueda12 = new MiBoton();
         Busqueda13 = new MiBoton();
@@ -91,10 +92,10 @@ public class GUI extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        año1 = new javax.swing.JCheckBox();
-        año2 = new javax.swing.JCheckBox();
+        año2020 = new javax.swing.JCheckBox();
+        año2019 = new javax.swing.JCheckBox();
         Masculino = new javax.swing.JCheckBox();
-        año3 = new javax.swing.JCheckBox();
+        año2018 = new javax.swing.JCheckBox();
         Cedula = new javax.swing.JCheckBox();
         jSeparator5 = new javax.swing.JSeparator();
         Noconozcomisgenitales = new javax.swing.JCheckBox();
@@ -136,9 +137,9 @@ public class GUI extends javax.swing.JFrame {
         Busqueda19 = new MiBoton();
         modo = new javax.swing.JToggleButton();
         radioañostodos = new javax.swing.JRadioButton();
-        radioaño2 = new javax.swing.JRadioButton();
-        radioaño3 = new javax.swing.JRadioButton();
-        radioaño4 = new javax.swing.JRadioButton();
+        radioaño2020 = new javax.swing.JRadioButton();
+        radioaño2019 = new javax.swing.JRadioButton();
+        radioaño2018 = new javax.swing.JRadioButton();
         Radiodocumentocedula = new javax.swing.JRadioButton();
         RadiodocumentoTodos = new javax.swing.JRadioButton();
         RadiodocumentoID1 = new javax.swing.JRadioButton();
@@ -233,11 +234,16 @@ public class GUI extends javax.swing.JFrame {
         Busqueda6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1250, -1, -1));
 
-        Busqueda7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda7.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda7.setContentAreaFilled(false);
-        Busqueda7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
+        BusquedaAños.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        BusquedaAños.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        BusquedaAños.setContentAreaFilled(false);
+        BusquedaAños.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BusquedaAños.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaAñosActionPerformed(evt);
+            }
+        });
+        Filtrador.add(BusquedaAños, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
         Busqueda8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda8.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
@@ -250,11 +256,16 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(Busqueda8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1020, -1, -1));
 
-        Busqueda9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda9.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda9.setContentAreaFilled(false);
-        Busqueda9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, -1, -1));
+        Busquedatipodocumento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Busquedatipodocumento.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Busquedatipodocumento.setContentAreaFilled(false);
+        Busquedatipodocumento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Busquedatipodocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedatipodocumentoActionPerformed(evt);
+            }
+        });
+        Filtrador.add(Busquedatipodocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, -1, -1));
 
         BotonGenero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         BotonGenero.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
@@ -392,25 +403,25 @@ public class GUI extends javax.swing.JFrame {
         jLabel18.setText("Tipo de documento");
         Filtrador.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 260, 50));
 
-        año1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        año1.setForeground(new java.awt.Color(255, 255, 255));
-        año1.setText("2020");
-        año1.addActionListener(new java.awt.event.ActionListener() {
+        año2020.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        año2020.setForeground(new java.awt.Color(255, 255, 255));
+        año2020.setText("2020");
+        año2020.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                año1ActionPerformed(evt);
+                año2020ActionPerformed(evt);
             }
         });
-        Filtrador.add(año1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+        Filtrador.add(año2020, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
 
-        año2.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        año2.setForeground(new java.awt.Color(255, 255, 255));
-        año2.setText("2019");
-        año2.addActionListener(new java.awt.event.ActionListener() {
+        año2019.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        año2019.setForeground(new java.awt.Color(255, 255, 255));
+        año2019.setText("2019");
+        año2019.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                año2ActionPerformed(evt);
+                año2019ActionPerformed(evt);
             }
         });
-        Filtrador.add(año2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+        Filtrador.add(año2019, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
         Masculino.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         Masculino.setForeground(new java.awt.Color(255, 255, 255));
@@ -422,15 +433,15 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(Masculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, -1, -1));
 
-        año3.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        año3.setForeground(new java.awt.Color(255, 255, 255));
-        año3.setText("2018");
-        año3.addActionListener(new java.awt.event.ActionListener() {
+        año2018.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        año2018.setForeground(new java.awt.Color(255, 255, 255));
+        año2018.setText("2018");
+        año2018.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                año3ActionPerformed(evt);
+                año2018ActionPerformed(evt);
             }
         });
-        Filtrador.add(año3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+        Filtrador.add(año2018, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
 
         Cedula.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         Cedula.setForeground(new java.awt.Color(255, 255, 255));
@@ -687,29 +698,29 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(radioañostodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
         radioañostodos.setVisible(false);
-        radioaño2.setBackground(new java.awt.Color(0, 102, 102));
-        grupoAños.add(radioaño2);
-        radioaño2.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        radioaño2.setForeground(new java.awt.Color(255, 255, 255));
-        radioaño2.setText("2020");
-        Filtrador.add(radioaño2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+        radioaño2020.setBackground(new java.awt.Color(0, 102, 102));
+        grupoAños.add(radioaño2020);
+        radioaño2020.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        radioaño2020.setForeground(new java.awt.Color(255, 255, 255));
+        radioaño2020.setText("2020");
+        Filtrador.add(radioaño2020, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
 
         radioañostodos.setVisible(false);
-        radioaño3.setBackground(new java.awt.Color(0, 102, 102));
-        grupoAños.add(radioaño3);
-        radioaño3.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        radioaño3.setForeground(new java.awt.Color(255, 255, 255));
-        radioaño3.setText("2019");
-        Filtrador.add(radioaño3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+        radioaño2019.setBackground(new java.awt.Color(0, 102, 102));
+        grupoAños.add(radioaño2019);
+        radioaño2019.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        radioaño2019.setForeground(new java.awt.Color(255, 255, 255));
+        radioaño2019.setText("2019");
+        Filtrador.add(radioaño2019, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
         radioañostodos.setVisible(false);
-        radioaño4.setBackground(new java.awt.Color(0, 102, 102));
-        grupoAños.add(radioaño4);
-        radioaño4.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        radioaño4.setForeground(new java.awt.Color(255, 255, 255));
-        radioaño4.setText("2018");
-        radioaño4.setToolTipText("");
-        Filtrador.add(radioaño4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+        radioaño2018.setBackground(new java.awt.Color(0, 102, 102));
+        grupoAños.add(radioaño2018);
+        radioaño2018.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        radioaño2018.setForeground(new java.awt.Color(255, 255, 255));
+        radioaño2018.setText("2018");
+        radioaño2018.setToolTipText("");
+        Filtrador.add(radioaño2018, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
 
         Radiodocumentocedula.setBackground(new java.awt.Color(0, 102, 102));
         ID.add(Radiodocumentocedula);
@@ -894,21 +905,21 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void año1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año1ActionPerformed
+    private void año2020ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2020ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_año1ActionPerformed
+    }//GEN-LAST:event_año2020ActionPerformed
 
     private void MasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasculinoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MasculinoActionPerformed
 
-    private void año2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2ActionPerformed
+    private void año2019ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2019ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_año2ActionPerformed
+    }//GEN-LAST:event_año2019ActionPerformed
 
-    private void año3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año3ActionPerformed
+    private void año2018ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2018ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_año3ActionPerformed
+    }//GEN-LAST:event_año2018ActionPerformed
 
     private void CedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CedulaActionPerformed
         // TODO add your handling code here:
@@ -997,24 +1008,136 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_Busqueda8ActionPerformed
 
     private void BotonGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGeneroActionPerformed
-
-        if (Masculino.isSelected()) {
-      
+       
+        if (modo.isSelected()) {
+          
+            if (RadioMasculino1.isSelected()) {
+                obj2.setRadiomasculino();
+                JOptionPane.showMessageDialog(null, obj2.getRadiomasculino());
+            }
+             if (RadioFemenino1.isSelected()) {
+                 obj2.setRadiofemenino();
+                JOptionPane.showMessageDialog(null, obj2.getRadiofemenino());
+            }
+              if (RadioNoidentificadoporningungenero1.isSelected()) {
+                obj2.setRadionoidentificado();
+                JOptionPane.showMessageDialog(null, obj2.getRadionoidentificado());
+            }
+               if (RadioTodosGeneros.isSelected()) {
+                 obj2.setRadiotodoslosgeneros();
+                JOptionPane.showMessageDialog(null, obj2.getRadiotodoslosgeneros());
+            }
             
-            obj.getHombres(); 
-              
+        } else {
+          
+            if (Masculino.isSelected()) {
+      
+            obj.setHombres();
+            System.out.println(obj.getHombres());
+            
         }  if (Femenino.isSelected()) {
           
-           obj.getMujeres();
+           obj.setMujeres();
+           System.out.println(obj.getMujeres());
             
         }  if (Noconozcomisgenitales.isSelected()) {
-            obj.getNoidentificados();
+            obj.setNoidentificados();
+           System.out.println(obj.getNoidentificados());
             
         }  if (TodosGeneros.isSelected()) {
-            obj.getTodo();
+             obj.setTodo();
+           System.out.println(obj.getTodo());
             
         }
+        }
+        
+        
     }//GEN-LAST:event_BotonGeneroActionPerformed
+
+    private void BusquedaAñosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaAñosActionPerformed
+        
+        if (modo.isSelected()) {
+          
+            if (radioaño2020.isSelected()) {
+                obj2.setRadioaño2020();
+                JOptionPane.showMessageDialog(null, obj2.getRadioaño2020());
+            }
+             if (radioaño2019.isSelected()) {
+                 obj2.setRadioaño2019();
+                JOptionPane.showMessageDialog(null, obj2.getRadioaño2019());
+            }
+              if (radioaño2018.isSelected()) {
+                obj2.setRadioaño2018();
+                JOptionPane.showMessageDialog(null, obj2.getRadioaño2018());
+            }
+               if (radioañostodos.isSelected()) {
+                 obj2.setRadiotodosaños();
+                JOptionPane.showMessageDialog(null, obj2.getRadiotodosaños());
+            }
+            
+        } else {
+          
+            if (año2020.isSelected()) {
+                obj.setAño2020();
+            System.out.println(obj.getAño2020());
+            
+        }  if (año2019.isSelected()) {
+          
+           obj.setAño2019();
+           System.out.println(obj.getAño2019());
+            
+        }  if (año2018.isSelected()) {
+            obj.setAño2018();
+           System.out.println(obj.getAño2018());
+            
+        }  if (todosaño.isSelected()) {
+             obj.setTodosaños();
+           System.out.println(obj.getTodosaños());
+            
+        }
+        }
+    }//GEN-LAST:event_BusquedaAñosActionPerformed
+
+    private void BusquedatipodocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedatipodocumentoActionPerformed
+     
+                
+        if (modo.isSelected()) {
+          
+            if (Radiodocumentocedula.isSelected()) {
+                obj2.setRadiocedula();
+                JOptionPane.showMessageDialog(null, obj2.getRadiocedula());
+            }
+             if (RadiodocumentoID1.isSelected()) {
+                 obj2.setRadioid();
+                JOptionPane.showMessageDialog(null, obj2.getRadioid());
+            }
+              if (RadiodocumentoTodos.isSelected()) {
+                obj2.setTodosid();
+                JOptionPane.showMessageDialog(null, obj2.getTodosid());
+            }
+           
+            
+        } else {
+          
+            if (Cedula.isSelected()) {
+                obj.setCedula();
+            System.out.println(obj.getCedula());
+            
+        }  if (TarjetaIdentidad.isSelected()) {
+          
+           obj.setID();
+           System.out.println(obj.getID());
+            
+        }  if (TodosTipodeDocumentos.isSelected()) {
+            obj.setIDtodos();
+           System.out.println(obj.getIDtodos());
+            
+        } 
+        }
+
+        
+        
+    }//GEN-LAST:event_BusquedatipodocumentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1071,9 +1194,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton Busqueda22;
     private javax.swing.JButton Busqueda23;
     private javax.swing.JButton Busqueda6;
-    private javax.swing.JButton Busqueda7;
     private javax.swing.JButton Busqueda8;
-    private javax.swing.JButton Busqueda9;
+    private javax.swing.JButton BusquedaAños;
+    private javax.swing.JButton Busquedatipodocumento;
     private javax.swing.JCheckBox Cedula;
     private javax.swing.ButtonGroup ColegioGeneroGrupo;
     private javax.swing.JCheckBox ColegiogeneroFEMENINO;
@@ -1114,9 +1237,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel Titulo2;
     protected javax.swing.JCheckBox TodosGeneros;
     private javax.swing.JCheckBox TodosTipodeDocumentos;
-    public javax.swing.JCheckBox año1;
-    public javax.swing.JCheckBox año2;
-    public javax.swing.JCheckBox año3;
+    public javax.swing.JCheckBox año2018;
+    public javax.swing.JCheckBox año2019;
+    public javax.swing.JCheckBox año2020;
     private javax.swing.ButtonGroup grupo1;
     private javax.swing.ButtonGroup grupoAños;
     private javax.swing.JButton jButton1;
@@ -1156,9 +1279,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JToggleButton modo;
-    protected javax.swing.JRadioButton radioaño2;
-    protected javax.swing.JRadioButton radioaño3;
-    protected javax.swing.JRadioButton radioaño4;
+    protected javax.swing.JRadioButton radioaño2018;
+    protected javax.swing.JRadioButton radioaño2019;
+    protected javax.swing.JRadioButton radioaño2020;
     public javax.swing.JRadioButton radioañostodos;
     protected javax.swing.JCheckBox todosaño;
     // End of variables declaration//GEN-END:variables
@@ -1201,14 +1324,14 @@ public void Labuenaaños(){
     
     //AÑOS
   
-        radioaño2.setVisible(true);
-        radioaño3.setVisible(true);
-        radioaño4.setVisible(true);
+        radioaño2020.setVisible(true);
+        radioaño2019.setVisible(true);
+        radioaño2018.setVisible(true);
         radioañostodos.setVisible(true);
 
-        año1.setVisible(false);  
-        año2.setVisible(false);        
-       año3.setVisible(false);  
+        año2020.setVisible(false);  
+        año2019.setVisible(false);        
+       año2018.setVisible(false);  
        todosaño.setVisible(false);
        
        //TIPO DE DOCUMENTO
@@ -1263,13 +1386,13 @@ public void Labuenaaños(){
         public void Lamalaaños(){
             //AÑOS
         radioañostodos.setVisible(false);
-        radioaño2.setVisible(false);
-         radioaño3.setVisible(false);
-         radioaño4.setVisible(false);
+        radioaño2020.setVisible(false);
+         radioaño2019.setVisible(false);
+         radioaño2018.setVisible(false);
          
-         año1.setVisible(true);  
-         año2.setVisible(true);  
-         año3.setVisible(true);  
+         año2020.setVisible(true);  
+         año2019.setVisible(true);  
+         año2018.setVisible(true);  
          todosaño.setVisible(true);
          
          //TIPO DE DOCUMEMTNO
