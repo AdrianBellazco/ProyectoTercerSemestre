@@ -25,7 +25,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 public class GUI extends javax.swing.JFrame {
           RegistrarVariablesCasillas obj = new RegistrarVariablesCasillas();
           RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
-       
+          GUI obj3;
     
    int mousex, mousey;
     public GUI() {
@@ -65,16 +65,16 @@ public class GUI extends javax.swing.JFrame {
         Titulo1 = new javax.swing.JLabel();
         Filtr = new javax.swing.JScrollPane();
         Filtrador = new javax.swing.JPanel();
-        BuscarAreaColegio = new MiBoton();
-        BusquedaAños = new MiBoton();
-        BuscarGeneroColegio = new MiBoton();
-        Busquedatipodocumento = new MiBoton();
-        BotonGenero = new MiBoton();
-        Municipio = new MiBoton();
-        BuscarDesempeñolectura = new MiBoton();
-        jButton1 = new MiBoton();
-        Busqueda10 = new MiBoton();
-        Busqueda15 = new MiBoton();
+        Bus5 = new MiBoton();
+        Bus1 = new MiBoton();
+        Bus4 = new MiBoton();
+        Bus2 = new MiBoton();
+        Bus3 = new MiBoton();
+        Bus6 = new MiBoton();
+        Bus9 = new MiBoton();
+        BuscarTodo = new MiBoton();
+        Bus8 = new MiBoton();
+        Bus7 = new MiBoton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -84,13 +84,13 @@ public class GUI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        mate = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        natu = new javax.swing.JLabel();
+        ing = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        glop = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         año2020 = new javax.swing.JCheckBox();
         año2019 = new javax.swing.JCheckBox();
@@ -118,19 +118,19 @@ public class GUI extends javax.swing.JFrame {
         AreaRural = new javax.swing.JCheckBox();
         AreaUrbana = new javax.swing.JCheckBox();
         jSeparator11 = new javax.swing.JSeparator();
-        Plectura = new javax.swing.JSlider();
+        Plecturamatematica = new javax.swing.JSlider();
         jSeparator12 = new javax.swing.JSeparator();
-        Busqueda14 = new MiBoton();
-        Busqueda21 = new MiBoton();
+        Bus10 = new MiBoton();
+        Bus11 = new MiBoton();
         jSeparator13 = new javax.swing.JSeparator();
-        Busqueda16 = new MiBoton();
-        Busqueda22 = new MiBoton();
+        Bus13 = new MiBoton();
+        Bus14 = new MiBoton();
         jSeparator14 = new javax.swing.JSeparator();
-        Busqueda17 = new MiBoton();
-        Busqueda23 = new MiBoton();
+        Bus12 = new MiBoton();
+        Bus15 = new MiBoton();
         jSeparator15 = new javax.swing.JSeparator();
-        Busqueda18 = new MiBoton();
-        Busqueda19 = new MiBoton();
+        Bus16 = new MiBoton();
+        Bus17 = new MiBoton();
         modo = new javax.swing.JToggleButton();
         radioañostodos = new javax.swing.JRadioButton();
         radioaño2020 = new javax.swing.JRadioButton();
@@ -152,7 +152,7 @@ public class GUI extends javax.swing.JFrame {
         RadioUrbana = new javax.swing.JRadioButton();
         jSeparator18 = new javax.swing.JSeparator();
         Plectura1 = new javax.swing.JSlider();
-        Plectura3 = new javax.swing.JSlider();
+        percentilbarra = new javax.swing.JSlider();
         Plectura4 = new javax.swing.JSlider();
         Plectura5 = new javax.swing.JSlider();
         putajeglobalbarra = new JSlider(JSlider.HORIZONTAL, 0, 500, 0);
@@ -160,8 +160,17 @@ public class GUI extends javax.swing.JFrame {
         desempeñolectura1 = new javax.swing.JComboBox<>();
         desempeñomatematica1 = new javax.swing.JComboBox<>();
         desempeñonaturales1 = new javax.swing.JComboBox<>();
-        PuntajeGlobal = new javax.swing.JSpinner();
-        CamPG = new javax.swing.JToggleButton();
+        Percentil = new javax.swing.JSpinner();
+        CamPercentil = new javax.swing.JToggleButton();
+        PuntajeGlobal1 = new javax.swing.JSpinner();
+        CamPG1 = new javax.swing.JToggleButton();
+        etiquetavalorlectura = new javax.swing.JLabel();
+        etiquetavalorlectura1 = new javax.swing.JLabel();
+        mateTex1 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         Info = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -230,119 +239,123 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.setRequestFocusEnabled(false);
         Filtrador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BuscarAreaColegio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        BuscarAreaColegio.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        BuscarAreaColegio.setContentAreaFilled(false);
-        BuscarAreaColegio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BuscarAreaColegio.addActionListener(new java.awt.event.ActionListener() {
+        Bus5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus5.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus5.setContentAreaFilled(false);
+        Bus5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarAreaColegioActionPerformed(evt);
+                Bus5ActionPerformed(evt);
             }
         });
-        Filtrador.add(BuscarAreaColegio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1250, -1, -1));
+        Filtrador.add(Bus5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1250, -1, -1));
 
-        BusquedaAños.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        BusquedaAños.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        BusquedaAños.setContentAreaFilled(false);
-        BusquedaAños.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BusquedaAños.addActionListener(new java.awt.event.ActionListener() {
+        Bus1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus1.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus1.setContentAreaFilled(false);
+        Bus1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BusquedaAñosActionPerformed(evt);
+                Bus1ActionPerformed(evt);
             }
         });
-        Filtrador.add(BusquedaAños, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
+        Filtrador.add(Bus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
-        BuscarGeneroColegio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        BuscarGeneroColegio.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        BuscarGeneroColegio.setContentAreaFilled(false);
-        BuscarGeneroColegio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BuscarGeneroColegio.addActionListener(new java.awt.event.ActionListener() {
+        Bus4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus4.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus4.setContentAreaFilled(false);
+        Bus4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarGeneroColegioActionPerformed(evt);
+                Bus4ActionPerformed(evt);
             }
         });
-        Filtrador.add(BuscarGeneroColegio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1020, -1, -1));
+        Filtrador.add(Bus4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1020, -1, -1));
 
-        Busquedatipodocumento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busquedatipodocumento.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busquedatipodocumento.setContentAreaFilled(false);
-        Busquedatipodocumento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Busquedatipodocumento.addActionListener(new java.awt.event.ActionListener() {
+        Bus2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus2.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus2.setContentAreaFilled(false);
+        Bus2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BusquedatipodocumentoActionPerformed(evt);
+                Bus2ActionPerformed(evt);
             }
         });
-        Filtrador.add(Busquedatipodocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, -1, -1));
+        Filtrador.add(Bus2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, -1, -1));
 
-        BotonGenero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        BotonGenero.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        BotonGenero.setContentAreaFilled(false);
-        BotonGenero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BotonGenero.addActionListener(new java.awt.event.ActionListener() {
+        Bus3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus3.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus3.setContentAreaFilled(false);
+        Bus3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonGeneroActionPerformed(evt);
+                Bus3ActionPerformed(evt);
             }
         });
-        Filtrador.add(BotonGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, -1));
+        Filtrador.add(Bus3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, -1));
 
-        Municipio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Municipio.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Municipio.setContentAreaFilled(false);
-        Municipio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Municipio.addActionListener(new java.awt.event.ActionListener() {
+        Bus6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus6.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus6.setContentAreaFilled(false);
+        Bus6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MunicipioActionPerformed(evt);
+                Bus6ActionPerformed(evt);
             }
         });
-        Filtrador.add(Municipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1470, -1, -1));
+        Filtrador.add(Bus6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1470, -1, -1));
 
-        BuscarDesempeñolectura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        BuscarDesempeñolectura.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        BuscarDesempeñolectura.setContentAreaFilled(false);
-        BuscarDesempeñolectura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BuscarDesempeñolectura.addActionListener(new java.awt.event.ActionListener() {
+        Bus9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus9.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus9.setContentAreaFilled(false);
+        Bus9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarDesempeñolecturaActionPerformed(evt);
+                Bus9ActionPerformed(evt);
             }
         });
-        Filtrador.add(BuscarDesempeñolectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2120, -1, -1));
+        Filtrador.add(Bus9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2120, -1, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/filtrar (3).png"))); // NOI18N
-        jButton1.setText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>todos los  filtrados");
-        jButton1.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar todos los elementos<br>seleccionados");
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BuscarTodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/filtrar (3).png"))); // NOI18N
+        BuscarTodo.setText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>todos los  filtrados");
+        BuscarTodo.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar todos los elementos<br>seleccionados");
+        BuscarTodo.setBorder(null);
+        BuscarTodo.setContentAreaFilled(false);
+        BuscarTodo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BuscarTodo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BuscarTodo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BuscarTodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BuscarTodoActionPerformed(evt);
             }
         });
-        Filtrador.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 4110, 120, 170));
+        Filtrador.add(BuscarTodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 4110, 120, 170));
 
-        Busqueda10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda10.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda10.setContentAreaFilled(false);
-        Busqueda10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1930, -1, -1));
-
-        Busqueda15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda15.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda15.setContentAreaFilled(false);
-        Busqueda15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Busqueda15.addActionListener(new java.awt.event.ActionListener() {
+        Bus8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus8.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus8.setContentAreaFilled(false);
+        Bus8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Busqueda15ActionPerformed(evt);
+                Bus8ActionPerformed(evt);
             }
         });
-        Filtrador.add(Busqueda15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1710, -1, -1));
+        Filtrador.add(Bus8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1930, -1, -1));
+
+        Bus7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus7.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus7.setContentAreaFilled(false);
+        Bus7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bus7ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(Bus7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1710, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel1.setText("percentil");
-        Filtrador.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 3820, 260, 50));
+        Filtrador.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3840, 80, 50));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -378,47 +391,44 @@ public class GUI extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 102, 0));
         jLabel8.setText("puntaje lectura");
-        Filtrador.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1780, 260, 50));
+        Filtrador.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1780, 260, 50));
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 102, 0));
         jLabel9.setText("desempeño lectura");
-        Filtrador.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1970, 260, 50));
+        Filtrador.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1970, 260, 50));
 
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel11.setText("puntaje matematica");
-        Filtrador.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 2200, 260, 50));
+        mate.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        mate.setForeground(new java.awt.Color(255, 102, 0));
+        Filtrador.add(mate, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 2200, 60, 50));
 
         jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 102, 0));
         jLabel12.setText("desempeño matematicas");
-        Filtrador.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 2420, 260, 50));
+        Filtrador.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2420, 260, 50));
 
         jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 102, 0));
         jLabel13.setText("desempeño naturales");
-        Filtrador.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 2860, 260, 50));
+        Filtrador.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2860, 260, 50));
 
-        jLabel14.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel14.setText("puntaje naturales");
-        Filtrador.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 2650, 260, 50));
+        natu.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        natu.setForeground(new java.awt.Color(255, 102, 0));
+        Filtrador.add(natu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 2640, 60, 50));
 
-        jLabel15.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel15.setText("puntaje ingles");
-        Filtrador.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 3090, 260, 50));
+        ing.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        ing.setForeground(new java.awt.Color(255, 102, 0));
+        Filtrador.add(ing, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 3090, 70, 50));
 
         jLabel16.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 102, 0));
         jLabel16.setText("desempeño ingles ");
-        Filtrador.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 3320, 260, 50));
+        Filtrador.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3310, 260, 50));
 
-        jLabel17.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel17.setText("puntaje gloval:");
-        Filtrador.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 3610, 260, 50));
+        glop.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        glop.setForeground(new java.awt.Color(255, 102, 0));
+        glop.setText("");
+        Filtrador.add(glop, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 3610, 140, 50));
 
         jLabel18.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 102, 0));
@@ -542,7 +552,7 @@ public class GUI extends javax.swing.JFrame {
         desempeñoingles.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         desempeñoingles.setForeground(new java.awt.Color(255, 102, 0));
         desempeñoingles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A-", "A1", "A2", "A2+", "B1", "B1+", "B2", "B2+", "C1", "C2" }));
-        Filtrador.add(desempeñoingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 3390, 180, 50));
+        Filtrador.add(desempeñoingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3380, 180, 50));
         Filtrador.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1320, 260, 10));
 
         municipiosselec.setBackground(new java.awt.Color(0, 102, 102));
@@ -623,82 +633,112 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(AreaUrbana, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1210, -1, -1));
         Filtrador.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 810, 260, 10));
 
-        Plectura.setMajorTickSpacing(10); // Espaciado entre las marcas principales
-        Plectura.setPaintTicks(true); // Dibuja las marcas
-        Plectura.setPaintLabels(true);
-        Plectura.setValue(0);
+        Plecturamatematica.setMajorTickSpacing(10); // Espaciado entre las marcas principales
+        Plecturamatematica.setPaintTicks(true); // Dibuja las marcas
+        Plecturamatematica.setPaintLabels(true);
+        Plecturamatematica.setValue(0);
 
-        Plectura.setMajorTickSpacing(10);
-        Plectura.setBackground(new java.awt.Color(255, 102, 0));
-        Plectura.setForeground(new java.awt.Color(255, 255, 255));
-        Filtrador.add(Plectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2290, 250, -1));
+        Plecturamatematica.setMajorTickSpacing(10);
+        Plecturamatematica.setBackground(new java.awt.Color(255, 102, 0));
+        Plecturamatematica.setForeground(new java.awt.Color(255, 255, 255));
+        Plecturamatematica.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                PlecturamatematicaStateChanged(evt);
+            }
+        });
+        Filtrador.add(Plecturamatematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2290, 250, -1));
         Filtrador.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1540, 260, 10));
 
-        Busqueda14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda14.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda14.setContentAreaFilled(false);
-        Busqueda14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2360, -1, -1));
-
-        Busqueda21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda21.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda21.setContentAreaFilled(false);
-        Busqueda21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Busqueda21.addActionListener(new java.awt.event.ActionListener() {
+        Bus10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus10.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus10.setContentAreaFilled(false);
+        Bus10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Busqueda21ActionPerformed(evt);
+                Bus10ActionPerformed(evt);
             }
         });
-        Filtrador.add(Busqueda21, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2570, -1, -1));
+        Filtrador.add(Bus10, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2360, -1, -1));
+
+        Bus11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus11.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus11.setContentAreaFilled(false);
+        Bus11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bus11ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(Bus11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2570, -1, -1));
         Filtrador.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2640, 260, 10));
 
-        Busqueda16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda16.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda16.setContentAreaFilled(false);
-        Busqueda16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Busqueda16.addActionListener(new java.awt.event.ActionListener() {
+        Bus13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus13.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus13.setContentAreaFilled(false);
+        Bus13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Busqueda16ActionPerformed(evt);
+                Bus13ActionPerformed(evt);
             }
         });
-        Filtrador.add(Busqueda16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3010, -1, -1));
+        Filtrador.add(Bus13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3010, -1, -1));
 
-        Busqueda22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda22.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda22.setContentAreaFilled(false);
-        Busqueda22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda22, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3250, -1, -1));
+        Bus14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus14.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus14.setContentAreaFilled(false);
+        Bus14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bus14ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(Bus14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3250, -1, -1));
         Filtrador.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3560, 260, 10));
 
-        Busqueda17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda17.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda17.setContentAreaFilled(false);
-        Busqueda17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2800, -1, -1));
-
-        Busqueda23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda23.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda23.setContentAreaFilled(false);
-        Busqueda23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Busqueda23.addActionListener(new java.awt.event.ActionListener() {
+        Bus12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus12.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus12.setContentAreaFilled(false);
+        Bus12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Busqueda23ActionPerformed(evt);
+                Bus12ActionPerformed(evt);
             }
         });
-        Filtrador.add(Busqueda23, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3470, -1, -1));
+        Filtrador.add(Bus12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2800, -1, -1));
+
+        Bus15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus15.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus15.setContentAreaFilled(false);
+        Bus15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bus15ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(Bus15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3470, -1, -1));
         Filtrador.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3090, 260, 10));
 
-        Busqueda18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda18.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda18.setContentAreaFilled(false);
-        Busqueda18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda18, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 3750, -1, -1));
+        Bus16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus16.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus16.setContentAreaFilled(false);
+        Bus16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bus16ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(Bus16, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 3760, -1, -1));
 
-        Busqueda19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda19.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda19.setContentAreaFilled(false);
-        Busqueda19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 4020, -1, -1));
+        Bus17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus17.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus17.setContentAreaFilled(false);
+        Bus17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bus17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bus17ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(Bus17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 3970, -1, -1));
 
         modo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar.png"))); // NOI18N
         modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Varias opciones");
@@ -849,17 +889,28 @@ public class GUI extends javax.swing.JFrame {
         Plectura1.setMajorTickSpacing(10);
         Plectura1.setBackground(new java.awt.Color(255, 102, 0));
         Plectura1.setForeground(new java.awt.Color(255, 255, 255));
+        Plectura1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Plectura1StateChanged(evt);
+            }
+        });
         Filtrador.add(Plectura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1860, 250, -1));
 
-        Plectura3.setMajorTickSpacing(10); // Espaciado entre las marcas principales
-        Plectura3.setPaintTicks(true); // Dibuja las marcas
-        Plectura3.setPaintLabels(true);
-        Plectura3.setValue(0);
+        percentilbarra.setMajorTickSpacing(10); // Espaciado entre las marcas principales
+        percentilbarra.setPaintTicks(true); // Dibuja las marcas
+        percentilbarra.setPaintLabels(true);
+        percentilbarra.setValue(0);
 
-        Plectura3.setMajorTickSpacing(10);
-        Plectura3.setBackground(new java.awt.Color(255, 102, 0));
-        Plectura3.setForeground(new java.awt.Color(255, 255, 255));
-        Filtrador.add(Plectura3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3910, 250, -1));
+        percentilbarra.setMajorTickSpacing(10);
+        percentilbarra.setBackground(new java.awt.Color(255, 102, 0));
+        percentilbarra.setForeground(new java.awt.Color(255, 255, 255));
+        percentilbarra.setEnabled(false);
+        percentilbarra.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                percentilbarraStateChanged(evt);
+            }
+        });
+        Filtrador.add(percentilbarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3910, 250, -1));
 
         Plectura4.setMajorTickSpacing(10); // Espaciado entre las marcas principales
         Plectura4.setPaintTicks(true); // Dibuja las marcas
@@ -869,6 +920,11 @@ public class GUI extends javax.swing.JFrame {
         Plectura4.setMajorTickSpacing(10);
         Plectura4.setBackground(new java.awt.Color(255, 102, 0));
         Plectura4.setForeground(new java.awt.Color(255, 255, 255));
+        Plectura4.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Plectura4StateChanged(evt);
+            }
+        });
         Filtrador.add(Plectura4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2730, 250, -1));
 
         Plectura5.setMajorTickSpacing(10); // Espaciado entre las marcas principales
@@ -879,6 +935,11 @@ public class GUI extends javax.swing.JFrame {
         Plectura5.setMajorTickSpacing(10);
         Plectura5.setBackground(new java.awt.Color(255, 102, 0));
         Plectura5.setForeground(new java.awt.Color(255, 255, 255));
+        Plectura5.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Plectura5StateChanged(evt);
+            }
+        });
         Filtrador.add(Plectura5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3180, 250, -1));
 
         putajeglobalbarra.setMajorTickSpacing(500); // Espaciado entre las marcas principales
@@ -890,6 +951,11 @@ public class GUI extends javax.swing.JFrame {
         putajeglobalbarra.setBackground(new java.awt.Color(255, 102, 0));
         putajeglobalbarra.setForeground(new java.awt.Color(255, 255, 255));
         putajeglobalbarra.setEnabled(false);
+        putajeglobalbarra.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                putajeglobalbarraStateChanged(evt);
+            }
+        });
         Filtrador.add(putajeglobalbarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3700, 250, -1));
 
         Estractoselect.setBackground(new java.awt.Color(0, 102, 102));
@@ -908,27 +974,80 @@ public class GUI extends javax.swing.JFrame {
         desempeñomatematica1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         desempeñomatematica1.setForeground(new java.awt.Color(255, 102, 0));
         desempeñomatematica1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3", " 4" }));
-        Filtrador.add(desempeñomatematica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2500, 180, 50));
+        Filtrador.add(desempeñomatematica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2500, 180, 50));
 
         desempeñonaturales1.setBackground(new java.awt.Color(0, 102, 102));
         desempeñonaturales1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         desempeñonaturales1.setForeground(new java.awt.Color(255, 102, 0));
         desempeñonaturales1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3", " 4" }));
-        Filtrador.add(desempeñonaturales1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 2930, 180, 50));
+        Filtrador.add(desempeñonaturales1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2930, 180, 50));
 
-        PuntajeGlobal.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        PuntajeGlobal.setModel(new javax.swing.SpinnerNumberModel(1, 1, 500, 1));
-        PuntajeGlobal.setToolTipText("");
-        Filtrador.add(PuntajeGlobal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3760, 70, 40));
+        Percentil.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        Percentil.setModel(new javax.swing.SpinnerNumberModel(1, 1, 500, 1));
+        Percentil.setToolTipText("");
+        Filtrador.add(Percentil, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3970, 70, 40));
 
-        CamPG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar (1).png"))); // NOI18N
-        CamPG.setContentAreaFilled(false);
-        CamPG.addActionListener(new java.awt.event.ActionListener() {
+        CamPercentil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar (1).png"))); // NOI18N
+        CamPercentil.setContentAreaFilled(false);
+        CamPercentil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CamPercentil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CamPGActionPerformed(evt);
+                CamPercentilActionPerformed(evt);
             }
         });
-        Filtrador.add(CamPG, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 3763, 40, 40));
+        Filtrador.add(CamPercentil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 3970, 40, 40));
+
+        PuntajeGlobal1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        PuntajeGlobal1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 500, 1));
+        PuntajeGlobal1.setToolTipText("");
+        Filtrador.add(PuntajeGlobal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3760, 70, 40));
+
+        CamPG1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar (1).png"))); // NOI18N
+        CamPG1.setContentAreaFilled(false);
+        CamPG1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CamPG1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CamPG1ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(CamPG1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 3763, 40, 40));
+
+        etiquetavalorlectura.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        etiquetavalorlectura.setForeground(new java.awt.Color(255, 102, 0));
+        etiquetavalorlectura.setToolTipText("");
+        etiquetavalorlectura.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Filtrador.add(etiquetavalorlectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1780, 80, 50));
+
+        etiquetavalorlectura1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        etiquetavalorlectura1.setForeground(new java.awt.Color(255, 102, 0));
+        etiquetavalorlectura1.setToolTipText("");
+        etiquetavalorlectura1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Filtrador.add(etiquetavalorlectura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1780, 80, 50));
+
+        mateTex1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        mateTex1.setForeground(new java.awt.Color(255, 102, 0));
+        mateTex1.setText("puntaje matematica");
+        Filtrador.add(mateTex1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2200, 260, 50));
+
+        jLabel19.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel19.setText("puntaje naturales");
+        Filtrador.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2640, 260, 50));
+
+        jLabel20.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel20.setText("puntaje ingles");
+        Filtrador.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3090, 260, 50));
+
+        jLabel21.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel21.setText("puntaje gloval:");
+        Filtrador.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3610, 140, 50));
+
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel10.setText("percentil");
+        Filtrador.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3840, 80, 50));
 
         Filtr.setViewportView(Filtrador);
 
@@ -971,9 +1090,11 @@ public class GUI extends javax.swing.JFrame {
      System.exit(0);
     }//GEN-LAST:event_SalirBotonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void BuscarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarTodoActionPerformed
+     actionbusi();
+        
+        
+    }//GEN-LAST:event_BuscarTodoActionPerformed
 
     private void año2020ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2020ActionPerformed
         // TODO add your handling code here:
@@ -1073,269 +1194,139 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_radioañostodosActionPerformed
 
-    private void BuscarGeneroColegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarGeneroColegioActionPerformed
+    private void Bus4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus4ActionPerformed
                
-        if (modo.isSelected()) {
-          
-            if (RadioGeneroColegioMasculino.isSelected()) {
-                obj2.setRadiocolmasculino();
-                JOptionPane.showMessageDialog(null, obj2.getRadiocolmasculino());
-            }
-             if (RadioGeneroColegioMixto1.isSelected()) {
-                 obj2.setRadiomixto();
-                JOptionPane.showMessageDialog(null, obj2.getRadiomixto());
-            }
-              if (RadioGeneroColegioFemenino.isSelected()) {
-                obj2.setRadiocolfemenino();
-                JOptionPane.showMessageDialog(null, obj2.getRadiocolfemenino());
-            }
-               if (RadioGeneroColegioTodos.isSelected()) {
-                 obj2.setRadiocoltodos();
-                JOptionPane.showMessageDialog(null, obj2.getRadiocoltodos());
-            }
-            
-        } else {
-          
-            if (ColegiogeneroMasculino.isSelected()) {
-      
-            obj.setColmasculino();
-            System.out.println(obj.getColmasculino());
-            
-        }  if (ColegiogeneroFEMENINO.isSelected()) {
-          
-           obj.setColfemenino();
-           System.out.println(obj.getColfemenino());
-            
-        }  if (ColegiogeneroTODOS.isSelected()) {
-            obj.setColtodos();
-           System.out.println(obj.getColtodos());
-            
-        }  if (ColegiogeneroMIXTO.isSelected()) {
-            obj.setMixto();
-           System.out.println(obj.getMixto());
-            
-        }  
-        }
+        actionbus4();
+    }//GEN-LAST:event_Bus4ActionPerformed
 
-    }//GEN-LAST:event_BuscarGeneroColegioActionPerformed
-
-    private void BotonGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGeneroActionPerformed
-       
-        if (modo.isSelected()) {
-          
-            if (RadioMasculino1.isSelected()) {
-                obj2.setRadiomasculino();
-                JOptionPane.showMessageDialog(null, obj2.getRadiomasculino());
-            }
-             if (RadioFemenino1.isSelected()) {
-                 obj2.setRadiofemenino();
-                JOptionPane.showMessageDialog(null, obj2.getRadiofemenino());
-            }
-              if (RadioNoidentificadoporningungenero1.isSelected()) {
-                obj2.setRadionoidentificado();
-                JOptionPane.showMessageDialog(null, obj2.getRadionoidentificado());
-            }
-               if (RadioTodosGeneros.isSelected()) {
-                 obj2.setRadiotodoslosgeneros();
-                JOptionPane.showMessageDialog(null, obj2.getRadiotodoslosgeneros());
-            }
-            
-        } else {
-          
-            if (Masculino.isSelected()) {
-      
-            obj.setHombres();
-            System.out.println(obj.getHombres());
-            
-        }  if (Femenino.isSelected()) {
-          
-           obj.setMujeres();
-           System.out.println(obj.getMujeres());
-            
-        }  if (Noconozcomisgenitales.isSelected()) {
-            obj.setNoidentificados();
-           System.out.println(obj.getNoidentificados());
-            
-        }  if (TodosGeneros.isSelected()) {
-             obj.setTodo();
-           System.out.println(obj.getTodo());
-            
-        }
-        }
+    private void Bus3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus3ActionPerformed
+       actionbus3();
         
-        
-    }//GEN-LAST:event_BotonGeneroActionPerformed
+    }//GEN-LAST:event_Bus3ActionPerformed
 
-    private void BusquedaAñosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaAñosActionPerformed
-        
-        if (modo.isSelected()) {
-          
-            if (radioaño2020.isSelected()) {
-                obj2.setRadioaño2020();
-                JOptionPane.showMessageDialog(null, obj2.getRadioaño2020());
-            }
-             if (radioaño2019.isSelected()) {
-                 obj2.setRadioaño2019();
-                JOptionPane.showMessageDialog(null, obj2.getRadioaño2019());
-            }
-              if (radioaño2018.isSelected()) {
-                obj2.setRadioaño2018();
-                JOptionPane.showMessageDialog(null, obj2.getRadioaño2018());
-            }
-               if (radioañostodos.isSelected()) {
-                 obj2.setRadiotodosaños();
-                JOptionPane.showMessageDialog(null, obj2.getRadiotodosaños());
-            }
-            
-        } else {
-          
-            if (año2020.isSelected()) {
-                obj.setAño2020();
-            System.out.println(obj.getAño2020());
-            
-        }  if (año2019.isSelected()) {
-          
-           obj.setAño2019();
-           System.out.println(obj.getAño2019());
-            
-        }  if (año2018.isSelected()) {
-            obj.setAño2018();
-           System.out.println(obj.getAño2018());
-            
-        }  if (todosaño.isSelected()) {
-             obj.setTodosaños();
-           System.out.println(obj.getTodosaños());
-            
-        }
-        }
-    }//GEN-LAST:event_BusquedaAñosActionPerformed
+    private void Bus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus1ActionPerformed
+        actionbus1();
+    }//GEN-LAST:event_Bus1ActionPerformed
 
-    private void BusquedatipodocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedatipodocumentoActionPerformed
+    private void Bus2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus2ActionPerformed
      
-                
-        if (modo.isSelected()) {
-          
-            if (Radiodocumentocedula.isSelected()) {
-                obj2.setRadiocedula();
-                JOptionPane.showMessageDialog(null, obj2.getRadiocedula());
-            }
-             if (RadiodocumentoID1.isSelected()) {
-                 obj2.setRadioid();
-                JOptionPane.showMessageDialog(null, obj2.getRadioid());
-            }
-              if (RadiodocumentoTodos.isSelected()) {
-                obj2.setTodosid();
-                JOptionPane.showMessageDialog(null, obj2.getTodosid());
-            }
-           
-            
-        } else {
-          
-            if (Cedula.isSelected()) {
-                obj.setCedula();
-            System.out.println(obj.getCedula());
-            
-        }  if (TarjetaIdentidad.isSelected()) {
-          
-           obj.setID();
-           System.out.println(obj.getID());
-            
-        }  if (TodosTipodeDocumentos.isSelected()) {
-            obj.setIDtodos();
-           System.out.println(obj.getIDtodos());
-            
-        } 
-        }
-
+        actionbus2();
         
         
-    }//GEN-LAST:event_BusquedatipodocumentoActionPerformed
+    }//GEN-LAST:event_Bus2ActionPerformed
 
-    private void BuscarAreaColegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarAreaColegioActionPerformed
-           
-        if (modo.isSelected()) {
-          
-            if (RadioRural.isSelected()) {
-                obj2.setRadiorural();
-                JOptionPane.showMessageDialog(null, obj2.getRadiorural());
-            }
-             if (RadioUrbana.isSelected()) {
-                 obj2.setRadiourbano();
-                JOptionPane.showMessageDialog(null, obj2.getRadiourbano());
-            }
-              if (RadioTodosArea.isSelected()) {
-                obj2.setRadiotodosarea();
-                JOptionPane.showMessageDialog(null, obj2.getRadiotodosarea());
-            }
-            
-        } else {
-          
-            if (AreaRural.isSelected()) {
-      
-            obj.setRural();
-            System.out.println(obj.getRural());
-            
-        }  if (AreaTodos.isSelected()) {
-          
-           obj.setZonatodos();
-           System.out.println(obj.getZonatodos());
-            
-        }  if (AreaUrbana.isSelected()) {
-            obj.setUrbana();
-           System.out.println(obj.getUrbana());
-            
-        } 
-        }      
-    }//GEN-LAST:event_BuscarAreaColegioActionPerformed
+    private void Bus5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus5ActionPerformed
+        actionbus5();
+    }//GEN-LAST:event_Bus5ActionPerformed
 
-    private void BuscarDesempeñolecturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarDesempeñolecturaActionPerformed
-        String select =(String) desempeñolectura1.getSelectedItem();
-        JOptionPane.showMessageDialog(null, select);
-    }//GEN-LAST:event_BuscarDesempeñolecturaActionPerformed
+    private void Bus9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus9ActionPerformed
+       actionbus9();
+    }//GEN-LAST:event_Bus9ActionPerformed
 
-    private void MunicipioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MunicipioActionPerformed
-       String busquedamunicipios = (String) municipiosselec.getSelectedItem();
-       JOptionPane.showMessageDialog(null, busquedamunicipios);
-    }//GEN-LAST:event_MunicipioActionPerformed
+    private void Bus6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus6ActionPerformed
+      actionbus6();
+    }//GEN-LAST:event_Bus6ActionPerformed
 
-    private void Busqueda15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda15ActionPerformed
-       String select = (String) Estractoselect.getSelectedItem();
-       JOptionPane.showMessageDialog(null, select);
-    }//GEN-LAST:event_Busqueda15ActionPerformed
+    private void Bus7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus7ActionPerformed
+actionbus7();
+    }//GEN-LAST:event_Bus7ActionPerformed
 
-    private void Busqueda21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda21ActionPerformed
-      String select = (String) desempeñomatematica1.getSelectedItem();
-      JOptionPane.showMessageDialog(null, select);
-    }//GEN-LAST:event_Busqueda21ActionPerformed
+    private void Bus11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus11ActionPerformed
+actionbus11();
+    }//GEN-LAST:event_Bus11ActionPerformed
 
-    private void Busqueda16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda16ActionPerformed
-           String select = (String) desempeñonaturales1.getSelectedItem();
-      JOptionPane.showMessageDialog(null, select);
-    }//GEN-LAST:event_Busqueda16ActionPerformed
+    private void Bus13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus13ActionPerformed
+         actionbus13();
+    }//GEN-LAST:event_Bus13ActionPerformed
 
-    private void Busqueda23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda23ActionPerformed
-           String select = (String) desempeñoingles.getSelectedItem();
-      JOptionPane.showMessageDialog(null, select);
-    }//GEN-LAST:event_Busqueda23ActionPerformed
+    private void Bus15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus15ActionPerformed
+        actionbus15();
+    }//GEN-LAST:event_Bus15ActionPerformed
 
-    private void CamPGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CamPGActionPerformed
+    private void CamPercentilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CamPercentilActionPerformed
 
-        if (CamPG.isSelected()) {
+        if (CamPercentil.isSelected()) {
            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender (1).png"));
-        CamPG.setIcon(img);
-        PuntajeGlobal.setEnabled(false);
-        putajeglobalbarra.setEnabled(true);
+        CamPercentil.setIcon(img);
+        Percentil.setEnabled(false);
+        percentilbarra.setEnabled(true);
      
         } else {
              ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar (1).png"));
-        CamPG.setIcon(img);
-           PuntajeGlobal.setEnabled(true);
-        putajeglobalbarra.setEnabled(false);
+        CamPercentil.setIcon(img);
+           Percentil.setEnabled(true);
+        percentilbarra.setEnabled(false);
  
         }       
         
         
-    }//GEN-LAST:event_CamPGActionPerformed
+    }//GEN-LAST:event_CamPercentilActionPerformed
+
+    private void CamPG1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CamPG1ActionPerformed
+        
+        if (CamPG1.isSelected()) {
+           ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender (1).png"));
+        CamPG1.setIcon(img);
+        putajeglobalbarra.setEnabled(true);
+        PuntajeGlobal1.setEnabled(false);
+     
+        } else {
+             ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar (1).png"));
+        CamPG1.setIcon(img);
+           putajeglobalbarra.setEnabled(false);
+        PuntajeGlobal1.setEnabled(true);
+ 
+        }     
+    }//GEN-LAST:event_CamPG1ActionPerformed
+
+    private void Bus8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus8ActionPerformed
+       actionbus8();
+    }//GEN-LAST:event_Bus8ActionPerformed
+
+    private void Plectura1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Plectura1StateChanged
+        etiquetavalorlectura.setText(""+Plectura1.getValue());
+        
+    }//GEN-LAST:event_Plectura1StateChanged
+
+    private void PlecturamatematicaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PlecturamatematicaStateChanged
+        mate.setText(""+Plecturamatematica.getValue());
+    }//GEN-LAST:event_PlecturamatematicaStateChanged
+
+    private void Plectura4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Plectura4StateChanged
+       natu.setText(""+Plectura4.getValue());
+    }//GEN-LAST:event_Plectura4StateChanged
+
+    private void Plectura5StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Plectura5StateChanged
+       ing.setText(""+Plectura5.getValue());
+    }//GEN-LAST:event_Plectura5StateChanged
+
+    private void putajeglobalbarraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_putajeglobalbarraStateChanged
+      glop.setText(""+putajeglobalbarra.getValue());
+    }//GEN-LAST:event_putajeglobalbarraStateChanged
+
+    private void percentilbarraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_percentilbarraStateChanged
+     jLabel1.setText(""+percentilbarra.getValue());
+    }//GEN-LAST:event_percentilbarraStateChanged
+
+    private void Bus10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus10ActionPerformed
+     actionbus10();
+    }//GEN-LAST:event_Bus10ActionPerformed
+
+    private void Bus12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus12ActionPerformed
+     actionbus12();
+    }//GEN-LAST:event_Bus12ActionPerformed
+
+    private void Bus14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus14ActionPerformed
+      actionbus14();
+    }//GEN-LAST:event_Bus14ActionPerformed
+
+    private void Bus16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus16ActionPerformed
+      actionbus16();
+    }//GEN-LAST:event_Bus16ActionPerformed
+
+    private void Bus17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus17ActionPerformed
+     actionbus17();
+    }//GEN-LAST:event_Bus17ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1378,23 +1369,26 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox AreaTodos;
     private javax.swing.JCheckBox AreaUrbana;
     private javax.swing.JPanel Barra1;
-    private javax.swing.JButton BotonGenero;
-    private javax.swing.JButton BuscarAreaColegio;
-    private javax.swing.JButton BuscarDesempeñolectura;
-    private javax.swing.JButton BuscarGeneroColegio;
-    private javax.swing.JButton Busqueda10;
-    private javax.swing.JButton Busqueda14;
-    private javax.swing.JButton Busqueda15;
-    private javax.swing.JButton Busqueda16;
-    private javax.swing.JButton Busqueda17;
-    private javax.swing.JButton Busqueda18;
-    private javax.swing.JButton Busqueda19;
-    private javax.swing.JButton Busqueda21;
-    private javax.swing.JButton Busqueda22;
-    private javax.swing.JButton Busqueda23;
-    private javax.swing.JButton BusquedaAños;
-    private javax.swing.JButton Busquedatipodocumento;
-    private javax.swing.JToggleButton CamPG;
+    private javax.swing.JButton Bus1;
+    private javax.swing.JButton Bus10;
+    private javax.swing.JButton Bus11;
+    private javax.swing.JButton Bus12;
+    private javax.swing.JButton Bus13;
+    private javax.swing.JButton Bus14;
+    private javax.swing.JButton Bus15;
+    private javax.swing.JButton Bus16;
+    private javax.swing.JButton Bus17;
+    private javax.swing.JButton Bus2;
+    private javax.swing.JButton Bus3;
+    private javax.swing.JButton Bus4;
+    private javax.swing.JButton Bus5;
+    private javax.swing.JButton Bus6;
+    private javax.swing.JButton Bus7;
+    private javax.swing.JButton Bus8;
+    private javax.swing.JButton Bus9;
+    private javax.swing.JButton BuscarTodo;
+    private javax.swing.JToggleButton CamPG1;
+    private javax.swing.JToggleButton CamPercentil;
     private javax.swing.JCheckBox Cedula;
     private javax.swing.ButtonGroup ColegioGeneroGrupo;
     private javax.swing.JCheckBox ColegiogeneroFEMENINO;
@@ -1409,14 +1403,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup ID;
     private javax.swing.JPanel Info;
     protected javax.swing.JCheckBox Masculino;
-    private javax.swing.JButton Municipio;
     protected javax.swing.JCheckBox Noconozcomisgenitales;
-    private javax.swing.JSlider Plectura;
+    private javax.swing.JSpinner Percentil;
     private javax.swing.JSlider Plectura1;
-    private javax.swing.JSlider Plectura3;
     private javax.swing.JSlider Plectura4;
     private javax.swing.JSlider Plectura5;
-    private javax.swing.JSpinner PuntajeGlobal;
+    private javax.swing.JSlider Plecturamatematica;
+    private javax.swing.JSpinner PuntajeGlobal1;
     private javax.swing.JRadioButton RadioFemenino1;
     private javax.swing.JRadioButton RadioGeneroColegioFemenino;
     private javax.swing.JRadioButton RadioGeneroColegioMasculino;
@@ -1444,19 +1437,22 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> desempeñolectura1;
     private javax.swing.JComboBox<String> desempeñomatematica1;
     private javax.swing.JComboBox<String> desempeñonaturales1;
+    private javax.swing.JLabel etiquetavalorlectura;
+    private javax.swing.JLabel etiquetavalorlectura1;
+    private javax.swing.JLabel glop;
     private javax.swing.ButtonGroup grupo1;
     private javax.swing.ButtonGroup grupoAños;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel ing;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1476,8 +1472,12 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JLabel mate;
+    private javax.swing.JLabel mateTex1;
     private javax.swing.JToggleButton modo;
     private javax.swing.JComboBox<String> municipiosselec;
+    private javax.swing.JLabel natu;
+    private javax.swing.JSlider percentilbarra;
     private javax.swing.JSlider putajeglobalbarra;
     protected javax.swing.JRadioButton radioaño2018;
     protected javax.swing.JRadioButton radioaño2019;
@@ -1639,6 +1639,293 @@ public void Labuenaaños(){
             
         }
         
+        public void actionbus1(){
+        
+        if (modo.isSelected()) {
+          
+            if (radioaño2020.isSelected()) {
+                obj2.setRadioaño2020();
+                JOptionPane.showMessageDialog(null, obj2.getRadioaño2020());
+            }
+             if (radioaño2019.isSelected()) {
+                 obj2.setRadioaño2019();
+                JOptionPane.showMessageDialog(null, obj2.getRadioaño2019());
+            }
+              if (radioaño2018.isSelected()) {
+                obj2.setRadioaño2018();
+                JOptionPane.showMessageDialog(null, obj2.getRadioaño2018());
+            }
+               if (radioañostodos.isSelected()) {
+                 obj2.setRadiotodosaños();
+                JOptionPane.showMessageDialog(null, obj2.getRadiotodosaños());
+            }
+            
+        } else {
+          
+            if (año2020.isSelected()) {
+                obj.setAño2020();
+            System.out.println(obj.getAño2020());
+            
+        }  if (año2019.isSelected()) {
+          
+           obj.setAño2019();
+           System.out.println(obj.getAño2019());
+            
+        }  if (año2018.isSelected()) {
+            obj.setAño2018();
+           System.out.println(obj.getAño2018());
+            
+        }  if (todosaño.isSelected()) {
+             obj.setTodosaños();
+           System.out.println(obj.getTodosaños());
+            
+        }
+        }
+        }
+        public void actionbus2(){
+                            
+        if (modo.isSelected()) {
+          
+            if (Radiodocumentocedula.isSelected()) {
+                obj2.setRadiocedula();
+                JOptionPane.showMessageDialog(null, obj2.getRadiocedula());
+            }
+             if (RadiodocumentoID1.isSelected()) {
+                 obj2.setRadioid();
+                JOptionPane.showMessageDialog(null, obj2.getRadioid());
+            }
+              if (RadiodocumentoTodos.isSelected()) {
+                obj2.setTodosid();
+                JOptionPane.showMessageDialog(null, obj2.getTodosid());
+            }
+           
+            
+        } else {
+          
+            if (Cedula.isSelected()) {
+                obj.setCedula();
+            System.out.println(obj.getCedula());
+            
+        }  if (TarjetaIdentidad.isSelected()) {
+          
+           obj.setID();
+           System.out.println(obj.getID());
+            
+        }  if (TodosTipodeDocumentos.isSelected()) {
+            obj.setIDtodos();
+           System.out.println(obj.getIDtodos());
+            
+        } 
+        }
+
+        }
+        public void actionbus3(){
+                
+        if (modo.isSelected()) {
+          
+            if (RadioMasculino1.isSelected()) {
+                obj2.setRadiomasculino();
+                JOptionPane.showMessageDialog(null, obj2.getRadiomasculino());
+            }
+             if (RadioFemenino1.isSelected()) {
+                 obj2.setRadiofemenino();
+                JOptionPane.showMessageDialog(null, obj2.getRadiofemenino());
+            }
+              if (RadioNoidentificadoporningungenero1.isSelected()) {
+                obj2.setRadionoidentificado();
+                JOptionPane.showMessageDialog(null, obj2.getRadionoidentificado());
+            }
+               if (RadioTodosGeneros.isSelected()) {
+                 obj2.setRadiotodoslosgeneros();
+                JOptionPane.showMessageDialog(null, obj2.getRadiotodoslosgeneros());
+            }
+            
+        } else {
+          
+            if (Masculino.isSelected()) {
+      
+            obj.setHombres();
+            System.out.println(obj.getHombres());
+            
+        }  if (Femenino.isSelected()) {
+          
+           obj.setMujeres();
+           System.out.println(obj.getMujeres());
+            
+        }  if (Noconozcomisgenitales.isSelected()) {
+            obj.setNoidentificados();
+           System.out.println(obj.getNoidentificados());
+            
+        }  if (TodosGeneros.isSelected()) {
+             obj.setTodo();
+           System.out.println(obj.getTodo());
+            
+        }
+        }
+        
+        }
+        public void actionbus4(){
+                    if (modo.isSelected()) {
+          
+            if (RadioGeneroColegioMasculino.isSelected()) {
+                obj2.setRadiocolmasculino();
+                JOptionPane.showMessageDialog(null, obj2.getRadiocolmasculino());
+            }
+             if (RadioGeneroColegioMixto1.isSelected()) {
+                 obj2.setRadiomixto();
+                JOptionPane.showMessageDialog(null, obj2.getRadiomixto());
+            }
+              if (RadioGeneroColegioFemenino.isSelected()) {
+                obj2.setRadiocolfemenino();
+                JOptionPane.showMessageDialog(null, obj2.getRadiocolfemenino());
+            }
+               if (RadioGeneroColegioTodos.isSelected()) {
+                 obj2.setRadiocoltodos();
+                JOptionPane.showMessageDialog(null, obj2.getRadiocoltodos());
+            }
+            
+        } else {
+          
+            if (ColegiogeneroMasculino.isSelected()) {
+      
+            obj.setColmasculino();
+            System.out.println(obj.getColmasculino());
+            
+        }  if (ColegiogeneroFEMENINO.isSelected()) {
+          
+           obj.setColfemenino();
+           System.out.println(obj.getColfemenino());
+            
+        }  if (ColegiogeneroTODOS.isSelected()) {
+            obj.setColtodos();
+           System.out.println(obj.getColtodos());
+            
+        }  if (ColegiogeneroMIXTO.isSelected()) {
+            obj.setMixto();
+           System.out.println(obj.getMixto());
+            
+        }  
+        }
+
+        }
+        public void actionbus5(){
+                       
+        if (modo.isSelected()) {
+          
+            if (RadioRural.isSelected()) {
+                obj2.setRadiorural();
+                JOptionPane.showMessageDialog(null, obj2.getRadiorural());
+            }
+             if (RadioUrbana.isSelected()) {
+                 obj2.setRadiourbano();
+                JOptionPane.showMessageDialog(null, obj2.getRadiourbano());
+            }
+              if (RadioTodosArea.isSelected()) {
+                obj2.setRadiotodosarea();
+                JOptionPane.showMessageDialog(null, obj2.getRadiotodosarea());
+            }
+            
+        } else {
+          
+            if (AreaRural.isSelected()) {
+      
+            obj.setRural();
+            System.out.println(obj.getRural());
+            
+        }  if (AreaTodos.isSelected()) {
+          
+           obj.setZonatodos();
+           System.out.println(obj.getZonatodos());
+            
+        }  if (AreaUrbana.isSelected()) {
+            obj.setUrbana();
+           System.out.println(obj.getUrbana());
+            
+        } 
+        }      
+        }
+        public void actionbus6(){
+             String busquedamunicipios = (String) municipiosselec.getSelectedItem();
+       JOptionPane.showMessageDialog(null, busquedamunicipios);
+        }
+        public void actionbus7(){
+                   String select = (String) Estractoselect.getSelectedItem();
+       JOptionPane.showMessageDialog(null, select);
+
+        }
+        public void actionbus8(){
+            JOptionPane.showMessageDialog(null, "selecciono: "+Plectura1.getValue());
+        }
+        public void actionbus9(){
+             String select =(String) desempeñolectura1.getSelectedItem();
+        JOptionPane.showMessageDialog(null, select);
+        }
+        public void actionbus10(){
+              JOptionPane.showMessageDialog(null, "selecciono: "+Plecturamatematica.getValue());
+        }
+        public void actionbus11(){
+                  String select = (String) desempeñomatematica1.getSelectedItem();
+      JOptionPane.showMessageDialog(null, select);
+        }
+        public void actionbus12(){
+                JOptionPane.showMessageDialog(null, "selecciono: "+Plectura4.getValue());
+        }
+        public void actionbus13(){
+              String select = (String) desempeñonaturales1.getSelectedItem();
+      JOptionPane.showMessageDialog(null, select);
+        }
+        public void actionbus14(){
+               JOptionPane.showMessageDialog(null, "selecciono: "+Plectura5.getValue());
+        }
+        public void actionbus15(){
+               String select = (String) desempeñoingles.getSelectedItem();
+      JOptionPane.showMessageDialog(null, select);
+        }
+        public void actionbus16(){
+             
+        if (CamPG1.isSelected()) {
+          JOptionPane.showMessageDialog(null, "selecciono: "+putajeglobalbarra.getValue());
+      
+     
+        } else {
+      
+ JOptionPane.showMessageDialog(null, "selecciono: "+PuntajeGlobal1.getValue());
+        }    
+        }
+        
+        public void actionbus17(){
+               if (CamPercentil.isSelected()) {
+          JOptionPane.showMessageDialog(null, "selecciono: "+percentilbarra.getValue());
+      
+     
+        } else {
+      
+ JOptionPane.showMessageDialog(null, "selecciono: "+Percentil.getValue());
+        }     
+        }
+       
+        public  void actionbusi(){
+            actionbus1();
+            actionbus2();
+            actionbus3();
+            actionbus4();
+            actionbus5();
+            actionbus6();
+            actionbus7();
+            actionbus8();
+            actionbus9();
+            actionbus10();
+            actionbus11();
+            actionbus12();
+            actionbus13();
+            actionbus14();
+            actionbus15();
+            actionbus16();
+            actionbus17();
+            
+            
+            
+        }
         
 
 }
