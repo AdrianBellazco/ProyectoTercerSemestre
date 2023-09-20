@@ -65,13 +65,13 @@ public class GUI extends javax.swing.JFrame {
         Titulo1 = new javax.swing.JLabel();
         Filtr = new javax.swing.JScrollPane();
         Filtrador = new javax.swing.JPanel();
-        Busqueda6 = new MiBoton();
+        BuscarAreaColegio = new MiBoton();
         BusquedaAños = new MiBoton();
-        Busqueda8 = new MiBoton();
+        BuscarGeneroColegio = new MiBoton();
         Busquedatipodocumento = new MiBoton();
         BotonGenero = new MiBoton();
-        Busqueda12 = new MiBoton();
-        Busqueda13 = new MiBoton();
+        Municipio = new MiBoton();
+        BuscarDesempeñolectura = new MiBoton();
         jButton1 = new MiBoton();
         Busqueda10 = new MiBoton();
         Busqueda15 = new MiBoton();
@@ -106,9 +106,9 @@ public class GUI extends javax.swing.JFrame {
         AreaTodos = new javax.swing.JCheckBox();
         todosaño = new javax.swing.JCheckBox();
         TodosTipodeDocumentos = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        desempeñoingles = new javax.swing.JComboBox<>();
         jSeparator8 = new javax.swing.JSeparator();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        municipiosselec = new javax.swing.JComboBox<>();
         TodosGeneros = new javax.swing.JCheckBox();
         ColegiogeneroMIXTO = new javax.swing.JCheckBox();
         ColegiogeneroFEMENINO = new javax.swing.JCheckBox();
@@ -121,16 +121,12 @@ public class GUI extends javax.swing.JFrame {
         Plectura = new javax.swing.JSlider();
         jSeparator12 = new javax.swing.JSeparator();
         Busqueda14 = new MiBoton();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
         Busqueda21 = new MiBoton();
         jSeparator13 = new javax.swing.JSeparator();
         Busqueda16 = new MiBoton();
-        jComboBox6 = new javax.swing.JComboBox<>();
         Busqueda22 = new MiBoton();
         jSeparator14 = new javax.swing.JSeparator();
         Busqueda17 = new MiBoton();
-        jComboBox7 = new javax.swing.JComboBox<>();
         Busqueda23 = new MiBoton();
         jSeparator15 = new javax.swing.JSeparator();
         Busqueda18 = new MiBoton();
@@ -151,7 +147,7 @@ public class GUI extends javax.swing.JFrame {
         RadioGeneroColegioMixto1 = new javax.swing.JRadioButton();
         RadioGeneroColegioFemenino = new javax.swing.JRadioButton();
         RadioGeneroColegioMasculino = new javax.swing.JRadioButton();
-        RadioTodos = new javax.swing.JRadioButton();
+        RadioTodosArea = new javax.swing.JRadioButton();
         RadioRural = new javax.swing.JRadioButton();
         RadioUrbana = new javax.swing.JRadioButton();
         jSeparator18 = new javax.swing.JSeparator();
@@ -159,7 +155,13 @@ public class GUI extends javax.swing.JFrame {
         Plectura3 = new javax.swing.JSlider();
         Plectura4 = new javax.swing.JSlider();
         Plectura5 = new javax.swing.JSlider();
-        Plectura6 = new javax.swing.JSlider();
+        putajeglobalbarra = new JSlider(JSlider.HORIZONTAL, 0, 500, 0);
+        Estractoselect = new javax.swing.JComboBox<>();
+        desempeñolectura1 = new javax.swing.JComboBox<>();
+        desempeñomatematica1 = new javax.swing.JComboBox<>();
+        desempeñonaturales1 = new javax.swing.JComboBox<>();
+        PuntajeGlobal = new javax.swing.JSpinner();
+        CamPG = new javax.swing.JToggleButton();
         Info = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -228,11 +230,16 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.setRequestFocusEnabled(false);
         Filtrador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Busqueda6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda6.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda6.setContentAreaFilled(false);
-        Busqueda6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1250, -1, -1));
+        BuscarAreaColegio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        BuscarAreaColegio.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        BuscarAreaColegio.setContentAreaFilled(false);
+        BuscarAreaColegio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BuscarAreaColegio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarAreaColegioActionPerformed(evt);
+            }
+        });
+        Filtrador.add(BuscarAreaColegio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1250, -1, -1));
 
         BusquedaAños.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         BusquedaAños.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
@@ -245,16 +252,16 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(BusquedaAños, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
-        Busqueda8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda8.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda8.setContentAreaFilled(false);
-        Busqueda8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Busqueda8.addActionListener(new java.awt.event.ActionListener() {
+        BuscarGeneroColegio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        BuscarGeneroColegio.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        BuscarGeneroColegio.setContentAreaFilled(false);
+        BuscarGeneroColegio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BuscarGeneroColegio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Busqueda8ActionPerformed(evt);
+                BuscarGeneroColegioActionPerformed(evt);
             }
         });
-        Filtrador.add(Busqueda8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1020, -1, -1));
+        Filtrador.add(BuscarGeneroColegio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1020, -1, -1));
 
         Busquedatipodocumento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busquedatipodocumento.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
@@ -278,17 +285,27 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(BotonGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, -1));
 
-        Busqueda12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda12.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda12.setContentAreaFilled(false);
-        Busqueda12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1470, -1, -1));
+        Municipio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Municipio.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Municipio.setContentAreaFilled(false);
+        Municipio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Municipio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MunicipioActionPerformed(evt);
+            }
+        });
+        Filtrador.add(Municipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1470, -1, -1));
 
-        Busqueda13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Busqueda13.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Busqueda13.setContentAreaFilled(false);
-        Busqueda13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2120, -1, -1));
+        BuscarDesempeñolectura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        BuscarDesempeñolectura.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        BuscarDesempeñolectura.setContentAreaFilled(false);
+        BuscarDesempeñolectura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BuscarDesempeñolectura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarDesempeñolecturaActionPerformed(evt);
+            }
+        });
+        Filtrador.add(BuscarDesempeñolectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2120, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/filtrar (3).png"))); // NOI18N
         jButton1.setText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>todos los  filtrados");
@@ -315,6 +332,11 @@ public class GUI extends javax.swing.JFrame {
         Busqueda15.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda15.setContentAreaFilled(false);
         Busqueda15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Busqueda15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Busqueda15ActionPerformed(evt);
+            }
+        });
         Filtrador.add(Busqueda15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1710, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -516,12 +538,18 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(TodosTipodeDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Filtrador.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1630, 150, 30));
+        desempeñoingles.setBackground(new java.awt.Color(0, 102, 102));
+        desempeñoingles.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        desempeñoingles.setForeground(new java.awt.Color(255, 102, 0));
+        desempeñoingles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A-", "A1", "A2", "A2+", "B1", "B1+", "B2", "B2+", "C1", "C2" }));
+        Filtrador.add(desempeñoingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 3390, 180, 50));
         Filtrador.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1320, 260, 10));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Filtrador.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1400, 150, 30));
+        municipiosselec.setBackground(new java.awt.Color(0, 102, 102));
+        municipiosselec.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        municipiosselec.setForeground(new java.awt.Color(255, 102, 0));
+        municipiosselec.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Amazonas", "Antioquia", "Arauca", "Atlántico", "Bolívar", "Boyacá", "Caldas", "Caquetá", "Casanare", "Cauca", "Cesar", "Chocó", "Córdoba", "Cundinamarca", "Guainía", "Guaviare", "Huila", "La Guajira", "Magdalena", "Meta", "Nariño", "Norte de Santander", "Putumayo", "Quindío", "Risaralda", "San Andrés y Providencia", "Santander", "Sucre", "Tolima", "Valle del Cauca", "Vaupés", "Vichada" }));
+        Filtrador.add(municipiosselec, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1380, 180, 50));
 
         TodosGeneros.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         TodosGeneros.setForeground(new java.awt.Color(255, 255, 255));
@@ -612,16 +640,15 @@ public class GUI extends javax.swing.JFrame {
         Busqueda14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2360, -1, -1));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Filtrador.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 2060, 100, -1));
-
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Filtrador.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 2500, 100, -1));
-
         Busqueda21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda21.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda21.setContentAreaFilled(false);
         Busqueda21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Busqueda21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Busqueda21ActionPerformed(evt);
+            }
+        });
         Filtrador.add(Busqueda21, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2570, -1, -1));
         Filtrador.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2640, 260, 10));
 
@@ -629,10 +656,12 @@ public class GUI extends javax.swing.JFrame {
         Busqueda16.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda16.setContentAreaFilled(false);
         Busqueda16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Busqueda16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Busqueda16ActionPerformed(evt);
+            }
+        });
         Filtrador.add(Busqueda16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3010, -1, -1));
-
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Filtrador.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 2940, 100, -1));
 
         Busqueda22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda22.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
@@ -647,13 +676,15 @@ public class GUI extends javax.swing.JFrame {
         Busqueda17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Filtrador.add(Busqueda17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2800, -1, -1));
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Filtrador.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 3400, 100, -1));
-
         Busqueda23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda23.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda23.setContentAreaFilled(false);
         Busqueda23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Busqueda23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Busqueda23ActionPerformed(evt);
+            }
+        });
         Filtrador.add(Busqueda23, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3470, -1, -1));
         Filtrador.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3090, 260, 10));
 
@@ -661,7 +692,7 @@ public class GUI extends javax.swing.JFrame {
         Busqueda18.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Busqueda18.setContentAreaFilled(false);
         Busqueda18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Filtrador.add(Busqueda18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3800, -1, -1));
+        Filtrador.add(Busqueda18, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 3750, -1, -1));
 
         Busqueda19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Busqueda19.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
@@ -791,11 +822,11 @@ public class GUI extends javax.swing.JFrame {
         RadioGeneroColegioMasculino.setText("Masculino");
         Filtrador.add(RadioGeneroColegioMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 980, -1, -1));
 
-        AreaColegio.add(RadioTodos);
-        RadioTodos.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        RadioTodos.setForeground(new java.awt.Color(255, 255, 255));
-        RadioTodos.setText("Todos");
-        Filtrador.add(RadioTodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1260, -1, -1));
+        AreaColegio.add(RadioTodosArea);
+        RadioTodosArea.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        RadioTodosArea.setForeground(new java.awt.Color(255, 255, 255));
+        RadioTodosArea.setText("Todos");
+        Filtrador.add(RadioTodosArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1260, -1, -1));
 
         AreaColegio.add(RadioRural);
         RadioRural.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -850,15 +881,54 @@ public class GUI extends javax.swing.JFrame {
         Plectura5.setForeground(new java.awt.Color(255, 255, 255));
         Filtrador.add(Plectura5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3180, 250, -1));
 
-        Plectura6.setMajorTickSpacing(10); // Espaciado entre las marcas principales
-        Plectura6.setPaintTicks(true); // Dibuja las marcas
-        Plectura6.setPaintLabels(true);
-        Plectura6.setValue(0);
+        putajeglobalbarra.setMajorTickSpacing(500); // Espaciado entre las marcas principales
+        putajeglobalbarra.setPaintTicks(true); // Dibuja las marcas
+        putajeglobalbarra.setPaintLabels(true);
+        putajeglobalbarra.setValue(0);
 
-        Plectura6.setMajorTickSpacing(10);
-        Plectura6.setBackground(new java.awt.Color(255, 102, 0));
-        Plectura6.setForeground(new java.awt.Color(255, 255, 255));
-        Filtrador.add(Plectura6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3700, 250, -1));
+        putajeglobalbarra.setMajorTickSpacing(10);
+        putajeglobalbarra.setBackground(new java.awt.Color(255, 102, 0));
+        putajeglobalbarra.setForeground(new java.awt.Color(255, 255, 255));
+        putajeglobalbarra.setEnabled(false);
+        Filtrador.add(putajeglobalbarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3700, 250, -1));
+
+        Estractoselect.setBackground(new java.awt.Color(0, 102, 102));
+        Estractoselect.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        Estractoselect.setForeground(new java.awt.Color(255, 102, 0));
+        Estractoselect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3", " 4", "5", "6", "7", "8", "9", "10" }));
+        Filtrador.add(Estractoselect, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1600, 180, 50));
+
+        desempeñolectura1.setBackground(new java.awt.Color(0, 102, 102));
+        desempeñolectura1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        desempeñolectura1.setForeground(new java.awt.Color(255, 102, 0));
+        desempeñolectura1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3", " 4" }));
+        Filtrador.add(desempeñolectura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2040, 180, 50));
+
+        desempeñomatematica1.setBackground(new java.awt.Color(0, 102, 102));
+        desempeñomatematica1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        desempeñomatematica1.setForeground(new java.awt.Color(255, 102, 0));
+        desempeñomatematica1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3", " 4" }));
+        Filtrador.add(desempeñomatematica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2500, 180, 50));
+
+        desempeñonaturales1.setBackground(new java.awt.Color(0, 102, 102));
+        desempeñonaturales1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        desempeñonaturales1.setForeground(new java.awt.Color(255, 102, 0));
+        desempeñonaturales1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3", " 4" }));
+        Filtrador.add(desempeñonaturales1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 2930, 180, 50));
+
+        PuntajeGlobal.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        PuntajeGlobal.setModel(new javax.swing.SpinnerNumberModel(1, 1, 500, 1));
+        PuntajeGlobal.setToolTipText("");
+        Filtrador.add(PuntajeGlobal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3760, 70, 40));
+
+        CamPG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar (1).png"))); // NOI18N
+        CamPG.setContentAreaFilled(false);
+        CamPG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CamPGActionPerformed(evt);
+            }
+        });
+        Filtrador.add(CamPG, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 3763, 40, 40));
 
         Filtr.setViewportView(Filtrador);
 
@@ -1003,9 +1073,51 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_radioañostodosActionPerformed
 
-    private void Busqueda8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda8ActionPerformed
+    private void BuscarGeneroColegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarGeneroColegioActionPerformed
+               
+        if (modo.isSelected()) {
+          
+            if (RadioGeneroColegioMasculino.isSelected()) {
+                obj2.setRadiocolmasculino();
+                JOptionPane.showMessageDialog(null, obj2.getRadiocolmasculino());
+            }
+             if (RadioGeneroColegioMixto1.isSelected()) {
+                 obj2.setRadiomixto();
+                JOptionPane.showMessageDialog(null, obj2.getRadiomixto());
+            }
+              if (RadioGeneroColegioFemenino.isSelected()) {
+                obj2.setRadiocolfemenino();
+                JOptionPane.showMessageDialog(null, obj2.getRadiocolfemenino());
+            }
+               if (RadioGeneroColegioTodos.isSelected()) {
+                 obj2.setRadiocoltodos();
+                JOptionPane.showMessageDialog(null, obj2.getRadiocoltodos());
+            }
+            
+        } else {
+          
+            if (ColegiogeneroMasculino.isSelected()) {
       
-    }//GEN-LAST:event_Busqueda8ActionPerformed
+            obj.setColmasculino();
+            System.out.println(obj.getColmasculino());
+            
+        }  if (ColegiogeneroFEMENINO.isSelected()) {
+          
+           obj.setColfemenino();
+           System.out.println(obj.getColfemenino());
+            
+        }  if (ColegiogeneroTODOS.isSelected()) {
+            obj.setColtodos();
+           System.out.println(obj.getColtodos());
+            
+        }  if (ColegiogeneroMIXTO.isSelected()) {
+            obj.setMixto();
+           System.out.println(obj.getMixto());
+            
+        }  
+        }
+
+    }//GEN-LAST:event_BuscarGeneroColegioActionPerformed
 
     private void BotonGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGeneroActionPerformed
        
@@ -1139,6 +1251,92 @@ public class GUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_BusquedatipodocumentoActionPerformed
 
+    private void BuscarAreaColegioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarAreaColegioActionPerformed
+           
+        if (modo.isSelected()) {
+          
+            if (RadioRural.isSelected()) {
+                obj2.setRadiorural();
+                JOptionPane.showMessageDialog(null, obj2.getRadiorural());
+            }
+             if (RadioUrbana.isSelected()) {
+                 obj2.setRadiourbano();
+                JOptionPane.showMessageDialog(null, obj2.getRadiourbano());
+            }
+              if (RadioTodosArea.isSelected()) {
+                obj2.setRadiotodosarea();
+                JOptionPane.showMessageDialog(null, obj2.getRadiotodosarea());
+            }
+            
+        } else {
+          
+            if (AreaRural.isSelected()) {
+      
+            obj.setRural();
+            System.out.println(obj.getRural());
+            
+        }  if (AreaTodos.isSelected()) {
+          
+           obj.setZonatodos();
+           System.out.println(obj.getZonatodos());
+            
+        }  if (AreaUrbana.isSelected()) {
+            obj.setUrbana();
+           System.out.println(obj.getUrbana());
+            
+        } 
+        }      
+    }//GEN-LAST:event_BuscarAreaColegioActionPerformed
+
+    private void BuscarDesempeñolecturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarDesempeñolecturaActionPerformed
+        String select =(String) desempeñolectura1.getSelectedItem();
+        JOptionPane.showMessageDialog(null, select);
+    }//GEN-LAST:event_BuscarDesempeñolecturaActionPerformed
+
+    private void MunicipioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MunicipioActionPerformed
+       String busquedamunicipios = (String) municipiosselec.getSelectedItem();
+       JOptionPane.showMessageDialog(null, busquedamunicipios);
+    }//GEN-LAST:event_MunicipioActionPerformed
+
+    private void Busqueda15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda15ActionPerformed
+       String select = (String) Estractoselect.getSelectedItem();
+       JOptionPane.showMessageDialog(null, select);
+    }//GEN-LAST:event_Busqueda15ActionPerformed
+
+    private void Busqueda21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda21ActionPerformed
+      String select = (String) desempeñomatematica1.getSelectedItem();
+      JOptionPane.showMessageDialog(null, select);
+    }//GEN-LAST:event_Busqueda21ActionPerformed
+
+    private void Busqueda16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda16ActionPerformed
+           String select = (String) desempeñonaturales1.getSelectedItem();
+      JOptionPane.showMessageDialog(null, select);
+    }//GEN-LAST:event_Busqueda16ActionPerformed
+
+    private void Busqueda23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda23ActionPerformed
+           String select = (String) desempeñoingles.getSelectedItem();
+      JOptionPane.showMessageDialog(null, select);
+    }//GEN-LAST:event_Busqueda23ActionPerformed
+
+    private void CamPGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CamPGActionPerformed
+
+        if (CamPG.isSelected()) {
+           ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender (1).png"));
+        CamPG.setIcon(img);
+        PuntajeGlobal.setEnabled(false);
+        putajeglobalbarra.setEnabled(true);
+     
+        } else {
+             ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar (1).png"));
+        CamPG.setIcon(img);
+           PuntajeGlobal.setEnabled(true);
+        putajeglobalbarra.setEnabled(false);
+ 
+        }       
+        
+        
+    }//GEN-LAST:event_CamPGActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1181,9 +1379,10 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox AreaUrbana;
     private javax.swing.JPanel Barra1;
     private javax.swing.JButton BotonGenero;
+    private javax.swing.JButton BuscarAreaColegio;
+    private javax.swing.JButton BuscarDesempeñolectura;
+    private javax.swing.JButton BuscarGeneroColegio;
     private javax.swing.JButton Busqueda10;
-    private javax.swing.JButton Busqueda12;
-    private javax.swing.JButton Busqueda13;
     private javax.swing.JButton Busqueda14;
     private javax.swing.JButton Busqueda15;
     private javax.swing.JButton Busqueda16;
@@ -1193,16 +1392,16 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton Busqueda21;
     private javax.swing.JButton Busqueda22;
     private javax.swing.JButton Busqueda23;
-    private javax.swing.JButton Busqueda6;
-    private javax.swing.JButton Busqueda8;
     private javax.swing.JButton BusquedaAños;
     private javax.swing.JButton Busquedatipodocumento;
+    private javax.swing.JToggleButton CamPG;
     private javax.swing.JCheckBox Cedula;
     private javax.swing.ButtonGroup ColegioGeneroGrupo;
     private javax.swing.JCheckBox ColegiogeneroFEMENINO;
     private javax.swing.JCheckBox ColegiogeneroMIXTO;
     private javax.swing.JCheckBox ColegiogeneroMasculino;
     private javax.swing.JCheckBox ColegiogeneroTODOS;
+    private javax.swing.JComboBox<String> Estractoselect;
     protected javax.swing.JCheckBox Femenino;
     private javax.swing.JScrollPane Filtr;
     private javax.swing.JPanel Filtrador;
@@ -1210,13 +1409,14 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup ID;
     private javax.swing.JPanel Info;
     protected javax.swing.JCheckBox Masculino;
+    private javax.swing.JButton Municipio;
     protected javax.swing.JCheckBox Noconozcomisgenitales;
     private javax.swing.JSlider Plectura;
     private javax.swing.JSlider Plectura1;
     private javax.swing.JSlider Plectura3;
     private javax.swing.JSlider Plectura4;
     private javax.swing.JSlider Plectura5;
-    private javax.swing.JSlider Plectura6;
+    private javax.swing.JSpinner PuntajeGlobal;
     private javax.swing.JRadioButton RadioFemenino1;
     private javax.swing.JRadioButton RadioGeneroColegioFemenino;
     private javax.swing.JRadioButton RadioGeneroColegioMasculino;
@@ -1225,7 +1425,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton RadioMasculino1;
     private javax.swing.JRadioButton RadioNoidentificadoporningungenero1;
     private javax.swing.JRadioButton RadioRural;
-    private javax.swing.JRadioButton RadioTodos;
+    private javax.swing.JRadioButton RadioTodosArea;
     private javax.swing.JRadioButton RadioTodosGeneros;
     private javax.swing.JRadioButton RadioUrbana;
     private javax.swing.JRadioButton RadiodocumentoID1;
@@ -1240,15 +1440,13 @@ public class GUI extends javax.swing.JFrame {
     public javax.swing.JCheckBox año2018;
     public javax.swing.JCheckBox año2019;
     public javax.swing.JCheckBox año2020;
+    private javax.swing.JComboBox<String> desempeñoingles;
+    private javax.swing.JComboBox<String> desempeñolectura1;
+    private javax.swing.JComboBox<String> desempeñomatematica1;
+    private javax.swing.JComboBox<String> desempeñonaturales1;
     private javax.swing.ButtonGroup grupo1;
     private javax.swing.ButtonGroup grupoAños;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1279,6 +1477,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JToggleButton modo;
+    private javax.swing.JComboBox<String> municipiosselec;
+    private javax.swing.JSlider putajeglobalbarra;
     protected javax.swing.JRadioButton radioaño2018;
     protected javax.swing.JRadioButton radioaño2019;
     protected javax.swing.JRadioButton radioaño2020;
@@ -1377,7 +1577,7 @@ public void Labuenaaños(){
        
               RadioRural.setVisible(true);
        RadioUrbana.setVisible(true);
-       RadioTodos.setVisible(true);
+       RadioTodosArea.setVisible(true);
       
        
        
@@ -1435,7 +1635,7 @@ public void Labuenaaños(){
        
        RadioRural.setVisible(false);
        RadioUrbana.setVisible(false);
-       RadioTodos.setVisible(false);
+       RadioTodosArea.setVisible(false);
             
         }
         

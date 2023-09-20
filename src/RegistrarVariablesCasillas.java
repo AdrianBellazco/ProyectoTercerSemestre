@@ -15,14 +15,14 @@ public  class   RegistrarVariablesCasillas{
     private String  Hombres,Mujeres,Noidentificados,Todo;
     private String año2020, año2018, año2019, todosaños; 
     private String cedula, ID, IDtodos;
-    private String mixto, Colfemenino, Colmasculino;
+    private String mixto, Colfemenino, Colmasculino, coltodos;
     private String urbana, rural, zonatodos;
 
     public RegistrarVariablesCasillas() {
        año2020=  año2018= año2019= todosaños="-"; 
         Hombres =   Mujeres = Noidentificados =Todo = "-";
         cedula=ID=IDtodos="-";
-       mixto= Colfemenino=Colmasculino="-";
+       mixto= Colfemenino=Colmasculino=coltodos="-";
         urbana= rural= zonatodos="-";
          
     }
@@ -147,6 +147,16 @@ public  class   RegistrarVariablesCasillas{
     public void setColmasculino( ) {
         this.Colmasculino = "Masculino";
     }
+
+    public String getColtodos() {
+        return coltodos;
+    }
+
+    public void setColtodos( ) {
+        this.coltodos = "Todos los generos del colegio";
+    }
+    
+    
     
      //GETTER SETTER PARA AREA DEL COLEGIO
 
@@ -162,7 +172,7 @@ public  class   RegistrarVariablesCasillas{
         return rural;
     }
 
-    public void setRural(String rural) {
+    public void setRural( ) {
         this.rural = "Rural";
     }
 
@@ -170,7 +180,7 @@ public  class   RegistrarVariablesCasillas{
         return zonatodos;
     }
 
-    public void setZonatodos(String zonatodos) {
+    public void setZonatodos( ) {
         this.zonatodos = "Todas las zonas";
     }
     

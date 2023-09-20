@@ -11,12 +11,15 @@ public class RegistrarVariablesRadioButtons {
     private String Radiomasculino, radiofemenino, radionoidentificado, radiotodoslosgeneros;
      private String radioaño2020, radioaño2018, radioaño2019, radiotodosaños; 
      private String radiocedula, radioid, todosid;
+     private String radiomixto, radiocolmasculino, radiocolfemenino, radiocoltodos;
+     private String radiorural, radiourbano, radiotodos;
      
     public RegistrarVariablesRadioButtons(){
      Radiomasculino= radiofemenino= radionoidentificado=radiotodoslosgeneros="-";
      radioaño2020= radioaño2018= radioaño2019= radiotodosaños="-";
      radiocedula= radioid= todosid="-";
-     
+     radiomixto= radiocolmasculino= radiocolfemenino= radiocoltodos="-";
+     radiorural= radiourbano= radiotodos="-";
     }
     
     
@@ -115,6 +118,69 @@ public class RegistrarVariablesRadioButtons {
     public void setRadiotodoslosgeneros( ) {
         this.radiotodoslosgeneros = "Todos los generos";
     }
+    
+    //RADIO DE GENEROS DE COLEGIO
+
+    public String getRadiomixto() {
+        return radiomixto;
+    }
+
+    public void setRadiomixto( ) {
+        this.radiomixto = "Colegio mixto";
+    }
+
+    public String getRadiocolmasculino() {
+        return radiocolmasculino;
+    }
+
+    public void setRadiocolmasculino( ) {
+        this.radiocolmasculino = "Colegio masculino";
+    }
+
+    public String getRadiocolfemenino() {
+        return radiocolfemenino;
+    }
+
+    public void setRadiocolfemenino( ) {
+        this.radiocolfemenino = "Colegio femenino";
+    }
+
+    public String getRadiocoltodos() {
+        return radiocoltodos;
+    }
+
+    public void setRadiocoltodos( ) {
+        this.radiocoltodos = "todos los generos de colegio";
+    }
+    
+    //ZONA COLEGIO
+
+    public String getRadiorural() {
+        return radiorural;
+    }
+
+    public void setRadiorural( ) {
+        this.radiorural = "Rural";
+    }
+
+    public String getRadiourbano() {
+        return radiourbano;
+    }
+
+    public void setRadiourbano( ) {
+        this.radiourbano = "Urbano";
+    }
+
+    public String getRadiotodosarea() {
+        return radiotodos;
+    }
+
+    public void setRadiotodosarea( ) {
+        this.radiotodos = "Todas las zonas";
+    }
+    
+    
+    
     
     
     
