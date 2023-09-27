@@ -41,6 +41,13 @@ public class GUI extends javax.swing.JFrame {
 
     public GUI() {
 
+        llenarArray2020();
+        llenarArray2019();
+        llenarArray2018();
+    //    leerArray();
+
+        
+        
         initComponents();
         grafico_pastel();
         grafica_barras_1();
@@ -1451,9 +1458,7 @@ int cont = 0;
     }//GEN-LAST:event_graficopastelbarraComponentAdded
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        llenarArray2020();
-        llenarArray2019();
-        llenarArray2018();
+      
         leerArray();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -2178,7 +2183,7 @@ public void grafica_barras_1() {
 
         try {
             fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2020-2.csv");
-            JOptionPane.showMessageDialog(null, "Arraylist 2020 creado con excito");
+  //          JOptionPane.showMessageDialog(null, "Arraylist 2020 creado con excito");
         } catch (Exception e) {
             error = true;
             JOptionPane.showMessageDialog(this, "Error al conectar la base de datos",
@@ -2219,7 +2224,8 @@ public void grafica_barras_1() {
 
         try {
             fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2019-2.csv");
-            JOptionPane.showMessageDialog(null, "Arraylist 2019 creado con excito");
+       
+  //          JOptionPane.showMessageDialog(null, "Arraylist 2019 creado con excito");
         } catch (Exception e) {
             error = true;
             JOptionPane.showMessageDialog(this, "Error al conectar la base de datos",
@@ -2260,7 +2266,7 @@ public void grafica_barras_1() {
 
         try {
             fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2018-1 R.csv");
-            JOptionPane.showMessageDialog(null, "Arraylist 2018 creado con excito");
+          //  JOptionPane.showMessageDialog(null, "Arraylist 2018 creado con excito");
         } catch (Exception e) {
             error = true;
             JOptionPane.showMessageDialog(this, "Error al conectar la base de datos",
