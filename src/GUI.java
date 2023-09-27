@@ -28,7 +28,11 @@ import org.jfree.ui.RectangleInsets;
  * @author USUARIO
  */
 public class GUI extends javax.swing.JFrame {
-    ArrayList<String> informacio;
+
+    ArrayList<String> informacio2020;
+    ArrayList<String> informacio2019;
+    ArrayList<String> informacio2018;
+
     RegistrarVariablesCasillas obj = new RegistrarVariablesCasillas();
     RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
     GUI obj3;
@@ -1447,8 +1451,10 @@ int cont = 0;
     }//GEN-LAST:event_graficopastelbarraComponentAdded
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     llenarArray();
-     leerArray();
+        llenarArray2020();
+        llenarArray2019();
+        llenarArray2018();
+        leerArray();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -2165,59 +2171,147 @@ public void grafica_barras_1() {
         actionbus17();
     }
 
-    public void llenarArray() {
-        informacio = new ArrayList<>();
-         
+    public void llenarArray2020() {
+        informacio2020 = new ArrayList<>();
         FileReader fr = null;
         boolean error = false;
-        
+
         try {
-           fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2019-2.csv");
-           JOptionPane.showMessageDialog(null, "Arraylist creado con excito");
+            fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2020-2.csv");
+            JOptionPane.showMessageDialog(null, "Arraylist 2020 creado con excito");
         } catch (Exception e) {
-            error=true;
+            error = true;
             JOptionPane.showMessageDialog(this, "Error al conectar la base de datos",
-                                            "Error", JOptionPane.ERROR_MESSAGE);
+                    "Error", JOptionPane.ERROR_MESSAGE);
         }
-       if(!error){
-           String registro = "";
-           BufferedReader br = new BufferedReader(fr);
-           String tokens[];
+        if (!error) {
+            String registro = "";
+            BufferedReader br = new BufferedReader(fr);
+            String tokens[];
 
-           
-           try {
-               while((registro = br.readLine())!= null){
-                   tokens = registro.split(";");
-                   informacio.add(registro);
+            try {
+                while ((registro = br.readLine()) != null) {
+                    tokens = registro.split(";");
+                    informacio2020.add(registro);
 
-               }
-           } catch (Exception e) {
-               error =true;
-               JOptionPane.showMessageDialog(this, "Error al entrar en la base de datos",
-                       "Error", JOptionPane.ERROR_MESSAGE);        
-           }
-           try {
-               fr.close();
-           } catch (Exception e) {
-               JOptionPane.showMessageDialog(this, "Error al salir de la base de datos",
-                       "Error", JOptionPane.ERROR_MESSAGE);
-           }          
-           
-       } 
-       
-      
+                }
+            } catch (Exception e) {
+                error = true;
+                JOptionPane.showMessageDialog(this, "Error al entrar en la base de datos",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            try {
+                fr.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Error al salir de la base de datos",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }
     }
+
+    public void llenarArray2019() {
+
+        informacio2019 = new ArrayList<>();
+
+        FileReader fr = null;
+        boolean error = false;
+
+        try {
+            fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2019-2.csv");
+            JOptionPane.showMessageDialog(null, "Arraylist 2019 creado con excito");
+        } catch (Exception e) {
+            error = true;
+            JOptionPane.showMessageDialog(this, "Error al conectar la base de datos",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        if (!error) {
+            String registro = "";
+            BufferedReader br = new BufferedReader(fr);
+            String tokens[];
+
+            try {
+                while ((registro = br.readLine()) != null) {
+                    tokens = registro.split(";");
+                    informacio2019.add(registro);
+
+                }
+            } catch (Exception e) {
+                error = true;
+                JOptionPane.showMessageDialog(this, "Error al entrar en la base de datos",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            try {
+                fr.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Error al salir de la base de datos",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }
+
+    }
+
+    public void llenarArray2018() {
+        informacio2018 = new ArrayList<>();
+
+        FileReader fr = null;
+        boolean error = false;
+
+        try {
+            fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2018-1 R.csv");
+            JOptionPane.showMessageDialog(null, "Arraylist 2018 creado con excito");
+        } catch (Exception e) {
+            error = true;
+            JOptionPane.showMessageDialog(this, "Error al conectar la base de datos",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        if (!error) {
+            String registro = "";
+            BufferedReader br = new BufferedReader(fr);
+            String tokens[];
+
+            try {
+                while ((registro = br.readLine()) != null) {
+                    tokens = registro.split(";");
+                    informacio2018.add(registro);
+
+                }
+            } catch (Exception e) {
+                error = true;
+                JOptionPane.showMessageDialog(this, "Error al entrar en la base de datos",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            try {
+                fr.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Error al salir de la base de datos",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }
+
+    }
+
+    public void leerArray() {
+        JOptionPane.showMessageDialog(null, "2020");
+        for (int j = 0; j < informacio2020.size(); j++) {
+            String get1 = informacio2020.get(j);
+            System.out.println(get1 + "\n");
+        }
+          System.out.println("2019----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        JOptionPane.showMessageDialog(null, "2019");
+        for (int i = 1; i < informacio2019.size(); i++) {
+            String get = informacio2019.get(i);
+            System.out.println(get + "\n");
+        }
+        System.out.println("2018----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         
-        
-     public void leerArray(){
-           for (int i = 1; i < informacio.size(); i++) {
-             String get = informacio.get(i);
-               System.out.println(get+"\n");
-             
-         }
-       }
-          
-       
-    
+        JOptionPane.showMessageDialog(null, "2018");
+        for (int i = 0; i < informacio2018.size(); i++) {
+            String get = informacio2018.get(i);
+            System.out.println(get + "\n");
+        }
+    }
 
 }
