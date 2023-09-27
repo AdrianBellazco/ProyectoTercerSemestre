@@ -3,7 +3,12 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Locale;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JSlider;
 import javax.swing.SwingConstants;
@@ -12,35 +17,31 @@ import javax.swing.event.ChangeListener;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
-
-
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.ui.RectangleInsets;
 
 /**
  *
  * @author USUARIO
  */
-
 public class GUI extends javax.swing.JFrame {
-          RegistrarVariablesCasillas obj = new RegistrarVariablesCasillas();
-          RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
-          GUI obj3;
-    
-   int mousex, mousey;
+    ArrayList<String> informacio;
+    RegistrarVariablesCasillas obj = new RegistrarVariablesCasillas();
+    RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
+    GUI obj3;
+
+    int mousex, mousey;
+
     public GUI() {
-       
+
         initComponents();
-           
-      
-       
+        grafico_pastel();
+        grafica_barras_1();
 
-
-
-   //    grafica_barras_1();
-
-       
-       
+        //    grafica_barras_1();
     }
 
     /**
@@ -171,7 +172,16 @@ public class GUI extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         Info = new javax.swing.JPanel();
+        Grafica1 = new javax.swing.JScrollPane();
+        grafico_barras1 = new javax.swing.JPanel();
+        grafica2 = new javax.swing.JScrollPane();
+        jPanel3 = new javax.swing.JPanel();
+        grafica3 = new javax.swing.JScrollPane();
+        graficopastelbarra = new javax.swing.JPanel();
+        grafica4 = new javax.swing.JScrollPane();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -1049,6 +1059,14 @@ public class GUI extends javax.swing.JFrame {
         jLabel10.setText("percentil");
         Filtrador.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3840, 80, 50));
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, 20));
+
         Filtr.setViewportView(Filtrador);
 
         jPanel1.add(Filtr, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -18, 340, 640));
@@ -1056,6 +1074,97 @@ public class GUI extends javax.swing.JFrame {
         Info.setBackground(new java.awt.Color(255, 255, 255));
         Info.setForeground(new java.awt.Color(255, 255, 255));
         Info.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Grafica1.setBackground(new java.awt.Color(255, 255, 255));
+        Grafica1.getVerticalScrollBar().setUnitIncrement(20);
+
+        grafico_barras1.setBackground(new java.awt.Color(255, 255, 255));
+        grafico_barras1.setForeground(new java.awt.Color(255, 255, 255));
+        grafico_barras1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        grafico_barras1.setMinimumSize(new java.awt.Dimension(500, 500));
+        grafico_barras1.setPreferredSize(new java.awt.Dimension(100, 100));
+
+        javax.swing.GroupLayout grafico_barras1Layout = new javax.swing.GroupLayout(grafico_barras1);
+        grafico_barras1.setLayout(grafico_barras1Layout);
+        grafico_barras1Layout.setHorizontalGroup(
+            grafico_barras1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+        grafico_barras1Layout.setVerticalGroup(
+            grafico_barras1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+
+        Grafica1.setViewportView(grafico_barras1);
+
+        Info.add(Grafica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 350, 270));
+
+        grafica2.getVerticalScrollBar().setUnitIncrement(20);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setPreferredSize(new java.awt.Dimension(100, 100));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 348, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 268, Short.MAX_VALUE)
+        );
+
+        grafica2.setViewportView(jPanel3);
+
+        Info.add(grafica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 350, 270));
+
+        grafica3.getVerticalScrollBar().setUnitIncrement(20);
+        grafica3.setBorder(null);
+
+        graficopastelbarra.setBackground(new java.awt.Color(255, 255, 255));
+        graficopastelbarra.setPreferredSize(new java.awt.Dimension(100, 100));
+        graficopastelbarra.setBorder(null);//ELIMINAR MARGEN
+        graficopastelbarra.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                graficopastelbarraComponentAdded(evt);
+            }
+        });
+        graficopastelbarra.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                graficopastelbarraAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        graficopastelbarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        grafica3.setViewportView(graficopastelbarra);
+
+        Info.add(grafica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 350, 260));
+
+        grafica4.getVerticalScrollBar().setUnitIncrement(20);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setMinimumSize(new java.awt.Dimension(500, 500));
+        jPanel4.setPreferredSize(new java.awt.Dimension(100, 100));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+
+        grafica4.setViewportView(jPanel4);
+
+        Info.add(grafica4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 350, 260));
+
         jPanel1.add(Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, -10, 730, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1073,27 +1182,27 @@ public class GUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+int cont = 0;
     private void Barra1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Barra1MousePressed
-        mousex=evt.getX();
+        mousex = evt.getX();
         mousey = evt.getY();
     }//GEN-LAST:event_Barra1MousePressed
 
     private void Barra1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Barra1MouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-mousex, y-mousey);
+        this.setLocation(x - mousex, y - mousey);
     }//GEN-LAST:event_Barra1MouseDragged
 
-    
+
     private void SalirBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirBotonActionPerformed
-     System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_SalirBotonActionPerformed
 
     private void BuscarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarTodoActionPerformed
-     actionbusi();
-        
-        
+        actionbusi();
+
+
     }//GEN-LAST:event_BuscarTodoActionPerformed
 
     private void año2020ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2020ActionPerformed
@@ -1169,24 +1278,23 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_AreaUrbanaActionPerformed
 
     private void modoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoActionPerformed
- 
+
         if (modo.isSelected()) {
-           ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender.png"));
-        modo.setIcon(img);
-        modo.setVerticalTextPosition(SwingConstants.BOTTOM);
-        modo.setHorizontalTextPosition(SwingConstants.CENTER); 
-        modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Unica opcion");
-        Labuenaaños();
-   
-       
+            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender.png"));
+            modo.setIcon(img);
+            modo.setVerticalTextPosition(SwingConstants.BOTTOM);
+            modo.setHorizontalTextPosition(SwingConstants.CENTER);
+            modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Unica opcion");
+            Labuenaaños();
+
         } else {
-             ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar.png"));
-        modo.setIcon(img);
-           modo.setVerticalTextPosition(SwingConstants.BOTTOM);
-        modo.setHorizontalTextPosition(SwingConstants.CENTER); 
-        modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Varias opciones");
-        Lamalaaños();
- 
+            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar.png"));
+            modo.setIcon(img);
+            modo.setVerticalTextPosition(SwingConstants.BOTTOM);
+            modo.setHorizontalTextPosition(SwingConstants.CENTER);
+            modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Varias opciones");
+            Lamalaaños();
+
         }
     }//GEN-LAST:event_modoActionPerformed
 
@@ -1195,24 +1303,26 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_radioañostodosActionPerformed
 
     private void Bus4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus4ActionPerformed
-               
+
         actionbus4();
     }//GEN-LAST:event_Bus4ActionPerformed
 
     private void Bus3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus3ActionPerformed
-       actionbus3();
-        
+        actionbus3();
+
     }//GEN-LAST:event_Bus3ActionPerformed
 
     private void Bus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus1ActionPerformed
         actionbus1();
+
+
     }//GEN-LAST:event_Bus1ActionPerformed
 
     private void Bus2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus2ActionPerformed
-     
+
         actionbus2();
-        
-        
+
+
     }//GEN-LAST:event_Bus2ActionPerformed
 
     private void Bus5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus5ActionPerformed
@@ -1220,23 +1330,23 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_Bus5ActionPerformed
 
     private void Bus9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus9ActionPerformed
-       actionbus9();
+        actionbus9();
     }//GEN-LAST:event_Bus9ActionPerformed
 
     private void Bus6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus6ActionPerformed
-      actionbus6();
+        actionbus6();
     }//GEN-LAST:event_Bus6ActionPerformed
 
     private void Bus7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus7ActionPerformed
-actionbus7();
+        actionbus7();
     }//GEN-LAST:event_Bus7ActionPerformed
 
     private void Bus11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus11ActionPerformed
-actionbus11();
+        actionbus11();
     }//GEN-LAST:event_Bus11ActionPerformed
 
     private void Bus13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus13ActionPerformed
-         actionbus13();
+        actionbus13();
     }//GEN-LAST:event_Bus13ActionPerformed
 
     private void Bus15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus15ActionPerformed
@@ -1246,87 +1356,100 @@ actionbus11();
     private void CamPercentilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CamPercentilActionPerformed
 
         if (CamPercentil.isSelected()) {
-           ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender (1).png"));
-        CamPercentil.setIcon(img);
-        Percentil.setEnabled(false);
-        percentilbarra.setEnabled(true);
-     
+            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender (1).png"));
+            CamPercentil.setIcon(img);
+            Percentil.setEnabled(false);
+            percentilbarra.setEnabled(true);
+
         } else {
-             ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar (1).png"));
-        CamPercentil.setIcon(img);
-           Percentil.setEnabled(true);
-        percentilbarra.setEnabled(false);
- 
-        }       
-        
-        
+            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar (1).png"));
+            CamPercentil.setIcon(img);
+            Percentil.setEnabled(true);
+            percentilbarra.setEnabled(false);
+
+        }
+
+
     }//GEN-LAST:event_CamPercentilActionPerformed
 
     private void CamPG1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CamPG1ActionPerformed
-        
+
         if (CamPG1.isSelected()) {
-           ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender (1).png"));
-        CamPG1.setIcon(img);
-        putajeglobalbarra.setEnabled(true);
-        PuntajeGlobal1.setEnabled(false);
-     
+            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender (1).png"));
+            CamPG1.setIcon(img);
+            putajeglobalbarra.setEnabled(true);
+            PuntajeGlobal1.setEnabled(false);
+
         } else {
-             ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar (1).png"));
-        CamPG1.setIcon(img);
-           putajeglobalbarra.setEnabled(false);
-        PuntajeGlobal1.setEnabled(true);
- 
-        }     
+            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar (1).png"));
+            CamPG1.setIcon(img);
+            putajeglobalbarra.setEnabled(false);
+            PuntajeGlobal1.setEnabled(true);
+
+        }
     }//GEN-LAST:event_CamPG1ActionPerformed
 
     private void Bus8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus8ActionPerformed
-       actionbus8();
+        actionbus8();
     }//GEN-LAST:event_Bus8ActionPerformed
 
     private void Plectura1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Plectura1StateChanged
-        etiquetavalorlectura.setText(""+Plectura1.getValue());
-        
+        etiquetavalorlectura.setText("" + Plectura1.getValue());
+
     }//GEN-LAST:event_Plectura1StateChanged
 
     private void PlecturamatematicaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PlecturamatematicaStateChanged
-        mate.setText(""+Plecturamatematica.getValue());
+        mate.setText("" + Plecturamatematica.getValue());
     }//GEN-LAST:event_PlecturamatematicaStateChanged
 
     private void Plectura4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Plectura4StateChanged
-       natu.setText(""+Plectura4.getValue());
+        natu.setText("" + Plectura4.getValue());
     }//GEN-LAST:event_Plectura4StateChanged
 
     private void Plectura5StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Plectura5StateChanged
-       ing.setText(""+Plectura5.getValue());
+        ing.setText("" + Plectura5.getValue());
     }//GEN-LAST:event_Plectura5StateChanged
 
     private void putajeglobalbarraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_putajeglobalbarraStateChanged
-      glop.setText(""+putajeglobalbarra.getValue());
+        glop.setText("" + putajeglobalbarra.getValue());
     }//GEN-LAST:event_putajeglobalbarraStateChanged
 
     private void percentilbarraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_percentilbarraStateChanged
-     jLabel1.setText(""+percentilbarra.getValue());
+        jLabel1.setText("" + percentilbarra.getValue());
     }//GEN-LAST:event_percentilbarraStateChanged
 
     private void Bus10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus10ActionPerformed
-     actionbus10();
+        actionbus10();
     }//GEN-LAST:event_Bus10ActionPerformed
 
     private void Bus12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus12ActionPerformed
-     actionbus12();
+        actionbus12();
     }//GEN-LAST:event_Bus12ActionPerformed
 
     private void Bus14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus14ActionPerformed
-      actionbus14();
+        actionbus14();
     }//GEN-LAST:event_Bus14ActionPerformed
 
     private void Bus16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus16ActionPerformed
-      actionbus16();
+        actionbus16();
     }//GEN-LAST:event_Bus16ActionPerformed
 
     private void Bus17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus17ActionPerformed
-     actionbus17();
+        actionbus17();
     }//GEN-LAST:event_Bus17ActionPerformed
+
+    private void graficopastelbarraAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_graficopastelbarraAncestorAdded
+
+    }//GEN-LAST:event_graficopastelbarraAncestorAdded
+
+    private void graficopastelbarraComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_graficopastelbarraComponentAdded
+
+    }//GEN-LAST:event_graficopastelbarraComponentAdded
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     llenarArray();
+     leerArray();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1400,6 +1523,7 @@ actionbus11();
     private javax.swing.JScrollPane Filtr;
     private javax.swing.JPanel Filtrador;
     private javax.swing.ButtonGroup Generos;
+    private javax.swing.JScrollPane Grafica1;
     private javax.swing.ButtonGroup ID;
     private javax.swing.JPanel Info;
     protected javax.swing.JCheckBox Masculino;
@@ -1440,9 +1564,15 @@ actionbus11();
     private javax.swing.JLabel etiquetavalorlectura;
     private javax.swing.JLabel etiquetavalorlectura1;
     private javax.swing.JLabel glop;
+    private javax.swing.JScrollPane grafica2;
+    private javax.swing.JScrollPane grafica3;
+    private javax.swing.JScrollPane grafica4;
+    private javax.swing.JPanel grafico_barras1;
+    private javax.swing.JPanel graficopastelbarra;
     private javax.swing.ButtonGroup grupo1;
     private javax.swing.ButtonGroup grupoAños;
     private javax.swing.JLabel ing;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -1461,6 +1591,8 @@ actionbus11();
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
@@ -1485,448 +1617,607 @@ actionbus11();
     public javax.swing.JRadioButton radioañostodos;
     protected javax.swing.JCheckBox todosaño;
     // End of variables declaration//GEN-END:variables
-public  void  grafica_barras_1(){
-    
-    
-       
-       
-        int datox=5;
-        int datoy=10;
-        int datoz=30;
+public void grafica_barras_1() {
+
+        int año1 = 0;
+        int año2 = 4;
+        int año3 = 4;
+        int cedula = 4;
+        int tarjetaIdentidad = 4;
+        int Masculino = 4;
+        int femenino = 4;
+        int Noidentificado = 4;
+        int Masculinocolegio = 4;
+        int femeninocolegio = 4;
+        int mixto = 4;
+        int rural = 4;
+        int urbana = 4;
+
         DefaultCategoryDataset datos = new DefaultCategoryDataset();
-        datos.setValue(datox, "dato x", "nose x");
-        datos.setValue(datoy, "dato x", "nose y");
-         datos.setValue(datoz, "dato x", "nose z");
-        
+        datos.setValue(año1, "Año", "2020");
+        datos.setValue(año2, "Año", "2019");
+        datos.setValue(año3, "Año", "2018");
+        datos.setValue(cedula, "Identificacion", "Cedula");
+        datos.setValue(tarjetaIdentidad, "Identificacion", "T.I");
+        datos.setValue(Masculino, "Genero", "Masculino");
+        datos.setValue(femenino, "Genero", "Femenino");
+        datos.setValue(Noidentificado, "Genero", "No identificado");
+        datos.setValue(mixto, "Genero del colegio", "Mixto");
+        datos.setValue(Masculinocolegio, "Genero del colegio", "Masculino");
+        datos.setValue(femeninocolegio, "Genero del colegio", "Femenino");
+        datos.setValue(rural, "Zona", "Rural");
+        datos.setValue(urbana, "Zona", "Urbana");
 
         JFreeChart grafico_1 = ChartFactory.createBarChart3D(
-     "grafico 1",         //nombre del grafico
-          "Datos x",      //nombre de las barras o columnas
-         "resultados x",  //nombre de la numeracion
-         datos,           //nombre de grafico
-         PlotOrientation.HORIZONTAL,       //orientacion
-         true,            //legenda de barras individuales por color
-         true,          //url del grafico
-         false
+                "Barras estadisticas", //nombre del grafico
+                "", //nombre de las barras o columnas
+                "", //nombre de la numeracion
+                datos, //nombre de grafico
+                PlotOrientation.HORIZONTAL, //orientacion
+                true, //legenda de barras individuales por color
+                true, //url del grafico
+                false
         );
-        
+
         ChartPanel barras = new ChartPanel(grafico_1);
+
         barras.setMouseWheelEnabled(true);
-        barras.setPreferredSize(new Dimension(0,300));
+
         barras.setLocation(0, 0);
-    
-       
+        barras.setPreferredSize(new Dimension(20, 20));
+        barras.setVisible(true);
+
+        grafico_barras1.setLayout(new BorderLayout());
+        grafico_barras1.add(barras);
+
         pack();
         repaint();
-}
+    }
 
-public void Labuenaaños(){
-    
-    //AÑOS
-  
+    public void grafico_pastel() {
+
+        int año1 = 0;
+        int año2 = 0;
+        int año3 = 0;
+        int cedula = 0;
+        int tarjetaIdentidad = 0;
+        int Masculino = 0;
+        int femenino = 0;
+        int Noidentificado = 0;
+        int Masculinocolegio = 0;
+        int femeninocolegio = 0;
+        int mixto = 0;
+        int rural = 0;
+        int urbana = 0;
+
+        DefaultPieDataset dato = new DefaultPieDataset();
+
+        dato.setValue("2020", año1);
+        dato.setValue("2019", año2);
+        dato.setValue("2018", año3);
+        dato.setValue("Cedula", cedula);
+        dato.setValue("Tarjeta de identidad", tarjetaIdentidad);
+        dato.setValue("Hombres", Masculino);
+        dato.setValue("Mujeres", femenino);
+        dato.setValue("No identificado", Noidentificado);
+        dato.setValue("Colegios masculinos", Masculinocolegio);
+        dato.setValue("Colegios femeninos", femeninocolegio);
+        dato.setValue("Colegios mixtos", mixto);
+        dato.setValue("Zona rural", rural);
+        dato.setValue("Zona Urbana", urbana);
+
+//dato.setValue("noe", dato6);
+        JFreeChart grafico_pastel = ChartFactory.createPieChart("Estadistica", dato, true, true, false);
+
+        ChartPanel panel_grafi = new ChartPanel(grafico_pastel);
+
+        panel_grafi.setBackground(Color.WHITE);
+
+        PiePlot plot = (PiePlot) grafico_pastel.getPlot();
+
+        // Cambiar el color de las secciones
+        plot.setSectionPaint("2020", new Color(0, 102, 102));
+        plot.setSectionPaint("2019", new Color(255, 102, 0));
+        plot.setSectionPaint("2018", new Color(0, 102, 102));
+        plot.setSectionPaint("Hombre", new Color(255, 102, 0));
+        plot.setSectionPaint("Mujer", new Color(0, 102, 102));
+
+        plot.setCircular(false);
+        plot.setIgnoreNullValues(true);
+        plot.setSectionOutlinesVisible(false);
+        plot.setLabelGenerator(null);
+
+        plot.setLabelLinksVisible(false);
+        plot.setBackgroundPaint(Color.WHITE); // Establecer el fondo del gráfico de pastel en blanco
+        grafico_pastel.setPadding(new RectangleInsets(0, 0, 0, 0));
+        //transparencia
+
+        // plot.setSectionPaint("noe", new Color(255,102,0));
+        panel_grafi.setMouseWheelEnabled(true);
+        panel_grafi.setLocation(0, 0);
+        panel_grafi.setPreferredSize(new Dimension(20, 20));
+        panel_grafi.setVisible(true);
+
+        graficopastelbarra.setLayout(new BorderLayout());
+        graficopastelbarra.add(panel_grafi);
+
+        pack();
+        repaint();
+    }
+
+    public void Labuenaaños() {
+
+        //AÑOS
         radioaño2020.setVisible(true);
         radioaño2019.setVisible(true);
         radioaño2018.setVisible(true);
         radioañostodos.setVisible(true);
 
-        año2020.setVisible(false);  
-        año2019.setVisible(false);        
-       año2018.setVisible(false);  
-       todosaño.setVisible(false);
-       
-       //TIPO DE DOCUMENTO
-       
-       RadiodocumentoID1.setVisible(true);
-              RadiodocumentoTodos.setVisible(true);
-       Radiodocumentocedula.setVisible(true);
+        año2020.setVisible(false);
+        año2019.setVisible(false);
+        año2018.setVisible(false);
+        todosaño.setVisible(false);
 
-       
-       
-       Cedula.setVisible(false);
-       TarjetaIdentidad.setVisible(false);
-       TodosTipodeDocumentos.setVisible(false);
-       
-       //TIPO DE GENERO 
-       
-       Masculino.setVisible(false);
-       Femenino.setVisible(false);
-       Noconozcomisgenitales.setVisible(false);
-       TodosGeneros.setVisible(false);
-       
-       RadioFemenino1.setVisible(true);
-       RadioMasculino1.setVisible(true);
-       RadioNoidentificadoporningungenero1.setVisible(true);
-       RadioTodosGeneros.setVisible(true);
-       
-       //GENERO DEL COLEGIO (OCULTAR CAJAS)
-       ColegiogeneroFEMENINO.setVisible(false);
-       ColegiogeneroMIXTO.setVisible(false);
-       ColegiogeneroMasculino.setVisible(false);
-       ColegiogeneroTODOS.setVisible(false);
-       
-       RadioGeneroColegioFemenino.setVisible(true);
-       RadioGeneroColegioMasculino.setVisible(true);
-       RadioGeneroColegioMixto1.setVisible(true);
-       RadioGeneroColegioTodos.setVisible(true);
-       
-       //AREA (OCULTAR CAJAS)
-       
-       AreaRural.setVisible(false);
-       AreaUrbana.setVisible(false);
-       AreaTodos.setVisible(false);
-       
-              RadioRural.setVisible(true);
-       RadioUrbana.setVisible(true);
-       RadioTodosArea.setVisible(true);
-      
-       
-       
-        }
-        
-        public void Lamalaaños(){
-            //AÑOS
+        //TIPO DE DOCUMENTO
+        RadiodocumentoID1.setVisible(true);
+        RadiodocumentoTodos.setVisible(true);
+        Radiodocumentocedula.setVisible(true);
+
+        Cedula.setVisible(false);
+        TarjetaIdentidad.setVisible(false);
+        TodosTipodeDocumentos.setVisible(false);
+
+        //TIPO DE GENERO 
+        Masculino.setVisible(false);
+        Femenino.setVisible(false);
+        Noconozcomisgenitales.setVisible(false);
+        TodosGeneros.setVisible(false);
+
+        RadioFemenino1.setVisible(true);
+        RadioMasculino1.setVisible(true);
+        RadioNoidentificadoporningungenero1.setVisible(true);
+        RadioTodosGeneros.setVisible(true);
+
+        //GENERO DEL COLEGIO (OCULTAR CAJAS)
+        ColegiogeneroFEMENINO.setVisible(false);
+        ColegiogeneroMIXTO.setVisible(false);
+        ColegiogeneroMasculino.setVisible(false);
+        ColegiogeneroTODOS.setVisible(false);
+
+        RadioGeneroColegioFemenino.setVisible(true);
+        RadioGeneroColegioMasculino.setVisible(true);
+        RadioGeneroColegioMixto1.setVisible(true);
+        RadioGeneroColegioTodos.setVisible(true);
+
+        //AREA (OCULTAR CAJAS)
+        AreaRural.setVisible(false);
+        AreaUrbana.setVisible(false);
+        AreaTodos.setVisible(false);
+
+        RadioRural.setVisible(true);
+        RadioUrbana.setVisible(true);
+        RadioTodosArea.setVisible(true);
+
+    }
+
+    public void Lamalaaños() {
+        //AÑOS
         radioañostodos.setVisible(false);
         radioaño2020.setVisible(false);
-         radioaño2019.setVisible(false);
-         radioaño2018.setVisible(false);
-         
-         año2020.setVisible(true);  
-         año2019.setVisible(true);  
-         año2018.setVisible(true);  
-         todosaño.setVisible(true);
-         
-         //TIPO DE DOCUMEMTNO
-         
-           Cedula.setVisible(true);
-       TarjetaIdentidad.setVisible(true);
-       TodosTipodeDocumentos.setVisible(true);
-            
+        radioaño2019.setVisible(false);
+        radioaño2018.setVisible(false);
+
+        año2020.setVisible(true);
+        año2019.setVisible(true);
+        año2018.setVisible(true);
+        todosaño.setVisible(true);
+
+        //TIPO DE DOCUMEMTNO
+        Cedula.setVisible(true);
+        TarjetaIdentidad.setVisible(true);
+        TodosTipodeDocumentos.setVisible(true);
+
         RadiodocumentoID1.setVisible(false);
-              RadiodocumentoTodos.setVisible(false);
-       Radiodocumentocedula.setVisible(false);
-       
-       //GENERO
-           RadioFemenino1.setVisible(false);
-       RadioMasculino1.setVisible(false);
-       RadioNoidentificadoporningungenero1.setVisible(false);
-       RadioTodosGeneros.setVisible(false);
-       
-       Masculino.setVisible(true);
-       Femenino.setVisible(true);
-       Noconozcomisgenitales.setVisible(true);
-       TodosGeneros.setVisible(true);
-       
-       //COLEGIO GENERO (MOSTRAR CAJAS DE TEXTO)
+        RadiodocumentoTodos.setVisible(false);
+        Radiodocumentocedula.setVisible(false);
+
+        //GENERO
+        RadioFemenino1.setVisible(false);
+        RadioMasculino1.setVisible(false);
+        RadioNoidentificadoporningungenero1.setVisible(false);
+        RadioTodosGeneros.setVisible(false);
+
+        Masculino.setVisible(true);
+        Femenino.setVisible(true);
+        Noconozcomisgenitales.setVisible(true);
+        TodosGeneros.setVisible(true);
+
+        //COLEGIO GENERO (MOSTRAR CAJAS DE TEXTO)
         ColegiogeneroFEMENINO.setVisible(true);
-       ColegiogeneroMIXTO.setVisible(true);
-       ColegiogeneroMasculino.setVisible(true);
-       ColegiogeneroTODOS.setVisible(true);
-       
-         RadioGeneroColegioFemenino.setVisible(false);
-       RadioGeneroColegioMasculino.setVisible(false);
-       RadioGeneroColegioMixto1.setVisible(false);
-       RadioGeneroColegioTodos.setVisible(false);
-       
-       //AREA (MOSTRAR CAJAS)
-       
+        ColegiogeneroMIXTO.setVisible(true);
+        ColegiogeneroMasculino.setVisible(true);
+        ColegiogeneroTODOS.setVisible(true);
+
+        RadioGeneroColegioFemenino.setVisible(false);
+        RadioGeneroColegioMasculino.setVisible(false);
+        RadioGeneroColegioMixto1.setVisible(false);
+        RadioGeneroColegioTodos.setVisible(false);
+
+        //AREA (MOSTRAR CAJAS)
         AreaRural.setVisible(true);
-       AreaUrbana.setVisible(true);
-       AreaTodos.setVisible(true);
-       
-       RadioRural.setVisible(false);
-       RadioUrbana.setVisible(false);
-       RadioTodosArea.setVisible(false);
-            
-        }
-        
-        public void actionbus1(){
-        
+        AreaUrbana.setVisible(true);
+        AreaTodos.setVisible(true);
+
+        RadioRural.setVisible(false);
+        RadioUrbana.setVisible(false);
+        RadioTodosArea.setVisible(false);
+
+    }
+
+    public void actionbus1() {
+
         if (modo.isSelected()) {
-          
+
             if (radioaño2020.isSelected()) {
                 obj2.setRadioaño2020();
                 JOptionPane.showMessageDialog(null, obj2.getRadioaño2020());
             }
-             if (radioaño2019.isSelected()) {
-                 obj2.setRadioaño2019();
+            if (radioaño2019.isSelected()) {
+                obj2.setRadioaño2019();
                 JOptionPane.showMessageDialog(null, obj2.getRadioaño2019());
             }
-              if (radioaño2018.isSelected()) {
+            if (radioaño2018.isSelected()) {
                 obj2.setRadioaño2018();
                 JOptionPane.showMessageDialog(null, obj2.getRadioaño2018());
             }
-               if (radioañostodos.isSelected()) {
-                 obj2.setRadiotodosaños();
+            if (radioañostodos.isSelected()) {
+                obj2.setRadiotodosaños();
                 JOptionPane.showMessageDialog(null, obj2.getRadiotodosaños());
             }
-            
+
         } else {
-          
+
             if (año2020.isSelected()) {
                 obj.setAño2020();
-            System.out.println(obj.getAño2020());
-            
-        }  if (año2019.isSelected()) {
-          
-           obj.setAño2019();
-           System.out.println(obj.getAño2019());
-            
-        }  if (año2018.isSelected()) {
-            obj.setAño2018();
-           System.out.println(obj.getAño2018());
-            
-        }  if (todosaño.isSelected()) {
-             obj.setTodosaños();
-           System.out.println(obj.getTodosaños());
-            
+                System.out.println(obj.getAño2020());
+                cont++;
+
+            }
+            if (año2019.isSelected()) {
+
+                obj.setAño2019();
+                System.out.println(obj.getAño2019());
+
+            }
+            if (año2018.isSelected()) {
+                obj.setAño2018();
+                System.out.println(obj.getAño2018());
+
+            }
+            if (todosaño.isSelected()) {
+                obj.setTodosaños();
+                System.out.println(obj.getTodosaños());
+
+            }
         }
-        }
-        }
-        public void actionbus2(){
-                            
+    }
+
+    public void actionbus2() {
+
         if (modo.isSelected()) {
-          
+
             if (Radiodocumentocedula.isSelected()) {
                 obj2.setRadiocedula();
                 JOptionPane.showMessageDialog(null, obj2.getRadiocedula());
             }
-             if (RadiodocumentoID1.isSelected()) {
-                 obj2.setRadioid();
+            if (RadiodocumentoID1.isSelected()) {
+                obj2.setRadioid();
                 JOptionPane.showMessageDialog(null, obj2.getRadioid());
             }
-              if (RadiodocumentoTodos.isSelected()) {
+            if (RadiodocumentoTodos.isSelected()) {
                 obj2.setTodosid();
                 JOptionPane.showMessageDialog(null, obj2.getTodosid());
             }
-           
-            
+
         } else {
-          
+
             if (Cedula.isSelected()) {
                 obj.setCedula();
-            System.out.println(obj.getCedula());
-            
-        }  if (TarjetaIdentidad.isSelected()) {
-          
-           obj.setID();
-           System.out.println(obj.getID());
-            
-        }  if (TodosTipodeDocumentos.isSelected()) {
-            obj.setIDtodos();
-           System.out.println(obj.getIDtodos());
-            
-        } 
+                System.out.println(obj.getCedula());
+
+            }
+            if (TarjetaIdentidad.isSelected()) {
+
+                obj.setID();
+                System.out.println(obj.getID());
+
+            }
+            if (TodosTipodeDocumentos.isSelected()) {
+                obj.setIDtodos();
+                System.out.println(obj.getIDtodos());
+
+            }
         }
 
-        }
-        public void actionbus3(){
-                
+    }
+
+    public void actionbus3() {
+
         if (modo.isSelected()) {
-          
+
             if (RadioMasculino1.isSelected()) {
                 obj2.setRadiomasculino();
                 JOptionPane.showMessageDialog(null, obj2.getRadiomasculino());
             }
-             if (RadioFemenino1.isSelected()) {
-                 obj2.setRadiofemenino();
+            if (RadioFemenino1.isSelected()) {
+                obj2.setRadiofemenino();
                 JOptionPane.showMessageDialog(null, obj2.getRadiofemenino());
             }
-              if (RadioNoidentificadoporningungenero1.isSelected()) {
+            if (RadioNoidentificadoporningungenero1.isSelected()) {
                 obj2.setRadionoidentificado();
                 JOptionPane.showMessageDialog(null, obj2.getRadionoidentificado());
             }
-               if (RadioTodosGeneros.isSelected()) {
-                 obj2.setRadiotodoslosgeneros();
+            if (RadioTodosGeneros.isSelected()) {
+                obj2.setRadiotodoslosgeneros();
                 JOptionPane.showMessageDialog(null, obj2.getRadiotodoslosgeneros());
             }
-            
+
         } else {
-          
+
             if (Masculino.isSelected()) {
-      
-            obj.setHombres();
-            System.out.println(obj.getHombres());
-            
-        }  if (Femenino.isSelected()) {
-          
-           obj.setMujeres();
-           System.out.println(obj.getMujeres());
-            
-        }  if (Noconozcomisgenitales.isSelected()) {
-            obj.setNoidentificados();
-           System.out.println(obj.getNoidentificados());
-            
-        }  if (TodosGeneros.isSelected()) {
-             obj.setTodo();
-           System.out.println(obj.getTodo());
-            
+
+                obj.setHombres();
+                System.out.println(obj.getHombres());
+
+            }
+            if (Femenino.isSelected()) {
+
+                obj.setMujeres();
+                System.out.println(obj.getMujeres());
+
+            }
+            if (Noconozcomisgenitales.isSelected()) {
+                obj.setNoidentificados();
+                System.out.println(obj.getNoidentificados());
+
+            }
+            if (TodosGeneros.isSelected()) {
+                obj.setTodo();
+                System.out.println(obj.getTodo());
+
+            }
         }
-        }
-        
-        }
-        public void actionbus4(){
-                    if (modo.isSelected()) {
-          
+
+    }
+
+    public void actionbus4() {
+        if (modo.isSelected()) {
+
             if (RadioGeneroColegioMasculino.isSelected()) {
                 obj2.setRadiocolmasculino();
                 JOptionPane.showMessageDialog(null, obj2.getRadiocolmasculino());
             }
-             if (RadioGeneroColegioMixto1.isSelected()) {
-                 obj2.setRadiomixto();
+            if (RadioGeneroColegioMixto1.isSelected()) {
+                obj2.setRadiomixto();
                 JOptionPane.showMessageDialog(null, obj2.getRadiomixto());
             }
-              if (RadioGeneroColegioFemenino.isSelected()) {
+            if (RadioGeneroColegioFemenino.isSelected()) {
                 obj2.setRadiocolfemenino();
                 JOptionPane.showMessageDialog(null, obj2.getRadiocolfemenino());
             }
-               if (RadioGeneroColegioTodos.isSelected()) {
-                 obj2.setRadiocoltodos();
+            if (RadioGeneroColegioTodos.isSelected()) {
+                obj2.setRadiocoltodos();
                 JOptionPane.showMessageDialog(null, obj2.getRadiocoltodos());
             }
-            
+
         } else {
-          
+
             if (ColegiogeneroMasculino.isSelected()) {
-      
-            obj.setColmasculino();
-            System.out.println(obj.getColmasculino());
-            
-        }  if (ColegiogeneroFEMENINO.isSelected()) {
-          
-           obj.setColfemenino();
-           System.out.println(obj.getColfemenino());
-            
-        }  if (ColegiogeneroTODOS.isSelected()) {
-            obj.setColtodos();
-           System.out.println(obj.getColtodos());
-            
-        }  if (ColegiogeneroMIXTO.isSelected()) {
-            obj.setMixto();
-           System.out.println(obj.getMixto());
-            
-        }  
+
+                obj.setColmasculino();
+                System.out.println(obj.getColmasculino());
+
+            }
+            if (ColegiogeneroFEMENINO.isSelected()) {
+
+                obj.setColfemenino();
+                System.out.println(obj.getColfemenino());
+
+            }
+            if (ColegiogeneroTODOS.isSelected()) {
+                obj.setColtodos();
+                System.out.println(obj.getColtodos());
+
+            }
+            if (ColegiogeneroMIXTO.isSelected()) {
+                obj.setMixto();
+                System.out.println(obj.getMixto());
+
+            }
         }
 
-        }
-        public void actionbus5(){
-                       
+    }
+
+    public void actionbus5() {
+
         if (modo.isSelected()) {
-          
+
             if (RadioRural.isSelected()) {
                 obj2.setRadiorural();
                 JOptionPane.showMessageDialog(null, obj2.getRadiorural());
             }
-             if (RadioUrbana.isSelected()) {
-                 obj2.setRadiourbano();
+            if (RadioUrbana.isSelected()) {
+                obj2.setRadiourbano();
                 JOptionPane.showMessageDialog(null, obj2.getRadiourbano());
             }
-              if (RadioTodosArea.isSelected()) {
+            if (RadioTodosArea.isSelected()) {
                 obj2.setRadiotodosarea();
                 JOptionPane.showMessageDialog(null, obj2.getRadiotodosarea());
             }
-            
-        } else {
-          
-            if (AreaRural.isSelected()) {
-      
-            obj.setRural();
-            System.out.println(obj.getRural());
-            
-        }  if (AreaTodos.isSelected()) {
-          
-           obj.setZonatodos();
-           System.out.println(obj.getZonatodos());
-            
-        }  if (AreaUrbana.isSelected()) {
-            obj.setUrbana();
-           System.out.println(obj.getUrbana());
-            
-        } 
-        }      
-        }
-        public void actionbus6(){
-             String busquedamunicipios = (String) municipiosselec.getSelectedItem();
-       JOptionPane.showMessageDialog(null, busquedamunicipios);
-        }
-        public void actionbus7(){
-                   String select = (String) Estractoselect.getSelectedItem();
-       JOptionPane.showMessageDialog(null, select);
 
+        } else {
+
+            if (AreaRural.isSelected()) {
+
+                obj.setRural();
+                System.out.println(obj.getRural());
+
+            }
+            if (AreaTodos.isSelected()) {
+
+                obj.setZonatodos();
+                System.out.println(obj.getZonatodos());
+
+            }
+            if (AreaUrbana.isSelected()) {
+                obj.setUrbana();
+                System.out.println(obj.getUrbana());
+
+            }
         }
-        public void actionbus8(){
-            JOptionPane.showMessageDialog(null, "selecciono: "+Plectura1.getValue());
-        }
-        public void actionbus9(){
-             String select =(String) desempeñolectura1.getSelectedItem();
+    }
+
+    public void actionbus6() {
+        String busquedamunicipios = (String) municipiosselec.getSelectedItem();
+        JOptionPane.showMessageDialog(null, busquedamunicipios);
+    }
+
+    public void actionbus7() {
+        String select = (String) Estractoselect.getSelectedItem();
         JOptionPane.showMessageDialog(null, select);
-        }
-        public void actionbus10(){
-              JOptionPane.showMessageDialog(null, "selecciono: "+Plecturamatematica.getValue());
-        }
-        public void actionbus11(){
-                  String select = (String) desempeñomatematica1.getSelectedItem();
-      JOptionPane.showMessageDialog(null, select);
-        }
-        public void actionbus12(){
-                JOptionPane.showMessageDialog(null, "selecciono: "+Plectura4.getValue());
-        }
-        public void actionbus13(){
-              String select = (String) desempeñonaturales1.getSelectedItem();
-      JOptionPane.showMessageDialog(null, select);
-        }
-        public void actionbus14(){
-               JOptionPane.showMessageDialog(null, "selecciono: "+Plectura5.getValue());
-        }
-        public void actionbus15(){
-               String select = (String) desempeñoingles.getSelectedItem();
-      JOptionPane.showMessageDialog(null, select);
-        }
-        public void actionbus16(){
-             
+
+    }
+
+    public void actionbus8() {
+        JOptionPane.showMessageDialog(null, "selecciono: " + Plectura1.getValue());
+    }
+
+    public void actionbus9() {
+        String select = (String) desempeñolectura1.getSelectedItem();
+        JOptionPane.showMessageDialog(null, select);
+    }
+
+    public void actionbus10() {
+        JOptionPane.showMessageDialog(null, "selecciono: " + Plecturamatematica.getValue());
+    }
+
+    public void actionbus11() {
+        String select = (String) desempeñomatematica1.getSelectedItem();
+        JOptionPane.showMessageDialog(null, select);
+    }
+
+    public void actionbus12() {
+        JOptionPane.showMessageDialog(null, "selecciono: " + Plectura4.getValue());
+    }
+
+    public void actionbus13() {
+        String select = (String) desempeñonaturales1.getSelectedItem();
+        JOptionPane.showMessageDialog(null, select);
+    }
+
+    public void actionbus14() {
+        JOptionPane.showMessageDialog(null, "selecciono: " + Plectura5.getValue());
+    }
+
+    public void actionbus15() {
+        String select = (String) desempeñoingles.getSelectedItem();
+        JOptionPane.showMessageDialog(null, select);
+    }
+
+    public void actionbus16() {
+
         if (CamPG1.isSelected()) {
-          JOptionPane.showMessageDialog(null, "selecciono: "+putajeglobalbarra.getValue());
-      
-     
+            JOptionPane.showMessageDialog(null, "selecciono: " + putajeglobalbarra.getValue());
+
         } else {
-      
- JOptionPane.showMessageDialog(null, "selecciono: "+PuntajeGlobal1.getValue());
-        }    
+
+            JOptionPane.showMessageDialog(null, "selecciono: " + PuntajeGlobal1.getValue());
         }
+    }
+
+    public void actionbus17() {
+        if (CamPercentil.isSelected()) {
+            JOptionPane.showMessageDialog(null, "selecciono: " + percentilbarra.getValue());
+
+        } else {
+
+            JOptionPane.showMessageDialog(null, "selecciono: " + Percentil.getValue());
+        }
+    }
+
+    public void actionbusi() {
+        actionbus1();
+        actionbus2();
+        actionbus3();
+        actionbus4();
+        actionbus5();
+        actionbus6();
+        actionbus7();
+        actionbus8();
+        actionbus9();
+        actionbus10();
+        actionbus11();
+        actionbus12();
+        actionbus13();
+        actionbus14();
+        actionbus15();
+        actionbus16();
+        actionbus17();
+    }
+
+    public void llenarArray() {
+        informacio = new ArrayList<>();
+         
+        FileReader fr = null;
+        boolean error = false;
         
-        public void actionbus17(){
-               if (CamPercentil.isSelected()) {
-          JOptionPane.showMessageDialog(null, "selecciono: "+percentilbarra.getValue());
-      
-     
-        } else {
-      
- JOptionPane.showMessageDialog(null, "selecciono: "+Percentil.getValue());
-        }     
+        try {
+           fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2019-2.csv");
+           JOptionPane.showMessageDialog(null, "Arraylist creado con excito");
+        } catch (Exception e) {
+            error=true;
+            JOptionPane.showMessageDialog(this, "Error al conectar la base de datos",
+                                            "Error", JOptionPane.ERROR_MESSAGE);
         }
+       if(!error){
+           String registro = "";
+           BufferedReader br = new BufferedReader(fr);
+           String tokens[];
+
+           
+           try {
+               while((registro = br.readLine())!= null){
+                   tokens = registro.split(";");
+                   informacio.add(registro);
+
+               }
+           } catch (Exception e) {
+               error =true;
+               JOptionPane.showMessageDialog(this, "Error al entrar en la base de datos",
+                       "Error", JOptionPane.ERROR_MESSAGE);        
+           }
+           try {
+               fr.close();
+           } catch (Exception e) {
+               JOptionPane.showMessageDialog(this, "Error al salir de la base de datos",
+                       "Error", JOptionPane.ERROR_MESSAGE);
+           }          
+           
+       } 
        
-        public  void actionbusi(){
-            actionbus1();
-            actionbus2();
-            actionbus3();
-            actionbus4();
-            actionbus5();
-            actionbus6();
-            actionbus7();
-            actionbus8();
-            actionbus9();
-            actionbus10();
-            actionbus11();
-            actionbus12();
-            actionbus13();
-            actionbus14();
-            actionbus15();
-            actionbus16();
-            actionbus17();
-            
-            
-            
-        }
+      
+    }
         
+        
+     public void leerArray(){
+           for (int i = 1; i < informacio.size(); i++) {
+             String get = informacio.get(i);
+               System.out.println(get+"\n");
+             
+         }
+       }
+          
+       
+    
 
 }
-

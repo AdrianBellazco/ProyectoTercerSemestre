@@ -30,6 +30,7 @@ public  class   RegistrarVariablesCasillas{
       //GETTER SETTER PARA AÑOS
 
     public String getAño2020() {
+       
         return año2020;
     }
 
