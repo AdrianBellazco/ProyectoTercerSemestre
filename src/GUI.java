@@ -46,10 +46,10 @@ public class GUI extends javax.swing.JFrame {
         llenarArray2018();
     //    leerArray();
 
-        
+        int ara=0;
         
         initComponents();
-        grafico_pastel();
+        grafico_pastel(ara);
         grafica_barras_1();
 
         //    grafica_barras_1();
@@ -1320,7 +1320,8 @@ int cont = 0;
 
     private void Bus3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus3ActionPerformed
         actionbus3();
-
+       
+        
     }//GEN-LAST:event_Bus3ActionPerformed
 
     private void Bus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus1ActionPerformed
@@ -1635,7 +1636,7 @@ public void grafica_barras_1() {
         int año3 = 4;
         int cedula = 4;
         int tarjetaIdentidad = 4;
-        int Masculino = 4;
+        int Masculino = 0;
         int femenino = 4;
         int Noidentificado = 4;
         int Masculinocolegio = 4;
@@ -1685,23 +1686,25 @@ public void grafica_barras_1() {
         repaint();
     }
 
-    public void grafico_pastel() {
-
+    public void grafico_pastel(int masculino ) {
+         DefaultPieDataset dato = new DefaultPieDataset();
+        System.out.println("el valor de masculino es "+masculino);
+        repaint();
         int año1 = 0;
         int año2 = 0;
         int año3 = 0;
         int cedula = 0;
         int tarjetaIdentidad = 0;
-        int Masculino = 0;
-        int femenino = 0;
+        int Masculino = masculino;
+        int femenino = masculino;
         int Noidentificado = 0;
         int Masculinocolegio = 0;
         int femeninocolegio = 0;
         int mixto = 0;
         int rural = 0;
         int urbana = 0;
-
-        DefaultPieDataset dato = new DefaultPieDataset();
+        
+       
 
         dato.setValue("2020", año1);
         dato.setValue("2019", año2);
@@ -1740,7 +1743,7 @@ public void grafica_barras_1() {
 
         plot.setLabelLinksVisible(false);
         plot.setBackgroundPaint(Color.WHITE); // Establecer el fondo del gráfico de pastel en blanco
-        grafico_pastel.setPadding(new RectangleInsets(0, 0, 0, 0));
+  //      grafico_pastel.setPadding(new RectangleInsets(0, 0, 0, 0));
         //transparencia
 
         // plot.setSectionPaint("noe", new Color(255,102,0));
@@ -1872,6 +1875,9 @@ public void grafica_barras_1() {
             if (radioaño2020.isSelected()) {
                 obj2.setRadioaño2020();
                 JOptionPane.showMessageDialog(null, obj2.getRadioaño2020());
+                
+
+
             }
             if (radioaño2019.isSelected()) {
                 obj2.setRadioaño2019();
@@ -1885,6 +1891,8 @@ public void grafica_barras_1() {
                 obj2.setRadiotodosaños();
                 JOptionPane.showMessageDialog(null, obj2.getRadiotodosaños());
             }
+            
+           
 
         } else {
 
@@ -1959,10 +1967,19 @@ public void grafica_barras_1() {
             if (RadioMasculino1.isSelected()) {
                 obj2.setRadiomasculino();
                 JOptionPane.showMessageDialog(null, obj2.getRadiomasculino());
+                
+                int cantidadMasculinos = contarGeneroMasculino(informacio2020, "M");
+                JOptionPane.showMessageDialog(null, "la cantidad de hombres es de "+cantidadMasculinos);
+                 grafico_pastel(cantidadMasculinos);
+                 
+                
             }
             if (RadioFemenino1.isSelected()) {
                 obj2.setRadiofemenino();
                 JOptionPane.showMessageDialog(null, obj2.getRadiofemenino());
+                int cantidadMasculinos = contarGeneroMasculino(informacio2020, "F");
+                JOptionPane.showMessageDialog(null, "la cantidad de mujeres es de "+cantidadMasculinos);
+                 grafico_pastel(cantidadMasculinos);
             }
             if (RadioNoidentificadoporningungenero1.isSelected()) {
                 obj2.setRadionoidentificado();
@@ -2319,5 +2336,22 @@ public void grafica_barras_1() {
             System.out.println(get + "\n");
         }
     }
+    
+    public int contarGeneroMasculino(ArrayList<String> dataArrayList, String buscar) {
+    int contadorMasculino = 0;
+
+    for (String registro : dataArrayList) {
+        // Dividir la línea actual en tokens utilizando ';' como separador
+        String[] tokens = registro.split(";");
+
+        // Asegurarse de que haya al menos 3 elementos y verificar si el tercer elemento es "M"
+        if (tokens.length > 2 &&    buscar.equalsIgnoreCase(tokens[2])) {
+            contadorMasculino++;
+        }
+    }
+
+    return contadorMasculino;
+}
+
 
 }
