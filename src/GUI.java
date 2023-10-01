@@ -35,6 +35,9 @@ public class GUI extends javax.swing.JFrame {
 
     RegistrarVariablesCasillas obj = new RegistrarVariablesCasillas();
     RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
+
+    Calculos calculos = new Calculos();
+
     GUI obj3;
 
     int mousex, mousey;
@@ -44,10 +47,10 @@ public class GUI extends javax.swing.JFrame {
         llenarArray2020();
         llenarArray2019();
         llenarArray2018();
-    //    leerArray();
+        //    leerArray();
 
-        int ara=0;
-        
+        int ara = 0;
+
         initComponents();
         grafico_pastel(ara);
         grafica_barras_1();
@@ -1320,8 +1323,8 @@ int cont = 0;
 
     private void Bus3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus3ActionPerformed
         actionbus3();
-       
-        
+
+
     }//GEN-LAST:event_Bus3ActionPerformed
 
     private void Bus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus1ActionPerformed
@@ -1459,7 +1462,7 @@ int cont = 0;
     }//GEN-LAST:event_graficopastelbarraComponentAdded
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      
+
         leerArray();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1686,25 +1689,24 @@ public void grafica_barras_1() {
         repaint();
     }
 
-    public void grafico_pastel(int masculino ) {
-         DefaultPieDataset dato = new DefaultPieDataset();
-        System.out.println("el valor de masculino es "+masculino);
+    public void grafico_pastel(int elementos) {
+        DefaultPieDataset dato = new DefaultPieDataset();
+
         repaint();
         int año1 = 0;
         int año2 = 0;
         int año3 = 0;
         int cedula = 0;
         int tarjetaIdentidad = 0;
-        int Masculino = masculino;
-        int femenino = masculino;
+        int Masculino = elementos;
+        int femenino = elementos;
         int Noidentificado = 0;
         int Masculinocolegio = 0;
         int femeninocolegio = 0;
         int mixto = 0;
         int rural = 0;
         int urbana = 0;
-        
-       
+        System.out.println(Masculino + " elementos registrados en el metodo grafico_pastel");
 
         dato.setValue("2020", año1);
         dato.setValue("2019", año2);
@@ -1743,7 +1745,7 @@ public void grafica_barras_1() {
 
         plot.setLabelLinksVisible(false);
         plot.setBackgroundPaint(Color.WHITE); // Establecer el fondo del gráfico de pastel en blanco
-  //      grafico_pastel.setPadding(new RectangleInsets(0, 0, 0, 0));
+        //      grafico_pastel.setPadding(new RectangleInsets(0, 0, 0, 0));
         //transparencia
 
         // plot.setSectionPaint("noe", new Color(255,102,0));
@@ -1873,26 +1875,29 @@ public void grafica_barras_1() {
         if (modo.isSelected()) {
 
             if (radioaño2020.isSelected()) {
-                obj2.setRadioaño2020();
-                JOptionPane.showMessageDialog(null, obj2.getRadioaño2020());
-                
 
+                JOptionPane.showMessageDialog(null, "Existen " + informacio2020.size() + " Personas registradas en el 2020");
+                grafico_pastel(informacio2020.size());
 
             }
             if (radioaño2019.isSelected()) {
-                obj2.setRadioaño2019();
-                JOptionPane.showMessageDialog(null, obj2.getRadioaño2019());
+
+                JOptionPane.showMessageDialog(null, "Existen " + informacio2019.size() + " Personas registradas en el 2019");
+                grafico_pastel(informacio2019.size());
+
             }
             if (radioaño2018.isSelected()) {
-                obj2.setRadioaño2018();
-                JOptionPane.showMessageDialog(null, obj2.getRadioaño2018());
+
+                JOptionPane.showMessageDialog(null, "Existen " + informacio2018.size() + " Personas registradas en el 2018");
+                grafico_pastel(informacio2018.size());
+
             }
             if (radioañostodos.isSelected()) {
-                obj2.setRadiotodosaños();
-                JOptionPane.showMessageDialog(null, obj2.getRadiotodosaños());
+                int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
+                JOptionPane.showMessageDialog(null, "Existen " + TotalElementos + " Personas registradas en los tres años (2020, 2019, 2018)");
+                grafico_pastel(TotalElementos);
+
             }
-            
-           
 
         } else {
 
@@ -1926,12 +1931,23 @@ public void grafica_barras_1() {
         if (modo.isSelected()) {
 
             if (Radiodocumentocedula.isSelected()) {
-                obj2.setRadiocedula();
-                JOptionPane.showMessageDialog(null, obj2.getRadiocedula());
+
+                int cedula2020 = calculos.Contador2020(informacio2020, "CC", 0);
+                int cedula2019 = calculos.Contador2020(informacio2019, "CC", 0);
+                int cedula2018 = calculos.Contador2020(informacio2018, "CC", 0);
+                int total = cedula2020 + cedula2019 + cedula2018;
+                JOptionPane.showMessageDialog(null, "la cantidad de cedulas es de " + total + " registradas en los tres años");
+                grafico_pastel(total);
+
             }
             if (RadiodocumentoID1.isSelected()) {
-                obj2.setRadioid();
-                JOptionPane.showMessageDialog(null, obj2.getRadioid());
+
+                int TI2020 = calculos.Contador2020(informacio2020, "TI", 0);
+                int TI2019 = calculos.Contador2020(informacio2019, "TI", 0);
+                int TI2018 = calculos.Contador2020(informacio2018, "TI", 0);
+                int total = TI2020 + TI2019 + TI2018;
+                JOptionPane.showMessageDialog(null, "la cantidad de tarjetas de identidad es de " + total + " registradas en los tres años");
+                grafico_pastel(total);
             }
             if (RadiodocumentoTodos.isSelected()) {
                 obj2.setTodosid();
@@ -1965,29 +1981,35 @@ public void grafica_barras_1() {
         if (modo.isSelected()) {
 
             if (RadioMasculino1.isSelected()) {
-                obj2.setRadiomasculino();
-                JOptionPane.showMessageDialog(null, obj2.getRadiomasculino());
-                
-                int cantidadMasculinos = contarGeneroMasculino(informacio2020, "M");
-                JOptionPane.showMessageDialog(null, "la cantidad de hombres es de "+cantidadMasculinos);
-                 grafico_pastel(cantidadMasculinos);
-                 
-                
+
+                int hombre2020 = calculos.Contador2020(informacio2020, "M", 2);
+                int hombre2019 = calculos.Contador2020(informacio2019, "M", 2);
+                int hombre2018 = calculos.Contador2020(informacio2018, "M", 2);
+                int total = hombre2020 + hombre2018 + hombre2019;
+                JOptionPane.showMessageDialog(null, "la cantidad de hombres es de " + total);
+                grafico_pastel(total);
             }
             if (RadioFemenino1.isSelected()) {
-                obj2.setRadiofemenino();
-                JOptionPane.showMessageDialog(null, obj2.getRadiofemenino());
-                int cantidadMasculinos = contarGeneroMasculino(informacio2020, "F");
-                JOptionPane.showMessageDialog(null, "la cantidad de mujeres es de "+cantidadMasculinos);
-                 grafico_pastel(cantidadMasculinos);
+                int mujeres2020 = calculos.Contador2020(informacio2020, "F", 2);
+                int mujeres2019 = calculos.Contador2020(informacio2019, "F", 2);
+                int mujeres2018 = calculos.Contador2020(informacio2018, "F", 2);
+                int total = mujeres2020 + mujeres2018 + mujeres2019;
+                JOptionPane.showMessageDialog(null, "la cantidad de mujeres es de " + total);
+                grafico_pastel(total);
+
             }
             if (RadioNoidentificadoporningungenero1.isSelected()) {
-                obj2.setRadionoidentificado();
-                JOptionPane.showMessageDialog(null, obj2.getRadionoidentificado());
+
+                int Noid = calculos.Contador2020(informacio2020, "", 2) + calculos.Contador2020(informacio2018, "", 2) + calculos.Contador2020(informacio2019, "", 2);
+                JOptionPane.showMessageDialog(null, "la cantidad de personas sin sexo es de " + Noid);
+                grafico_pastel(Noid);
+
             }
             if (RadioTodosGeneros.isSelected()) {
-                obj2.setRadiotodoslosgeneros();
-                JOptionPane.showMessageDialog(null, obj2.getRadiotodoslosgeneros());
+                int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
+                JOptionPane.showMessageDialog(null, "la cantidad de total de hombre y mujeres es de " + TotalElementos + "  registradas en los tres años (2020, 2019, 2018)");
+                grafico_pastel(TotalElementos);
+
             }
 
         } else {
@@ -2022,20 +2044,36 @@ public void grafica_barras_1() {
         if (modo.isSelected()) {
 
             if (RadioGeneroColegioMasculino.isSelected()) {
-                obj2.setRadiocolmasculino();
-                JOptionPane.showMessageDialog(null, obj2.getRadiocolmasculino());
+                int colegiomasculino2020 = calculos.Contador2020(informacio2020, "MASCULINO", 10);
+                int colegiomasculino2019 = calculos.Contador2020(informacio2019, "MASCULINO", 10);
+                int colegiomasculino2018 = calculos.Contador2020(informacio2018, "MASCULINO", 10);
+                int total = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
+                JOptionPane.showMessageDialog(null, "la cantidad de colegios masculinos es de " + total + " registradas en los tres años");
+                grafico_pastel(total);
             }
             if (RadioGeneroColegioMixto1.isSelected()) {
-                obj2.setRadiomixto();
-                JOptionPane.showMessageDialog(null, obj2.getRadiomixto());
+                int colegiomixto2020 = calculos.Contador2020(informacio2020, "MIXTO", 10);
+                int colegiomixto2019 = calculos.Contador2020(informacio2019, "MIXTO", 10);
+                int colegiomixto2018 = calculos.Contador2020(informacio2018, "MIXTO", 10);
+                int total = colegiomixto2020 + colegiomixto2019 + colegiomixto2018;
+                JOptionPane.showMessageDialog(null, "la cantidad de colegios mixtos es de " + total + " registradas en los tres años");
+                grafico_pastel(total);
             }
             if (RadioGeneroColegioFemenino.isSelected()) {
-                obj2.setRadiocolfemenino();
-                JOptionPane.showMessageDialog(null, obj2.getRadiocolfemenino());
+                int colegioFEMENINO2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10);
+                int colegioFEMENINO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10);
+                int colegioFEMENINO2018 = calculos.Contador2020(informacio2018, "FEMENINO", 10);
+                int total = colegioFEMENINO2020 + colegioFEMENINO2019 + colegioFEMENINO2018;
+                JOptionPane.showMessageDialog(null, "la cantidad de colegios femeninos es de " + total + " registradas en los tres años");
+                grafico_pastel(total);
             }
             if (RadioGeneroColegioTodos.isSelected()) {
-                obj2.setRadiocoltodos();
-                JOptionPane.showMessageDialog(null, obj2.getRadiocoltodos());
+                int colegio2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10) + calculos.Contador2020(informacio2020, "MASCULINO", 10) + calculos.Contador2020(informacio2020, "MIXTO", 10);;
+                int colegioO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10) + calculos.Contador2020(informacio2019, "MASCULINO", 10) + calculos.Contador2020(informacio2019, "MIXTO", 10);;
+                int colegio2018 = calculos.Contador2020(informacio2018, "FEMENINO", 10) + calculos.Contador2020(informacio2018, "MASCULINO", 10) + calculos.Contador2020(informacio2018, "MIXTO", 10);;
+                int total = colegio2020 + colegioO2019 + colegio2018;
+                JOptionPane.showMessageDialog(null, "Total de colegios son " + total + " registradas en los tres años");
+                grafico_pastel(total);
             }
 
         } else {
@@ -2071,16 +2109,26 @@ public void grafica_barras_1() {
         if (modo.isSelected()) {
 
             if (RadioRural.isSelected()) {
-                obj2.setRadiorural();
-                JOptionPane.showMessageDialog(null, obj2.getRadiorural());
+
+                int colegioRURAL2020 = calculos.Contador2020(informacio2020, "RURAL", 12);
+                int colegioRURAL2019 = calculos.Contador2020(informacio2019, "RURAL", 12);
+                int colegioRURAL2018 = calculos.Contador2020(informacio2018, "RURAL", 12);
+                int total = colegioRURAL2020 + colegioRURAL2019 + colegioRURAL2018;
+                JOptionPane.showMessageDialog(null, "la cantidad de colegios rurales  es de " + total + " registradas en los tres años");
+                grafico_pastel(total);
             }
             if (RadioUrbana.isSelected()) {
-                obj2.setRadiourbano();
-                JOptionPane.showMessageDialog(null, obj2.getRadiourbano());
+                int colegioURBANO2020 = calculos.Contador2020(informacio2020, "URBANO", 12);
+                int colegioURBANO2019 = calculos.Contador2020(informacio2019, "URBANO", 12);
+                int colegioURBANO2018 = calculos.Contador2020(informacio2018, "URBANO", 12);
+                int total = colegioURBANO2020 + colegioURBANO2019 + colegioURBANO2018;
+                JOptionPane.showMessageDialog(null, "la cantidad de colegios urbanos  es de " + total + " registradas en los tres años");
+                grafico_pastel(total);
             }
             if (RadioTodosArea.isSelected()) {
-                obj2.setRadiotodosarea();
-                JOptionPane.showMessageDialog(null, obj2.getRadiotodosarea());
+                int areaTotal= calculos.Contador2020(informacio2020, "URBANO", 12) +calculos.Contador2020(informacio2018, "URBANO", 12) +calculos.Contador2020(informacio2019, "URBANO", 12) + calculos.Contador2020(informacio2020, "RURAL", 12)+calculos.Contador2020(informacio2019, "RURAL", 12)+calculos.Contador2020(informacio2018, "RURAL", 12);
+                JOptionPane.showMessageDialog(null, "la cantidad de area total  es de " + areaTotal + " registradas en los tres años");
+                 grafico_pastel(areaTotal);
             }
 
         } else {
@@ -2200,7 +2248,7 @@ public void grafica_barras_1() {
 
         try {
             fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2020-2.csv");
-  //          JOptionPane.showMessageDialog(null, "Arraylist 2020 creado con excito");
+            //          JOptionPane.showMessageDialog(null, "Arraylist 2020 creado con excito");
         } catch (Exception e) {
             error = true;
             JOptionPane.showMessageDialog(this, "Error al conectar la base de datos",
@@ -2241,8 +2289,8 @@ public void grafica_barras_1() {
 
         try {
             fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2019-2.csv");
-       
-  //          JOptionPane.showMessageDialog(null, "Arraylist 2019 creado con excito");
+
+            //          JOptionPane.showMessageDialog(null, "Arraylist 2019 creado con excito");
         } catch (Exception e) {
             error = true;
             JOptionPane.showMessageDialog(this, "Error al conectar la base de datos",
@@ -2283,7 +2331,7 @@ public void grafica_barras_1() {
 
         try {
             fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2018-1 R.csv");
-          //  JOptionPane.showMessageDialog(null, "Arraylist 2018 creado con excito");
+            //  JOptionPane.showMessageDialog(null, "Arraylist 2018 creado con excito");
         } catch (Exception e) {
             error = true;
             JOptionPane.showMessageDialog(this, "Error al conectar la base de datos",
@@ -2322,36 +2370,19 @@ public void grafica_barras_1() {
             String get1 = informacio2020.get(j);
             System.out.println(get1 + "\n");
         }
-          System.out.println("2019----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("2019----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         JOptionPane.showMessageDialog(null, "2019");
         for (int i = 1; i < informacio2019.size(); i++) {
             String get = informacio2019.get(i);
             System.out.println(get + "\n");
         }
         System.out.println("2018----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        
+
         JOptionPane.showMessageDialog(null, "2018");
         for (int i = 0; i < informacio2018.size(); i++) {
             String get = informacio2018.get(i);
             System.out.println(get + "\n");
         }
     }
-    
-    public int contarGeneroMasculino(ArrayList<String> dataArrayList, String buscar) {
-    int contadorMasculino = 0;
-
-    for (String registro : dataArrayList) {
-        // Dividir la línea actual en tokens utilizando ';' como separador
-        String[] tokens = registro.split(";");
-
-        // Asegurarse de que haya al menos 3 elementos y verificar si el tercer elemento es "M"
-        if (tokens.length > 2 &&    buscar.equalsIgnoreCase(tokens[2])) {
-            contadorMasculino++;
-        }
-    }
-
-    return contadorMasculino;
-}
-
 
 }
