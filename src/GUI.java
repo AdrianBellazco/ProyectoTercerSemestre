@@ -37,12 +37,16 @@ public class GUI extends javax.swing.JFrame {
     RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
 
     Calculos calculos = new Calculos();
+    
+    ChartPanel panel_grafi = new ChartPanel(null);
 
+    
     GUI obj3;
 
     int mousex, mousey;
 
     public GUI() {
+
 
         llenarArray2020();
         llenarArray2019();
@@ -52,7 +56,8 @@ public class GUI extends javax.swing.JFrame {
         int ara = 0;
 
         initComponents();
-        grafico_pastel(ara);
+       grafico_pastel(ara);
+   
         grafica_barras_1();
 
         //    grafica_barras_1();
@@ -1690,7 +1695,7 @@ public void grafica_barras_1() {
     }
 
     public void grafico_pastel(int elementos) {
-        DefaultPieDataset dato = new DefaultPieDataset();
+    DefaultPieDataset dato = new DefaultPieDataset();
 
         repaint();
         int año1 = 0;
@@ -1707,7 +1712,7 @@ public void grafica_barras_1() {
         int rural = 0;
         int urbana = 0;
         System.out.println(Masculino + " elementos registrados en el metodo grafico_pastel");
-
+   
         dato.setValue("2020", año1);
         dato.setValue("2019", año2);
         dato.setValue("2018", año3);
@@ -1723,9 +1728,9 @@ public void grafica_barras_1() {
         dato.setValue("Zona Urbana", urbana);
 
 //dato.setValue("noe", dato6);
-        JFreeChart grafico_pastel = ChartFactory.createPieChart("Estadistica", dato, true, true, false);
-
-        ChartPanel panel_grafi = new ChartPanel(grafico_pastel);
+       
+         JFreeChart grafico_pastel = ChartFactory.createPieChart("Estadistica", dato, true, true, false);
+        panel_grafi.setChart(grafico_pastel);
 
         panel_grafi.setBackground(Color.WHITE);
 
@@ -1753,7 +1758,7 @@ public void grafica_barras_1() {
         panel_grafi.setLocation(0, 0);
         panel_grafi.setPreferredSize(new Dimension(20, 20));
         panel_grafi.setVisible(true);
-
+         
         graficopastelbarra.setLayout(new BorderLayout());
         graficopastelbarra.add(panel_grafi);
 
