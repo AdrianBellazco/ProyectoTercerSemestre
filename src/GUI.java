@@ -34,7 +34,7 @@ public class GUI extends javax.swing.JFrame {
     ArrayList<String> informacio2018;
     
     ArrayList<Integer>Valores = new ArrayList<>();
-    int Elementos [] = new int[15];
+    int Elementos [] = new int[20];
    
     
 
@@ -124,7 +124,6 @@ public class GUI extends javax.swing.JFrame {
         año2018 = new javax.swing.JCheckBox();
         Cedula = new javax.swing.JCheckBox();
         jSeparator5 = new javax.swing.JSeparator();
-        Noconozcomisgenitales = new javax.swing.JCheckBox();
         TarjetaIdentidad = new javax.swing.JCheckBox();
         Femenino = new javax.swing.JCheckBox();
         jSeparator6 = new javax.swing.JSeparator();
@@ -168,7 +167,6 @@ public class GUI extends javax.swing.JFrame {
         RadioTodosGeneros = new javax.swing.JRadioButton();
         RadioMasculino1 = new javax.swing.JRadioButton();
         RadioFemenino1 = new javax.swing.JRadioButton();
-        RadioNoidentificadoporningungenero1 = new javax.swing.JRadioButton();
         RadioGeneroColegioTodos = new javax.swing.JRadioButton();
         RadioGeneroColegioMixto1 = new javax.swing.JRadioButton();
         RadioGeneroColegioFemenino = new javax.swing.JRadioButton();
@@ -315,7 +313,7 @@ public class GUI extends javax.swing.JFrame {
                 Bus2ActionPerformed(evt);
             }
         });
-        Filtrador.add(Bus2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, -1, -1));
+        Filtrador.add(Bus2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, -1, -1));
 
         Bus3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Bus3.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
@@ -400,7 +398,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 102, 0));
         jLabel3.setText("Genero");
-        Filtrador.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 550, 260, 50));
+        Filtrador.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 600, 260, 50));
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 102, 0));
@@ -497,7 +495,7 @@ public class GUI extends javax.swing.JFrame {
                 MasculinoActionPerformed(evt);
             }
         });
-        Filtrador.add(Masculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, -1, -1));
+        Filtrador.add(Masculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 670, -1, -1));
 
         año2018.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         año2018.setForeground(new java.awt.Color(255, 255, 255));
@@ -520,16 +518,6 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(Cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, -1, -1));
         Filtrador.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1780, 260, 10));
 
-        Noconozcomisgenitales.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        Noconozcomisgenitales.setForeground(new java.awt.Color(255, 255, 255));
-        Noconozcomisgenitales.setText("No identificado");
-        Noconozcomisgenitales.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NoconozcomisgenitalesActionPerformed(evt);
-            }
-        });
-        Filtrador.add(Noconozcomisgenitales, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 700, -1, -1));
-
         TarjetaIdentidad.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         TarjetaIdentidad.setForeground(new java.awt.Color(255, 255, 255));
         TarjetaIdentidad.setText("Tarjeta de identidad");
@@ -548,9 +536,9 @@ public class GUI extends javax.swing.JFrame {
                 FemeninoActionPerformed(evt);
             }
         });
-        Filtrador.add(Femenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 660, -1, -1));
+        Filtrador.add(Femenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 710, -1, -1));
         Filtrador.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 260, 10));
-        Filtrador.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 260, 10));
+        Filtrador.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 260, 10));
 
         AreaTodos.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         AreaTodos.setForeground(new java.awt.Color(255, 255, 255));
@@ -580,7 +568,7 @@ public class GUI extends javax.swing.JFrame {
                 TodosTipodeDocumentosActionPerformed(evt);
             }
         });
-        Filtrador.add(TodosTipodeDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
+        Filtrador.add(TodosTipodeDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, -1, -1));
 
         desempeñoingles.setBackground(new java.awt.Color(0, 102, 102));
         desempeñoingles.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -603,7 +591,7 @@ public class GUI extends javax.swing.JFrame {
                 TodosGenerosActionPerformed(evt);
             }
         });
-        Filtrador.add(TodosGeneros, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 740, -1, -1));
+        Filtrador.add(TodosGeneros, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 750, -1, -1));
 
         ColegiogeneroMIXTO.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         ColegiogeneroMIXTO.setForeground(new java.awt.Color(255, 255, 255));
@@ -839,7 +827,7 @@ public class GUI extends javax.swing.JFrame {
         RadiodocumentoTodos.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         RadiodocumentoTodos.setForeground(new java.awt.Color(255, 255, 255));
         RadiodocumentoTodos.setText("Todos");
-        Filtrador.add(RadiodocumentoTodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
+        Filtrador.add(RadiodocumentoTodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, -1, -1));
 
         RadiodocumentoID1.setBackground(new java.awt.Color(0, 102, 102));
         ID.add(RadiodocumentoID1);
@@ -852,25 +840,19 @@ public class GUI extends javax.swing.JFrame {
         RadioTodosGeneros.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         RadioTodosGeneros.setForeground(new java.awt.Color(255, 255, 255));
         RadioTodosGeneros.setText("Todos");
-        Filtrador.add(RadioTodosGeneros, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 740, -1, -1));
+        Filtrador.add(RadioTodosGeneros, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 750, -1, -1));
 
         Generos.add(RadioMasculino1);
         RadioMasculino1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         RadioMasculino1.setForeground(new java.awt.Color(255, 255, 255));
         RadioMasculino1.setText("Masculino");
-        Filtrador.add(RadioMasculino1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, -1, -1));
+        Filtrador.add(RadioMasculino1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 670, -1, -1));
 
         Generos.add(RadioFemenino1);
         RadioFemenino1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         RadioFemenino1.setForeground(new java.awt.Color(255, 255, 255));
         RadioFemenino1.setText("Femenino");
-        Filtrador.add(RadioFemenino1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 660, -1, -1));
-
-        Generos.add(RadioNoidentificadoporningungenero1);
-        RadioNoidentificadoporningungenero1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        RadioNoidentificadoporningungenero1.setForeground(new java.awt.Color(255, 255, 255));
-        RadioNoidentificadoporningungenero1.setText("No identificado");
-        Filtrador.add(RadioNoidentificadoporningungenero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 700, -1, -1));
+        Filtrador.add(RadioFemenino1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 710, -1, -1));
 
         ColegioGeneroGrupo.add(RadioGeneroColegioTodos);
         RadioGeneroColegioTodos.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -1459,10 +1441,6 @@ int cont = 0;
 
     }//GEN-LAST:event_graficopastelbarraComponentAdded
 
-    private void NoconozcomisgenitalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoconozcomisgenitalesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NoconozcomisgenitalesActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -1539,7 +1517,6 @@ int cont = 0;
     private javax.swing.ButtonGroup ID;
     private javax.swing.JPanel Info;
     protected javax.swing.JCheckBox Masculino;
-    private javax.swing.JCheckBox Noconozcomisgenitales;
     private javax.swing.JSpinner Percentil;
     private javax.swing.JSlider Plectura1;
     private javax.swing.JSlider Plectura4;
@@ -1552,7 +1529,6 @@ int cont = 0;
     private javax.swing.JRadioButton RadioGeneroColegioMixto1;
     private javax.swing.JRadioButton RadioGeneroColegioTodos;
     private javax.swing.JRadioButton RadioMasculino1;
-    private javax.swing.JRadioButton RadioNoidentificadoporningungenero1;
     private javax.swing.JRadioButton RadioRural;
     private javax.swing.JRadioButton RadioTodosArea;
     private javax.swing.JRadioButton RadioTodosGeneros;
@@ -1659,17 +1635,18 @@ public void grafica_barras_1() {
         datos.setValue(rural, "Zona", "Rural");
         datos.setValue(urbana, "Zona", "Urbana");
 
-        JFreeChart grafico_1 = ChartFactory.createBarChart3D(
+        JFreeChart grafico_1 = ChartFactory.createLineChart(
                 "Barras estadisticas", //nombre del grafico
                 "", //nombre de las barras o columnas
                 "", //nombre de la numeracion
                 datos, //nombre de grafico
-                PlotOrientation.HORIZONTAL, //orientacion
+                PlotOrientation.VERTICAL, //orientacion
                 true, //legenda de barras individuales por color
                 true, //url del grafico
                 false
         );
-
+        
+     
         ChartPanel barras = new ChartPanel(grafico_1);
 
         barras.setMouseWheelEnabled(true);
@@ -1695,14 +1672,18 @@ public void grafica_barras_1() {
         int todosAños= Elementos[13];
         int cedula = Elementos[3];
         int tarjetaIdentidad = Elementos[4];
+        int todosID = Elementos[16];
         int Masculino = Elementos[5] ;
         int femenino = Elementos[6];
         int Noidentificado = Elementos[7];
+        int TodosGeneros = Elementos[14];
         int Masculinocolegio = Elementos[8];
         int femeninocolegio = Elementos[9];
         int mixto = Elementos[10];
+        int TodosTiposDeColegio = Elementos[15];
         int rural = Elementos[11];
         int urbana = Elementos[12];
+       
         
    
         dato.setValue("2020", año1);
@@ -1711,12 +1692,15 @@ public void grafica_barras_1() {
         dato.setValue("Todos los años", todosAños);
         dato.setValue("Cedula", cedula);
         dato.setValue("Tarjeta de identidad", tarjetaIdentidad);
+        dato.setValue("Todos los documentos", todosID);
         dato.setValue("Hombres", Masculino);
         dato.setValue("Mujeres", femenino);
+        dato.setValue("Todos los generos", TodosGeneros);
         dato.setValue("No identificado", Noidentificado);
         dato.setValue("Colegios masculinos", Masculinocolegio);
         dato.setValue("Colegios femeninos", femeninocolegio);
         dato.setValue("Colegios mixtos", mixto);
+        dato.setValue("Todos los colegios", TodosTiposDeColegio);
         dato.setValue("Zona rural", rural);
         dato.setValue("Zona Urbana", urbana);
 
@@ -1782,12 +1766,10 @@ public void grafica_barras_1() {
         //TIPO DE GENERO 
         Masculino.setVisible(false);
         Femenino.setVisible(false);
-        Noconozcomisgenitales.setVisible(false);
         TodosGeneros.setVisible(false);
 
         RadioFemenino1.setVisible(true);
         RadioMasculino1.setVisible(true);
-        RadioNoidentificadoporningungenero1.setVisible(true);
         RadioTodosGeneros.setVisible(true);
 
         //GENERO DEL COLEGIO (OCULTAR CAJAS)
@@ -1836,12 +1818,10 @@ public void grafica_barras_1() {
         //GENERO
         RadioFemenino1.setVisible(false);
         RadioMasculino1.setVisible(false);
-        RadioNoidentificadoporningungenero1.setVisible(false);
         RadioTodosGeneros.setVisible(false);
 
         Masculino.setVisible(true);
         Femenino.setVisible(true);
-        Noconozcomisgenitales.setVisible(true);
         TodosGeneros.setVisible(true);
 
         //COLEGIO GENERO (MOSTRAR CAJAS DE TEXTO)
@@ -1871,28 +1851,21 @@ public void grafica_barras_1() {
         if (modo.isSelected()) {
 
             if (radioaño2020.isSelected()) {
-
-                JOptionPane.showMessageDialog(null, "Existen " + informacio2020.size() + " Personas registradas en el 2020");
                 Elementos[0] = informacio2020.size();
                 grafico_pastel();
 
             }
             if (radioaño2019.isSelected()) {
-
-                JOptionPane.showMessageDialog(null, "Existen " + informacio2019.size() + " Personas registradas en el 2019");
                 Elementos[1] = informacio2019.size();
                grafico_pastel();
 
             }
             if (radioaño2018.isSelected()) {
-
-                JOptionPane.showMessageDialog(null, "Existen " + informacio2018.size() + " Personas registradas en el 2018");
                 Elementos[2] = informacio2018.size();
-grafico_pastel();
+                grafico_pastel();
             }
             if (radioañostodos.isSelected()) {
                 int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
-                JOptionPane.showMessageDialog(null, "Existen " + TotalElementos + " Personas registradas en los tres años (2020, 2019, 2018)");
                 Elementos[13] = TotalElementos;
                 grafico_pastel();
             }
@@ -1934,8 +1907,9 @@ grafico_pastel();
                 int cedula2019 = calculos.Contador2020(informacio2019, "CC", 0);
                 int cedula2018 = calculos.Contador2020(informacio2018, "CC", 0);
                 int total = cedula2020 + cedula2019 + cedula2018;
-                JOptionPane.showMessageDialog(null, "la cantidad de cedulas es de " + total + " registradas en los tres años");
-//                grafico_pastel(total);
+            
+                Elementos[3] = total;
+               grafico_pastel();
 
             }
             if (RadiodocumentoID1.isSelected()) {
@@ -1944,12 +1918,14 @@ grafico_pastel();
                 int TI2019 = calculos.Contador2020(informacio2019, "TI", 0);
                 int TI2018 = calculos.Contador2020(informacio2018, "TI", 0);
                 int total = TI2020 + TI2019 + TI2018;
-                JOptionPane.showMessageDialog(null, "la cantidad de tarjetas de identidad es de " + total + " registradas en los tres años");
-//                grafico_pastel(total);
+               Elementos[4] = total;
+               grafico_pastel();
             }
             if (RadiodocumentoTodos.isSelected()) {
-                obj2.setTodosid();
-                JOptionPane.showMessageDialog(null, obj2.getTodosid());
+               
+               int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
+                Elementos[16] = TotalElementos;
+                grafico_pastel();
             }
 
         } else {
@@ -2004,17 +1980,11 @@ grafico_pastel();
                 grafico_pastel();
 
             }
-            if (RadioNoidentificadoporningungenero1.isSelected()) {
-
-                int Noid = calculos.Contador2020(informacio2020, "", 2) + calculos.Contador2020(informacio2018, "", 2) + calculos.Contador2020(informacio2019, "", 2);
-                JOptionPane.showMessageDialog(null, "la cantidad de personas sin sexo es de " + Noid);
-           //     grafico_pastel(Noid);
-
-            }
+      
             if (RadioTodosGeneros.isSelected()) {
                 int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
-                JOptionPane.showMessageDialog(null, "la cantidad de total de hombre y mujeres es de " + TotalElementos + "  registradas en los tres años (2020, 2019, 2018)");
-//                grafico_pastel(TotalElementos);
+                Elementos[14] = TotalElementos;
+                grafico_pastel();
 
             }
 
@@ -2032,11 +2002,7 @@ grafico_pastel();
                 System.out.println(obj.getMujeres());
 
             }
-            if (Noconozcomisgenitales.isSelected()) {
-                obj.setNoidentificados();
-                System.out.println(obj.getNoidentificados());
-
-            }
+        
             if (TodosGeneros.isSelected()) {
                 obj.setTodo();
                 System.out.println(obj.getTodo());
@@ -2253,7 +2219,7 @@ grafico_pastel();
         boolean error = false;
 
         try {
-            fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2020-2.csv");
+            fr = new FileReader("Saber 11 2020-2.csv");
             //          JOptionPane.showMessageDialog(null, "Arraylist 2020 creado con excito");
         } catch (Exception e) {
             error = true;
@@ -2294,7 +2260,7 @@ grafico_pastel();
         boolean error = false;
 
         try {
-            fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2019-2.csv");
+            fr = new FileReader("Saber 11 2019-2.csv");
 
             //          JOptionPane.showMessageDialog(null, "Arraylist 2019 creado con excito");
         } catch (Exception e) {
@@ -2336,7 +2302,7 @@ grafico_pastel();
         boolean error = false;
 
         try {
-            fr = new FileReader("C:\\Users\\USUARIO\\Pictures\\Proyecto integrador tercer semestre\\Integrador3\\datos\\Saber 11 2018-1 R.csv");
+            fr = new FileReader("Saber 11 2018-1 R.csv");
             //  JOptionPane.showMessageDialog(null, "Arraylist 2018 creado con excito");
         } catch (Exception e) {
             error = true;
