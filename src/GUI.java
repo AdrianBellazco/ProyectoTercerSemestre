@@ -1666,6 +1666,7 @@ public void grafica_barras_1() {
     DefaultPieDataset dato = new DefaultPieDataset();
 
         repaint();
+        //posicion mas grande [17]
         int año1 = Elementos[0];
         int año2 = Elementos[1];
         int año3 = Elementos[2];
@@ -1683,6 +1684,7 @@ public void grafica_barras_1() {
         int TodosTiposDeColegio = Elementos[15];
         int rural = Elementos[11];
         int urbana = Elementos[12];
+        int todazona = Elementos[17];
        
         
    
@@ -1703,6 +1705,7 @@ public void grafica_barras_1() {
         dato.setValue("Todos los colegios", TodosTiposDeColegio);
         dato.setValue("Zona rural", rural);
         dato.setValue("Zona Urbana", urbana);
+        dato.setValue("Todas las zonas", todazona);
 
 //dato.setValue("noe", dato6);
        
@@ -2020,32 +2023,32 @@ public void grafica_barras_1() {
                 int colegiomasculino2019 = calculos.Contador2020(informacio2019, "MASCULINO", 10);
                 int colegiomasculino2018 = calculos.Contador2020(informacio2018, "MASCULINO", 10);
                 int total = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
-                JOptionPane.showMessageDialog(null, "la cantidad de colegios masculinos es de " + total + " registradas en los tres años");
-///                grafico_pastel(total);
+               Elementos [8] = total;
+               grafico_pastel();
             }
             if (RadioGeneroColegioMixto1.isSelected()) {
                 int colegiomixto2020 = calculos.Contador2020(informacio2020, "MIXTO", 10);
                 int colegiomixto2019 = calculos.Contador2020(informacio2019, "MIXTO", 10);
                 int colegiomixto2018 = calculos.Contador2020(informacio2018, "MIXTO", 10);
                 int total = colegiomixto2020 + colegiomixto2019 + colegiomixto2018;
-                JOptionPane.showMessageDialog(null, "la cantidad de colegios mixtos es de " + total + " registradas en los tres años");
-////                grafico_pastel(total);
+               Elementos [10] = total;
+               grafico_pastel();
             }
             if (RadioGeneroColegioFemenino.isSelected()) {
                 int colegioFEMENINO2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10);
                 int colegioFEMENINO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10);
                 int colegioFEMENINO2018 = calculos.Contador2020(informacio2018, "FEMENINO", 10);
                 int total = colegioFEMENINO2020 + colegioFEMENINO2019 + colegioFEMENINO2018;
-                JOptionPane.showMessageDialog(null, "la cantidad de colegios femeninos es de " + total + " registradas en los tres años");
-//                grafico_pastel(total);
+                Elementos [9] = total;
+               grafico_pastel();
             }
             if (RadioGeneroColegioTodos.isSelected()) {
                 int colegio2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10) + calculos.Contador2020(informacio2020, "MASCULINO", 10) + calculos.Contador2020(informacio2020, "MIXTO", 10);;
                 int colegioO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10) + calculos.Contador2020(informacio2019, "MASCULINO", 10) + calculos.Contador2020(informacio2019, "MIXTO", 10);;
                 int colegio2018 = calculos.Contador2020(informacio2018, "FEMENINO", 10) + calculos.Contador2020(informacio2018, "MASCULINO", 10) + calculos.Contador2020(informacio2018, "MIXTO", 10);;
                 int total = colegio2020 + colegioO2019 + colegio2018;
-                JOptionPane.showMessageDialog(null, "Total de colegios son " + total + " registradas en los tres años");
-//                grafico_pastel(total);
+                Elementos [15] = total;
+               grafico_pastel();
             }
 
         } else {
@@ -2086,21 +2089,21 @@ public void grafica_barras_1() {
                 int colegioRURAL2019 = calculos.Contador2020(informacio2019, "RURAL", 12);
                 int colegioRURAL2018 = calculos.Contador2020(informacio2018, "RURAL", 12);
                 int total = colegioRURAL2020 + colegioRURAL2019 + colegioRURAL2018;
-                JOptionPane.showMessageDialog(null, "la cantidad de colegios rurales  es de " + total + " registradas en los tres años");
-//                grafico_pastel(total);
+                Elementos[11] = total;
+               grafico_pastel();
             }
             if (RadioUrbana.isSelected()) {
                 int colegioURBANO2020 = calculos.Contador2020(informacio2020, "URBANO", 12);
                 int colegioURBANO2019 = calculos.Contador2020(informacio2019, "URBANO", 12);
                 int colegioURBANO2018 = calculos.Contador2020(informacio2018, "URBANO", 12);
                 int total = colegioURBANO2020 + colegioURBANO2019 + colegioURBANO2018;
-                JOptionPane.showMessageDialog(null, "la cantidad de colegios urbanos  es de " + total + " registradas en los tres años");
-//                grafico_pastel(total);
+                Elementos[12] = total;
+               grafico_pastel();
             }
             if (RadioTodosArea.isSelected()) {
                 int areaTotal= calculos.Contador2020(informacio2020, "URBANO", 12) +calculos.Contador2020(informacio2018, "URBANO", 12) +calculos.Contador2020(informacio2019, "URBANO", 12) + calculos.Contador2020(informacio2020, "RURAL", 12)+calculos.Contador2020(informacio2019, "RURAL", 12)+calculos.Contador2020(informacio2018, "RURAL", 12);
-                JOptionPane.showMessageDialog(null, "la cantidad de area total  es de " + areaTotal + " registradas en los tres años");
-       //          grafico_pastel(areaTotal);
+                Elementos[17] = areaTotal;
+               grafico_pastel();
             }
 
         } else {
