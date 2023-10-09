@@ -283,7 +283,7 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.setRequestFocusEnabled(false);
         Filtrador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Bus5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
         Bus5.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Bus5.setContentAreaFilled(false);
         Bus5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -294,7 +294,7 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(Bus5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1250, -1, -1));
 
-        Bus1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
         Bus1.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Bus1.setContentAreaFilled(false);
         Bus1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -305,7 +305,7 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(Bus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
-        Bus4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
         Bus4.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Bus4.setContentAreaFilled(false);
         Bus4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -316,7 +316,7 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(Bus4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1020, -1, -1));
 
-        Bus2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
         Bus2.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Bus2.setContentAreaFilled(false);
         Bus2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -327,7 +327,7 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(Bus2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, -1, -1));
 
-        Bus3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Bus3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
         Bus3.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Bus3.setContentAreaFilled(false);
         Bus3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -1260,6 +1260,11 @@ int cont = 0;
             actionbus3();
             actionbus4();
             actionbus5();
+            
+            
+            refresco();
+             grafico_pastel();
+              grafica_barras_1();
 
         } else {
             ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar.png"));
@@ -1267,7 +1272,17 @@ int cont = 0;
             modo.setVerticalTextPosition(SwingConstants.BOTTOM);
             modo.setHorizontalTextPosition(SwingConstants.CENTER);
             modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Varias opciones");
+             Bus1ActionPerformed(null) ;
+             Bus2ActionPerformed(null);
+             Bus3ActionPerformed(null);
+             Bus4ActionPerformed(null);
+             Bus5ActionPerformed(null);
             Lamalaaños();
+             refresco();
+             grafico_pastel();
+              grafica_barras_1();
+             
+           
 
         }
     }//GEN-LAST:event_modoActionPerformed
@@ -1278,30 +1293,71 @@ int cont = 0;
 
     private void Bus4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus4ActionPerformed
 
-        actionbus4();
+     //   actionbus4();
+     ColegioGeneroGrupo.clearSelection();
+ 
+   Elementos[8] = 0;
+      Elementos[9] = 0;
+       Elementos[10] = 0;
+      Elementos[15] = 0;
+      
+ grafica_barras_1();
+ grafico_pastel();
     }//GEN-LAST:event_Bus4ActionPerformed
 
     private void Bus3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus3ActionPerformed
-        actionbus3();
-
+//        actionbus3();
+Generos.clearSelection();
+ 
+   Elementos[5] = 0;
+      Elementos[6] = 0;
+       Elementos[14] = 0;
+     
+ grafica_barras_1();
+ grafico_pastel();
 
     }//GEN-LAST:event_Bus3ActionPerformed
 
     private void Bus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus1ActionPerformed
-        actionbus1();
+//        actionbus1();
+ grupoAños.clearSelection();
+ 
+   Elementos[0] = 0;
+      Elementos[1] = 0;
+       Elementos[2] = 0;
+        Elementos[13] = 0;
+ grafica_barras_1();
+ grafico_pastel();
 
 
     }//GEN-LAST:event_Bus1ActionPerformed
 
     private void Bus2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus2ActionPerformed
 
-        actionbus2();
-
+       // actionbus2();
+ID.clearSelection();
+ 
+   Elementos[3] = 0;
+      Elementos[4] = 0;
+       Elementos[16] = 0;
+     
+ grafica_barras_1();
+ grafico_pastel();
 
     }//GEN-LAST:event_Bus2ActionPerformed
 
     private void Bus5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus5ActionPerformed
-        actionbus5();
+       // actionbus5();
+       AreaColegio.clearSelection();
+ 
+   Elementos[11] = 0;
+      Elementos[12] = 0;
+       Elementos[17] = 0;
+     
+ grafica_barras_1();
+ grafico_pastel();
+
+       
     }//GEN-LAST:event_Bus5ActionPerformed
 
     private void Bus9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus9ActionPerformed
@@ -1593,14 +1649,14 @@ public void grafica_barras_1() {
         int año1 = Elementos[0];
         int año2 = Elementos[1];
         int año3 = Elementos[2];
-        int todosAños = Elementos[14];
+        int todosAños = Elementos[13];
         int cedula = Elementos[3];
         int tarjetaIdentidad = Elementos[4];
         int todosID = Elementos[16];
         int Masculino = Elementos[5];
         int femenino = Elementos[6];
         int Noidentificado = Elementos[7];
-        int TodosGeneros = Elementos[13];
+        int TodosGeneros = Elementos[14];
         int Masculinocolegio = Elementos[8];
         int femeninocolegio = Elementos[9];
         int mixto = Elementos[10];
@@ -1888,7 +1944,7 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
               radioañostodos.addActionListener(e -> {
             if (radioañostodos.isSelected()) {
                 int elementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
-                Elementos[14] = elementos;
+                Elementos[13] = elementos;
                 grafico_pastel();
                 grafica_barras_1();
             }
@@ -2018,7 +2074,7 @@ RadioFemenino1.addActionListener(e-> {
 RadioTodosGeneros.addActionListener(e-> {
             if (RadioTodosGeneros.isSelected()) {
                 int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
-                Elementos[13] = TotalElementos;
+                Elementos[14] = TotalElementos;
                 grafico_pastel();
                 grafica_barras_1();
 
