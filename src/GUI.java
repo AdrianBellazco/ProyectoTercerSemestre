@@ -399,7 +399,7 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel4.setText("Municipio");
+        jLabel4.setText("Jornada");
         Filtrador.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1320, 260, 50));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -577,7 +577,7 @@ public class GUI extends javax.swing.JFrame {
         municipiosselec.setBackground(new java.awt.Color(0, 102, 102));
         municipiosselec.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         municipiosselec.setForeground(new java.awt.Color(255, 102, 0));
-        municipiosselec.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Amazonas", "Antioquia", "Arauca", "Atlántico", "Bolívar", "Boyacá", "Caldas", "Caquetá", "Casanare", "Cauca", "Cesar", "Chocó", "Córdoba", "Cundinamarca", "Guainía", "Guaviare", "Huila", "La Guajira", "Magdalena", "Meta", "Nariño", "Norte de Santander", "Putumayo", "Quindío", "Risaralda", "San Andrés y Providencia", "Santander", "Sucre", "Tolima", "Valle del Cauca", "Vaupés", "Vichada" }));
+        municipiosselec.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "COMPLETA", "MAÑANA", "NOCHE", "SABATINA", "TARDE", "UNICA" }));
         Filtrador.add(municipiosselec, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1380, 180, 50));
 
         TodosGeneros.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
