@@ -1255,6 +1255,11 @@ int cont = 0;
             modo.setHorizontalTextPosition(SwingConstants.CENTER);
             modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Unica opcion");
             Labuenaaños();
+            actionbus1();
+            actionbus2();
+            actionbus3();
+            actionbus4();
+            actionbus5();
 
         } else {
             ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar.png"));
@@ -1747,6 +1752,8 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
     }
 
     public void Labuenaaños() {
+        
+        
 
         //AÑOS
         radioaño2020.setVisible(true);
@@ -1852,33 +1859,40 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
     }
 
     public void actionbus1() {
+      
 
         if (modo.isSelected()) {
-
+            radioaño2020.addActionListener(e -> {
             if (radioaño2020.isSelected()) {
                 Elementos[0] = informacio2020.size();
                 grafico_pastel();
                  grafica_barras_1();
 
             }
+            });
+              radioaño2019.addActionListener(e -> {
             if (radioaño2019.isSelected()) {
                 Elementos[1] = informacio2019.size();
                 grafico_pastel();
                 grafica_barras_1();
 
             }
+            });
+              radioaño2018.addActionListener(e -> {
             if (radioaño2018.isSelected()) {
                 Elementos[2] = informacio2018.size();
                 grafico_pastel();
                 grafica_barras_1();
             }
+              });
+              radioañostodos.addActionListener(e -> {
             if (radioañostodos.isSelected()) {
                 int elementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
                 Elementos[14] = elementos;
                 grafico_pastel();
                 grafica_barras_1();
             }
-
+              });
         } else {
 
             if (año2020.isSelected()) {
@@ -1905,11 +1919,14 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
             }
         }
     }
+            
+        
+                
 
     public void actionbus2() {
 
         if (modo.isSelected()) {
-
+            Radiodocumentocedula.addChangeListener(e -> { 
             if (Radiodocumentocedula.isSelected()) {
 
                 int cedula2020 = calculos.Contador2020(informacio2020, "CC", 0);
@@ -1922,6 +1939,8 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
                 grafica_barras_1();
 
             }
+            });
+             RadiodocumentoID1.addChangeListener(e -> { 
             if (RadiodocumentoID1.isSelected()) {
 
                 int TI2020 = calculos.Contador2020(informacio2020, "TI", 0);
@@ -1932,6 +1951,8 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
                 grafico_pastel();
                 grafica_barras_1();
             }
+              });
+            RadiodocumentoTodos.addChangeListener(e -> { 
             if (RadiodocumentoTodos.isSelected()) {
 
                 int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
@@ -1939,7 +1960,7 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
                 grafico_pastel();
                 grafica_barras_1();
             }
-
+  });
         } else {
 
             if (Cedula.isSelected()) {
@@ -1965,7 +1986,7 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
     public void actionbus3() {
 
         if (modo.isSelected()) {
-
+RadioMasculino1.addActionListener(e-> {
             if (RadioMasculino1.isSelected()) {
 
                 int hombre2020 = calculos.Contador2020(informacio2020, "M", 2);
@@ -1977,7 +1998,10 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 
                 grafico_pastel();
                 grafica_barras_1();
+           
             }
+             });
+RadioFemenino1.addActionListener(e-> {
             if (RadioFemenino1.isSelected()) {
                 int mujeres2020 = calculos.Contador2020(informacio2020, "F", 2);
                 int mujeres2019 = calculos.Contador2020(informacio2019, "F", 2);
@@ -1990,7 +2014,8 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
                 grafica_barras_1();
 
             }
-
+ });
+RadioTodosGeneros.addActionListener(e-> {
             if (RadioTodosGeneros.isSelected()) {
                 int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
                 Elementos[13] = TotalElementos;
@@ -1998,7 +2023,7 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
                 grafica_barras_1();
 
             }
-
+ });
         } else {
 
             if (Masculino.isSelected()) {
@@ -2025,7 +2050,7 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 
     public void actionbus4() {
         if (modo.isSelected()) {
-
+RadioGeneroColegioMasculino.addActionListener(e -> {
             if (RadioGeneroColegioMasculino.isSelected()) {
                 int colegiomasculino2020 = calculos.Contador2020(informacio2020, "MASCULINO", 10);
                 int colegiomasculino2019 = calculos.Contador2020(informacio2019, "MASCULINO", 10);
@@ -2035,6 +2060,8 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
                 grafico_pastel();
                 grafica_barras_1();
             }
+});
+RadioGeneroColegioMixto1.addActionListener(e -> {
             if (RadioGeneroColegioMixto1.isSelected()) {
                 int colegiomixto2020 = calculos.Contador2020(informacio2020, "MIXTO", 10);
                 int colegiomixto2019 = calculos.Contador2020(informacio2019, "MIXTO", 10);
@@ -2044,6 +2071,8 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
                 grafico_pastel();
                 grafica_barras_1();
             }
+            });
+RadioGeneroColegioFemenino.addActionListener(e -> {
             if (RadioGeneroColegioFemenino.isSelected()) {
                 int colegioFEMENINO2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10);
                 int colegioFEMENINO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10);
@@ -2053,6 +2082,8 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
                 grafico_pastel();
                 grafica_barras_1();
             }
+            });
+RadioGeneroColegioTodos.addActionListener(e -> {
             if (RadioGeneroColegioTodos.isSelected()) {
                 int colegio2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10) + calculos.Contador2020(informacio2020, "MASCULINO", 10) + calculos.Contador2020(informacio2020, "MIXTO", 10);;
                 int colegioO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10) + calculos.Contador2020(informacio2019, "MASCULINO", 10) + calculos.Contador2020(informacio2019, "MIXTO", 10);;
@@ -2062,6 +2093,7 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
                 grafico_pastel();
                 grafica_barras_1();
             }
+            });
 
         } else {
 
@@ -2094,7 +2126,7 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
     public void actionbus5() {
 
         if (modo.isSelected()) {
-
+RadioRural.addActionListener(e -> {
             if (RadioRural.isSelected()) {
 
                 int colegioRURAL2020 = calculos.Contador2020(informacio2020, "RURAL", 12);
@@ -2105,6 +2137,8 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
                 grafico_pastel();
                 grafica_barras_1();
             }
+});
+RadioUrbana.addActionListener(e -> {
             if (RadioUrbana.isSelected()) {
                 int colegioURBANO2020 = calculos.Contador2020(informacio2020, "URBANO", 12);
                 int colegioURBANO2019 = calculos.Contador2020(informacio2019, "URBANO", 12);
@@ -2114,12 +2148,15 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
                 grafico_pastel();
                 grafica_barras_1();
             }
+            });
+RadioTodosArea.addActionListener(e -> {
             if (RadioTodosArea.isSelected()) {
                 int areaTotal = calculos.Contador2020(informacio2020, "URBANO", 12) + calculos.Contador2020(informacio2018, "URBANO", 12) + calculos.Contador2020(informacio2019, "URBANO", 12) + calculos.Contador2020(informacio2020, "RURAL", 12) + calculos.Contador2020(informacio2019, "RURAL", 12) + calculos.Contador2020(informacio2018, "RURAL", 12);
                 Elementos[17] = areaTotal;
                 grafico_pastel();
                 grafica_barras_1();
             }
+            });
 
         } else {
 
