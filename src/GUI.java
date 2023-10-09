@@ -98,7 +98,6 @@ public class GUI extends javax.swing.JFrame {
         Bus3 = new MiBoton();
         Bus6 = new MiBoton();
         Bus9 = new MiBoton();
-        BuscarTodo = new MiBoton();
         Bus8 = new MiBoton();
         Bus7 = new MiBoton();
         jLabel1 = new javax.swing.JLabel();
@@ -195,14 +194,13 @@ public class GUI extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        BuscarTodo1 = new MiBoton();
         Info = new javax.swing.JPanel();
-        Grafica1 = new javax.swing.JScrollPane();
-        grafico_barras1 = new javax.swing.JPanel();
-        grafica2 = new javax.swing.JScrollPane();
         grafica3 = new javax.swing.JScrollPane();
         graficopastelbarra = new javax.swing.JPanel();
-        grafica4 = new javax.swing.JScrollPane();
-        jPanel4 = new javax.swing.JPanel();
+        Limpiar = new MiBoton();
+        grafico_barras1 = new javax.swing.JPanel();
+        Graficotres = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -361,21 +359,6 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         Filtrador.add(Bus9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2120, -1, -1));
-
-        BuscarTodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/filtrar (3).png"))); // NOI18N
-        BuscarTodo.setText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>todos los  filtrados");
-        BuscarTodo.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar todos los elementos<br>seleccionados");
-        BuscarTodo.setBorder(null);
-        BuscarTodo.setContentAreaFilled(false);
-        BuscarTodo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BuscarTodo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        BuscarTodo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        BuscarTodo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarTodoActionPerformed(evt);
-            }
-        });
-        Filtrador.add(BuscarTodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 4110, 120, 170));
 
         Bus8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
         Bus8.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
@@ -778,7 +761,7 @@ public class GUI extends javax.swing.JFrame {
 
         modo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar.png"))); // NOI18N
         modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Varias opciones");
-        modo.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Convierte todas las casillas de<br>seleccion multiple en<br>radiobuttons");
+        modo.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Convierte todas las casillas de<br>seleccion multiple en<br>radiobuttons y viceversa");
         modo.setContentAreaFilled(false);
         modo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         modo.setHideActionText(true);
@@ -1079,6 +1062,21 @@ public class GUI extends javax.swing.JFrame {
         jLabel10.setText("percentil");
         Filtrador.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3840, 80, 50));
 
+        BuscarTodo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/filtrar (3).png"))); // NOI18N
+        BuscarTodo1.setText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>todos los  filtrados");
+        BuscarTodo1.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar todos los elementos<br>seleccionados");
+        BuscarTodo1.setBorder(null);
+        BuscarTodo1.setContentAreaFilled(false);
+        BuscarTodo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BuscarTodo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BuscarTodo1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BuscarTodo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarTodo1ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(BuscarTodo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 4110, 120, 170));
+
         Filtr.setViewportView(Filtrador);
 
         jPanel1.add(Filtr, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -18, 340, 640));
@@ -1086,23 +1084,6 @@ public class GUI extends javax.swing.JFrame {
         Info.setBackground(new java.awt.Color(255, 255, 255));
         Info.setForeground(new java.awt.Color(255, 255, 255));
         Info.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Grafica1.setBackground(new java.awt.Color(255, 255, 255));
-        Grafica1.getVerticalScrollBar().setUnitIncrement(20);
-
-        grafico_barras1.setBackground(new java.awt.Color(255, 255, 255));
-        grafico_barras1.setForeground(new java.awt.Color(255, 255, 255));
-        grafico_barras1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        grafico_barras1.setBorder(null);
-        grafico_barras1.setMinimumSize(new java.awt.Dimension(500, 500));
-        grafico_barras1.setPreferredSize(new java.awt.Dimension(100, 100));
-        grafico_barras1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Grafica1.setViewportView(grafico_barras1);
-
-        Info.add(Grafica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 700, 270));
-
-        grafica2.getVerticalScrollBar().setUnitIncrement(20);
-        Info.add(grafica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 350, 270));
 
         grafica3.getVerticalScrollBar().setUnitIncrement(20);
         grafica3.setBorder(null);
@@ -1127,29 +1108,32 @@ public class GUI extends javax.swing.JFrame {
         graficopastelbarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         grafica3.setViewportView(graficopastelbarra);
 
-        Info.add(grafica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 350, 260));
+        Info.add(grafica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 350, 260));
 
-        grafica4.getVerticalScrollBar().setUnitIncrement(20);
+        Limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/limpiar.png"))); // NOI18N
+        Limpiar.setText("<html><center><font face='Century Gothic' size = '1' color='0,102,102'><b>Limpiar");
+        Limpiar.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Limpiar graficos<br>seleccionados");
+        Limpiar.setBorder(null);
+        Limpiar.setContentAreaFilled(false);
+        Limpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Limpiar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Limpiar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LimpiarActionPerformed(evt);
+            }
+        });
+        Info.add(Limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 550, 50, 50));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.setMinimumSize(new java.awt.Dimension(500, 500));
-        jPanel4.setPreferredSize(new java.awt.Dimension(100, 100));
+        grafico_barras1.setBackground(new java.awt.Color(255, 255, 255));
+        grafico_barras1.setForeground(new java.awt.Color(255, 255, 255));
+        grafico_barras1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Info.add(grafico_barras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 690, 270));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-
-        grafica4.setViewportView(jPanel4);
-
-        Info.add(grafica4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 350, 260));
+        Graficotres.setBackground(new java.awt.Color(255, 255, 255));
+        Graficotres.setForeground(new java.awt.Color(255, 255, 255));
+        Graficotres.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Info.add(Graficotres, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 330, 210));
 
         jPanel1.add(Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, -10, 730, 630));
 
@@ -1185,11 +1169,14 @@ int cont = 0;
         System.exit(0);
     }//GEN-LAST:event_SalirBotonActionPerformed
 
-    private void BuscarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarTodoActionPerformed
-        actionbusi();
+    private void LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarActionPerformed
+        refresco();
+        grafico_pastel();
+        grafica_barras_1();
+        
 
 
-    }//GEN-LAST:event_BuscarTodoActionPerformed
+    }//GEN-LAST:event_LimpiarActionPerformed
 
     private void año2020ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2020ActionPerformed
         // TODO add your handling code here:
@@ -1429,6 +1416,10 @@ int cont = 0;
 
     }//GEN-LAST:event_graficopastelbarraComponentAdded
 
+    private void BuscarTodo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarTodo1ActionPerformed
+        actionbusi();
+    }//GEN-LAST:event_BuscarTodo1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1487,7 +1478,7 @@ int cont = 0;
     private javax.swing.JButton Bus7;
     private javax.swing.JButton Bus8;
     private javax.swing.JButton Bus9;
-    private javax.swing.JButton BuscarTodo;
+    private javax.swing.JButton BuscarTodo1;
     private javax.swing.JToggleButton CamPG1;
     private javax.swing.JToggleButton CamPercentil;
     private javax.swing.JCheckBox Cedula;
@@ -1501,9 +1492,10 @@ int cont = 0;
     private javax.swing.JScrollPane Filtr;
     private javax.swing.JPanel Filtrador;
     private javax.swing.ButtonGroup Generos;
-    private javax.swing.JScrollPane Grafica1;
+    private javax.swing.JPanel Graficotres;
     private javax.swing.ButtonGroup ID;
     private javax.swing.JPanel Info;
+    private javax.swing.JButton Limpiar;
     protected javax.swing.JCheckBox Masculino;
     private javax.swing.JSpinner Percentil;
     private javax.swing.JSlider Plectura1;
@@ -1540,9 +1532,7 @@ int cont = 0;
     private javax.swing.JLabel etiquetavalorlectura;
     private javax.swing.JLabel etiquetavalorlectura1;
     private javax.swing.JLabel glop;
-    private javax.swing.JScrollPane grafica2;
     private javax.swing.JScrollPane grafica3;
-    private javax.swing.JScrollPane grafica4;
     private javax.swing.JPanel grafico_barras1;
     private javax.swing.JPanel graficopastelbarra;
     private javax.swing.ButtonGroup grupo1;
@@ -1567,7 +1557,6 @@ int cont = 0;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
