@@ -17,8 +17,11 @@ import javax.swing.event.ChangeListener;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.ui.RectangleInsets;
@@ -32,38 +35,34 @@ public class GUI extends javax.swing.JFrame {
     ArrayList<String> informacio2020;
     ArrayList<String> informacio2019;
     ArrayList<String> informacio2018;
-    
-    ArrayList<Integer>Valores = new ArrayList<>();
-    int Elementos [] = new int[20];
-   
-    
+
+    ArrayList<Integer> Valores = new ArrayList<>();
+    int Elementos[] = new int[20];
 
     RegistrarVariablesCasillas obj = new RegistrarVariablesCasillas();
     RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
 
     Calculos calculos = new Calculos();
-    
-    ChartPanel panel_grafi = new ChartPanel(null);
 
-    
+    ChartPanel panel_grafi = new ChartPanel(null);
+    ChartPanel barras = new ChartPanel(null);
+
     GUI obj3;
 
     int mousex, mousey;
 
     public GUI() {
         Valores.add(0);
-         Valores.add(0);
+        Valores.add(0);
 
         llenarArray2020();
         llenarArray2019();
         llenarArray2018();
         //    leerArray();
 
-       
-
         initComponents();
-      grafico_pastel();
-   
+        grafico_pastel();
+
         grafica_barras_1();
 
         //    grafica_barras_1();
@@ -89,6 +88,7 @@ public class GUI extends javax.swing.JFrame {
         SalirBoton = new MiBoton();
         Titulo2 = new javax.swing.JLabel();
         Titulo1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         Filtr = new javax.swing.JScrollPane();
         Filtrador = new javax.swing.JPanel();
         Bus5 = new MiBoton();
@@ -199,7 +199,6 @@ public class GUI extends javax.swing.JFrame {
         Grafica1 = new javax.swing.JScrollPane();
         grafico_barras1 = new javax.swing.JPanel();
         grafica2 = new javax.swing.JScrollPane();
-        jPanel3 = new javax.swing.JPanel();
         grafica3 = new javax.swing.JScrollPane();
         graficopastelbarra = new javax.swing.JPanel();
         grafica4 = new javax.swing.JScrollPane();
@@ -253,6 +252,21 @@ public class GUI extends javax.swing.JFrame {
         Titulo1.setForeground(new java.awt.Color(255, 102, 51));
         Titulo1.setText("Edu");
         Barra1.add(Titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        Barra1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         jPanel1.add(Barra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 49));
 
@@ -1079,42 +1093,15 @@ public class GUI extends javax.swing.JFrame {
         grafico_barras1.setBackground(new java.awt.Color(255, 255, 255));
         grafico_barras1.setForeground(new java.awt.Color(255, 255, 255));
         grafico_barras1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        grafico_barras1.setBorder(null);
         grafico_barras1.setMinimumSize(new java.awt.Dimension(500, 500));
         grafico_barras1.setPreferredSize(new java.awt.Dimension(100, 100));
-
-        javax.swing.GroupLayout grafico_barras1Layout = new javax.swing.GroupLayout(grafico_barras1);
-        grafico_barras1.setLayout(grafico_barras1Layout);
-        grafico_barras1Layout.setHorizontalGroup(
-            grafico_barras1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-        grafico_barras1Layout.setVerticalGroup(
-            grafico_barras1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-
+        grafico_barras1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         Grafica1.setViewportView(grafico_barras1);
 
-        Info.add(Grafica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 350, 270));
+        Info.add(Grafica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 700, 270));
 
         grafica2.getVerticalScrollBar().setUnitIncrement(20);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setPreferredSize(new java.awt.Dimension(100, 100));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 268, Short.MAX_VALUE)
-        );
-
-        grafica2.setViewportView(jPanel3);
-
         Info.add(grafica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 350, 270));
 
         grafica3.getVerticalScrollBar().setUnitIncrement(20);
@@ -1145,6 +1132,7 @@ public class GUI extends javax.swing.JFrame {
         grafica4.getVerticalScrollBar().setUnitIncrement(20);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.setMinimumSize(new java.awt.Dimension(500, 500));
         jPanel4.setPreferredSize(new java.awt.Dimension(100, 100));
 
@@ -1578,7 +1566,7 @@ int cont = 0;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -1605,76 +1593,105 @@ int cont = 0;
     protected javax.swing.JCheckBox todosaño;
     // End of variables declaration//GEN-END:variables
 public void grafica_barras_1() {
+    
+     DefaultCategoryDataset datos = new DefaultCategoryDataset();
 
-        int año1 = 0;
-        int año2 = 4;
-        int año3 = 4;
-        int cedula = 4;
-        int tarjetaIdentidad = 4;
-        int Masculino = 0;
-        int femenino = 4;
-        int Noidentificado = 4;
-        int Masculinocolegio = 4;
-        int femeninocolegio = 4;
-        int mixto = 4;
-        int rural = 4;
-        int urbana = 4;
+        int año1 = Elementos[0];
+        int año2 = Elementos[1];
+        int año3 = Elementos[2];
+        int todosAños = Elementos[14];
+        int cedula = Elementos[3];
+        int tarjetaIdentidad = Elementos[4];
+        int todosID = Elementos[16];
+        int Masculino = Elementos[5];
+        int femenino = Elementos[6];
+        int Noidentificado = Elementos[7];
+        int TodosGeneros = Elementos[13];
+        int Masculinocolegio = Elementos[8];
+        int femeninocolegio = Elementos[9];
+        int mixto = Elementos[10];
+        int TodosTiposDeColegio = Elementos[15];
+        int rural = Elementos[11];
+        int urbana = Elementos[12];
+        int todazona = Elementos[17];
 
-        DefaultCategoryDataset datos = new DefaultCategoryDataset();
+      
         datos.setValue(año1, "Año", "2020");
         datos.setValue(año2, "Año", "2019");
         datos.setValue(año3, "Año", "2018");
+        datos.setValue(todosAños, "Años", "Todos los años");
+        
         datos.setValue(cedula, "Identificacion", "Cedula");
         datos.setValue(tarjetaIdentidad, "Identificacion", "T.I");
+        datos.setValue(todosID, "identificacion", "todas las identificaciones");
+        
         datos.setValue(Masculino, "Genero", "Masculino");
         datos.setValue(femenino, "Genero", "Femenino");
-        datos.setValue(Noidentificado, "Genero", "No identificado");
+        datos.setValue(TodosGeneros, "Genero", "Todos los generos");
+        
         datos.setValue(mixto, "Genero del colegio", "Mixto");
-        datos.setValue(Masculinocolegio, "Genero del colegio", "Masculino");
-        datos.setValue(femeninocolegio, "Genero del colegio", "Femenino");
+        datos.setValue(Masculinocolegio, "Tipo de colegio", "Colegio masculino");
+        datos.setValue(femeninocolegio, "Tipo de colegio", "Colegio femenino");
+        datos.setValue(TodosTiposDeColegio, "Tipo de colegio", "Todo tipo de colegio");
+        
         datos.setValue(rural, "Zona", "Rural");
         datos.setValue(urbana, "Zona", "Urbana");
-
-        JFreeChart grafico_1 = ChartFactory.createLineChart(
-                "Barras estadisticas", //nombre del grafico
-                "", //nombre de las barras o columnas
-                "", //nombre de la numeracion
-                datos, //nombre de grafico
-                PlotOrientation.VERTICAL, //orientacion
-                true, //legenda de barras individuales por color
-                true, //url del grafico
-                false
-        );
+         datos.setValue(todazona, "Zona", "Todas las zonas");
         
-     
-        ChartPanel barras = new ChartPanel(grafico_1);
+        
+        
+       
 
-        barras.setMouseWheelEnabled(true);
+    JFreeChart grafico_1 = ChartFactory.createBarChart3D(
+            "", // Título del gráfico
+            "", // Etiqueta para el eje de las categorías
+            "", // Etiqueta para el eje de los valores
+            datos, // DatasetVERTICAL
+            PlotOrientation.HORIZONTAL, // Orientación del gráfico
+            true, // Mostrar leyenda
+            true, // Mostrar tooltips (información al pasar el ratón)
+            false // Mostrar URLs (no utilizado)
+    );
 
-        barras.setLocation(0, 0);
-        barras.setPreferredSize(new Dimension(20, 20));
-        barras.setVisible(true);
+    // Personalización de la apariencia del gráfico
+    CategoryPlot plot = grafico_1.getCategoryPlot();
+    BarRenderer renderer = (BarRenderer) plot.getRenderer();
+    renderer.setSeriesPaint(0, Color.BLUE); // Color de las barras
+    plot.setBackgroundPaint(Color.WHITE); // Color de fondo del gráfico
+    plot.setRangeGridlinesVisible(true); // Mostrar líneas de cuadrícula en el eje Y
+NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
+    rangeAxis.setTickLabelsVisible(false);
+    ChartPanel barras = new ChartPanel(grafico_1);
+    barras.setMouseWheelEnabled(true);
 
-        grafico_barras1.setLayout(new BorderLayout());
-        grafico_barras1.add(barras);
+    // Ajusta el tamaño y la ubicación del panel del gráfico
+    barras.setPreferredSize(new Dimension(800, 600)); // Tamaño del panel
+    barras.setVisible(true);
 
-        pack();
-        repaint();
+    // Agrega el panel del gráfico al contenedor deseado (por ejemplo, un JPanel llamado grafico_barras1)
+    grafico_barras1.removeAll(); // Limpia cualquier componente anterior en el contenedor
+    grafico_barras1.setLayout(new BorderLayout());
+    grafico_barras1.add(barras, BorderLayout.CENTER);
+
+    // Repinta el contenedor para mostrar el nuevo gráfico
+    grafico_barras1.revalidate();
+    grafico_barras1.repaint();
+
     }
 
     public void grafico_pastel() {
-    DefaultPieDataset dato = new DefaultPieDataset();
+        DefaultPieDataset dato = new DefaultPieDataset();
 
         repaint();
         //posicion mas grande [17]
         int año1 = Elementos[0];
         int año2 = Elementos[1];
         int año3 = Elementos[2];
-        int todosAños= Elementos[13];
+        int todosAños = Elementos[13];
         int cedula = Elementos[3];
         int tarjetaIdentidad = Elementos[4];
         int todosID = Elementos[16];
-        int Masculino = Elementos[5] ;
+        int Masculino = Elementos[5];
         int femenino = Elementos[6];
         int Noidentificado = Elementos[7];
         int TodosGeneros = Elementos[14];
@@ -1685,9 +1702,7 @@ public void grafica_barras_1() {
         int rural = Elementos[11];
         int urbana = Elementos[12];
         int todazona = Elementos[17];
-       
-        
-   
+
         dato.setValue("2020", año1);
         dato.setValue("2019", año2);
         dato.setValue("2018", año3);
@@ -1707,9 +1722,8 @@ public void grafica_barras_1() {
         dato.setValue("Zona Urbana", urbana);
         dato.setValue("Todas las zonas", todazona);
 
-//dato.setValue("noe", dato6);
-       
-         JFreeChart grafico_pastel = ChartFactory.createPieChart("Estadistica", dato, true, true, false);
+
+        JFreeChart grafico_pastel = ChartFactory.createPieChart("", dato, true, true, false);
         panel_grafi.setChart(grafico_pastel);
 
         panel_grafi.setBackground(Color.WHITE);
@@ -1717,14 +1731,13 @@ public void grafica_barras_1() {
         PiePlot plot = (PiePlot) grafico_pastel.getPlot();
 
         // Cambiar el color de las secciones
-        
         plot.setSectionPaint("2020", new Color(0, 102, 102));
-
 
         plot.setCircular(false);
         plot.setIgnoreNullValues(true);
         plot.setSectionOutlinesVisible(false);
         plot.setLabelGenerator(null);
+     
 
         plot.setLabelLinksVisible(false);
         plot.setBackgroundPaint(Color.WHITE); // Establecer el fondo del gráfico de pastel en blanco
@@ -1736,7 +1749,7 @@ public void grafica_barras_1() {
         panel_grafi.setLocation(0, 0);
         panel_grafi.setPreferredSize(new Dimension(20, 20));
         panel_grafi.setVisible(true);
-         
+
         graficopastelbarra.setLayout(new BorderLayout());
         graficopastelbarra.add(panel_grafi);
 
@@ -1856,21 +1869,25 @@ public void grafica_barras_1() {
             if (radioaño2020.isSelected()) {
                 Elementos[0] = informacio2020.size();
                 grafico_pastel();
+                 grafica_barras_1();
 
             }
             if (radioaño2019.isSelected()) {
                 Elementos[1] = informacio2019.size();
-               grafico_pastel();
+                grafico_pastel();
+                grafica_barras_1();
 
             }
             if (radioaño2018.isSelected()) {
                 Elementos[2] = informacio2018.size();
                 grafico_pastel();
+                grafica_barras_1();
             }
             if (radioañostodos.isSelected()) {
-                int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
-                Elementos[13] = TotalElementos;
+                int elementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
+                Elementos[14] = elementos;
                 grafico_pastel();
+                grafica_barras_1();
             }
 
         } else {
@@ -1910,9 +1927,10 @@ public void grafica_barras_1() {
                 int cedula2019 = calculos.Contador2020(informacio2019, "CC", 0);
                 int cedula2018 = calculos.Contador2020(informacio2018, "CC", 0);
                 int total = cedula2020 + cedula2019 + cedula2018;
-            
+
                 Elementos[3] = total;
-               grafico_pastel();
+                grafico_pastel();
+                grafica_barras_1();
 
             }
             if (RadiodocumentoID1.isSelected()) {
@@ -1921,14 +1939,16 @@ public void grafica_barras_1() {
                 int TI2019 = calculos.Contador2020(informacio2019, "TI", 0);
                 int TI2018 = calculos.Contador2020(informacio2018, "TI", 0);
                 int total = TI2020 + TI2019 + TI2018;
-               Elementos[4] = total;
-               grafico_pastel();
+                Elementos[4] = total;
+                grafico_pastel();
+                grafica_barras_1();
             }
             if (RadiodocumentoTodos.isSelected()) {
-               
-               int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
+
+                int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
                 Elementos[16] = TotalElementos;
                 grafico_pastel();
+                grafica_barras_1();
             }
 
         } else {
@@ -1963,31 +1983,30 @@ public void grafica_barras_1() {
                 int hombre2019 = calculos.Contador2020(informacio2019, "M", 2);
                 int hombre2018 = calculos.Contador2020(informacio2018, "M", 2);
                 int total = hombre2020 + hombre2018 + hombre2019;
-                
-               Elementos[5] = total;
 
-                
+                Elementos[5] = total;
+
                 grafico_pastel();
+                grafica_barras_1();
             }
             if (RadioFemenino1.isSelected()) {
                 int mujeres2020 = calculos.Contador2020(informacio2020, "F", 2);
                 int mujeres2019 = calculos.Contador2020(informacio2019, "F", 2);
                 int mujeres2018 = calculos.Contador2020(informacio2018, "F", 2);
                 int total = mujeres2020 + mujeres2018 + mujeres2019;
-                
-                  Elementos[6] = total;
 
-                
-                
-               
+                Elementos[6] = total;
+
                 grafico_pastel();
+                grafica_barras_1();
 
             }
-      
+
             if (RadioTodosGeneros.isSelected()) {
                 int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
-                Elementos[14] = TotalElementos;
+                Elementos[13] = TotalElementos;
                 grafico_pastel();
+                grafica_barras_1();
 
             }
 
@@ -2005,7 +2024,7 @@ public void grafica_barras_1() {
                 System.out.println(obj.getMujeres());
 
             }
-        
+
             if (TodosGeneros.isSelected()) {
                 obj.setTodo();
                 System.out.println(obj.getTodo());
@@ -2023,32 +2042,36 @@ public void grafica_barras_1() {
                 int colegiomasculino2019 = calculos.Contador2020(informacio2019, "MASCULINO", 10);
                 int colegiomasculino2018 = calculos.Contador2020(informacio2018, "MASCULINO", 10);
                 int total = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
-               Elementos [8] = total;
-               grafico_pastel();
+                Elementos[8] = total;
+                grafico_pastel();
+                grafica_barras_1();
             }
             if (RadioGeneroColegioMixto1.isSelected()) {
                 int colegiomixto2020 = calculos.Contador2020(informacio2020, "MIXTO", 10);
                 int colegiomixto2019 = calculos.Contador2020(informacio2019, "MIXTO", 10);
                 int colegiomixto2018 = calculos.Contador2020(informacio2018, "MIXTO", 10);
                 int total = colegiomixto2020 + colegiomixto2019 + colegiomixto2018;
-               Elementos [10] = total;
-               grafico_pastel();
+                Elementos[10] = total;
+                grafico_pastel();
+                grafica_barras_1();
             }
             if (RadioGeneroColegioFemenino.isSelected()) {
                 int colegioFEMENINO2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10);
                 int colegioFEMENINO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10);
                 int colegioFEMENINO2018 = calculos.Contador2020(informacio2018, "FEMENINO", 10);
                 int total = colegioFEMENINO2020 + colegioFEMENINO2019 + colegioFEMENINO2018;
-                Elementos [9] = total;
-               grafico_pastel();
+                Elementos[9] = total;
+                grafico_pastel();
+                grafica_barras_1();
             }
             if (RadioGeneroColegioTodos.isSelected()) {
                 int colegio2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10) + calculos.Contador2020(informacio2020, "MASCULINO", 10) + calculos.Contador2020(informacio2020, "MIXTO", 10);;
                 int colegioO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10) + calculos.Contador2020(informacio2019, "MASCULINO", 10) + calculos.Contador2020(informacio2019, "MIXTO", 10);;
                 int colegio2018 = calculos.Contador2020(informacio2018, "FEMENINO", 10) + calculos.Contador2020(informacio2018, "MASCULINO", 10) + calculos.Contador2020(informacio2018, "MIXTO", 10);;
                 int total = colegio2020 + colegioO2019 + colegio2018;
-                Elementos [15] = total;
-               grafico_pastel();
+                Elementos[15] = total;
+                grafico_pastel();
+                grafica_barras_1();
             }
 
         } else {
@@ -2090,7 +2113,8 @@ public void grafica_barras_1() {
                 int colegioRURAL2018 = calculos.Contador2020(informacio2018, "RURAL", 12);
                 int total = colegioRURAL2020 + colegioRURAL2019 + colegioRURAL2018;
                 Elementos[11] = total;
-               grafico_pastel();
+                grafico_pastel();
+                grafica_barras_1();
             }
             if (RadioUrbana.isSelected()) {
                 int colegioURBANO2020 = calculos.Contador2020(informacio2020, "URBANO", 12);
@@ -2098,12 +2122,14 @@ public void grafica_barras_1() {
                 int colegioURBANO2018 = calculos.Contador2020(informacio2018, "URBANO", 12);
                 int total = colegioURBANO2020 + colegioURBANO2019 + colegioURBANO2018;
                 Elementos[12] = total;
-               grafico_pastel();
+                grafico_pastel();
+                grafica_barras_1();
             }
             if (RadioTodosArea.isSelected()) {
-                int areaTotal= calculos.Contador2020(informacio2020, "URBANO", 12) +calculos.Contador2020(informacio2018, "URBANO", 12) +calculos.Contador2020(informacio2019, "URBANO", 12) + calculos.Contador2020(informacio2020, "RURAL", 12)+calculos.Contador2020(informacio2019, "RURAL", 12)+calculos.Contador2020(informacio2018, "RURAL", 12);
+                int areaTotal = calculos.Contador2020(informacio2020, "URBANO", 12) + calculos.Contador2020(informacio2018, "URBANO", 12) + calculos.Contador2020(informacio2019, "URBANO", 12) + calculos.Contador2020(informacio2020, "RURAL", 12) + calculos.Contador2020(informacio2019, "RURAL", 12) + calculos.Contador2020(informacio2018, "RURAL", 12);
                 Elementos[17] = areaTotal;
-               grafico_pastel();
+                grafico_pastel();
+                grafica_barras_1();
             }
 
         } else {
@@ -2359,13 +2385,12 @@ public void grafica_barras_1() {
             System.out.println(get + "\n");
         }
     }
-    
-    public void refresco(){
+
+    public void refresco() {
         for (int i = 0; i < Elementos.length; i++) {
-           Elementos [i] =0;
-            
+            Elementos[i] = 0;
+
         }
     }
-    
 
 }
