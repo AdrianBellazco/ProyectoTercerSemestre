@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Locale;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
@@ -41,6 +43,9 @@ public class GUI extends javax.swing.JFrame {
 
     RegistrarVariablesCasillas obj = new RegistrarVariablesCasillas();
     RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
+    double max = 79.799 / 100 ;
+    int Maxcon = (int) max;
+;
 
     Calculos calculos = new Calculos();
 
@@ -58,14 +63,14 @@ public class GUI extends javax.swing.JFrame {
         llenarArray2020();
         llenarArray2019();
         llenarArray2018();
-        //    leerArray();
 
         initComponents();
         grafico_pastel();
 
         grafica_barras_1();
 
-        //    grafica_barras_1();
+        percentilbarra.setEnabled(true);
+        putajeglobalbarra.setEnabled(true);
     }
 
     /**
@@ -116,7 +121,6 @@ public class GUI extends javax.swing.JFrame {
         ing = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         glop = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         año2020 = new javax.swing.JCheckBox();
         año2019 = new javax.swing.JCheckBox();
         Masculino = new javax.swing.JCheckBox();
@@ -142,7 +146,7 @@ public class GUI extends javax.swing.JFrame {
         AreaRural = new javax.swing.JCheckBox();
         AreaUrbana = new javax.swing.JCheckBox();
         jSeparator11 = new javax.swing.JSeparator();
-        Plecturamatematica = new javax.swing.JSlider();
+        matematica = new javax.swing.JSlider();
         jSeparator12 = new javax.swing.JSeparator();
         Bus10 = new MiBoton();
         Bus11 = new MiBoton();
@@ -174,33 +178,46 @@ public class GUI extends javax.swing.JFrame {
         RadioRural = new javax.swing.JRadioButton();
         RadioUrbana = new javax.swing.JRadioButton();
         jSeparator18 = new javax.swing.JSeparator();
-        Plectura1 = new javax.swing.JSlider();
+        lectura = new javax.swing.JSlider();
         percentilbarra = new javax.swing.JSlider();
-        Plectura4 = new javax.swing.JSlider();
-        Plectura5 = new javax.swing.JSlider();
+        naturales = new javax.swing.JSlider();
+        inglees = new javax.swing.JSlider();
         putajeglobalbarra = new JSlider(JSlider.HORIZONTAL, 0, 500, 0);
         Estractoselect = new javax.swing.JComboBox<>();
         desempeñolectura1 = new javax.swing.JComboBox<>();
         desempeñomatematica1 = new javax.swing.JComboBox<>();
         desempeñonaturales1 = new javax.swing.JComboBox<>();
-        Percentil = new javax.swing.JSpinner();
-        CamPercentil = new javax.swing.JToggleButton();
-        PuntajeGlobal1 = new javax.swing.JSpinner();
-        CamPG1 = new javax.swing.JToggleButton();
-        etiquetavalorlectura = new javax.swing.JLabel();
-        etiquetavalorlectura1 = new javax.swing.JLabel();
         mateTex1 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         BuscarTodo1 = new MiBoton();
+        etiquetavalorlectura2 = new javax.swing.JLabel();
+        etiquetavalorlectura = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         Info = new javax.swing.JPanel();
         grafica3 = new javax.swing.JScrollPane();
         graficopastelbarra = new javax.swing.JPanel();
         Limpiar = new MiBoton();
         grafico_barras1 = new javax.swing.JPanel();
-        Graficotres = new javax.swing.JPanel();
+        progreso1 = new javax.swing.JPanel();
+        etiquetavalorlectura3 = new javax.swing.JLabel();
+        pro1 = new rojerusan.componentes.RSProgressBar();
+        PuntajeLabelMatematica = new javax.swing.JLabel();
+        pro2 = new rojerusan.componentes.RSProgressBar();
+        pro3 = new rojerusan.componentes.RSProgressBar();
+        PuntajeLabelNaturales = new javax.swing.JLabel();
+        pro4 = new rojerusan.componentes.RSProgressBar();
+        PuntajeLabelIngles = new javax.swing.JLabel();
+        PuntajeLabelGlobal = new javax.swing.JLabel();
+        pro5 = new rojerusan.componentes.RSProgressBar();
+        pro6 = new rojerusan.componentes.RSProgressBar();
+        PuntajeLabelPercentil = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        PuntajeLabelLectura = new javax.swing.JLabel();
+        lectorpersonas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -420,7 +437,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 102, 0));
         jLabel8.setText("puntaje lectura");
-        Filtrador.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1780, 260, 50));
+        Filtrador.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1780, 140, 50));
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 102, 0));
@@ -458,11 +475,6 @@ public class GUI extends javax.swing.JFrame {
         glop.setForeground(new java.awt.Color(255, 102, 0));
         glop.setText("");
         Filtrador.add(glop, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 3610, 140, 50));
-
-        jLabel18.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel18.setText("Tipo de documento");
-        Filtrador.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 260, 50));
 
         año2020.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         año2020.setForeground(new java.awt.Color(255, 255, 255));
@@ -652,20 +664,20 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(AreaUrbana, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1210, -1, -1));
         Filtrador.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 810, 260, 10));
 
-        Plecturamatematica.setMajorTickSpacing(10); // Espaciado entre las marcas principales
-        Plecturamatematica.setPaintTicks(true); // Dibuja las marcas
-        Plecturamatematica.setPaintLabels(true);
-        Plecturamatematica.setValue(0);
+        matematica.setMajorTickSpacing(10); // Espaciado entre las marcas principales
+        matematica.setPaintTicks(true); // Dibuja las marcas
+        matematica.setPaintLabels(true);
+        matematica.setValue(0);
 
-        Plecturamatematica.setMajorTickSpacing(10);
-        Plecturamatematica.setBackground(new java.awt.Color(255, 102, 0));
-        Plecturamatematica.setForeground(new java.awt.Color(255, 255, 255));
-        Plecturamatematica.addChangeListener(new javax.swing.event.ChangeListener() {
+        matematica.setMajorTickSpacing(10);
+        matematica.setBackground(new java.awt.Color(255, 102, 0));
+        matematica.setForeground(new java.awt.Color(255, 255, 255));
+        matematica.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                PlecturamatematicaStateChanged(evt);
+                matematicaStateChanged(evt);
             }
         });
-        Filtrador.add(Plecturamatematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2290, 250, -1));
+        Filtrador.add(matematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2290, 250, -1));
         Filtrador.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1540, 260, 10));
 
         Bus10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
@@ -894,20 +906,20 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(RadioUrbana, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1210, -1, -1));
         Filtrador.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1090, 260, 10));
 
-        Plectura1.setMajorTickSpacing(10); // Espaciado entre las marcas principales
-        Plectura1.setPaintTicks(true); // Dibuja las marcas
-        Plectura1.setPaintLabels(true);
-        Plectura1.setValue(0);
+        lectura.setMajorTickSpacing(10); // Espaciado entre las marcas principales
+        lectura.setPaintTicks(true); // Dibuja las marcas
+        lectura.setPaintLabels(true);
+        lectura.setValue(0);
 
-        Plectura1.setMajorTickSpacing(10);
-        Plectura1.setBackground(new java.awt.Color(255, 102, 0));
-        Plectura1.setForeground(new java.awt.Color(255, 255, 255));
-        Plectura1.addChangeListener(new javax.swing.event.ChangeListener() {
+        lectura.setMajorTickSpacing(10);
+        lectura.setBackground(new java.awt.Color(255, 102, 0));
+        lectura.setForeground(new java.awt.Color(255, 255, 255));
+        lectura.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                Plectura1StateChanged(evt);
+                lecturaStateChanged(evt);
             }
         });
-        Filtrador.add(Plectura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1860, 250, -1));
+        Filtrador.add(lectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1860, 250, -1));
 
         percentilbarra.setMajorTickSpacing(10); // Espaciado entre las marcas principales
         percentilbarra.setPaintTicks(true); // Dibuja las marcas
@@ -925,35 +937,35 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(percentilbarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3910, 250, -1));
 
-        Plectura4.setMajorTickSpacing(10); // Espaciado entre las marcas principales
-        Plectura4.setPaintTicks(true); // Dibuja las marcas
-        Plectura4.setPaintLabels(true);
-        Plectura4.setValue(0);
+        naturales.setMajorTickSpacing(10); // Espaciado entre las marcas principales
+        naturales.setPaintTicks(true); // Dibuja las marcas
+        naturales.setPaintLabels(true);
+        naturales.setValue(0);
 
-        Plectura4.setMajorTickSpacing(10);
-        Plectura4.setBackground(new java.awt.Color(255, 102, 0));
-        Plectura4.setForeground(new java.awt.Color(255, 255, 255));
-        Plectura4.addChangeListener(new javax.swing.event.ChangeListener() {
+        naturales.setMajorTickSpacing(10);
+        naturales.setBackground(new java.awt.Color(255, 102, 0));
+        naturales.setForeground(new java.awt.Color(255, 255, 255));
+        naturales.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                Plectura4StateChanged(evt);
+                naturalesStateChanged(evt);
             }
         });
-        Filtrador.add(Plectura4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2730, 250, -1));
+        Filtrador.add(naturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2730, 250, -1));
 
-        Plectura5.setMajorTickSpacing(10); // Espaciado entre las marcas principales
-        Plectura5.setPaintTicks(true); // Dibuja las marcas
-        Plectura5.setPaintLabels(true);
-        Plectura5.setValue(0);
+        inglees.setMajorTickSpacing(10); // Espaciado entre las marcas principales
+        inglees.setPaintTicks(true); // Dibuja las marcas
+        inglees.setPaintLabels(true);
+        inglees.setValue(0);
 
-        Plectura5.setMajorTickSpacing(10);
-        Plectura5.setBackground(new java.awt.Color(255, 102, 0));
-        Plectura5.setForeground(new java.awt.Color(255, 255, 255));
-        Plectura5.addChangeListener(new javax.swing.event.ChangeListener() {
+        inglees.setMajorTickSpacing(10);
+        inglees.setBackground(new java.awt.Color(255, 102, 0));
+        inglees.setForeground(new java.awt.Color(255, 255, 255));
+        inglees.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                Plectura5StateChanged(evt);
+                ingleesStateChanged(evt);
             }
         });
-        Filtrador.add(Plectura5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3180, 250, -1));
+        Filtrador.add(inglees, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3180, 250, -1));
 
         putajeglobalbarra.setMajorTickSpacing(500); // Espaciado entre las marcas principales
         putajeglobalbarra.setPaintTicks(true); // Dibuja las marcas
@@ -995,48 +1007,6 @@ public class GUI extends javax.swing.JFrame {
         desempeñonaturales1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3", " 4" }));
         Filtrador.add(desempeñonaturales1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2930, 180, 50));
 
-        Percentil.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        Percentil.setModel(new javax.swing.SpinnerNumberModel(1, 1, 500, 1));
-        Percentil.setToolTipText("");
-        Filtrador.add(Percentil, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3970, 70, 40));
-
-        CamPercentil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar (1).png"))); // NOI18N
-        CamPercentil.setContentAreaFilled(false);
-        CamPercentil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CamPercentil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CamPercentilActionPerformed(evt);
-            }
-        });
-        Filtrador.add(CamPercentil, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 3970, 40, 40));
-
-        PuntajeGlobal1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        PuntajeGlobal1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 500, 1));
-        PuntajeGlobal1.setToolTipText("");
-        Filtrador.add(PuntajeGlobal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3760, 70, 40));
-
-        CamPG1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar (1).png"))); // NOI18N
-        CamPG1.setContentAreaFilled(false);
-        CamPG1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CamPG1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CamPG1ActionPerformed(evt);
-            }
-        });
-        Filtrador.add(CamPG1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 3763, 40, 40));
-
-        etiquetavalorlectura.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        etiquetavalorlectura.setForeground(new java.awt.Color(255, 102, 0));
-        etiquetavalorlectura.setToolTipText("");
-        etiquetavalorlectura.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Filtrador.add(etiquetavalorlectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1780, 80, 50));
-
-        etiquetavalorlectura1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        etiquetavalorlectura1.setForeground(new java.awt.Color(255, 102, 0));
-        etiquetavalorlectura1.setToolTipText("");
-        etiquetavalorlectura1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Filtrador.add(etiquetavalorlectura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1780, 80, 50));
-
         mateTex1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         mateTex1.setForeground(new java.awt.Color(255, 102, 0));
         mateTex1.setText("puntaje matematica");
@@ -1054,7 +1024,7 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel21.setText("puntaje gloval:");
+        jLabel21.setText("puntaje global:");
         Filtrador.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3610, 140, 50));
 
         jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -1077,6 +1047,23 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(BuscarTodo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 4110, 120, 170));
 
+        etiquetavalorlectura2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        etiquetavalorlectura2.setForeground(new java.awt.Color(255, 102, 0));
+        etiquetavalorlectura2.setToolTipText("");
+        etiquetavalorlectura2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Filtrador.add(etiquetavalorlectura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 1780, 80, 50));
+
+        etiquetavalorlectura.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        etiquetavalorlectura.setForeground(new java.awt.Color(255, 102, 0));
+        etiquetavalorlectura.setToolTipText("");
+        etiquetavalorlectura.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Filtrador.add(etiquetavalorlectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1790, 30, 29));
+
+        jLabel22.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel22.setText("Tipo de documento");
+        Filtrador.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 260, 50));
+
         Filtr.setViewportView(Filtrador);
 
         jPanel1.add(Filtr, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -18, 340, 640));
@@ -1088,7 +1075,7 @@ public class GUI extends javax.swing.JFrame {
         grafica3.getVerticalScrollBar().setUnitIncrement(20);
         grafica3.setBorder(null);
 
-        graficopastelbarra.setBackground(new java.awt.Color(255, 255, 255));
+        graficopastelbarra.setBackground(new java.awt.Color(204, 204, 204));
         graficopastelbarra.setPreferredSize(new java.awt.Dimension(100, 100));
         graficopastelbarra.setBorder(null);//ELIMINAR MARGEN
         graficopastelbarra.addContainerListener(new java.awt.event.ContainerAdapter() {
@@ -1108,7 +1095,7 @@ public class GUI extends javax.swing.JFrame {
         graficopastelbarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         grafica3.setViewportView(graficopastelbarra);
 
-        Info.add(grafica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 350, 260));
+        Info.add(grafica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 350, 260));
 
         Limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/limpiar.png"))); // NOI18N
         Limpiar.setText("<html><center><font face='Century Gothic' size = '1' color='0,102,102'><b>Limpiar");
@@ -1123,25 +1110,128 @@ public class GUI extends javax.swing.JFrame {
                 LimpiarActionPerformed(evt);
             }
         });
-        Info.add(Limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 550, 50, 50));
+        Info.add(Limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 570, 50, 50));
 
-        grafico_barras1.setBackground(new java.awt.Color(255, 255, 255));
+        grafico_barras1.setBackground(new java.awt.Color(204, 204, 204));
         grafico_barras1.setForeground(new java.awt.Color(255, 255, 255));
         grafico_barras1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Info.add(grafico_barras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 690, 270));
+        Info.add(grafico_barras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 850, 270));
 
-        Graficotres.setBackground(new java.awt.Color(255, 255, 255));
-        Graficotres.setForeground(new java.awt.Color(255, 255, 255));
-        Graficotres.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Info.add(Graficotres, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 330, 210));
+        progreso1.setBackground(new java.awt.Color(255, 255, 255));
+        progreso1.setForeground(new java.awt.Color(255, 255, 255));
+        progreso1.setPreferredSize(new java.awt.Dimension(100, 100));
+        progreso1.setSize(100, 100);
+        progreso1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.add(Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, -10, 730, 630));
+        etiquetavalorlectura3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        etiquetavalorlectura3.setForeground(new java.awt.Color(255, 102, 0));
+        etiquetavalorlectura3.setToolTipText("");
+        etiquetavalorlectura3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        progreso1.add(etiquetavalorlectura3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 560, 80, 50));
+
+        pro1.setForeground(new java.awt.Color(255, 102, 0));
+        pro1.setMaximum(7980);
+        pro1.setToolTipText("Puntos de lectura critica");
+        pro1.setValue(0);
+        pro1.setColorBorde(new java.awt.Color(255, 255, 255));
+        pro1.setColorSelBackground(new java.awt.Color(255, 102, 0));
+        pro1.setColorSelForeground(new java.awt.Color(0, 102, 102));
+        pro1.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
+        progreso1.add(pro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 40, 200));
+
+        PuntajeLabelMatematica.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        PuntajeLabelMatematica.setForeground(new java.awt.Color(0, 102, 102));
+        progreso1.add(PuntajeLabelMatematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 30, 30));
+
+        pro2.setForeground(new java.awt.Color(0, 102, 102));
+        pro2.setToolTipText("Puntos de matematica");
+        pro2.setValue(0);
+        pro2.setColorBorde(new java.awt.Color(255, 255, 255));
+        pro2.setColorSelBackground(new java.awt.Color(0, 102, 102));
+        pro2.setColorSelForeground(new java.awt.Color(255, 102, 0));
+        pro2.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
+        progreso1.add(pro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 40, 200));
+
+        pro3.setForeground(new java.awt.Color(255, 102, 0));
+        pro3.setToolTipText("Puntos de naturales");
+        pro3.setValue(0);
+        pro3.setColorBorde(new java.awt.Color(255, 255, 255));
+        pro3.setColorSelBackground(new java.awt.Color(255, 102, 0));
+        pro3.setColorSelForeground(new java.awt.Color(0, 102, 102));
+        pro3.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
+        progreso1.add(pro3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 40, 200));
+
+        PuntajeLabelNaturales.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        PuntajeLabelNaturales.setForeground(new java.awt.Color(255, 102, 0));
+        progreso1.add(PuntajeLabelNaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 30, 30));
+
+        pro4.setForeground(new java.awt.Color(0, 102, 102));
+        pro4.setToolTipText("puntos de ingles");
+        pro4.setValue(0);
+        pro4.setColorBorde(new java.awt.Color(255, 255, 255));
+        pro4.setColorSelBackground(new java.awt.Color(0, 102, 102));
+        pro4.setColorSelForeground(new java.awt.Color(255, 102, 0));
+        pro4.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
+        progreso1.add(pro4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 40, 200));
+
+        PuntajeLabelIngles.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        PuntajeLabelIngles.setForeground(new java.awt.Color(0, 102, 102));
+        progreso1.add(PuntajeLabelIngles, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 30, 30));
+
+        PuntajeLabelGlobal.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        PuntajeLabelGlobal.setForeground(new java.awt.Color(255, 102, 0));
+        progreso1.add(PuntajeLabelGlobal, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 30, 30));
+
+        pro5.setForeground(new java.awt.Color(255, 102, 0));
+        pro5.setMaximum(500);
+        pro5.setToolTipText("Puntaje global\n(puntaje de icfes)");
+        pro5.setValue(0);
+        pro5.setColorBorde(new java.awt.Color(255, 255, 255));
+        pro5.setColorSelBackground(new java.awt.Color(255, 102, 0));
+        pro5.setColorSelForeground(new java.awt.Color(0, 102, 102));
+        pro5.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
+        progreso1.add(pro5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 40, 200));
+
+        pro6.setForeground(new java.awt.Color(0, 102, 102));
+        pro6.setToolTipText("Puntos Percentil");
+        pro6.setValue(0);
+        pro6.setColorBorde(new java.awt.Color(255, 255, 255));
+        pro6.setColorSelBackground(new java.awt.Color(0, 102, 102));
+        pro6.setColorSelForeground(new java.awt.Color(255, 102, 0));
+        pro6.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
+        progreso1.add(pro6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, 40, 200));
+
+        PuntajeLabelPercentil.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        PuntajeLabelPercentil.setForeground(new java.awt.Color(0, 102, 102));
+        progreso1.add(PuntajeLabelPercentil, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 30, 30));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/velocimetro.png"))); // NOI18N
+        jButton1.setToolTipText("Puntaje (1/100)");
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        progreso1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, 30));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/grupo (1).png"))); // NOI18N
+        jButton2.setContentAreaFilled(false);
+        progreso1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+
+        PuntajeLabelLectura.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        PuntajeLabelLectura.setForeground(new java.awt.Color(255, 102, 0));
+        progreso1.add(PuntajeLabelLectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 30, 30));
+
+        lectorpersonas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        lectorpersonas.setForeground(new java.awt.Color(0, 102, 102));
+        progreso1.add(lectorpersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 40, 40));
+
+        Info.add(progreso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 480, 270));
+
+        jPanel1.add(Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, -10, 880, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1043, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1173,7 +1263,6 @@ int cont = 0;
         refresco();
         grafico_pastel();
         grafica_barras_1();
-        
 
 
     }//GEN-LAST:event_LimpiarActionPerformed
@@ -1260,11 +1349,10 @@ int cont = 0;
             actionbus3();
             actionbus4();
             actionbus5();
-            
-            
+
             refresco();
-             grafico_pastel();
-              grafica_barras_1();
+            grafico_pastel();
+            grafica_barras_1();
 
         } else {
             ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar.png"));
@@ -1272,17 +1360,15 @@ int cont = 0;
             modo.setVerticalTextPosition(SwingConstants.BOTTOM);
             modo.setHorizontalTextPosition(SwingConstants.CENTER);
             modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Varias opciones");
-             Bus1ActionPerformed(null) ;
-             Bus2ActionPerformed(null);
-             Bus3ActionPerformed(null);
-             Bus4ActionPerformed(null);
-             Bus5ActionPerformed(null);
+            Bus1ActionPerformed(null);
+            Bus2ActionPerformed(null);
+            Bus3ActionPerformed(null);
+            Bus4ActionPerformed(null);
+            Bus5ActionPerformed(null);
             Lamalaaños();
-             refresco();
-             grafico_pastel();
-              grafica_barras_1();
-             
-           
+            refresco();
+            grafico_pastel();
+            grafica_barras_1();
 
         }
     }//GEN-LAST:event_modoActionPerformed
@@ -1293,71 +1379,71 @@ int cont = 0;
 
     private void Bus4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus4ActionPerformed
 
-     //   actionbus4();
-     ColegioGeneroGrupo.clearSelection();
- 
-   Elementos[8] = 0;
-      Elementos[9] = 0;
-       Elementos[10] = 0;
-      Elementos[15] = 0;
-      
- grafica_barras_1();
- grafico_pastel();
+        //   actionbus4();
+        ColegioGeneroGrupo.clearSelection();
+
+        Elementos[8] = 0;
+        Elementos[9] = 0;
+        Elementos[10] = 0;
+        Elementos[15] = 0;
+
+        grafica_barras_1();
+        grafico_pastel();
     }//GEN-LAST:event_Bus4ActionPerformed
 
     private void Bus3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus3ActionPerformed
 //        actionbus3();
-Generos.clearSelection();
- 
-   Elementos[5] = 0;
-      Elementos[6] = 0;
-       Elementos[14] = 0;
-     
- grafica_barras_1();
- grafico_pastel();
+        Generos.clearSelection();
+
+        Elementos[5] = 0;
+        Elementos[6] = 0;
+        Elementos[14] = 0;
+
+        grafica_barras_1();
+        grafico_pastel();
 
     }//GEN-LAST:event_Bus3ActionPerformed
 
     private void Bus1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus1ActionPerformed
 //        actionbus1();
- grupoAños.clearSelection();
- 
-   Elementos[0] = 0;
-      Elementos[1] = 0;
-       Elementos[2] = 0;
+        grupoAños.clearSelection();
+
+        Elementos[0] = 0;
+        Elementos[1] = 0;
+        Elementos[2] = 0;
         Elementos[13] = 0;
- grafica_barras_1();
- grafico_pastel();
+        grafica_barras_1();
+        grafico_pastel();
 
 
     }//GEN-LAST:event_Bus1ActionPerformed
 
     private void Bus2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus2ActionPerformed
 
-       // actionbus2();
-ID.clearSelection();
- 
-   Elementos[3] = 0;
-      Elementos[4] = 0;
-       Elementos[16] = 0;
-     
- grafica_barras_1();
- grafico_pastel();
+        // actionbus2();
+        ID.clearSelection();
+
+        Elementos[3] = 0;
+        Elementos[4] = 0;
+        Elementos[16] = 0;
+
+        grafica_barras_1();
+        grafico_pastel();
 
     }//GEN-LAST:event_Bus2ActionPerformed
 
     private void Bus5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus5ActionPerformed
-       // actionbus5();
-       AreaColegio.clearSelection();
- 
-   Elementos[11] = 0;
-      Elementos[12] = 0;
-       Elementos[17] = 0;
-     
- grafica_barras_1();
- grafico_pastel();
+        // actionbus5();
+        AreaColegio.clearSelection();
 
-       
+        Elementos[11] = 0;
+        Elementos[12] = 0;
+        Elementos[17] = 0;
+
+        grafica_barras_1();
+        grafico_pastel();
+
+
     }//GEN-LAST:event_Bus5ActionPerformed
 
     private void Bus9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus9ActionPerformed
@@ -1384,69 +1470,51 @@ ID.clearSelection();
         actionbus15();
     }//GEN-LAST:event_Bus15ActionPerformed
 
-    private void CamPercentilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CamPercentilActionPerformed
-
-        if (CamPercentil.isSelected()) {
-            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender (1).png"));
-            CamPercentil.setIcon(img);
-            Percentil.setEnabled(false);
-            percentilbarra.setEnabled(true);
-
-        } else {
-            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar (1).png"));
-            CamPercentil.setIcon(img);
-            Percentil.setEnabled(true);
-            percentilbarra.setEnabled(false);
-
-        }
-
-
-    }//GEN-LAST:event_CamPercentilActionPerformed
-
-    private void CamPG1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CamPG1ActionPerformed
-
-        if (CamPG1.isSelected()) {
-            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender (1).png"));
-            CamPG1.setIcon(img);
-            putajeglobalbarra.setEnabled(true);
-            PuntajeGlobal1.setEnabled(false);
-
-        } else {
-            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar (1).png"));
-            CamPG1.setIcon(img);
-            putajeglobalbarra.setEnabled(false);
-            PuntajeGlobal1.setEnabled(true);
-
-        }
-    }//GEN-LAST:event_CamPG1ActionPerformed
-
     private void Bus8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus8ActionPerformed
         actionbus8();
     }//GEN-LAST:event_Bus8ActionPerformed
 
-    private void Plectura1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Plectura1StateChanged
-        etiquetavalorlectura.setText("" + Plectura1.getValue());
+    private void lecturaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_lecturaStateChanged
+        etiquetavalorlectura.setText("" + lectura.getValue());
+        PuntajeLabelLectura.setText("" + lectura.getValue());
+        String datoDeCantidad = Integer.toString(lectura.getValue());
+        int cantidad= llenarBarraInteractiva(datoDeCantidad);
+        //calcular al 100% cuanto seria 
+   
+        pro1.setValue(cantidad);
+        lectorpersonas.setText(""+cantidad);
+      //  JOptionPane.showMessageDialog(null, cantidad);
+    }//GEN-LAST:event_lecturaStateChanged
 
-    }//GEN-LAST:event_Plectura1StateChanged
+    private void matematicaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_matematicaStateChanged
+        mate.setText("" + matematica.getValue());
+        PuntajeLabelMatematica.setText("" + matematica.getValue());
+        pro2.setValue(matematica.getValue());
+    }//GEN-LAST:event_matematicaStateChanged
 
-    private void PlecturamatematicaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PlecturamatematicaStateChanged
-        mate.setText("" + Plecturamatematica.getValue());
-    }//GEN-LAST:event_PlecturamatematicaStateChanged
+    private void naturalesStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_naturalesStateChanged
+        natu.setText("" + naturales.getValue());
+        PuntajeLabelNaturales.setText("" + naturales.getValue());
+        pro3.setValue(naturales.getValue());
+    }//GEN-LAST:event_naturalesStateChanged
 
-    private void Plectura4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Plectura4StateChanged
-        natu.setText("" + Plectura4.getValue());
-    }//GEN-LAST:event_Plectura4StateChanged
+    private void ingleesStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ingleesStateChanged
+        ing.setText("" + inglees.getValue());
+        PuntajeLabelIngles.setText("" + inglees.getValue());
+        pro4.setValue(inglees.getValue());
 
-    private void Plectura5StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Plectura5StateChanged
-        ing.setText("" + Plectura5.getValue());
-    }//GEN-LAST:event_Plectura5StateChanged
+    }//GEN-LAST:event_ingleesStateChanged
 
     private void putajeglobalbarraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_putajeglobalbarraStateChanged
         glop.setText("" + putajeglobalbarra.getValue());
+        PuntajeLabelGlobal.setText("" + putajeglobalbarra.getValue());
+        pro5.setValue(putajeglobalbarra.getValue());
     }//GEN-LAST:event_putajeglobalbarraStateChanged
 
     private void percentilbarraStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_percentilbarraStateChanged
         jLabel1.setText("" + percentilbarra.getValue());
+        PuntajeLabelPercentil.setText("" + percentilbarra.getValue());
+        pro6.setValue(percentilbarra.getValue());
     }//GEN-LAST:event_percentilbarraStateChanged
 
     private void Bus10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus10ActionPerformed
@@ -1462,11 +1530,11 @@ ID.clearSelection();
     }//GEN-LAST:event_Bus14ActionPerformed
 
     private void Bus16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus16ActionPerformed
-        actionbus16();
+//        actionbus16();
     }//GEN-LAST:event_Bus16ActionPerformed
 
     private void Bus17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bus17ActionPerformed
-        actionbus17();
+        //  actionbus17();
     }//GEN-LAST:event_Bus17ActionPerformed
 
     private void graficopastelbarraAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_graficopastelbarraAncestorAdded
@@ -1540,8 +1608,6 @@ ID.clearSelection();
     private javax.swing.JButton Bus8;
     private javax.swing.JButton Bus9;
     private javax.swing.JButton BuscarTodo1;
-    private javax.swing.JToggleButton CamPG1;
-    private javax.swing.JToggleButton CamPercentil;
     private javax.swing.JCheckBox Cedula;
     private javax.swing.ButtonGroup ColegioGeneroGrupo;
     private javax.swing.JCheckBox ColegiogeneroFEMENINO;
@@ -1553,17 +1619,16 @@ ID.clearSelection();
     private javax.swing.JScrollPane Filtr;
     private javax.swing.JPanel Filtrador;
     private javax.swing.ButtonGroup Generos;
-    private javax.swing.JPanel Graficotres;
     private javax.swing.ButtonGroup ID;
     private javax.swing.JPanel Info;
     private javax.swing.JButton Limpiar;
     protected javax.swing.JCheckBox Masculino;
-    private javax.swing.JSpinner Percentil;
-    private javax.swing.JSlider Plectura1;
-    private javax.swing.JSlider Plectura4;
-    private javax.swing.JSlider Plectura5;
-    private javax.swing.JSlider Plecturamatematica;
-    private javax.swing.JSpinner PuntajeGlobal1;
+    private javax.swing.JLabel PuntajeLabelGlobal;
+    private javax.swing.JLabel PuntajeLabelIngles;
+    private javax.swing.JLabel PuntajeLabelLectura;
+    private javax.swing.JLabel PuntajeLabelMatematica;
+    private javax.swing.JLabel PuntajeLabelNaturales;
+    private javax.swing.JLabel PuntajeLabelPercentil;
     private javax.swing.JRadioButton RadioFemenino1;
     private javax.swing.JRadioButton RadioGeneroColegioFemenino;
     private javax.swing.JRadioButton RadioGeneroColegioMasculino;
@@ -1591,7 +1656,8 @@ ID.clearSelection();
     private javax.swing.JComboBox<String> desempeñomatematica1;
     private javax.swing.JComboBox<String> desempeñonaturales1;
     private javax.swing.JLabel etiquetavalorlectura;
-    private javax.swing.JLabel etiquetavalorlectura1;
+    private javax.swing.JLabel etiquetavalorlectura2;
+    private javax.swing.JLabel etiquetavalorlectura3;
     private javax.swing.JLabel glop;
     private javax.swing.JScrollPane grafica3;
     private javax.swing.JPanel grafico_barras1;
@@ -1599,16 +1665,19 @@ ID.clearSelection();
     private javax.swing.ButtonGroup grupo1;
     private javax.swing.ButtonGroup grupoAños;
     private javax.swing.JLabel ing;
+    private javax.swing.JSlider inglees;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1629,12 +1698,23 @@ ID.clearSelection();
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JLabel lectorpersonas;
+    private javax.swing.JSlider lectura;
     private javax.swing.JLabel mate;
     private javax.swing.JLabel mateTex1;
+    private javax.swing.JSlider matematica;
     private javax.swing.JToggleButton modo;
     private javax.swing.JComboBox<String> municipiosselec;
     private javax.swing.JLabel natu;
+    private javax.swing.JSlider naturales;
     private javax.swing.JSlider percentilbarra;
+    private rojerusan.componentes.RSProgressBar pro1;
+    private rojerusan.componentes.RSProgressBar pro2;
+    private rojerusan.componentes.RSProgressBar pro3;
+    private rojerusan.componentes.RSProgressBar pro4;
+    private rojerusan.componentes.RSProgressBar pro5;
+    private rojerusan.componentes.RSProgressBar pro6;
+    private javax.swing.JPanel progreso1;
     private javax.swing.JSlider putajeglobalbarra;
     protected javax.swing.JRadioButton radioaño2018;
     protected javax.swing.JRadioButton radioaño2019;
@@ -1643,8 +1723,8 @@ ID.clearSelection();
     protected javax.swing.JCheckBox todosaño;
     // End of variables declaration//GEN-END:variables
 public void grafica_barras_1() {
-    
-     DefaultCategoryDataset datos = new DefaultCategoryDataset();
+
+        DefaultCategoryDataset datos = new DefaultCategoryDataset();
 
         int año1 = Elementos[0];
         int año2 = Elementos[1];
@@ -1665,67 +1745,62 @@ public void grafica_barras_1() {
         int urbana = Elementos[12];
         int todazona = Elementos[17];
 
-      
         datos.setValue(año1, "Año", "2020");
         datos.setValue(año2, "Año", "2019");
         datos.setValue(año3, "Año", "2018");
         datos.setValue(todosAños, "Años", "Todos los años");
-        
+
         datos.setValue(cedula, "Identificacion", "Cedula");
         datos.setValue(tarjetaIdentidad, "Identificacion", "T.I");
         datos.setValue(todosID, "identificacion", "todas las identificaciones");
-        
+
         datos.setValue(Masculino, "Genero", "Masculino");
         datos.setValue(femenino, "Genero", "Femenino");
         datos.setValue(TodosGeneros, "Genero", "Todos los generos");
-        
+
         datos.setValue(mixto, "Genero del colegio", "Mixto");
         datos.setValue(Masculinocolegio, "Tipo de colegio", "Colegio masculino");
         datos.setValue(femeninocolegio, "Tipo de colegio", "Colegio femenino");
         datos.setValue(TodosTiposDeColegio, "Tipo de colegio", "Todo tipo de colegio");
-        
+
         datos.setValue(rural, "Zona", "Rural");
         datos.setValue(urbana, "Zona", "Urbana");
-         datos.setValue(todazona, "Zona", "Todas las zonas");
-        
-        
-        
-       
+        datos.setValue(todazona, "Zona", "Todas las zonas");
 
-    JFreeChart grafico_1 = ChartFactory.createBarChart3D(
-            "", // Título del gráfico
-            "", // Etiqueta para el eje de las categorías
-            "", // Etiqueta para el eje de los valores
-            datos, // DatasetVERTICAL
-            PlotOrientation.HORIZONTAL, // Orientación del gráfico
-            true, // Mostrar leyenda
-            true, // Mostrar tooltips (información al pasar el ratón)
-            false // Mostrar URLs (no utilizado)
-    );
+        JFreeChart grafico_1 = ChartFactory.createBarChart3D(
+                "", // Título del gráfico
+                "", // Etiqueta para el eje de las categorías
+                "", // Etiqueta para el eje de los valores
+                datos, // DatasetVERTICAL
+                PlotOrientation.HORIZONTAL, // Orientación del gráfico
+                true, // Mostrar leyenda
+                true, // Mostrar tooltips (información al pasar el ratón)
+                false // Mostrar URLs (no utilizado)
+        );
 
-    // Personalización de la apariencia del gráfico
-    CategoryPlot plot = grafico_1.getCategoryPlot();
-    BarRenderer renderer = (BarRenderer) plot.getRenderer();
-    renderer.setSeriesPaint(0, Color.BLUE); // Color de las barras
-    plot.setBackgroundPaint(Color.WHITE); // Color de fondo del gráfico
-    plot.setRangeGridlinesVisible(true); // Mostrar líneas de cuadrícula en el eje Y
-NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
-    rangeAxis.setTickLabelsVisible(false);
-    ChartPanel barras = new ChartPanel(grafico_1);
-    barras.setMouseWheelEnabled(true);
+        // Personalización de la apariencia del gráfico
+        CategoryPlot plot = grafico_1.getCategoryPlot();
+        BarRenderer renderer = (BarRenderer) plot.getRenderer();
+        renderer.setSeriesPaint(0, Color.BLUE); // Color de las barras
+        plot.setBackgroundPaint(Color.WHITE); // Color de fondo del gráfico
+        plot.setRangeGridlinesVisible(true); // Mostrar líneas de cuadrícula en el eje Y
+        NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
+        rangeAxis.setTickLabelsVisible(false);
+        ChartPanel barras = new ChartPanel(grafico_1);
+        barras.setMouseWheelEnabled(true);
 
-    // Ajusta el tamaño y la ubicación del panel del gráfico
-    barras.setPreferredSize(new Dimension(800, 600)); // Tamaño del panel
-    barras.setVisible(true);
+        // Ajusta el tamaño y la ubicación del panel del gráfico
+        barras.setPreferredSize(new Dimension(800, 600)); // Tamaño del panel
+        barras.setVisible(true);
 
-    // Agrega el panel del gráfico al contenedor deseado (por ejemplo, un JPanel llamado grafico_barras1)
-    grafico_barras1.removeAll(); // Limpia cualquier componente anterior en el contenedor
-    grafico_barras1.setLayout(new BorderLayout());
-    grafico_barras1.add(barras, BorderLayout.CENTER);
+        // Agrega el panel del gráfico al contenedor deseado (por ejemplo, un JPanel llamado grafico_barras1)
+        grafico_barras1.removeAll(); // Limpia cualquier componente anterior en el contenedor
+        grafico_barras1.setLayout(new BorderLayout());
+        grafico_barras1.add(barras, BorderLayout.CENTER);
 
-    // Repinta el contenedor para mostrar el nuevo gráfico
-    grafico_barras1.revalidate();
-    grafico_barras1.repaint();
+        // Repinta el contenedor para mostrar el nuevo gráfico
+        grafico_barras1.revalidate();
+        grafico_barras1.repaint();
 
     }
 
@@ -1772,7 +1847,6 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
         dato.setValue("Zona Urbana", urbana);
         dato.setValue("Todas las zonas", todazona);
 
-
         JFreeChart grafico_pastel = ChartFactory.createPieChart("", dato, true, true, false);
         panel_grafi.setChart(grafico_pastel);
 
@@ -1787,7 +1861,6 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
         plot.setIgnoreNullValues(true);
         plot.setSectionOutlinesVisible(false);
         plot.setLabelGenerator(null);
-     
 
         plot.setLabelLinksVisible(false);
         plot.setBackgroundPaint(Color.WHITE); // Establecer el fondo del gráfico de pastel en blanco
@@ -1808,8 +1881,6 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
     }
 
     public void Labuenaaños() {
-        
-        
 
         //AÑOS
         radioaño2020.setVisible(true);
@@ -1915,40 +1986,39 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
     }
 
     public void actionbus1() {
-      
 
         if (modo.isSelected()) {
             radioaño2020.addActionListener(e -> {
-            if (radioaño2020.isSelected()) {
-                Elementos[0] = informacio2020.size();
-                grafico_pastel();
-                 grafica_barras_1();
+                if (radioaño2020.isSelected()) {
+                    Elementos[0] = informacio2020.size();
+                    grafico_pastel();
+                    grafica_barras_1();
 
-            }
+                }
             });
-              radioaño2019.addActionListener(e -> {
-            if (radioaño2019.isSelected()) {
-                Elementos[1] = informacio2019.size();
-                grafico_pastel();
-                grafica_barras_1();
+            radioaño2019.addActionListener(e -> {
+                if (radioaño2019.isSelected()) {
+                    Elementos[1] = informacio2019.size();
+                    grafico_pastel();
+                    grafica_barras_1();
 
-            }
+                }
             });
-              radioaño2018.addActionListener(e -> {
-            if (radioaño2018.isSelected()) {
-                Elementos[2] = informacio2018.size();
-                grafico_pastel();
-                grafica_barras_1();
-            }
-              });
-              radioañostodos.addActionListener(e -> {
-            if (radioañostodos.isSelected()) {
-                int elementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
-                Elementos[13] = elementos;
-                grafico_pastel();
-                grafica_barras_1();
-            }
-              });
+            radioaño2018.addActionListener(e -> {
+                if (radioaño2018.isSelected()) {
+                    Elementos[2] = informacio2018.size();
+                    grafico_pastel();
+                    grafica_barras_1();
+                }
+            });
+            radioañostodos.addActionListener(e -> {
+                if (radioañostodos.isSelected()) {
+                    int elementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
+                    Elementos[13] = elementos;
+                    grafico_pastel();
+                    grafica_barras_1();
+                }
+            });
         } else {
 
             if (año2020.isSelected()) {
@@ -1975,48 +2045,45 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
             }
         }
     }
-            
-        
-                
 
     public void actionbus2() {
 
         if (modo.isSelected()) {
-            Radiodocumentocedula.addChangeListener(e -> { 
-            if (Radiodocumentocedula.isSelected()) {
+            Radiodocumentocedula.addChangeListener(e -> {
+                if (Radiodocumentocedula.isSelected()) {
 
-                int cedula2020 = calculos.Contador2020(informacio2020, "CC", 0);
-                int cedula2019 = calculos.Contador2020(informacio2019, "CC", 0);
-                int cedula2018 = calculos.Contador2020(informacio2018, "CC", 0);
-                int total = cedula2020 + cedula2019 + cedula2018;
+                    int cedula2020 = calculos.Contador2020(informacio2020, "CC", 0);
+                    int cedula2019 = calculos.Contador2020(informacio2019, "CC", 0);
+                    int cedula2018 = calculos.Contador2020(informacio2018, "CC", 0);
+                    int total = cedula2020 + cedula2019 + cedula2018;
 
-                Elementos[3] = total;
-                grafico_pastel();
-                grafica_barras_1();
+                    Elementos[3] = total;
+                    grafico_pastel();
+                    grafica_barras_1();
 
-            }
+                }
             });
-             RadiodocumentoID1.addChangeListener(e -> { 
-            if (RadiodocumentoID1.isSelected()) {
+            RadiodocumentoID1.addChangeListener(e -> {
+                if (RadiodocumentoID1.isSelected()) {
 
-                int TI2020 = calculos.Contador2020(informacio2020, "TI", 0);
-                int TI2019 = calculos.Contador2020(informacio2019, "TI", 0);
-                int TI2018 = calculos.Contador2020(informacio2018, "TI", 0);
-                int total = TI2020 + TI2019 + TI2018;
-                Elementos[4] = total;
-                grafico_pastel();
-                grafica_barras_1();
-            }
-              });
-            RadiodocumentoTodos.addChangeListener(e -> { 
-            if (RadiodocumentoTodos.isSelected()) {
+                    int TI2020 = calculos.Contador2020(informacio2020, "TI", 0);
+                    int TI2019 = calculos.Contador2020(informacio2019, "TI", 0);
+                    int TI2018 = calculos.Contador2020(informacio2018, "TI", 0);
+                    int total = TI2020 + TI2019 + TI2018;
+                    Elementos[4] = total;
+                    grafico_pastel();
+                    grafica_barras_1();
+                }
+            });
+            RadiodocumentoTodos.addChangeListener(e -> {
+                if (RadiodocumentoTodos.isSelected()) {
 
-                int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
-                Elementos[16] = TotalElementos;
-                grafico_pastel();
-                grafica_barras_1();
-            }
-  });
+                    int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
+                    Elementos[16] = TotalElementos;
+                    grafico_pastel();
+                    grafica_barras_1();
+                }
+            });
         } else {
 
             if (Cedula.isSelected()) {
@@ -2042,44 +2109,44 @@ NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
     public void actionbus3() {
 
         if (modo.isSelected()) {
-RadioMasculino1.addActionListener(e-> {
-            if (RadioMasculino1.isSelected()) {
+            RadioMasculino1.addActionListener(e -> {
+                if (RadioMasculino1.isSelected()) {
 
-                int hombre2020 = calculos.Contador2020(informacio2020, "M", 2);
-                int hombre2019 = calculos.Contador2020(informacio2019, "M", 2);
-                int hombre2018 = calculos.Contador2020(informacio2018, "M", 2);
-                int total = hombre2020 + hombre2018 + hombre2019;
+                    int hombre2020 = calculos.Contador2020(informacio2020, "M", 2);
+                    int hombre2019 = calculos.Contador2020(informacio2019, "M", 2);
+                    int hombre2018 = calculos.Contador2020(informacio2018, "M", 2);
+                    int total = hombre2020 + hombre2018 + hombre2019;
 
-                Elementos[5] = total;
+                    Elementos[5] = total;
 
-                grafico_pastel();
-                grafica_barras_1();
-           
-            }
-             });
-RadioFemenino1.addActionListener(e-> {
-            if (RadioFemenino1.isSelected()) {
-                int mujeres2020 = calculos.Contador2020(informacio2020, "F", 2);
-                int mujeres2019 = calculos.Contador2020(informacio2019, "F", 2);
-                int mujeres2018 = calculos.Contador2020(informacio2018, "F", 2);
-                int total = mujeres2020 + mujeres2018 + mujeres2019;
+                    grafico_pastel();
+                    grafica_barras_1();
 
-                Elementos[6] = total;
+                }
+            });
+            RadioFemenino1.addActionListener(e -> {
+                if (RadioFemenino1.isSelected()) {
+                    int mujeres2020 = calculos.Contador2020(informacio2020, "F", 2);
+                    int mujeres2019 = calculos.Contador2020(informacio2019, "F", 2);
+                    int mujeres2018 = calculos.Contador2020(informacio2018, "F", 2);
+                    int total = mujeres2020 + mujeres2018 + mujeres2019;
 
-                grafico_pastel();
-                grafica_barras_1();
+                    Elementos[6] = total;
 
-            }
- });
-RadioTodosGeneros.addActionListener(e-> {
-            if (RadioTodosGeneros.isSelected()) {
-                int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
-                Elementos[14] = TotalElementos;
-                grafico_pastel();
-                grafica_barras_1();
+                    grafico_pastel();
+                    grafica_barras_1();
 
-            }
- });
+                }
+            });
+            RadioTodosGeneros.addActionListener(e -> {
+                if (RadioTodosGeneros.isSelected()) {
+                    int TotalElementos = informacio2020.size() + informacio2018.size() + informacio2019.size();
+                    Elementos[14] = TotalElementos;
+                    grafico_pastel();
+                    grafica_barras_1();
+
+                }
+            });
         } else {
 
             if (Masculino.isSelected()) {
@@ -2106,49 +2173,49 @@ RadioTodosGeneros.addActionListener(e-> {
 
     public void actionbus4() {
         if (modo.isSelected()) {
-RadioGeneroColegioMasculino.addActionListener(e -> {
-            if (RadioGeneroColegioMasculino.isSelected()) {
-                int colegiomasculino2020 = calculos.Contador2020(informacio2020, "MASCULINO", 10);
-                int colegiomasculino2019 = calculos.Contador2020(informacio2019, "MASCULINO", 10);
-                int colegiomasculino2018 = calculos.Contador2020(informacio2018, "MASCULINO", 10);
-                int total = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
-                Elementos[8] = total;
-                grafico_pastel();
-                grafica_barras_1();
-            }
-});
-RadioGeneroColegioMixto1.addActionListener(e -> {
-            if (RadioGeneroColegioMixto1.isSelected()) {
-                int colegiomixto2020 = calculos.Contador2020(informacio2020, "MIXTO", 10);
-                int colegiomixto2019 = calculos.Contador2020(informacio2019, "MIXTO", 10);
-                int colegiomixto2018 = calculos.Contador2020(informacio2018, "MIXTO", 10);
-                int total = colegiomixto2020 + colegiomixto2019 + colegiomixto2018;
-                Elementos[10] = total;
-                grafico_pastel();
-                grafica_barras_1();
-            }
+            RadioGeneroColegioMasculino.addActionListener(e -> {
+                if (RadioGeneroColegioMasculino.isSelected()) {
+                    int colegiomasculino2020 = calculos.Contador2020(informacio2020, "MASCULINO", 10);
+                    int colegiomasculino2019 = calculos.Contador2020(informacio2019, "MASCULINO", 10);
+                    int colegiomasculino2018 = calculos.Contador2020(informacio2018, "MASCULINO", 10);
+                    int total = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
+                    Elementos[8] = total;
+                    grafico_pastel();
+                    grafica_barras_1();
+                }
             });
-RadioGeneroColegioFemenino.addActionListener(e -> {
-            if (RadioGeneroColegioFemenino.isSelected()) {
-                int colegioFEMENINO2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10);
-                int colegioFEMENINO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10);
-                int colegioFEMENINO2018 = calculos.Contador2020(informacio2018, "FEMENINO", 10);
-                int total = colegioFEMENINO2020 + colegioFEMENINO2019 + colegioFEMENINO2018;
-                Elementos[9] = total;
-                grafico_pastel();
-                grafica_barras_1();
-            }
+            RadioGeneroColegioMixto1.addActionListener(e -> {
+                if (RadioGeneroColegioMixto1.isSelected()) {
+                    int colegiomixto2020 = calculos.Contador2020(informacio2020, "MIXTO", 10);
+                    int colegiomixto2019 = calculos.Contador2020(informacio2019, "MIXTO", 10);
+                    int colegiomixto2018 = calculos.Contador2020(informacio2018, "MIXTO", 10);
+                    int total = colegiomixto2020 + colegiomixto2019 + colegiomixto2018;
+                    Elementos[10] = total;
+                    grafico_pastel();
+                    grafica_barras_1();
+                }
             });
-RadioGeneroColegioTodos.addActionListener(e -> {
-            if (RadioGeneroColegioTodos.isSelected()) {
-                int colegio2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10) + calculos.Contador2020(informacio2020, "MASCULINO", 10) + calculos.Contador2020(informacio2020, "MIXTO", 10);;
-                int colegioO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10) + calculos.Contador2020(informacio2019, "MASCULINO", 10) + calculos.Contador2020(informacio2019, "MIXTO", 10);;
-                int colegio2018 = calculos.Contador2020(informacio2018, "FEMENINO", 10) + calculos.Contador2020(informacio2018, "MASCULINO", 10) + calculos.Contador2020(informacio2018, "MIXTO", 10);;
-                int total = colegio2020 + colegioO2019 + colegio2018;
-                Elementos[15] = total;
-                grafico_pastel();
-                grafica_barras_1();
-            }
+            RadioGeneroColegioFemenino.addActionListener(e -> {
+                if (RadioGeneroColegioFemenino.isSelected()) {
+                    int colegioFEMENINO2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10);
+                    int colegioFEMENINO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10);
+                    int colegioFEMENINO2018 = calculos.Contador2020(informacio2018, "FEMENINO", 10);
+                    int total = colegioFEMENINO2020 + colegioFEMENINO2019 + colegioFEMENINO2018;
+                    Elementos[9] = total;
+                    grafico_pastel();
+                    grafica_barras_1();
+                }
+            });
+            RadioGeneroColegioTodos.addActionListener(e -> {
+                if (RadioGeneroColegioTodos.isSelected()) {
+                    int colegio2020 = calculos.Contador2020(informacio2020, "FEMENINO", 10) + calculos.Contador2020(informacio2020, "MASCULINO", 10) + calculos.Contador2020(informacio2020, "MIXTO", 10);;
+                    int colegioO2019 = calculos.Contador2020(informacio2019, "FEMENINO", 10) + calculos.Contador2020(informacio2019, "MASCULINO", 10) + calculos.Contador2020(informacio2019, "MIXTO", 10);;
+                    int colegio2018 = calculos.Contador2020(informacio2018, "FEMENINO", 10) + calculos.Contador2020(informacio2018, "MASCULINO", 10) + calculos.Contador2020(informacio2018, "MIXTO", 10);;
+                    int total = colegio2020 + colegioO2019 + colegio2018;
+                    Elementos[15] = total;
+                    grafico_pastel();
+                    grafica_barras_1();
+                }
             });
 
         } else {
@@ -2182,36 +2249,36 @@ RadioGeneroColegioTodos.addActionListener(e -> {
     public void actionbus5() {
 
         if (modo.isSelected()) {
-RadioRural.addActionListener(e -> {
-            if (RadioRural.isSelected()) {
+            RadioRural.addActionListener(e -> {
+                if (RadioRural.isSelected()) {
 
-                int colegioRURAL2020 = calculos.Contador2020(informacio2020, "RURAL", 12);
-                int colegioRURAL2019 = calculos.Contador2020(informacio2019, "RURAL", 12);
-                int colegioRURAL2018 = calculos.Contador2020(informacio2018, "RURAL", 12);
-                int total = colegioRURAL2020 + colegioRURAL2019 + colegioRURAL2018;
-                Elementos[11] = total;
-                grafico_pastel();
-                grafica_barras_1();
-            }
-});
-RadioUrbana.addActionListener(e -> {
-            if (RadioUrbana.isSelected()) {
-                int colegioURBANO2020 = calculos.Contador2020(informacio2020, "URBANO", 12);
-                int colegioURBANO2019 = calculos.Contador2020(informacio2019, "URBANO", 12);
-                int colegioURBANO2018 = calculos.Contador2020(informacio2018, "URBANO", 12);
-                int total = colegioURBANO2020 + colegioURBANO2019 + colegioURBANO2018;
-                Elementos[12] = total;
-                grafico_pastel();
-                grafica_barras_1();
-            }
+                    int colegioRURAL2020 = calculos.Contador2020(informacio2020, "RURAL", 12);
+                    int colegioRURAL2019 = calculos.Contador2020(informacio2019, "RURAL", 12);
+                    int colegioRURAL2018 = calculos.Contador2020(informacio2018, "RURAL", 12);
+                    int total = colegioRURAL2020 + colegioRURAL2019 + colegioRURAL2018;
+                    Elementos[11] = total;
+                    grafico_pastel();
+                    grafica_barras_1();
+                }
             });
-RadioTodosArea.addActionListener(e -> {
-            if (RadioTodosArea.isSelected()) {
-                int areaTotal = calculos.Contador2020(informacio2020, "URBANO", 12) + calculos.Contador2020(informacio2018, "URBANO", 12) + calculos.Contador2020(informacio2019, "URBANO", 12) + calculos.Contador2020(informacio2020, "RURAL", 12) + calculos.Contador2020(informacio2019, "RURAL", 12) + calculos.Contador2020(informacio2018, "RURAL", 12);
-                Elementos[17] = areaTotal;
-                grafico_pastel();
-                grafica_barras_1();
-            }
+            RadioUrbana.addActionListener(e -> {
+                if (RadioUrbana.isSelected()) {
+                    int colegioURBANO2020 = calculos.Contador2020(informacio2020, "URBANO", 12);
+                    int colegioURBANO2019 = calculos.Contador2020(informacio2019, "URBANO", 12);
+                    int colegioURBANO2018 = calculos.Contador2020(informacio2018, "URBANO", 12);
+                    int total = colegioURBANO2020 + colegioURBANO2019 + colegioURBANO2018;
+                    Elementos[12] = total;
+                    grafico_pastel();
+                    grafica_barras_1();
+                }
+            });
+            RadioTodosArea.addActionListener(e -> {
+                if (RadioTodosArea.isSelected()) {
+                    int areaTotal = calculos.Contador2020(informacio2020, "URBANO", 12) + calculos.Contador2020(informacio2018, "URBANO", 12) + calculos.Contador2020(informacio2019, "URBANO", 12) + calculos.Contador2020(informacio2020, "RURAL", 12) + calculos.Contador2020(informacio2019, "RURAL", 12) + calculos.Contador2020(informacio2018, "RURAL", 12);
+                    Elementos[17] = areaTotal;
+                    grafico_pastel();
+                    grafica_barras_1();
+                }
             });
 
         } else {
@@ -2248,7 +2315,7 @@ RadioTodosArea.addActionListener(e -> {
     }
 
     public void actionbus8() {
-        JOptionPane.showMessageDialog(null, "selecciono: " + Plectura1.getValue());
+        JOptionPane.showMessageDialog(null, "selecciono: " + lectura.getValue());
     }
 
     public void actionbus9() {
@@ -2257,7 +2324,7 @@ RadioTodosArea.addActionListener(e -> {
     }
 
     public void actionbus10() {
-        JOptionPane.showMessageDialog(null, "selecciono: " + Plecturamatematica.getValue());
+        JOptionPane.showMessageDialog(null, "selecciono: " + matematica.getValue());
     }
 
     public void actionbus11() {
@@ -2266,7 +2333,7 @@ RadioTodosArea.addActionListener(e -> {
     }
 
     public void actionbus12() {
-        JOptionPane.showMessageDialog(null, "selecciono: " + Plectura4.getValue());
+        JOptionPane.showMessageDialog(null, "selecciono: " + naturales.getValue());
     }
 
     public void actionbus13() {
@@ -2275,7 +2342,7 @@ RadioTodosArea.addActionListener(e -> {
     }
 
     public void actionbus14() {
-        JOptionPane.showMessageDialog(null, "selecciono: " + Plectura5.getValue());
+        JOptionPane.showMessageDialog(null, "selecciono: " + inglees.getValue());
     }
 
     public void actionbus15() {
@@ -2283,6 +2350,7 @@ RadioTodosArea.addActionListener(e -> {
         JOptionPane.showMessageDialog(null, select);
     }
 
+    /*
     public void actionbus16() {
 
         if (CamPG1.isSelected()) {
@@ -2303,7 +2371,7 @@ RadioTodosArea.addActionListener(e -> {
             JOptionPane.showMessageDialog(null, "selecciono: " + Percentil.getValue());
         }
     }
-
+     */
     public void actionbusi() {
         actionbus1();
         actionbus2();
@@ -2320,8 +2388,8 @@ RadioTodosArea.addActionListener(e -> {
         actionbus13();
         actionbus14();
         actionbus15();
-        actionbus16();
-        actionbus17();
+        //    actionbus16();
+        //    actionbus17();
     }
 
     public void llenarArray2020() {
@@ -2473,6 +2541,18 @@ RadioTodosArea.addActionListener(e -> {
             Elementos[i] = 0;
 
         }
+
     }
 
-}
+    public int llenarBarraInteractiva(String dato) {
+        int respuesta = 0;
+        int lectura2020 = calculos.Contador2020(informacio2020, dato, 14);
+        int lectura2019 = calculos.Contador2020(informacio2019, dato, 14);
+        int lectura2018 = calculos.Contador2020(informacio2018, dato, 14);
+        respuesta = lectura2020 + lectura2019 +lectura2018 ;
+
+        return respuesta;
+    }
+
+}//Fin del programa
+
