@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Calculos {
     
-     public int Contador2020(ArrayList<String> dataArrayList, String buscar, int toks) {
+     public int Contador(ArrayList<String> dataArrayList, String buscar, int toks) {
     int contador = 0;
 
     for (String registro : dataArrayList) {
