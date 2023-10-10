@@ -1209,11 +1209,12 @@ public class GUI extends javax.swing.JFrame {
         jButton1.setToolTipText("Puntaje (1/100)");
         jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        progreso1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, 30));
+        progreso1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 50, 30));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/grupo (1).png"))); // NOI18N
+        jButton2.setToolTipText("<html>Cantidad de personas<br>Con ese puntaje<br>(79799 personas en total)");
         jButton2.setContentAreaFilled(false);
-        progreso1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+        progreso1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 50, -1));
 
         PuntajeLabelLectura.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         PuntajeLabelLectura.setForeground(new java.awt.Color(255, 102, 0));
@@ -1221,7 +1222,7 @@ public class GUI extends javax.swing.JFrame {
 
         lectorpersonas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         lectorpersonas.setForeground(new java.awt.Color(0, 102, 102));
-        progreso1.add(lectorpersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 40, 40));
+        progreso1.add(lectorpersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 40, 30));
 
         Info.add(progreso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 480, 270));
 
