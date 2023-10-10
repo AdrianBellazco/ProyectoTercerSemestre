@@ -57,6 +57,10 @@ public class GUI extends javax.swing.JFrame {
     int mousex, mousey;
 
     public GUI() {
+         ImageIcon icon = new ImageIcon("estadisticas.png");
+          Image image = icon.getImage();
+          setIconImage(image);
+          
         Valores.add(0);
         Valores.add(0);
 
