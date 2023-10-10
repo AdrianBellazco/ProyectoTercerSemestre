@@ -411,7 +411,7 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel4.setText("Jornada");
+        jLabel4.setText("Calendario");
         Filtrador.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1320, 260, 50));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -584,7 +584,7 @@ public class GUI extends javax.swing.JFrame {
         JornadaSelec.setBackground(new java.awt.Color(0, 102, 102));
         JornadaSelec.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         JornadaSelec.setForeground(new java.awt.Color(255, 102, 0));
-        JornadaSelec.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "COMPLETA", "MAÑANA", "NOCHE", "SABATINA", "TARDE", "UNICA" }));
+        JornadaSelec.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "OTRO" }));
         JornadaSelec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JornadaSelecActionPerformed(evt);
@@ -1807,9 +1807,9 @@ public void grafica_barras_1() {
         dato.setValue("Zona Urbana", urbana);
         dato.setValue("Todas las zonas", todazona);
 
-        dato.setValue("Jornada Completa", jornadaCompleta);
-        dato.setValue(" Mañana", jornadaMañana);
-        dato.setValue(" Noche", jornadaNoche);
+        dato.setValue("Calentadio A", jornadaCompleta);
+        dato.setValue("Calentadio  B", jornadaMañana);
+        dato.setValue("OTRO Calentadio", jornadaNoche);
         dato.setValue(" Sabatina", jornadaSabatina);
         dato.setValue(" Tarde", jornadaTarde);
         dato.setValue("Jornada unica", jornadaUnica);
@@ -2274,16 +2274,14 @@ public void grafica_barras_1() {
         JornadaSelec.addActionListener(e -> {
             String BuscarJornada = (String) JornadaSelec.getSelectedItem();
           
-            int elemento1 = calculos.Contador(informacio2020, BuscarJornada, 13);
-            int elemento2 = calculos.Contador(informacio2019, BuscarJornada, 13);
-            int elemento3 = calculos.Contador(informacio2018, BuscarJornada, 13);
+            int elemento1 = calculos.Contador(informacio2020, BuscarJornada, 11);
+            int elemento2 = calculos.Contador(informacio2019, BuscarJornada, 11);
+            int elemento3 = calculos.Contador(informacio2018, BuscarJornada, 11);
             switch (BuscarJornada) {
-                case "COMPLETA":    Elementos[18] = elemento1 + elemento2 + elemento3;     ; break;
-                case "MAÑANA":    Elementos[19] = elemento1 + elemento2 + elemento3;     ; break;
-                case "NOCHE":    Elementos[20] = elemento1 + elemento2 + elemento3;     ; break;
-                case "SABATINA":    Elementos[21] = elemento1 + elemento2 + elemento3;     ; break;
-                case "TARDE":    Elementos[22] = elemento1 + elemento2 + elemento3;     ; break;
-                case "UNICA":    Elementos[23] = elemento1 + elemento2 + elemento3;     ; break;
+                case "A":    Elementos[18] = elemento1 + elemento2 + elemento3;     ; break;
+                case "B":    Elementos[19] = elemento1 + elemento2 + elemento3;     ; break;
+                case "OTRO":    Elementos[20] = elemento1 + elemento2 + elemento3;     ; break;
+           
                 default:
                     throw new AssertionError();
             }
