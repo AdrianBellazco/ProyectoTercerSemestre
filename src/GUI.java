@@ -63,6 +63,8 @@ public class GUI extends javax.swing.JFrame {
         llenarArray2020();
         llenarArray2019();
         llenarArray2018();
+        
+      
 
         initComponents();
         grafico_pastel();
@@ -71,6 +73,7 @@ public class GUI extends javax.swing.JFrame {
         SeleccionarComboBox();
         percentilbarra.setEnabled(true);
         putajeglobalbarra.setEnabled(true);
+        
     }
 
     /**
@@ -578,6 +581,11 @@ public class GUI extends javax.swing.JFrame {
         JornadaSelec.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         JornadaSelec.setForeground(new java.awt.Color(255, 102, 0));
         JornadaSelec.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "COMPLETA", "MAÑANA", "NOCHE", "SABATINA", "TARDE", "UNICA" }));
+        JornadaSelec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JornadaSelecActionPerformed(evt);
+            }
+        });
         Filtrador.add(JornadaSelec, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1380, 180, 50));
 
         TodosGeneros.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -1482,6 +1490,10 @@ int cont = 0;
     private void graficopastelbarraComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_graficopastelbarraComponentAdded
 
     }//GEN-LAST:event_graficopastelbarraComponentAdded
+
+    private void JornadaSelecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JornadaSelecActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JornadaSelecActionPerformed
 
     /**
      * @param args the command line arguments
