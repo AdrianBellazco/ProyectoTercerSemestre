@@ -992,7 +992,7 @@ public class GUI extends javax.swing.JFrame {
         etiquetavalorlectura.setForeground(new java.awt.Color(255, 102, 0));
         etiquetavalorlectura.setToolTipText("");
         etiquetavalorlectura.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Filtrador.add(etiquetavalorlectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 1790, 30, 29));
+        Filtrador.add(etiquetavalorlectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 1790, 50, 29));
 
         jLabel22.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 102, 0));
@@ -1103,11 +1103,11 @@ public class GUI extends javax.swing.JFrame {
 
         PuntajeLabelGlobal.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         PuntajeLabelGlobal.setForeground(new java.awt.Color(0, 102, 102));
-        progreso1.add(PuntajeLabelGlobal, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 30, 30));
+        progreso1.add(PuntajeLabelGlobal, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 50, 30));
 
         PuntajeLabelPercentil.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         PuntajeLabelPercentil.setForeground(new java.awt.Color(0, 102, 102));
-        progreso1.add(PuntajeLabelPercentil, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 30, 30));
+        progreso1.add(PuntajeLabelPercentil, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 50, 30));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/velocimetro.png"))); // NOI18N
         jButton1.setToolTipText("Puntaje (1/100)");
@@ -1143,11 +1143,11 @@ public class GUI extends javax.swing.JFrame {
 
         RegistroPersonaGloval.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         RegistroPersonaGloval.setForeground(new java.awt.Color(255, 102, 0));
-        progreso1.add(RegistroPersonaGloval, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 40, 30));
+        progreso1.add(RegistroPersonaGloval, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 50, 30));
 
         RegistroPersonaPercentil.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         RegistroPersonaPercentil.setForeground(new java.awt.Color(255, 102, 0));
-        progreso1.add(RegistroPersonaPercentil, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 40, 30));
+        progreso1.add(RegistroPersonaPercentil, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 50, 30));
 
         barraRegistroglobal.setForeground(new java.awt.Color(0, 102, 102));
         barraRegistroglobal.setMaximum(7980);
