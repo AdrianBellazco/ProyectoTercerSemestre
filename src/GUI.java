@@ -63,13 +63,11 @@ public class GUI extends javax.swing.JFrame {
 
         Valores.add(0);
         Valores.add(0);
-        
-      
-        
+
         llenarArray2020();
         llenarArray2019();
         llenarArray2018();
-  imprimir();
+        // imprimir();
         initComponents();
         grafico_pastel();
 
@@ -77,10 +75,10 @@ public class GUI extends javax.swing.JFrame {
         SeleccionarComboBox();
         percentilbarra.setEnabled(true);
         putajeglobalbarra.setEnabled(true);
-        
+
         grafico_barras1.setVisible(false);
-            graficopastelbarra.setVisible(false);
-            progreso1.setVisible(false);
+        graficopastelbarra.setVisible(false);
+        progreso1.setVisible(false);
 
     }
 
@@ -224,6 +222,10 @@ public class GUI extends javax.swing.JFrame {
         barraRegistroglobal = new rojerusan.componentes.RSProgressCircle();
         barraRegistroPercentil = new rojerusan.componentes.RSProgressCircle();
         jSeparator1 = new javax.swing.JSeparator();
+        DesempeñoIngles = new rojerusan.componentes.RSProgressBar();
+        Desempeñolectura = new rojerusan.componentes.RSProgressBar();
+        Desempeñomate = new rojerusan.componentes.RSProgressBar();
+        Desempeñonaturales = new rojerusan.componentes.RSProgressBar();
         Limpiar = new MiBoton();
         graficopastelbarra = new javax.swing.JPanel();
 
@@ -579,7 +581,12 @@ public class GUI extends javax.swing.JFrame {
         desempeñoingles.setBackground(new java.awt.Color(0, 102, 102));
         desempeñoingles.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         desempeñoingles.setForeground(new java.awt.Color(255, 102, 0));
-        desempeñoingles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A-", "A1", "A2", "A2+", "B1", "B1+", "B2", "B2+", "C1", "C2" }));
+        desempeñoingles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A-", "A1", "A2", "B+", "B1" }));
+        desempeñoingles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                desempeñoinglesActionPerformed(evt);
+            }
+        });
         Filtrador.add(desempeñoingles, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3380, 180, 50));
         Filtrador.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1320, 260, 10));
 
@@ -934,12 +941,17 @@ public class GUI extends javax.swing.JFrame {
         Estractoselect.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         Estractoselect.setForeground(new java.awt.Color(255, 102, 0));
         Estractoselect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estrato 1", "Estrato 2", "Estrato 3", "Estrato 4", "Estrato 5", "Estrato 6", "Sin Estrato" }));
+        Estractoselect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstractoselectActionPerformed(evt);
+            }
+        });
         Filtrador.add(Estractoselect, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1600, 180, 50));
 
         desempeñolectura1.setBackground(new java.awt.Color(0, 102, 102));
         desempeñolectura1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         desempeñolectura1.setForeground(new java.awt.Color(255, 102, 0));
-        desempeñolectura1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3", " 4" }));
+        desempeñolectura1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
         desempeñolectura1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 desempeñolectura1ActionPerformed(evt);
@@ -950,13 +962,18 @@ public class GUI extends javax.swing.JFrame {
         desempeñomatematica1.setBackground(new java.awt.Color(0, 102, 102));
         desempeñomatematica1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         desempeñomatematica1.setForeground(new java.awt.Color(255, 102, 0));
-        desempeñomatematica1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3", " 4" }));
+        desempeñomatematica1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+        desempeñomatematica1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                desempeñomatematica1ActionPerformed(evt);
+            }
+        });
         Filtrador.add(desempeñomatematica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2500, 180, 50));
 
         desempeñonaturales1.setBackground(new java.awt.Color(0, 102, 102));
         desempeñonaturales1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         desempeñonaturales1.setForeground(new java.awt.Color(255, 102, 0));
-        desempeñonaturales1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3", " 4" }));
+        desempeñonaturales1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
         Filtrador.add(desempeñonaturales1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2930, 180, 50));
 
         mateTex1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -1135,6 +1152,46 @@ public class GUI extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         progreso1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 10, 220));
 
+        DesempeñoIngles.setForeground(new java.awt.Color(0, 102, 102));
+        DesempeñoIngles.setMaximum(79799);
+        DesempeñoIngles.setToolTipText("Desempeño de ingles");
+        DesempeñoIngles.setValue(0);
+        DesempeñoIngles.setColorBorde(new java.awt.Color(255, 255, 255));
+        DesempeñoIngles.setColorSelBackground(new java.awt.Color(0, 102, 102));
+        DesempeñoIngles.setColorSelForeground(new java.awt.Color(255, 102, 0));
+        DesempeñoIngles.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
+        progreso1.add(DesempeñoIngles, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 20, -1));
+
+        Desempeñolectura.setForeground(new java.awt.Color(255, 102, 0));
+        Desempeñolectura.setMaximum(79799);
+        Desempeñolectura.setToolTipText("Desempeño de Lectura critica");
+        Desempeñolectura.setValue(0);
+        Desempeñolectura.setColorBorde(new java.awt.Color(255, 255, 255));
+        Desempeñolectura.setColorSelBackground(new java.awt.Color(255, 102, 0));
+        Desempeñolectura.setColorSelForeground(new java.awt.Color(0, 102, 102));
+        Desempeñolectura.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
+        progreso1.add(Desempeñolectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 20, -1));
+
+        Desempeñomate.setForeground(new java.awt.Color(0, 102, 102));
+        Desempeñomate.setMaximum(79799);
+        Desempeñomate.setToolTipText("Desempeño de matematica");
+        Desempeñomate.setValue(0);
+        Desempeñomate.setColorBorde(new java.awt.Color(255, 255, 255));
+        Desempeñomate.setColorSelBackground(new java.awt.Color(0, 102, 102));
+        Desempeñomate.setColorSelForeground(new java.awt.Color(255, 102, 0));
+        Desempeñomate.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
+        progreso1.add(Desempeñomate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 20, -1));
+
+        Desempeñonaturales.setForeground(new java.awt.Color(255, 102, 0));
+        Desempeñonaturales.setMaximum(79799);
+        Desempeñonaturales.setToolTipText("Desempeño de naturales");
+        Desempeñonaturales.setValue(0);
+        Desempeñonaturales.setColorBorde(new java.awt.Color(255, 255, 255));
+        Desempeñonaturales.setColorSelBackground(new java.awt.Color(255, 102, 0));
+        Desempeñonaturales.setColorSelForeground(new java.awt.Color(0, 102, 102));
+        Desempeñonaturales.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
+        progreso1.add(Desempeñonaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 20, -1));
+
         Info.add(progreso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 480, 270));
 
         Limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/limpiar.png"))); // NOI18N
@@ -1211,6 +1268,16 @@ int cont = 0;
         naturales.setValue(0);
         percentilbarra.setValue(0);
         putajeglobalbarra.setValue(0);
+        DesempeñoIngles.setValue(0);
+        Desempeñomate.setValue(0);
+        Desempeñonaturales.setValue(0);
+        Desempeñolectura.setValue(0);
+        barraRegistroLectura.setValue(0);
+        barraRegistroMatematica.setValue(0);
+        barraRegistroNaturales.setValue(0);
+        barraRegistroIngles.setValue(0);
+        barraRegistroPercentil.setValue(0);
+        barraRegistroglobal.setValue(0);
 
 
     }//GEN-LAST:event_LimpiarActionPerformed
@@ -1301,7 +1368,7 @@ int cont = 0;
             grafico_barras1.setVisible(true);
             graficopastelbarra.setVisible(true);
             progreso1.setVisible(true);
-            
+            LimpiarActionPerformed(null);
             refresco();
             grafico_pastel();
             grafica_barras_1();
@@ -1322,7 +1389,7 @@ int cont = 0;
             grafico_barras1.setVisible(false);
             graficopastelbarra.setVisible(false);
             progreso1.setVisible(false);
-            
+
             refresco();
             grafico_pastel();
             grafica_barras_1();
@@ -1424,7 +1491,7 @@ int cont = 0;
     }//GEN-LAST:event_AccionnaturalesActionPerformed
 
     private void AccioninglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccioninglesActionPerformed
-        AccionDesempeñoIngles();
+        AccionDesempeñoIngles(23);
     }//GEN-LAST:event_AccioninglesActionPerformed
 
     private void lecturaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_lecturaStateChanged
@@ -1501,6 +1568,18 @@ int cont = 0;
         // TODO add your handling code here:
     }//GEN-LAST:event_desempeñolectura1ActionPerformed
 
+    private void EstractoselectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstractoselectActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EstractoselectActionPerformed
+
+    private void desempeñomatematica1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desempeñomatematica1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_desempeñomatematica1ActionPerformed
+
+    private void desempeñoinglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desempeñoinglesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_desempeñoinglesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1559,6 +1638,10 @@ int cont = 0;
     private javax.swing.JCheckBox ColegiogeneroMIXTO;
     private javax.swing.JCheckBox ColegiogeneroMasculino;
     private javax.swing.JCheckBox ColegiogeneroTODOS;
+    private rojerusan.componentes.RSProgressBar DesempeñoIngles;
+    private rojerusan.componentes.RSProgressBar Desempeñolectura;
+    private rojerusan.componentes.RSProgressBar Desempeñomate;
+    private rojerusan.componentes.RSProgressBar Desempeñonaturales;
     private javax.swing.JComboBox<String> Estractoselect;
     protected javax.swing.JCheckBox Femenino;
     private javax.swing.JScrollPane Filtr;
@@ -1794,8 +1877,7 @@ public void grafica_barras_1() {
         int estracto5 = Elementos[28];
         int estracto6 = Elementos[29];
         int sinestracto = Elementos[31];
-        
-        
+
         dato.setValue("2020", año1);
         dato.setValue("2019", año2);
         dato.setValue("2018", año3);
@@ -1831,35 +1913,31 @@ public void grafica_barras_1() {
 
         dato.setValue("Sin Estracto", sinestracto);
 
-        
         JFreeChart grafico_pastel = ChartFactory.createPieChart("", dato, true, true, false);
         panel_grafi.setChart(grafico_pastel);
 
         panel_grafi.setBackground(Color.WHITE);
-       
+
         PiePlot plot = (PiePlot) grafico_pastel.getPlot();
 
-
         // Cambiar el color de las secciones
-       
-plot.setLabelGenerator(null);
+        plot.setLabelGenerator(null);
         plot.setCircular(false);
         plot.setIgnoreNullValues(true);
         plot.setSectionOutlinesVisible(false);
-        
 
         plot.setLabelLinksVisible(false);
-        plot.setBackgroundPaint(Color.WHITE); 
-     
+        plot.setBackgroundPaint(Color.WHITE);
+
         panel_grafi.setMouseWheelEnabled(true);
         panel_grafi.setLocation(0, 0);
         panel_grafi.setPreferredSize(new Dimension(20, 20));
         panel_grafi.setVisible(true);
 
         graficopastelbarra.setLayout(new BorderLayout());
-        
+
         graficopastelbarra.add(panel_grafi);
-        
+
         pack();
         repaint();
     }
@@ -2360,14 +2438,10 @@ plot.setLabelGenerator(null);
             }
 
             grafico_pastel();
-       //     grafica_barras_1();
+            //     grafica_barras_1();
 
         }
-    
-
-    
-
-    );
+        );
     }
 
     public void actionbus8() {
@@ -2377,7 +2451,24 @@ plot.setLabelGenerator(null);
     public void AccionDesempeñoLectura() {
         desempeñolectura1.addActionListener(e -> {
             String select = (String) desempeñolectura1.getSelectedItem();
-            JOptionPane.showMessageDialog(null, select);
+            int cantidad = CalcularDesempeñodebarras(select, 15);
+            switch (select) {
+                case "1":
+                    Desempeñolectura.setValue(cantidad);
+                    break;
+                case "2":
+                    Desempeñolectura.setValue(cantidad);
+                    break;
+                case "3":
+                    Desempeñolectura.setValue(cantidad);
+                    break;
+                case "4":
+                    Desempeñolectura.setValue(cantidad);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+
         });
     }
 
@@ -2388,7 +2479,24 @@ plot.setLabelGenerator(null);
     public void AccionDesempeñoMatematica() {
         desempeñomatematica1.addActionListener(e -> {
             String select = (String) desempeñomatematica1.getSelectedItem();
-            JOptionPane.showMessageDialog(null, select);
+            int cantidad = CalcularDesempeñodebarras(select, 17);
+            switch (select) {
+                case "1":
+                    Desempeñomate.setValue(cantidad);
+                    break;
+                case "2":
+                    Desempeñomate.setValue(cantidad);
+                    break;
+                case "3":
+                    Desempeñomate.setValue(cantidad);
+                    break;
+                case "4":
+                    Desempeñomate.setValue(cantidad);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+
         });
     }
 
@@ -2399,7 +2507,24 @@ plot.setLabelGenerator(null);
     public void AccionDesempeñoNaturales() {
         desempeñonaturales1.addActionListener(e -> {
             String select = (String) desempeñonaturales1.getSelectedItem();
-            JOptionPane.showMessageDialog(null, select);
+            int cantidad = CalcularDesempeñodebarras(select, 19);
+            switch (select) {
+                case "1":
+                    Desempeñonaturales.setValue(cantidad);
+                    System.out.println("naturales: " + cantidad);
+                    break;
+                case "2":
+                    Desempeñonaturales.setValue(cantidad);
+                    break;
+                case "3":
+                    Desempeñonaturales.setValue(cantidad);
+                    break;
+                case "4":
+                    Desempeñonaturales.setValue(cantidad);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
         });
     }
 
@@ -2407,10 +2532,44 @@ plot.setLabelGenerator(null);
         JOptionPane.showMessageDialog(null, "selecciono: " + inglees.getValue());
     }
 
-    public void AccionDesempeñoIngles() {
+    public void AccionDesempeñoIngles(int posicion) {
+
         desempeñoingles.addActionListener(e -> {
             String select = (String) desempeñoingles.getSelectedItem();
-            JOptionPane.showMessageDialog(null, select);
+            int cantidad;
+        switch (select) {
+                case "A-":
+
+                    cantidad = llenarBarraInteractiva(select, posicion);
+                    //calcular al 100% cuanto seria 
+                    DesempeñoIngles.setValue(cantidad);
+
+                    break;
+                case "A1":
+                    cantidad = llenarBarraInteractiva(select, posicion);
+                    //calcular al 100% cuanto seria 
+                    DesempeñoIngles.setValue(cantidad);
+
+                    break;
+                case "A2":
+                    cantidad = llenarBarraInteractiva(select, posicion);
+                    //calcular al 100% cuanto seria 
+                    DesempeñoIngles.setValue(cantidad);
+
+                    break;
+                case "B+":
+                    cantidad = llenarBarraInteractiva(select, posicion);
+                    //calcular al 100% cuanto seria 
+                    DesempeñoIngles.setValue(cantidad);
+                    break;
+                case "B1":
+                    cantidad = llenarBarraInteractiva(select, posicion);
+                    //calcular al 100% cuanto seria 
+                    DesempeñoIngles.setValue(cantidad);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
         });
     }
 
@@ -2451,7 +2610,7 @@ plot.setLabelGenerator(null);
         actionbus12();
         AccionDesempeñoNaturales();
         actionbus14();
-        AccionDesempeñoIngles();
+        AccionDesempeñoIngles(23);
         //    actionbus16();
         //    actionbus17();
     }
@@ -2621,18 +2780,49 @@ plot.setLabelGenerator(null);
     public void SeleccionarComboBox() {
         AccionDeLasJornadas();
         accionDeEstracto();
-        AccionDesempeñoIngles();
+        AccionDesempeñoIngles(23);
         AccionDesempeñoNaturales();
         AccionDesempeñoMatematica();
         AccionDesempeñoLectura();
     }
-    
-    public void imprimir(){
+
+    public void imprimir() {
         for (int i = 0; i < informacio2020.size(); i++) {
             String get = informacio2020.get(i);
             System.out.println(get);
-            
+
         }
+    }
+
+    public int CalcularDesempeñodebarras(String select, int posicion) {
+        int cantidad;
+        switch (select) {
+            case "1":
+
+                // String valor =  select;
+                cantidad = llenarBarraInteractiva(select, posicion);
+                //calcular al 100% cuanto seria 
+
+                break;
+            case "2":
+                cantidad = llenarBarraInteractiva(select, posicion);
+                //calcular al 100% cuanto seria 
+
+                break;
+            case "3":
+                cantidad = llenarBarraInteractiva(select, posicion);
+                //calcular al 100% cuanto seria 
+
+                break;
+            case "4":
+                cantidad = llenarBarraInteractiva(select, posicion);
+                //calcular al 100% cuanto seria 
+
+                break;
+            default:
+                throw new AssertionError();
+        }
+        return cantidad;
     }
 
 }//Fin del programa
