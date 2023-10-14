@@ -111,7 +111,6 @@ public class GUI extends javax.swing.JFrame {
         Bus2 = new MiBoton();
         Bus3 = new MiBoton();
         AccionJornada = new MiBoton();
-        Accionlectura = new MiBoton();
         Accionestracto = new MiBoton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -156,11 +155,8 @@ public class GUI extends javax.swing.JFrame {
         jSeparator11 = new javax.swing.JSeparator();
         matematica = new javax.swing.JSlider();
         jSeparator12 = new javax.swing.JSeparator();
-        Accionmate = new MiBoton();
         jSeparator13 = new javax.swing.JSeparator();
-        Accionnaturales = new MiBoton();
         jSeparator14 = new javax.swing.JSeparator();
-        Accioningles = new MiBoton();
         jSeparator15 = new javax.swing.JSeparator();
         modo = new javax.swing.JToggleButton();
         radioañostodos = new javax.swing.JRadioButton();
@@ -197,6 +193,10 @@ public class GUI extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         etiquetavalorlectura = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        InfoIngles = new javax.swing.JLabel();
+        InfoInnaturales = new javax.swing.JLabel();
+        InfoImate = new javax.swing.JLabel();
+        Infolectura = new javax.swing.JLabel();
         Info = new javax.swing.JPanel();
         grafico_barras1 = new javax.swing.JPanel();
         progreso1 = new javax.swing.JPanel();
@@ -226,6 +226,11 @@ public class GUI extends javax.swing.JFrame {
         Desempeñolectura = new rojerusan.componentes.RSProgressBar();
         Desempeñomate = new rojerusan.componentes.RSProgressBar();
         Desempeñonaturales = new rojerusan.componentes.RSProgressBar();
+        jLabel11 = new javax.swing.JLabel();
+        LabelDesNaturales = new javax.swing.JLabel();
+        LabelDesMate = new javax.swing.JLabel();
+        LabelDesIngles = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         Limpiar = new MiBoton();
         graficopastelbarra = new javax.swing.JPanel();
 
@@ -311,7 +316,7 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Bus5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
-        Bus5.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus5.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Limpiar");
         Bus5.setContentAreaFilled(false);
         Bus5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Bus5.addActionListener(new java.awt.event.ActionListener() {
@@ -322,7 +327,7 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(Bus5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1250, -1, -1));
 
         Bus1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
-        Bus1.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus1.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Limpiar");
         Bus1.setContentAreaFilled(false);
         Bus1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Bus1.addActionListener(new java.awt.event.ActionListener() {
@@ -333,7 +338,7 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(Bus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
         Bus4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
-        Bus4.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus4.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Limpiar");
         Bus4.setContentAreaFilled(false);
         Bus4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Bus4.addActionListener(new java.awt.event.ActionListener() {
@@ -344,7 +349,7 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(Bus4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1020, -1, -1));
 
         Bus2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
-        Bus2.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus2.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Limpiar");
         Bus2.setContentAreaFilled(false);
         Bus2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Bus2.addActionListener(new java.awt.event.ActionListener() {
@@ -355,7 +360,7 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(Bus2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, -1, -1));
 
         Bus3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
-        Bus3.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
+        Bus3.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Limpiar");
         Bus3.setContentAreaFilled(false);
         Bus3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Bus3.addActionListener(new java.awt.event.ActionListener() {
@@ -365,7 +370,7 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(Bus3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, -1));
 
-        AccionJornada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        AccionJornada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
         AccionJornada.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         AccionJornada.setContentAreaFilled(false);
         AccionJornada.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -376,18 +381,7 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(AccionJornada, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1470, -1, -1));
 
-        Accionlectura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Accionlectura.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Accionlectura.setContentAreaFilled(false);
-        Accionlectura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Accionlectura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccionlecturaActionPerformed(evt);
-            }
-        });
-        Filtrador.add(Accionlectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2120, -1, -1));
-
-        Accionestracto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
+        Accionestracto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
         Accionestracto.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
         Accionestracto.setContentAreaFilled(false);
         Accionestracto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -441,7 +435,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 102, 0));
         jLabel9.setText("desempeño lectura");
-        Filtrador.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 1970, 260, 50));
+        Filtrador.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 1940, 260, 50));
 
         mate.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         mate.setForeground(new java.awt.Color(255, 102, 0));
@@ -450,7 +444,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 102, 0));
         jLabel12.setText("desempeño matematicas");
-        Filtrador.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2420, 260, 50));
+        Filtrador.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2380, 260, 50));
 
         jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 102, 0));
@@ -688,41 +682,8 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(matematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2290, 250, -1));
         Filtrador.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1540, 260, 10));
-
-        Accionmate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Accionmate.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Accionmate.setContentAreaFilled(false);
-        Accionmate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Accionmate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccionmateActionPerformed(evt);
-            }
-        });
-        Filtrador.add(Accionmate, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 2570, -1, -1));
         Filtrador.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2640, 260, 10));
-
-        Accionnaturales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Accionnaturales.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Accionnaturales.setContentAreaFilled(false);
-        Accionnaturales.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Accionnaturales.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccionnaturalesActionPerformed(evt);
-            }
-        });
-        Filtrador.add(Accionnaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3010, -1, -1));
         Filtrador.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3560, 260, 10));
-
-        Accioningles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/revisar.png"))); // NOI18N
-        Accioningles.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Accioningles.setContentAreaFilled(false);
-        Accioningles.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Accioningles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccioninglesActionPerformed(evt);
-            }
-        });
-        Filtrador.add(Accioningles, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 3470, -1, -1));
         Filtrador.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3090, 260, 10));
 
         modo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar.png"))); // NOI18N
@@ -957,7 +918,7 @@ public class GUI extends javax.swing.JFrame {
                 desempeñolectura1ActionPerformed(evt);
             }
         });
-        Filtrador.add(desempeñolectura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 2040, 180, 50));
+        Filtrador.add(desempeñolectura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2000, 180, 50));
 
         desempeñomatematica1.setBackground(new java.awt.Color(0, 102, 102));
         desempeñomatematica1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -968,7 +929,7 @@ public class GUI extends javax.swing.JFrame {
                 desempeñomatematica1ActionPerformed(evt);
             }
         });
-        Filtrador.add(desempeñomatematica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2500, 180, 50));
+        Filtrador.add(desempeñomatematica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2460, 180, 50));
 
         desempeñonaturales1.setBackground(new java.awt.Color(0, 102, 102));
         desempeñonaturales1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -1012,6 +973,34 @@ public class GUI extends javax.swing.JFrame {
         jLabel22.setText("Tipo de documento");
         Filtrador.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 260, 50));
 
+        InfoIngles.setBackground(new java.awt.Color(255, 102, 0));
+        InfoIngles.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        InfoIngles.setForeground(new java.awt.Color(255, 102, 0));
+        InfoIngles.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        InfoIngles.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        Filtrador.add(InfoIngles, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3450, 230, 100));
+
+        InfoInnaturales.setBackground(new java.awt.Color(255, 102, 0));
+        InfoInnaturales.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        InfoInnaturales.setForeground(new java.awt.Color(255, 102, 0));
+        InfoInnaturales.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        InfoInnaturales.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        Filtrador.add(InfoInnaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2990, 230, 100));
+
+        InfoImate.setBackground(new java.awt.Color(255, 102, 0));
+        InfoImate.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        InfoImate.setForeground(new java.awt.Color(255, 102, 0));
+        InfoImate.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        InfoImate.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        Filtrador.add(InfoImate, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2530, 230, 100));
+
+        Infolectura.setBackground(new java.awt.Color(255, 102, 0));
+        Infolectura.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        Infolectura.setForeground(new java.awt.Color(255, 102, 0));
+        Infolectura.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Infolectura.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        Filtrador.add(Infolectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2070, 230, 100));
+
         Filtr.setViewportView(Filtrador);
 
         jPanel1.add(Filtr, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -18, 340, 640));
@@ -1037,6 +1026,7 @@ public class GUI extends javax.swing.JFrame {
         etiquetavalorlectura3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         progreso1.add(etiquetavalorlectura3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 560, 80, 50));
 
+        barraRegistroLectura.setBorder(new javax.swing.border.MatteBorder(null));
         barraRegistroLectura.setForeground(new java.awt.Color(255, 102, 0));
         barraRegistroLectura.setMaximum(7980);
         barraRegistroLectura.setToolTipText("Puntos de lectura critica\nporcentaje de personas\npor X cantidad de puntos");
@@ -1045,12 +1035,13 @@ public class GUI extends javax.swing.JFrame {
         barraRegistroLectura.setColorSelBackground(new java.awt.Color(255, 102, 0));
         barraRegistroLectura.setColorSelForeground(new java.awt.Color(0, 102, 102));
         barraRegistroLectura.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
-        progreso1.add(barraRegistroLectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 40, 200));
+        progreso1.add(barraRegistroLectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 40, 170));
 
         PuntajeLabelMatematica.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         PuntajeLabelMatematica.setForeground(new java.awt.Color(0, 102, 102));
         progreso1.add(PuntajeLabelMatematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 30, 30));
 
+        barraRegistroMatematica.setBorder(new javax.swing.border.MatteBorder(null));
         barraRegistroMatematica.setForeground(new java.awt.Color(0, 102, 102));
         barraRegistroMatematica.setMaximum(7980);
         barraRegistroMatematica.setToolTipText("Puntos de matematica\nporcentaje de personas\npor X cantidad de puntos");
@@ -1059,8 +1050,9 @@ public class GUI extends javax.swing.JFrame {
         barraRegistroMatematica.setColorSelBackground(new java.awt.Color(0, 102, 102));
         barraRegistroMatematica.setColorSelForeground(new java.awt.Color(255, 102, 0));
         barraRegistroMatematica.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
-        progreso1.add(barraRegistroMatematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 40, 200));
+        progreso1.add(barraRegistroMatematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 40, 170));
 
+        barraRegistroNaturales.setBorder(new javax.swing.border.MatteBorder(null));
         barraRegistroNaturales.setForeground(new java.awt.Color(255, 102, 0));
         barraRegistroNaturales.setMaximum(7980);
         barraRegistroNaturales.setToolTipText("Puntos de naturales\nporcentaje de personas\npor X cantidad de puntos");
@@ -1069,12 +1061,13 @@ public class GUI extends javax.swing.JFrame {
         barraRegistroNaturales.setColorSelBackground(new java.awt.Color(255, 102, 0));
         barraRegistroNaturales.setColorSelForeground(new java.awt.Color(0, 102, 102));
         barraRegistroNaturales.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
-        progreso1.add(barraRegistroNaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 40, 200));
+        progreso1.add(barraRegistroNaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 40, 170));
 
         PuntajeLabelNaturales.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         PuntajeLabelNaturales.setForeground(new java.awt.Color(255, 102, 0));
         progreso1.add(PuntajeLabelNaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 30, 30));
 
+        barraRegistroIngles.setBorder(new javax.swing.border.MatteBorder(null));
         barraRegistroIngles.setForeground(new java.awt.Color(0, 102, 102));
         barraRegistroIngles.setMaximum(7980);
         barraRegistroIngles.setToolTipText("puntos de ingles\nporcentaje de personas\npor X cantidad de puntos");
@@ -1083,7 +1076,7 @@ public class GUI extends javax.swing.JFrame {
         barraRegistroIngles.setColorSelBackground(new java.awt.Color(0, 102, 102));
         barraRegistroIngles.setColorSelForeground(new java.awt.Color(255, 102, 0));
         barraRegistroIngles.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
-        progreso1.add(barraRegistroIngles, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 40, 200));
+        progreso1.add(barraRegistroIngles, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 40, 170));
 
         PuntajeLabelIngles.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         PuntajeLabelIngles.setForeground(new java.awt.Color(0, 102, 102));
@@ -1101,33 +1094,33 @@ public class GUI extends javax.swing.JFrame {
         jButton1.setToolTipText("Puntaje (1/100)");
         jButton1.setContentAreaFilled(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        progreso1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 50, 30));
+        progreso1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 50, 30));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/grupo (1).png"))); // NOI18N
         jButton2.setToolTipText("<html>Cantidad de personas<br>Con ese puntaje<br>(79799 personas registradas<br>de forma global)");
         jButton2.setContentAreaFilled(false);
-        progreso1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 50, -1));
+        progreso1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, -1));
 
         PuntajeLabelLectura.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         PuntajeLabelLectura.setForeground(new java.awt.Color(255, 102, 0));
-        progreso1.add(PuntajeLabelLectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 50, 30));
+        progreso1.add(PuntajeLabelLectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 30, 30));
 
         lectorpersonas.setBackground(new java.awt.Color(0, 153, 204));
         lectorpersonas.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         lectorpersonas.setForeground(new java.awt.Color(0, 102, 102));
-        progreso1.add(lectorpersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 40, 30));
+        progreso1.add(lectorpersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 30, 30));
 
         registropersonasmatematica.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         registropersonasmatematica.setForeground(new java.awt.Color(255, 102, 0));
-        progreso1.add(registropersonasmatematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 40, 30));
+        progreso1.add(registropersonasmatematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 40, 30));
 
         registropersonasNaturales.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         registropersonasNaturales.setForeground(new java.awt.Color(0, 102, 102));
-        progreso1.add(registropersonasNaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 40, 30));
+        progreso1.add(registropersonasNaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 40, 30));
 
         RegistroPersonasIngles.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         RegistroPersonasIngles.setForeground(new java.awt.Color(255, 102, 0));
-        progreso1.add(RegistroPersonasIngles, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 40, 30));
+        progreso1.add(RegistroPersonasIngles, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 40, 30));
 
         RegistroPersonaGloval.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         RegistroPersonaGloval.setForeground(new java.awt.Color(255, 102, 0));
@@ -1152,6 +1145,7 @@ public class GUI extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         progreso1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 10, 220));
 
+        DesempeñoIngles.setBorder(new javax.swing.border.MatteBorder(null));
         DesempeñoIngles.setForeground(new java.awt.Color(0, 102, 102));
         DesempeñoIngles.setMaximum(79799);
         DesempeñoIngles.setToolTipText("Desempeño de ingles");
@@ -1160,8 +1154,9 @@ public class GUI extends javax.swing.JFrame {
         DesempeñoIngles.setColorSelBackground(new java.awt.Color(0, 102, 102));
         DesempeñoIngles.setColorSelForeground(new java.awt.Color(255, 102, 0));
         DesempeñoIngles.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
-        progreso1.add(DesempeñoIngles, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 20, -1));
+        progreso1.add(DesempeñoIngles, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 20, 170));
 
+        Desempeñolectura.setBorder(new javax.swing.border.MatteBorder(null));
         Desempeñolectura.setForeground(new java.awt.Color(255, 102, 0));
         Desempeñolectura.setMaximum(79799);
         Desempeñolectura.setToolTipText("Desempeño de Lectura critica");
@@ -1170,8 +1165,9 @@ public class GUI extends javax.swing.JFrame {
         Desempeñolectura.setColorSelBackground(new java.awt.Color(255, 102, 0));
         Desempeñolectura.setColorSelForeground(new java.awt.Color(0, 102, 102));
         Desempeñolectura.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
-        progreso1.add(Desempeñolectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 20, -1));
+        progreso1.add(Desempeñolectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 20, 170));
 
+        Desempeñomate.setBorder(new javax.swing.border.MatteBorder(null));
         Desempeñomate.setForeground(new java.awt.Color(0, 102, 102));
         Desempeñomate.setMaximum(79799);
         Desempeñomate.setToolTipText("Desempeño de matematica");
@@ -1180,8 +1176,9 @@ public class GUI extends javax.swing.JFrame {
         Desempeñomate.setColorSelBackground(new java.awt.Color(0, 102, 102));
         Desempeñomate.setColorSelForeground(new java.awt.Color(255, 102, 0));
         Desempeñomate.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
-        progreso1.add(Desempeñomate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 20, -1));
+        progreso1.add(Desempeñomate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 20, 170));
 
+        Desempeñonaturales.setBorder(new javax.swing.border.MatteBorder(null));
         Desempeñonaturales.setForeground(new java.awt.Color(255, 102, 0));
         Desempeñonaturales.setMaximum(79799);
         Desempeñonaturales.setToolTipText("Desempeño de naturales");
@@ -1190,9 +1187,34 @@ public class GUI extends javax.swing.JFrame {
         Desempeñonaturales.setColorSelBackground(new java.awt.Color(255, 102, 0));
         Desempeñonaturales.setColorSelForeground(new java.awt.Color(0, 102, 102));
         Desempeñonaturales.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
-        progreso1.add(Desempeñonaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 20, -1));
+        progreso1.add(Desempeñonaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 20, 170));
 
-        Info.add(progreso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 480, 270));
+        jLabel11.setBackground(new java.awt.Color(255, 102, 0));
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 102, 0));
+        progreso1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 40, 30));
+
+        LabelDesNaturales.setBackground(new java.awt.Color(255, 102, 0));
+        LabelDesNaturales.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        LabelDesNaturales.setForeground(new java.awt.Color(255, 102, 0));
+        progreso1.add(LabelDesNaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 40, 30));
+
+        LabelDesMate.setBackground(new java.awt.Color(255, 102, 0));
+        LabelDesMate.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        LabelDesMate.setForeground(new java.awt.Color(255, 102, 0));
+        progreso1.add(LabelDesMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 40, 30));
+
+        LabelDesIngles.setBackground(new java.awt.Color(255, 102, 0));
+        LabelDesIngles.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        LabelDesIngles.setForeground(new java.awt.Color(255, 102, 0));
+        progreso1.add(LabelDesIngles, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 40, 30));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/grupo (1).png"))); // NOI18N
+        jButton3.setToolTipText("<html>Cantidad de personas<br>Con ese puntaje<br>(79799 personas registradas<br>de forma global)");
+        jButton3.setContentAreaFilled(false);
+        progreso1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 50, -1));
+
+        Info.add(progreso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 480, 280));
 
         Limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/limpiar.png"))); // NOI18N
         Limpiar.setText("<html><center><font face='Century Gothic' size = '1' color='0,102,102'><b>Limpiar");
@@ -1278,6 +1300,11 @@ int cont = 0;
         barraRegistroIngles.setValue(0);
         barraRegistroPercentil.setValue(0);
         barraRegistroglobal.setValue(0);
+        
+         InfoIngles.setText("");
+         InfoImate.setText("");
+         Infolectura.setText("");
+         InfoInnaturales.setText("");
 
 
     }//GEN-LAST:event_LimpiarActionPerformed
@@ -1369,9 +1396,10 @@ int cont = 0;
             graficopastelbarra.setVisible(true);
             progreso1.setVisible(true);
             LimpiarActionPerformed(null);
-            refresco();
+        
             grafico_pastel();
             grafica_barras_1();
+            LimpiarActionPerformed(null);
 
         } else {
             ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar.png"));
@@ -1389,8 +1417,8 @@ int cont = 0;
             grafico_barras1.setVisible(false);
             graficopastelbarra.setVisible(false);
             progreso1.setVisible(false);
-
-            refresco();
+            LimpiarActionPerformed(null);
+       
             grafico_pastel();
             grafica_barras_1();
 
@@ -1470,29 +1498,22 @@ int cont = 0;
 
     }//GEN-LAST:event_Bus5ActionPerformed
 
-    private void AccionlecturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionlecturaActionPerformed
-        AccionDesempeñoLectura();
-    }//GEN-LAST:event_AccionlecturaActionPerformed
-
     private void AccionJornadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionJornadaActionPerformed
-        AccionDeLasJornadas();
+   //     AccionDeLasJornadas();
+        for (int i = 18; i <=20; i++) {
+            Elementos[i]=0;
+        }
+        grafico_pastel();
     }//GEN-LAST:event_AccionJornadaActionPerformed
 
     private void AccionestractoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionestractoActionPerformed
         accionDeEstracto();
+          for (int i = 24; i <= 31; i++) {
+            Elementos[i] = 0;
+
+        }
+          grafico_pastel();
     }//GEN-LAST:event_AccionestractoActionPerformed
-
-    private void AccionmateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionmateActionPerformed
-        AccionDesempeñoMatematica();
-    }//GEN-LAST:event_AccionmateActionPerformed
-
-    private void AccionnaturalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionnaturalesActionPerformed
-        AccionDesempeñoNaturales();
-    }//GEN-LAST:event_AccionnaturalesActionPerformed
-
-    private void AccioninglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccioninglesActionPerformed
-        AccionDesempeñoIngles(23);
-    }//GEN-LAST:event_AccioninglesActionPerformed
 
     private void lecturaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_lecturaStateChanged
         etiquetavalorlectura.setText("" + lectura.getValue());
@@ -1618,10 +1639,6 @@ int cont = 0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AccionJornada;
     private javax.swing.JButton Accionestracto;
-    private javax.swing.JButton Accioningles;
-    private javax.swing.JButton Accionlectura;
-    private javax.swing.JButton Accionmate;
-    private javax.swing.JButton Accionnaturales;
     private javax.swing.ButtonGroup AreaColegio;
     private javax.swing.JCheckBox AreaRural;
     private javax.swing.JCheckBox AreaTodos;
@@ -1649,7 +1666,14 @@ int cont = 0;
     private javax.swing.ButtonGroup Generos;
     private javax.swing.ButtonGroup ID;
     private javax.swing.JPanel Info;
+    private javax.swing.JLabel InfoImate;
+    private javax.swing.JLabel InfoIngles;
+    private javax.swing.JLabel InfoInnaturales;
+    private javax.swing.JLabel Infolectura;
     private javax.swing.JComboBox<String> JornadaSelec;
+    private javax.swing.JLabel LabelDesIngles;
+    private javax.swing.JLabel LabelDesMate;
+    private javax.swing.JLabel LabelDesNaturales;
     private javax.swing.JButton Limpiar;
     protected javax.swing.JCheckBox Masculino;
     private javax.swing.JLabel PuntajeLabelGlobal;
@@ -1704,8 +1728,10 @@ int cont = 0;
     private javax.swing.JSlider inglees;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
@@ -2455,15 +2481,23 @@ public void grafica_barras_1() {
             switch (select) {
                 case "1":
                     Desempeñolectura.setValue(cantidad);
+                    jLabel11.setText(""+cantidad);
+                    Infolectura.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en lectua critica");
                     break;
                 case "2":
                     Desempeñolectura.setValue(cantidad);
+                    jLabel11.setText(""+cantidad);
+                    Infolectura.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en lectua critica");
                     break;
                 case "3":
                     Desempeñolectura.setValue(cantidad);
+                    jLabel11.setText(""+cantidad);
+                    Infolectura.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en lectua critica");
                     break;
                 case "4":
                     Desempeñolectura.setValue(cantidad);
+                    jLabel11.setText(""+cantidad);
+                    Infolectura.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en lectua critica");
                     break;
                 default:
                     throw new AssertionError();
@@ -2483,15 +2517,23 @@ public void grafica_barras_1() {
             switch (select) {
                 case "1":
                     Desempeñomate.setValue(cantidad);
+                    LabelDesMate.setText(""+cantidad);
+                    InfoImate.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en matematica");
                     break;
                 case "2":
                     Desempeñomate.setValue(cantidad);
+                    LabelDesMate.setText(""+cantidad);
+                    InfoImate.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en matematica");
                     break;
                 case "3":
                     Desempeñomate.setValue(cantidad);
+                    LabelDesMate.setText(""+cantidad);
+                    InfoImate.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en matematica");
                     break;
                 case "4":
                     Desempeñomate.setValue(cantidad);
+                    LabelDesMate.setText(""+cantidad);
+                    InfoImate.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en matematica");
                     break;
                 default:
                     throw new AssertionError();
@@ -2511,16 +2553,23 @@ public void grafica_barras_1() {
             switch (select) {
                 case "1":
                     Desempeñonaturales.setValue(cantidad);
-                    System.out.println("naturales: " + cantidad);
+                    LabelDesNaturales.setText(""+cantidad);
+                     InfoInnaturales.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en naturales");
                     break;
                 case "2":
                     Desempeñonaturales.setValue(cantidad);
+                    LabelDesNaturales.setText(""+cantidad);
+                    InfoInnaturales.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+"  en naturales");
                     break;
                 case "3":
                     Desempeñonaturales.setValue(cantidad);
+                    LabelDesNaturales.setText(""+cantidad);
+                    InfoInnaturales.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+"  en naturales");
                     break;
                 case "4":
                     Desempeñonaturales.setValue(cantidad);
+                    LabelDesNaturales.setText(""+cantidad);
+                    InfoInnaturales.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+"  en naturales");
                     break;
                 default:
                     throw new AssertionError();
@@ -2543,58 +2592,47 @@ public void grafica_barras_1() {
                     cantidad = llenarBarraInteractiva(select, posicion);
                     //calcular al 100% cuanto seria 
                     DesempeñoIngles.setValue(cantidad);
-
+                    LabelDesIngles.setText(""+cantidad);
+                     InfoIngles.setText("<html>existen "+cantidad+" Personas<br> con una calificacion de <br> "+select+" en ingles");
+                    
                     break;
                 case "A1":
                     cantidad = llenarBarraInteractiva(select, posicion);
                     //calcular al 100% cuanto seria 
                     DesempeñoIngles.setValue(cantidad);
-
+                    LabelDesIngles.setText(""+cantidad);
+                     InfoIngles.setText("<html>existen "+cantidad+" Personas<br> con una calificacion de <br> "+select+" en ingles");
+                    
                     break;
                 case "A2":
                     cantidad = llenarBarraInteractiva(select, posicion);
                     //calcular al 100% cuanto seria 
                     DesempeñoIngles.setValue(cantidad);
+                    LabelDesIngles.setText(""+cantidad);
+                     InfoIngles.setText("<html>existen "+cantidad+" Personas<br> con una calificacion de <br> "+select+" en ingles");
 
                     break;
                 case "B+":
                     cantidad = llenarBarraInteractiva(select, posicion);
                     //calcular al 100% cuanto seria 
                     DesempeñoIngles.setValue(cantidad);
+                    LabelDesIngles.setText(""+cantidad);
+                     InfoIngles.setText("<html>existen "+cantidad+" Personas<br> con una calificacion de <br> "+select+" en ingles");
                     break;
                 case "B1":
                     cantidad = llenarBarraInteractiva(select, posicion);
                     //calcular al 100% cuanto seria 
                     DesempeñoIngles.setValue(cantidad);
+                    LabelDesIngles.setText(""+cantidad);
+                     InfoIngles.setText("<html>existen "+cantidad+" Personas<br> con una calificacion de <br> "+select+" en ingles");
                     break;
                 default:
                     throw new AssertionError();
+                    
             }
         });
     }
 
-    /*
-    public void actionbus16() {
-
-        if (CamPG1.isSelected()) {
-            JOptionPane.showMessageDialog(null, "selecciono: " + putajeglobalbarra.getValue());
-
-        } else {
-
-            JOptionPane.showMessageDialog(null, "selecciono: " + PuntajeGlobal1.getValue());
-        }
-    }
-
-    public void actionbus17() {
-        if (CamPercentil.isSelected()) {
-            JOptionPane.showMessageDialog(null, "selecciono: " + percentilbarra.getValue());
-
-        } else {
-
-            JOptionPane.showMessageDialog(null, "selecciono: " + Percentil.getValue());
-        }
-    }
-     */
     public void actionbusi() {
         actionbus1();
         actionbus2();
