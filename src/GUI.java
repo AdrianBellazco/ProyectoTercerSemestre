@@ -39,7 +39,7 @@ public class GUI extends javax.swing.JFrame {
     ArrayList<String> informacio2018;
 
     ArrayList<Integer> Valores = new ArrayList<>();
-    int Elementos[] = new int[30];
+    int Elementos[] = new int[33];
 
     RegistrarVariablesCasillas obj = new RegistrarVariablesCasillas();
     RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
@@ -57,19 +57,19 @@ public class GUI extends javax.swing.JFrame {
     int mousex, mousey;
 
     public GUI() {
-         ImageIcon icon = new ImageIcon("estadisticas.png");
-          Image image = icon.getImage();
-          setIconImage(image);
-          
-        Valores.add(0);
-        Valores.add(0);
+        ImageIcon icon = new ImageIcon("estadisticas.png");
+        Image image = icon.getImage();
+        setIconImage(image);
 
+        Valores.add(0);
+        Valores.add(0);
+        
+      
+        
         llenarArray2020();
         llenarArray2019();
         llenarArray2018();
-        
-      
-
+  imprimir();
         initComponents();
         grafico_pastel();
 
@@ -78,6 +78,10 @@ public class GUI extends javax.swing.JFrame {
         percentilbarra.setEnabled(true);
         putajeglobalbarra.setEnabled(true);
         
+        grafico_barras1.setVisible(false);
+            graficopastelbarra.setVisible(false);
+            progreso1.setVisible(false);
+
     }
 
     /**
@@ -193,12 +197,9 @@ public class GUI extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        etiquetavalorlectura2 = new javax.swing.JLabel();
         etiquetavalorlectura = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         Info = new javax.swing.JPanel();
-        grafica3 = new javax.swing.JScrollPane();
-        graficopastelbarra = new javax.swing.JPanel();
         grafico_barras1 = new javax.swing.JPanel();
         progreso1 = new javax.swing.JPanel();
         etiquetavalorlectura3 = new javax.swing.JLabel();
@@ -224,6 +225,7 @@ public class GUI extends javax.swing.JFrame {
         barraRegistroPercentil = new rojerusan.componentes.RSProgressCircle();
         jSeparator1 = new javax.swing.JSeparator();
         Limpiar = new MiBoton();
+        graficopastelbarra = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -931,7 +933,7 @@ public class GUI extends javax.swing.JFrame {
         Estractoselect.setBackground(new java.awt.Color(0, 102, 102));
         Estractoselect.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         Estractoselect.setForeground(new java.awt.Color(255, 102, 0));
-        Estractoselect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " 1", " 2", " 3", " 4", "5", "6", "7", "8", "9", "10" }));
+        Estractoselect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estrato 1", "Estrato 2", "Estrato 3", "Estrato 4", "Estrato 5", "Estrato 6", "Sin Estrato" }));
         Filtrador.add(Estractoselect, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1600, 180, 50));
 
         desempeñolectura1.setBackground(new java.awt.Color(0, 102, 102));
@@ -982,12 +984,6 @@ public class GUI extends javax.swing.JFrame {
         jLabel10.setText("percentil");
         Filtrador.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 3840, 80, 50));
 
-        etiquetavalorlectura2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        etiquetavalorlectura2.setForeground(new java.awt.Color(255, 102, 0));
-        etiquetavalorlectura2.setToolTipText("");
-        etiquetavalorlectura2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Filtrador.add(etiquetavalorlectura2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 1780, 80, 50));
-
         etiquetavalorlectura.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         etiquetavalorlectura.setForeground(new java.awt.Color(255, 102, 0));
         etiquetavalorlectura.setToolTipText("");
@@ -1006,31 +1002,6 @@ public class GUI extends javax.swing.JFrame {
         Info.setBackground(new java.awt.Color(255, 255, 255));
         Info.setForeground(new java.awt.Color(255, 255, 255));
         Info.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        grafica3.getVerticalScrollBar().setUnitIncrement(20);
-        grafica3.setBorder(null);
-
-        graficopastelbarra.setBackground(new java.awt.Color(204, 204, 204));
-        graficopastelbarra.setPreferredSize(new java.awt.Dimension(100, 100));
-        graficopastelbarra.setBorder(null);//ELIMINAR MARGEN
-        graficopastelbarra.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                graficopastelbarraComponentAdded(evt);
-            }
-        });
-        graficopastelbarra.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                graficopastelbarraAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        graficopastelbarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        grafica3.setViewportView(graficopastelbarra);
-
-        Info.add(grafica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 350, 260));
 
         grafico_barras1.setBackground(new java.awt.Color(204, 204, 204));
         grafico_barras1.setForeground(new java.awt.Color(255, 255, 255));
@@ -1181,6 +1152,21 @@ public class GUI extends javax.swing.JFrame {
         });
         Info.add(Limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 570, 40, 50));
 
+        graficopastelbarra.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout graficopastelbarraLayout = new javax.swing.GroupLayout(graficopastelbarra);
+        graficopastelbarra.setLayout(graficopastelbarraLayout);
+        graficopastelbarraLayout.setHorizontalGroup(
+            graficopastelbarraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 340, Short.MAX_VALUE)
+        );
+        graficopastelbarraLayout.setVerticalGroup(
+            graficopastelbarraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+
+        Info.add(graficopastelbarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 340, 500));
+
         jPanel1.add(Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, -10, 880, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1219,6 +1205,12 @@ int cont = 0;
         refresco();
         grafico_pastel();
         grafica_barras_1();
+        lectura.setValue(0);
+        matematica.setValue(0);
+        inglees.setValue(0);
+        naturales.setValue(0);
+        percentilbarra.setValue(0);
+        putajeglobalbarra.setValue(0);
 
 
     }//GEN-LAST:event_LimpiarActionPerformed
@@ -1305,7 +1297,11 @@ int cont = 0;
             actionbus3();
             actionbus4();
             actionbus5();
-
+            //ocultar paneles
+            grafico_barras1.setVisible(true);
+            graficopastelbarra.setVisible(true);
+            progreso1.setVisible(true);
+            
             refresco();
             grafico_pastel();
             grafica_barras_1();
@@ -1322,6 +1318,11 @@ int cont = 0;
             Bus4ActionPerformed(null);
             Bus5ActionPerformed(null);
             Lamalaaños();
+            //mostrar paneles
+            grafico_barras1.setVisible(false);
+            graficopastelbarra.setVisible(false);
+            progreso1.setVisible(false);
+            
             refresco();
             grafico_pastel();
             grafica_barras_1();
@@ -1427,7 +1428,7 @@ int cont = 0;
     }//GEN-LAST:event_AccioninglesActionPerformed
 
     private void lecturaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_lecturaStateChanged
-        etiquetavalorlectura.setText("" + lectura.getValue() + "" + desempeñolectura1.getSelectedItem());
+        etiquetavalorlectura.setText("" + lectura.getValue());
         PuntajeLabelLectura.setText("" + lectura.getValue());
         String datoDeCantidad = Integer.toString(lectura.getValue());
         int cantidad = llenarBarraInteractiva(datoDeCantidad, 14);
@@ -1491,14 +1492,6 @@ int cont = 0;
         RegistroPersonaPercentil.setText("" + cantidad);
 
     }//GEN-LAST:event_percentilbarraStateChanged
-
-    private void graficopastelbarraAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_graficopastelbarraAncestorAdded
-
-    }//GEN-LAST:event_graficopastelbarraAncestorAdded
-
-    private void graficopastelbarraComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_graficopastelbarraComponentAdded
-
-    }//GEN-LAST:event_graficopastelbarraComponentAdded
 
     private void JornadaSelecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JornadaSelecActionPerformed
         // TODO add your handling code here:
@@ -1618,10 +1611,8 @@ int cont = 0;
     private javax.swing.JComboBox<String> desempeñomatematica1;
     private javax.swing.JComboBox<String> desempeñonaturales1;
     private javax.swing.JLabel etiquetavalorlectura;
-    private javax.swing.JLabel etiquetavalorlectura2;
     private javax.swing.JLabel etiquetavalorlectura3;
     private javax.swing.JLabel glop;
-    private javax.swing.JScrollPane grafica3;
     private javax.swing.JPanel grafico_barras1;
     private javax.swing.JPanel graficopastelbarra;
     private javax.swing.ButtonGroup grupo1;
@@ -1765,8 +1756,7 @@ public void grafica_barras_1() {
     public void grafico_pastel() {
         DefaultPieDataset dato = new DefaultPieDataset();
 
-        repaint();
-        //posicion mas grande [23]
+        //posicion mas grande [31]
         int año1 = Elementos[0];
         int año2 = Elementos[1];
         int año3 = Elementos[2];
@@ -1797,6 +1787,15 @@ public void grafica_barras_1() {
         int jornadaTarde = Elementos[22];
         int jornadaUnica = Elementos[23];
 
+        int estracto1 = Elementos[24];
+        int estracto2 = Elementos[25];
+        int estracto3 = Elementos[26];
+        int estracto4 = Elementos[27];
+        int estracto5 = Elementos[28];
+        int estracto6 = Elementos[29];
+        int sinestracto = Elementos[31];
+        
+        
         dato.setValue("2020", año1);
         dato.setValue("2019", año2);
         dato.setValue("2018", año3);
@@ -1823,35 +1822,44 @@ public void grafica_barras_1() {
         dato.setValue(" Tarde", jornadaTarde);
         dato.setValue("Jornada unica", jornadaUnica);
 
+        dato.setValue("Estracto 1", estracto1);
+        dato.setValue("Estracto 2", estracto2);
+        dato.setValue("Estracto 3", estracto3);
+        dato.setValue("Estracto 4", estracto4);
+        dato.setValue("Estracto 5", estracto5);
+        dato.setValue("Estracto 6", estracto6);
+
+        dato.setValue("Sin Estracto", sinestracto);
+
+        
         JFreeChart grafico_pastel = ChartFactory.createPieChart("", dato, true, true, false);
         panel_grafi.setChart(grafico_pastel);
 
         panel_grafi.setBackground(Color.WHITE);
-
+       
         PiePlot plot = (PiePlot) grafico_pastel.getPlot();
 
-        // Cambiar el color de las secciones
-        plot.setSectionPaint("2020", new Color(0, 102, 102));
 
+        // Cambiar el color de las secciones
+       
+plot.setLabelGenerator(null);
         plot.setCircular(false);
         plot.setIgnoreNullValues(true);
         plot.setSectionOutlinesVisible(false);
-        plot.setLabelGenerator(null);
+        
 
         plot.setLabelLinksVisible(false);
-        plot.setBackgroundPaint(Color.WHITE); // Establecer el fondo del gráfico de pastel en blanco
-        //      grafico_pastel.setPadding(new RectangleInsets(0, 0, 0, 0));
-        //transparencia
-
-        // plot.setSectionPaint("noe", new Color(255,102,0));
+        plot.setBackgroundPaint(Color.WHITE); 
+     
         panel_grafi.setMouseWheelEnabled(true);
         panel_grafi.setLocation(0, 0);
         panel_grafi.setPreferredSize(new Dimension(20, 20));
         panel_grafi.setVisible(true);
 
         graficopastelbarra.setLayout(new BorderLayout());
+        
         graficopastelbarra.add(panel_grafi);
-
+        
         pack();
         repaint();
     }
@@ -2282,19 +2290,28 @@ public void grafica_barras_1() {
     public void AccionDeLasJornadas() {
         JornadaSelec.addActionListener(e -> {
             String BuscarJornada = (String) JornadaSelec.getSelectedItem();
-          
+
             int elemento1 = calculos.Contador(informacio2020, BuscarJornada, 11);
             int elemento2 = calculos.Contador(informacio2019, BuscarJornada, 11);
             int elemento3 = calculos.Contador(informacio2018, BuscarJornada, 11);
             switch (BuscarJornada) {
-                case "A":    Elementos[18] = elemento1 + elemento2 + elemento3;     ; break;
-                case "B":    Elementos[19] = elemento1 + elemento2 + elemento3;     ; break;
-                case "OTRO":    Elementos[20] = elemento1 + elemento2 + elemento3;     ; break;
-           
+                case "A":
+                    Elementos[18] = elemento1 + elemento2 + elemento3;
+                    ;
+                    break;
+                case "B":
+                    Elementos[19] = elemento1 + elemento2 + elemento3;
+                    ;
+                    break;
+                case "OTRO":
+                    Elementos[20] = elemento1 + elemento2 + elemento3;
+                    ;
+                    break;
+
                 default:
                     throw new AssertionError();
             }
-          
+
             grafico_pastel();
             grafica_barras_1();
 
@@ -2304,8 +2321,53 @@ public void grafica_barras_1() {
     public void accionDeEstracto() {
         Estractoselect.addActionListener(e -> {
             String select = (String) Estractoselect.getSelectedItem();
-            JOptionPane.showMessageDialog(null, select);
-        });
+
+            int elemento1 = calculos.Contador(informacio2020, select, 6);
+            int elemento2 = calculos.Contador(informacio2019, select, 6);
+            int elemento3 = calculos.Contador(informacio2018, select, 6);
+            switch (select) {
+                case "Estrato 1":
+                    Elementos[24] = elemento1 + elemento2 + elemento3;
+                    ;
+                    break;
+                case "Estrato 2":
+                    Elementos[25] = elemento1 + elemento2 + elemento3;
+                    ;
+                    break;
+                case "Estrato 3":
+                    Elementos[26] = elemento1 + elemento2 + elemento3;
+                    ;
+                    break;
+                case "Estrato 4":
+                    Elementos[27] = elemento1 + elemento2 + elemento3;
+                    ;
+                    break;
+                case "Estrato 5":
+                    Elementos[28] = elemento1 + elemento2 + elemento3;
+                    ;
+                    break;
+                case "Estrato 6":
+                    Elementos[29] = elemento1 + elemento2 + elemento3;
+                    ;
+                    break;
+                case "Sin Estrato":
+                    Elementos[30] = elemento1 + elemento2 + elemento3;
+                    ;
+                    break;
+
+                default:
+                    throw new AssertionError();
+            }
+
+            grafico_pastel();
+       //     grafica_barras_1();
+
+        }
+    
+
+    
+
+    );
     }
 
     public void actionbus8() {
@@ -2563,6 +2625,14 @@ public void grafica_barras_1() {
         AccionDesempeñoNaturales();
         AccionDesempeñoMatematica();
         AccionDesempeñoLectura();
+    }
+    
+    public void imprimir(){
+        for (int i = 0; i < informacio2020.size(); i++) {
+            String get = informacio2020.get(i);
+            System.out.println(get);
+            
+        }
     }
 
 }//Fin del programa
