@@ -197,6 +197,7 @@ public class GUI extends javax.swing.JFrame {
         InfoInnaturales = new javax.swing.JLabel();
         InfoImate = new javax.swing.JLabel();
         Infolectura = new javax.swing.JLabel();
+        Manual = new MiBoton();
         Info = new javax.swing.JPanel();
         grafico_barras1 = new javax.swing.JPanel();
         progreso1 = new javax.swing.JPanel();
@@ -289,14 +290,14 @@ public class GUI extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGap(0, 310, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        Barra1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+        Barra1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, -1));
 
         jPanel1.add(Barra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 49));
 
@@ -335,7 +336,7 @@ public class GUI extends javax.swing.JFrame {
                 Bus1ActionPerformed(evt);
             }
         });
-        Filtrador.add(Bus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
+        Filtrador.add(Bus1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, -1, -1));
 
         Bus4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
         Bus4.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Limpiar");
@@ -400,7 +401,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 102, 0));
         jLabel2.setText("Año");
-        Filtrador.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 260, 50));
+        Filtrador.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 40, 50));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 102, 0));
@@ -477,7 +478,7 @@ public class GUI extends javax.swing.JFrame {
                 año2020ActionPerformed(evt);
             }
         });
-        Filtrador.add(año2020, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+        Filtrador.add(año2020, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
         año2019.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         año2019.setForeground(new java.awt.Color(255, 255, 255));
@@ -487,7 +488,7 @@ public class GUI extends javax.swing.JFrame {
                 año2019ActionPerformed(evt);
             }
         });
-        Filtrador.add(año2019, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+        Filtrador.add(año2019, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
 
         Masculino.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         Masculino.setForeground(new java.awt.Color(255, 255, 255));
@@ -507,7 +508,7 @@ public class GUI extends javax.swing.JFrame {
                 año2018ActionPerformed(evt);
             }
         });
-        Filtrador.add(año2018, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+        Filtrador.add(año2018, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
         Cedula.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         Cedula.setForeground(new java.awt.Color(255, 255, 255));
@@ -517,7 +518,7 @@ public class GUI extends javax.swing.JFrame {
                 CedulaActionPerformed(evt);
             }
         });
-        Filtrador.add(Cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, -1, -1));
+        Filtrador.add(Cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, -1, -1));
         Filtrador.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1780, 260, 10));
 
         TarjetaIdentidad.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -528,7 +529,7 @@ public class GUI extends javax.swing.JFrame {
                 TarjetaIdentidadActionPerformed(evt);
             }
         });
-        Filtrador.add(TarjetaIdentidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, -1, -1));
+        Filtrador.add(TarjetaIdentidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, -1, -1));
 
         Femenino.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         Femenino.setForeground(new java.awt.Color(255, 255, 255));
@@ -539,7 +540,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         Filtrador.add(Femenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 710, -1, -1));
-        Filtrador.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 260, 10));
+        Filtrador.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 260, 10));
         Filtrador.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 260, 10));
 
         AreaTodos.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -560,7 +561,7 @@ public class GUI extends javax.swing.JFrame {
                 todosañoActionPerformed(evt);
             }
         });
-        Filtrador.add(todosaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+        Filtrador.add(todosaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
 
         TodosTipodeDocumentos.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         TodosTipodeDocumentos.setForeground(new java.awt.Color(255, 255, 255));
@@ -699,7 +700,7 @@ public class GUI extends javax.swing.JFrame {
                 modoActionPerformed(evt);
             }
         });
-        Filtrador.add(modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 110, -1));
+        Filtrador.add(modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 110, -1));
 
         radioañostodos.setVisible(false);
         radioañostodos.setBackground(new java.awt.Color(0, 102, 102));
@@ -712,7 +713,7 @@ public class GUI extends javax.swing.JFrame {
                 radioañostodosActionPerformed(evt);
             }
         });
-        Filtrador.add(radioañostodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+        Filtrador.add(radioañostodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
 
         radioañostodos.setVisible(false);
         radioaño2020.setBackground(new java.awt.Color(0, 102, 102));
@@ -720,7 +721,7 @@ public class GUI extends javax.swing.JFrame {
         radioaño2020.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         radioaño2020.setForeground(new java.awt.Color(255, 255, 255));
         radioaño2020.setText("2020");
-        Filtrador.add(radioaño2020, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+        Filtrador.add(radioaño2020, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
         radioañostodos.setVisible(false);
         radioaño2019.setBackground(new java.awt.Color(0, 102, 102));
@@ -728,7 +729,7 @@ public class GUI extends javax.swing.JFrame {
         radioaño2019.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         radioaño2019.setForeground(new java.awt.Color(255, 255, 255));
         radioaño2019.setText("2019");
-        Filtrador.add(radioaño2019, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+        Filtrador.add(radioaño2019, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
 
         radioañostodos.setVisible(false);
         radioaño2018.setBackground(new java.awt.Color(0, 102, 102));
@@ -737,14 +738,14 @@ public class GUI extends javax.swing.JFrame {
         radioaño2018.setForeground(new java.awt.Color(255, 255, 255));
         radioaño2018.setText("2018");
         radioaño2018.setToolTipText("");
-        Filtrador.add(radioaño2018, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+        Filtrador.add(radioaño2018, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
         Radiodocumentocedula.setBackground(new java.awt.Color(0, 102, 102));
         ID.add(Radiodocumentocedula);
         Radiodocumentocedula.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         Radiodocumentocedula.setForeground(new java.awt.Color(255, 255, 255));
         Radiodocumentocedula.setText("Cedula\n");
-        Filtrador.add(Radiodocumentocedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, -1, -1));
+        Filtrador.add(Radiodocumentocedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, -1, -1));
 
         RadiodocumentoTodos.setBackground(new java.awt.Color(0, 102, 102));
         ID.add(RadiodocumentoTodos);
@@ -758,7 +759,7 @@ public class GUI extends javax.swing.JFrame {
         RadiodocumentoID1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         RadiodocumentoID1.setForeground(new java.awt.Color(255, 255, 255));
         RadiodocumentoID1.setText("Tarjeta de identidad");
-        Filtrador.add(RadiodocumentoID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, -1, -1));
+        Filtrador.add(RadiodocumentoID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, -1, -1));
 
         Generos.add(RadioTodosGeneros);
         RadioTodosGeneros.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -971,7 +972,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 102, 0));
         jLabel22.setText("Tipo de documento");
-        Filtrador.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 260, 50));
+        Filtrador.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 260, 50));
 
         InfoIngles.setBackground(new java.awt.Color(255, 102, 0));
         InfoIngles.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -1001,6 +1002,20 @@ public class GUI extends javax.swing.JFrame {
         Infolectura.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         Filtrador.add(Infolectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2070, 230, 100));
 
+        Manual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/guia-del-usuario (1).png"))); // NOI18N
+        Manual.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Manual");
+        Manual.setContentAreaFilled(false);
+        Manual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Manual.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Manual.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Manual.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Manual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ManualActionPerformed(evt);
+            }
+        });
+        Filtrador.add(Manual, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 70, 90));
+
         Filtr.setViewportView(Filtrador);
 
         jPanel1.add(Filtr, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -18, 340, 640));
@@ -1026,7 +1041,6 @@ public class GUI extends javax.swing.JFrame {
         etiquetavalorlectura3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         progreso1.add(etiquetavalorlectura3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 560, 80, 50));
 
-        barraRegistroLectura.setBorder(new javax.swing.border.MatteBorder(null));
         barraRegistroLectura.setForeground(new java.awt.Color(255, 102, 0));
         barraRegistroLectura.setMaximum(7980);
         barraRegistroLectura.setToolTipText("Puntos de lectura critica\nporcentaje de personas\npor X cantidad de puntos");
@@ -1041,7 +1055,6 @@ public class GUI extends javax.swing.JFrame {
         PuntajeLabelMatematica.setForeground(new java.awt.Color(0, 102, 102));
         progreso1.add(PuntajeLabelMatematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 30, 30));
 
-        barraRegistroMatematica.setBorder(new javax.swing.border.MatteBorder(null));
         barraRegistroMatematica.setForeground(new java.awt.Color(0, 102, 102));
         barraRegistroMatematica.setMaximum(7980);
         barraRegistroMatematica.setToolTipText("Puntos de matematica\nporcentaje de personas\npor X cantidad de puntos");
@@ -1052,7 +1065,6 @@ public class GUI extends javax.swing.JFrame {
         barraRegistroMatematica.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
         progreso1.add(barraRegistroMatematica, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 40, 170));
 
-        barraRegistroNaturales.setBorder(new javax.swing.border.MatteBorder(null));
         barraRegistroNaturales.setForeground(new java.awt.Color(255, 102, 0));
         barraRegistroNaturales.setMaximum(7980);
         barraRegistroNaturales.setToolTipText("Puntos de naturales\nporcentaje de personas\npor X cantidad de puntos");
@@ -1067,7 +1079,6 @@ public class GUI extends javax.swing.JFrame {
         PuntajeLabelNaturales.setForeground(new java.awt.Color(255, 102, 0));
         progreso1.add(PuntajeLabelNaturales, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 30, 30));
 
-        barraRegistroIngles.setBorder(new javax.swing.border.MatteBorder(null));
         barraRegistroIngles.setForeground(new java.awt.Color(0, 102, 102));
         barraRegistroIngles.setMaximum(7980);
         barraRegistroIngles.setToolTipText("puntos de ingles\nporcentaje de personas\npor X cantidad de puntos");
@@ -1145,7 +1156,6 @@ public class GUI extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         progreso1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 10, 220));
 
-        DesempeñoIngles.setBorder(new javax.swing.border.MatteBorder(null));
         DesempeñoIngles.setForeground(new java.awt.Color(0, 102, 102));
         DesempeñoIngles.setMaximum(79799);
         DesempeñoIngles.setToolTipText("Desempeño de ingles");
@@ -1156,7 +1166,6 @@ public class GUI extends javax.swing.JFrame {
         DesempeñoIngles.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
         progreso1.add(DesempeñoIngles, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 20, 170));
 
-        Desempeñolectura.setBorder(new javax.swing.border.MatteBorder(null));
         Desempeñolectura.setForeground(new java.awt.Color(255, 102, 0));
         Desempeñolectura.setMaximum(79799);
         Desempeñolectura.setToolTipText("Desempeño de Lectura critica");
@@ -1167,7 +1176,6 @@ public class GUI extends javax.swing.JFrame {
         Desempeñolectura.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
         progreso1.add(Desempeñolectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 20, 170));
 
-        Desempeñomate.setBorder(new javax.swing.border.MatteBorder(null));
         Desempeñomate.setForeground(new java.awt.Color(0, 102, 102));
         Desempeñomate.setMaximum(79799);
         Desempeñomate.setToolTipText("Desempeño de matematica");
@@ -1178,7 +1186,6 @@ public class GUI extends javax.swing.JFrame {
         Desempeñomate.setOrientacion(rojerusan.componentes.RSProgressBar.ORIENTACION.VERTICAL);
         progreso1.add(Desempeñomate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 20, 170));
 
-        Desempeñonaturales.setBorder(new javax.swing.border.MatteBorder(null));
         Desempeñonaturales.setForeground(new java.awt.Color(255, 102, 0));
         Desempeñonaturales.setMaximum(79799);
         Desempeñonaturales.setToolTipText("Desempeño de naturales");
@@ -1601,6 +1608,10 @@ int cont = 0;
         // TODO add your handling code here:
     }//GEN-LAST:event_desempeñoinglesActionPerformed
 
+    private void ManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManualActionPerformed
+       JOptionPane.showMessageDialog(null, "En proceso xd");
+    }//GEN-LAST:event_ManualActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1675,6 +1686,7 @@ int cont = 0;
     private javax.swing.JLabel LabelDesMate;
     private javax.swing.JLabel LabelDesNaturales;
     private javax.swing.JButton Limpiar;
+    private javax.swing.JButton Manual;
     protected javax.swing.JCheckBox Masculino;
     private javax.swing.JLabel PuntajeLabelGlobal;
     private javax.swing.JLabel PuntajeLabelIngles;
