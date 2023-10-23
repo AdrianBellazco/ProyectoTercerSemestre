@@ -45,7 +45,7 @@ public class GUI extends javax.swing.JFrame {
     RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
     double max = 79.799 / 100;
     int Maxcon = (int) max;
-    ;
+    int añosAcum;
 
     Calculos calculos = new Calculos();
 
@@ -199,6 +199,11 @@ public class GUI extends javax.swing.JFrame {
         Infolectura = new javax.swing.JLabel();
         Manual = new MiBoton();
         Info = new javax.swing.JPanel();
+        Check1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        informe1 = new rojerusan.componentes.RSProgressCircle();
+        añoe = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         grafico_barras1 = new javax.swing.JPanel();
         progreso1 = new javax.swing.JPanel();
         etiquetavalorlectura3 = new javax.swing.JLabel();
@@ -721,6 +726,11 @@ public class GUI extends javax.swing.JFrame {
         radioaño2020.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         radioaño2020.setForeground(new java.awt.Color(255, 255, 255));
         radioaño2020.setText("2020");
+        radioaño2020.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioaño2020ActionPerformed(evt);
+            }
+        });
         Filtrador.add(radioaño2020, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
         radioañostodos.setVisible(false);
@@ -1024,6 +1034,56 @@ public class GUI extends javax.swing.JFrame {
         Info.setForeground(new java.awt.Color(255, 255, 255));
         Info.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Check1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        informe1.setForeground(new java.awt.Color(255, 102, 0));
+        informe1.setMaximum(79799);
+
+        añoe.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        añoe.setForeground(new java.awt.Color(255, 102, 0));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(informe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(añoe, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(618, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(informe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(añoe, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(79, Short.MAX_VALUE))
+        );
+
+        Check1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 0, 830, 340));
+
+        jPanel4.setBackground(new java.awt.Color(51, 0, 204));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 830, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+        );
+
+        Check1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 830, 190));
+
+        Info.add(Check1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 850, 560));
+
         grafico_barras1.setBackground(new java.awt.Color(204, 204, 204));
         grafico_barras1.setForeground(new java.awt.Color(255, 255, 255));
         grafico_barras1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1271,21 +1331,6 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 int cont = 0;
-    private void Barra1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Barra1MousePressed
-        mousex = evt.getX();
-        mousey = evt.getY();
-    }//GEN-LAST:event_Barra1MousePressed
-
-    private void Barra1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Barra1MouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x - mousex, y - mousey);
-    }//GEN-LAST:event_Barra1MouseDragged
-
-
-    private void SalirBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirBotonActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_SalirBotonActionPerformed
 
     private void LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarActionPerformed
         refresco();
@@ -1317,7 +1362,7 @@ int cont = 0;
     }//GEN-LAST:event_LimpiarActionPerformed
 
     private void año2020ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2020ActionPerformed
-        // TODO add your handling code here:
+        casillasAños2020();
     }//GEN-LAST:event_año2020ActionPerformed
 
     private void MasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasculinoActionPerformed
@@ -1325,7 +1370,7 @@ int cont = 0;
     }//GEN-LAST:event_MasculinoActionPerformed
 
     private void año2019ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2019ActionPerformed
-        // TODO add your handling code here:
+        casillasAños2019();
     }//GEN-LAST:event_año2019ActionPerformed
 
     private void año2018ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2018ActionPerformed
@@ -1399,6 +1444,7 @@ int cont = 0;
             actionbus4();
             actionbus5();
             //ocultar paneles
+             Check1.setVisible(false);
             grafico_barras1.setVisible(true);
             graficopastelbarra.setVisible(true);
             progreso1.setVisible(true);
@@ -1421,6 +1467,7 @@ int cont = 0;
             Bus5ActionPerformed(null);
             Lamalaaños();
             //mostrar paneles
+             Check1.setVisible(true);
             grafico_barras1.setVisible(false);
             graficopastelbarra.setVisible(false);
             progreso1.setVisible(false);
@@ -1609,8 +1656,28 @@ int cont = 0;
     }//GEN-LAST:event_desempeñoinglesActionPerformed
 
     private void ManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManualActionPerformed
-       JOptionPane.showMessageDialog(null, "En proceso xd");
+       libro obj = new libro();
+       obj.setVisible(true);
     }//GEN-LAST:event_ManualActionPerformed
+
+    private void Barra1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Barra1MousePressed
+        mousex = evt.getX();
+        mousey = evt.getY();
+    }//GEN-LAST:event_Barra1MousePressed
+
+    private void Barra1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Barra1MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - mousex, y - mousey);
+    }//GEN-LAST:event_Barra1MouseDragged
+
+    private void SalirBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirBotonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_SalirBotonActionPerformed
+
+    private void radioaño2020ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioaño2020ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioaño2020ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1661,6 +1728,7 @@ int cont = 0;
     private javax.swing.JButton Bus4;
     private javax.swing.JButton Bus5;
     private javax.swing.JCheckBox Cedula;
+    private javax.swing.JPanel Check1;
     private javax.swing.ButtonGroup ColegioGeneroGrupo;
     private javax.swing.JCheckBox ColegiogeneroFEMENINO;
     private javax.swing.JCheckBox ColegiogeneroMIXTO;
@@ -1719,6 +1787,7 @@ int cont = 0;
     public javax.swing.JCheckBox año2018;
     public javax.swing.JCheckBox año2019;
     public javax.swing.JCheckBox año2020;
+    private javax.swing.JLabel añoe;
     private rojerusan.componentes.RSProgressBar barraRegistroIngles;
     private rojerusan.componentes.RSProgressBar barraRegistroLectura;
     private rojerusan.componentes.RSProgressBar barraRegistroMatematica;
@@ -1736,6 +1805,7 @@ int cont = 0;
     private javax.swing.JPanel graficopastelbarra;
     private javax.swing.ButtonGroup grupo1;
     private javax.swing.ButtonGroup grupoAños;
+    private rojerusan.componentes.RSProgressCircle informe1;
     private javax.swing.JLabel ing;
     private javax.swing.JSlider inglees;
     private javax.swing.JButton jButton1;
@@ -1761,6 +1831,8 @@ int cont = 0;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -2875,5 +2947,53 @@ public void grafica_barras_1() {
         return cantidad;
     }
 
+    //calculo de casiilas
+    
+     int valor = 0;
+    public void casillasAños2020(){
+        
+        int mandarValor=0;
+       
+        if (año2020.isSelected()) {
+            mandarValor =  informacio2020.size();
+   
+            
+            informe1.setValue(mandarValor);
+            
+        } else {
+              informe1.setValue(mandarValor-valor);
+        }
+        
+        
+        
+    }
+    public void casillasAños2019(){
+         int mandarValor=0;
+   if (año2019.isSelected()) {
+             mandarValor = valor+ informacio2020.size();
+            
+            
+            informe1.setValue(valor);
+            
+        } else {
+              informe1.setValue(valor-0);
+        }
+    
+    }
+    
+      
+        
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }//Fin del programa
 
