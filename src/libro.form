@@ -647,15 +647,17 @@
               <Color blue="0" green="0" red="33" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;&lt;html&gt;Que es EduCompu?&lt;br&gt;&lt;br&gt;Es una aplicacion de busquedas&lt;html&gt;&quot;" type="code"/>
+              <Connection code="&quot;&lt;html&gt;Que es EduCompu?&lt;br&gt;&lt;br&gt;Es una aplicacion que permite realizar&lt;br&gt;busquedas de varios tipos, estas &lt;br&gt; pueden ser fijas o compuestas, cada busqueda debe retornar un valor que se vera&lt;br&gt;representado en una grafica&lt;html&gt;&quot;" type="code"/>
             </Property>
+            <Property name="verticalAlignment" type="int" value="1"/>
+            <Property name="horizontalTextPosition" type="int" value="2"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jEditorPane1.setVisible(true);"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="140" width="480" height="70"/>
+              <AbsoluteConstraints x="80" y="140" width="430" height="450"/>
             </Constraint>
           </Constraints>
         </Component>

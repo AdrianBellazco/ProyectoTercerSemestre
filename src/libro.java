@@ -432,8 +432,10 @@ public class libro extends javax.swing.JFrame {
         jEditorPane1.setBackground(new java.awt.Color(51, 0, 0));
         jEditorPane1.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jEditorPane1.setForeground(new java.awt.Color(51, 0, 0));
-        jEditorPane1.setText("<html>Que es EduCompu?<br><br>Es una aplicacion de busquedas<html>");
-        jPanel1.add(jEditorPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 480, 70));
+        jEditorPane1.setText("<html>Que es EduCompu?<br><br>Es una aplicacion que permite realizar<br>busquedas de varios tipos, estas <br> pueden ser fijas o compuestas, cada busqueda debe retornar un valor que se vera<br>representado en una grafica<html>");
+        jEditorPane1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jEditorPane1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(jEditorPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 430, 450));
         jEditorPane1.setVisible(true);
 
         texto2.setText("segunda pagina");
