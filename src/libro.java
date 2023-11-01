@@ -450,7 +450,7 @@ public class libro extends javax.swing.JFrame {
         xd.setFont(new java.awt.Font("Minecraft", 1, 18)); // NOI18N
         xd.setForeground(new java.awt.Color(0, 102, 102));
         xd.setText("Compu");
-        jPanel1.add(xd, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 80, 70));
+        jPanel1.add(xd, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 80, 70));
         jEditorPane1.setVisible(true);
 
         textobasura8.setBackground(new java.awt.Color(51, 0, 0));

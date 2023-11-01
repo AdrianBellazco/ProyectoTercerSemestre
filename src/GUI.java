@@ -38,8 +38,11 @@ public class GUI extends javax.swing.JFrame {
     ArrayList<String> informacio2019;
     ArrayList<String> informacio2018;
 
+    ArrayList<Integer> EstadisticaCasillas;
+
     ArrayList<Integer> Valores = new ArrayList<>();
     int Elementos[] = new int[33];
+    int ElementosCheck[] = new int[20];
 
     RegistrarVariablesCasillas obj = new RegistrarVariablesCasillas();
     RegistrarVariablesRadioButtons obj2 = new RegistrarVariablesRadioButtons();
@@ -51,6 +54,7 @@ public class GUI extends javax.swing.JFrame {
 
     ChartPanel panel_grafi = new ChartPanel(null);
     ChartPanel barras = new ChartPanel(null);
+    ChartPanel chebarras = new ChartPanel(null);
 
     GUI obj3;
 
@@ -70,16 +74,26 @@ public class GUI extends javax.swing.JFrame {
         // imprimir();
         initComponents();
         grafico_pastel();
-
+        
         grafica_barras_1();
         SeleccionarComboBox();
+          
         percentilbarra.setEnabled(true);
         putajeglobalbarra.setEnabled(true);
 
         grafico_barras1.setVisible(false);
         graficopastelbarra.setVisible(false);
         progreso1.setVisible(false);
-
+        grafica_check_barras();
+        Bus1.setVisible(false);
+        Bus2.setVisible(false);
+        Bus3.setVisible(false);
+        Bus5.setVisible(false);
+        Bus4.setVisible(false);
+        RadiodocumentoTodos.setVisible(false);
+        RadioTodosArea.setVisible(false);
+        RadioTodosGeneros.setVisible(false);
+        RadioGeneroColegioTodos.setVisible(false);
     }
 
     /**
@@ -110,8 +124,6 @@ public class GUI extends javax.swing.JFrame {
         Bus4 = new MiBoton();
         Bus2 = new MiBoton();
         Bus3 = new MiBoton();
-        AccionJornada = new MiBoton();
-        Accionestracto = new MiBoton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -138,18 +150,13 @@ public class GUI extends javax.swing.JFrame {
         Femenino = new javax.swing.JCheckBox();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
-        AreaTodos = new javax.swing.JCheckBox();
-        todosaño = new javax.swing.JCheckBox();
-        TodosTipodeDocumentos = new javax.swing.JCheckBox();
         desempeñoingles = new javax.swing.JComboBox<>();
         jSeparator8 = new javax.swing.JSeparator();
         JornadaSelec = new javax.swing.JComboBox<>();
-        TodosGeneros = new javax.swing.JCheckBox();
         ColegiogeneroMIXTO = new javax.swing.JCheckBox();
         ColegiogeneroFEMENINO = new javax.swing.JCheckBox();
         ColegiogeneroMasculino = new javax.swing.JCheckBox();
         jSeparator10 = new javax.swing.JSeparator();
-        ColegiogeneroTODOS = new javax.swing.JCheckBox();
         AreaRural = new javax.swing.JCheckBox();
         AreaUrbana = new javax.swing.JCheckBox();
         jSeparator11 = new javax.swing.JSeparator();
@@ -198,12 +205,14 @@ public class GUI extends javax.swing.JFrame {
         InfoImate = new javax.swing.JLabel();
         Infolectura = new javax.swing.JLabel();
         Manual = new MiBoton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         Info = new javax.swing.JPanel();
         Check1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        informe1 = new rojerusan.componentes.RSProgressCircle();
+        B1 = new javax.swing.JPanel();
         añoe = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        informe1 = new rojerusan.componentes.RSProgressCircle();
         grafico_barras1 = new javax.swing.JPanel();
         progreso1 = new javax.swing.JPanel();
         etiquetavalorlectura3 = new javax.swing.JLabel();
@@ -376,28 +385,6 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(Bus3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, -1));
 
-        AccionJornada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
-        AccionJornada.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        AccionJornada.setContentAreaFilled(false);
-        AccionJornada.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        AccionJornada.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccionJornadaActionPerformed(evt);
-            }
-        });
-        Filtrador.add(AccionJornada, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1470, -1, -1));
-
-        Accionestracto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
-        Accionestracto.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Filtrar");
-        Accionestracto.setContentAreaFilled(false);
-        Accionestracto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Accionestracto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AccionestractoActionPerformed(evt);
-            }
-        });
-        Filtrador.add(Accionestracto, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1710, -1, -1));
-
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 102, 0));
         Filtrador.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 3840, 80, 50));
@@ -406,7 +393,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 102, 0));
         jLabel2.setText("Año");
-        Filtrador.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 40, 50));
+        Filtrador.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 40, 50));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 102, 0));
@@ -430,7 +417,7 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel7.setText("area del colegio");
+        jLabel7.setText("Area del colegio");
         Filtrador.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1090, 260, 50));
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -548,36 +535,6 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 260, 10));
         Filtrador.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 260, 10));
 
-        AreaTodos.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        AreaTodos.setForeground(new java.awt.Color(255, 255, 255));
-        AreaTodos.setText("Todos");
-        AreaTodos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AreaTodosActionPerformed(evt);
-            }
-        });
-        Filtrador.add(AreaTodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1260, -1, -1));
-
-        todosaño.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        todosaño.setForeground(new java.awt.Color(255, 255, 255));
-        todosaño.setText("Todos");
-        todosaño.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                todosañoActionPerformed(evt);
-            }
-        });
-        Filtrador.add(todosaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
-
-        TodosTipodeDocumentos.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        TodosTipodeDocumentos.setForeground(new java.awt.Color(255, 255, 255));
-        TodosTipodeDocumentos.setText("Todos");
-        TodosTipodeDocumentos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TodosTipodeDocumentosActionPerformed(evt);
-            }
-        });
-        Filtrador.add(TodosTipodeDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, -1, -1));
-
         desempeñoingles.setBackground(new java.awt.Color(0, 102, 102));
         desempeñoingles.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         desempeñoingles.setForeground(new java.awt.Color(255, 102, 0));
@@ -600,16 +557,6 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         Filtrador.add(JornadaSelec, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1380, 180, 50));
-
-        TodosGeneros.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        TodosGeneros.setForeground(new java.awt.Color(255, 255, 255));
-        TodosGeneros.setText("Todos");
-        TodosGeneros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TodosGenerosActionPerformed(evt);
-            }
-        });
-        Filtrador.add(TodosGeneros, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 750, -1, -1));
 
         ColegiogeneroMIXTO.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         ColegiogeneroMIXTO.setForeground(new java.awt.Color(255, 255, 255));
@@ -641,16 +588,6 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(ColegiogeneroMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 980, -1, -1));
         Filtrador.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2200, 260, 10));
-
-        ColegiogeneroTODOS.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        ColegiogeneroTODOS.setForeground(new java.awt.Color(255, 255, 255));
-        ColegiogeneroTODOS.setText("Todos");
-        ColegiogeneroTODOS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ColegiogeneroTODOSActionPerformed(evt);
-            }
-        });
-        Filtrador.add(ColegiogeneroTODOS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1030, -1, -1));
 
         AreaRural.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         AreaRural.setForeground(new java.awt.Color(255, 255, 255));
@@ -692,8 +629,8 @@ public class GUI extends javax.swing.JFrame {
         Filtrador.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3560, 260, 10));
         Filtrador.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3090, 260, 10));
 
-        modo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar.png"))); // NOI18N
-        modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Consultas fijas desactivadas");
+        modo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-de-encendido (1).png"))); // NOI18N
+        modo.setText("<html><center><font face='Century Gothic' size = '2' color='white'><b>Consultas fijas desactivadas");
         modo.setToolTipText("<html><center><font face='Century Gothic' size = '4' color='orange'><b>Convierte todas las casillas de<br>seleccion multiple en<br>radiobuttons para seleccion fija<br>y viceversa");
         modo.setContentAreaFilled(false);
         modo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -705,7 +642,7 @@ public class GUI extends javax.swing.JFrame {
                 modoActionPerformed(evt);
             }
         });
-        Filtrador.add(modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 110, -1));
+        Filtrador.add(modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 110, -1));
 
         radioañostodos.setVisible(false);
         radioañostodos.setBackground(new java.awt.Color(0, 102, 102));
@@ -912,7 +849,7 @@ public class GUI extends javax.swing.JFrame {
         Estractoselect.setBackground(new java.awt.Color(0, 102, 102));
         Estractoselect.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         Estractoselect.setForeground(new java.awt.Color(255, 102, 0));
-        Estractoselect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estrato 1", "Estrato 2", "Estrato 3", "Estrato 4", "Estrato 5", "Estrato 6", "Sin Estrato" }));
+        Estractoselect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estrato 1", "Estrato 2", "Estrato 3", "Estrato 4", "Estrato 5", "Estrato 6" }));
         Estractoselect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EstractoselectActionPerformed(evt);
@@ -1012,8 +949,8 @@ public class GUI extends javax.swing.JFrame {
         Infolectura.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         Filtrador.add(Infolectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2070, 230, 100));
 
-        Manual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/guia-del-usuario (1).png"))); // NOI18N
-        Manual.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Manual");
+        Manual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/signo-de-interrogacion.png"))); // NOI18N
+        Manual.setText("<html><center><font face='Century Gothic' size = '2' color='white'><b>Ayuda<br>Help");
         Manual.setContentAreaFilled(false);
         Manual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Manual.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -1024,7 +961,23 @@ public class GUI extends javax.swing.JFrame {
                 ManualActionPerformed(evt);
             }
         });
-        Filtrador.add(Manual, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 70, 90));
+        Filtrador.add(Manual, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 70, 90));
+
+        jButton4.setText("jButton4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1490, -1, -1));
+
+        jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        Filtrador.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1720, -1, -1));
 
         Filtr.setViewportView(Filtrador);
 
@@ -1034,53 +987,57 @@ public class GUI extends javax.swing.JFrame {
         Info.setForeground(new java.awt.Color(255, 255, 255));
         Info.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Check1.setBackground(new java.awt.Color(255, 255, 255));
+        Check1.setForeground(new java.awt.Color(255, 255, 255));
         Check1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-
-        informe1.setForeground(new java.awt.Color(255, 102, 0));
-        informe1.setMaximum(79799);
+        B1.setBackground(new java.awt.Color(255, 255, 255));
 
         añoe.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         añoe.setForeground(new java.awt.Color(255, 102, 0));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout B1Layout = new javax.swing.GroupLayout(B1);
+        B1.setLayout(B1Layout);
+        B1Layout.setHorizontalGroup(
+            B1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(B1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(informe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(añoe, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(añoe, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(618, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(informe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        B1Layout.setVerticalGroup(
+            B1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(B1Layout.createSequentialGroup()
+                .addGap(207, 207, 207)
                 .addComponent(añoe, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(79, Short.MAX_VALUE))
         );
 
-        Check1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 0, 830, 340));
+        Check1.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 0, 830, 340));
 
         jPanel4.setBackground(new java.awt.Color(51, 0, 204));
+
+        informe1.setForeground(new java.awt.Color(255, 102, 0));
+        informe1.setMaximum(558593);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(informe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(592, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 190, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(informe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        Check1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 830, 190));
+        Check1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 780, 190));
 
         Info.add(Check1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 850, 560));
 
@@ -1353,10 +1310,11 @@ int cont = 0;
         barraRegistroPercentil.setValue(0);
         barraRegistroglobal.setValue(0);
         
-         InfoIngles.setText("");
-         InfoImate.setText("");
-         Infolectura.setText("");
-         InfoInnaturales.setText("");
+
+        InfoIngles.setText("");
+        InfoImate.setText("");
+        Infolectura.setText("");
+        InfoInnaturales.setText("");
 
 
     }//GEN-LAST:event_LimpiarActionPerformed
@@ -1366,7 +1324,7 @@ int cont = 0;
     }//GEN-LAST:event_año2020ActionPerformed
 
     private void MasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasculinoActionPerformed
-        // TODO add your handling code here:
+        casillasmasculio();
     }//GEN-LAST:event_MasculinoActionPerformed
 
     private void año2019ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2019ActionPerformed
@@ -1374,69 +1332,49 @@ int cont = 0;
     }//GEN-LAST:event_año2019ActionPerformed
 
     private void año2018ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2018ActionPerformed
-        // TODO add your handling code here:
+        casillasAños2018();
     }//GEN-LAST:event_año2018ActionPerformed
 
     private void CedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CedulaActionPerformed
-        // TODO add your handling code here:
+        casillasCedula();
     }//GEN-LAST:event_CedulaActionPerformed
 
     private void TarjetaIdentidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TarjetaIdentidadActionPerformed
-        // TODO add your handling code here:
+        casillasTI();
     }//GEN-LAST:event_TarjetaIdentidadActionPerformed
 
     private void FemeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FemeninoActionPerformed
-        // TODO add your handling code here:
+        casillasfemenino();
     }//GEN-LAST:event_FemeninoActionPerformed
 
-    private void AreaTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AreaTodosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AreaTodosActionPerformed
-
-    private void todosañoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todosañoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_todosañoActionPerformed
-
-    private void TodosTipodeDocumentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosTipodeDocumentosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TodosTipodeDocumentosActionPerformed
-
-    private void TodosGenerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosGenerosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TodosGenerosActionPerformed
-
     private void ColegiogeneroMIXTOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColegiogeneroMIXTOActionPerformed
-        // TODO add your handling code here:
+        casillasgenerocolegiomixto();
     }//GEN-LAST:event_ColegiogeneroMIXTOActionPerformed
 
     private void ColegiogeneroFEMENINOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColegiogeneroFEMENINOActionPerformed
-        // TODO add your handling code here:
+        casillasgenerocolegiofemenino();
     }//GEN-LAST:event_ColegiogeneroFEMENINOActionPerformed
 
     private void ColegiogeneroMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColegiogeneroMasculinoActionPerformed
-        // TODO add your handling code here:
+        casillasgenerocolegiomasculino();
     }//GEN-LAST:event_ColegiogeneroMasculinoActionPerformed
 
-    private void ColegiogeneroTODOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColegiogeneroTODOSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ColegiogeneroTODOSActionPerformed
-
     private void AreaRuralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AreaRuralActionPerformed
-        // TODO add your handling code here:
+        casillasarearural();
     }//GEN-LAST:event_AreaRuralActionPerformed
 
     private void AreaUrbanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AreaUrbanaActionPerformed
-        // TODO add your handling code here:
+        casillasareaurbana();
     }//GEN-LAST:event_AreaUrbanaActionPerformed
 
     private void modoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoActionPerformed
 
         if (modo.isSelected()) {
-            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/encender.png"));
+            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/boton-de-encendido.png"));
             modo.setIcon(img);
             modo.setVerticalTextPosition(SwingConstants.BOTTOM);
             modo.setHorizontalTextPosition(SwingConstants.CENTER);
-            modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Consulta fija activadas");
+            modo.setText("<html><center><font face='Century Gothic' size = '2' color='white'><b>Consulta fija activadas");
             Labuenaaños();
             actionbus1();
             actionbus2();
@@ -1444,35 +1382,49 @@ int cont = 0;
             actionbus4();
             actionbus5();
             //ocultar paneles
-             Check1.setVisible(false);
+            Check1.setVisible(false);
             grafico_barras1.setVisible(true);
             graficopastelbarra.setVisible(true);
             progreso1.setVisible(true);
             LimpiarActionPerformed(null);
-        
+            SeleccionarComboBox();
+              
+                 
             grafico_pastel();
             grafica_barras_1();
             LimpiarActionPerformed(null);
+            Bus1.setVisible(true);
+            Bus2.setVisible(true);
+            Bus3.setVisible(true);
+            Bus5.setVisible(true);
+            Bus4.setVisible(true);
 
         } else {
-            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/apagar.png"));
+            ImageIcon img = new ImageIcon(getClass().getResource("/imagenes/boton-de-encendido (1).png"));
             modo.setIcon(img);
             modo.setVerticalTextPosition(SwingConstants.BOTTOM);
             modo.setHorizontalTextPosition(SwingConstants.CENTER);
-            modo.setText("<html><center><font face='Century Gothic' size = '4' color='white'><b>Consultas fijas desactivadas");
+            modo.setText("<html><center><font face='Century Gothic' size = '2' color='white'><b>Consultas fijas desactivadas");
             Bus1ActionPerformed(null);
             Bus2ActionPerformed(null);
             Bus3ActionPerformed(null);
             Bus4ActionPerformed(null);
             Bus5ActionPerformed(null);
             Lamalaaños();
+
             //mostrar paneles
-             Check1.setVisible(true);
+            Check1.setVisible(true);
             grafico_barras1.setVisible(false);
             graficopastelbarra.setVisible(false);
             progreso1.setVisible(false);
             LimpiarActionPerformed(null);
-       
+   //  casillaestracto();
+            Bus1.setVisible(false);
+            Bus2.setVisible(false);
+            Bus3.setVisible(false);
+            Bus5.setVisible(false);
+            Bus4.setVisible(false);
+
             grafico_pastel();
             grafica_barras_1();
 
@@ -1552,23 +1504,6 @@ int cont = 0;
 
     }//GEN-LAST:event_Bus5ActionPerformed
 
-    private void AccionJornadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionJornadaActionPerformed
-   //     AccionDeLasJornadas();
-        for (int i = 18; i <=20; i++) {
-            Elementos[i]=0;
-        }
-        grafico_pastel();
-    }//GEN-LAST:event_AccionJornadaActionPerformed
-
-    private void AccionestractoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionestractoActionPerformed
-        accionDeEstracto();
-          for (int i = 24; i <= 31; i++) {
-            Elementos[i] = 0;
-
-        }
-          grafico_pastel();
-    }//GEN-LAST:event_AccionestractoActionPerformed
-
     private void lecturaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_lecturaStateChanged
         etiquetavalorlectura.setText("" + lectura.getValue());
         PuntajeLabelLectura.setText("" + lectura.getValue());
@@ -1636,7 +1571,13 @@ int cont = 0;
     }//GEN-LAST:event_percentilbarraStateChanged
 
     private void JornadaSelecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JornadaSelecActionPerformed
-        // TODO add your handling code here:
+        if (modo.isSelected()) {
+            
+        } else {
+            casillacalendario();
+        }
+        
+
     }//GEN-LAST:event_JornadaSelecActionPerformed
 
     private void desempeñolectura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desempeñolectura1ActionPerformed
@@ -1644,7 +1585,12 @@ int cont = 0;
     }//GEN-LAST:event_desempeñolectura1ActionPerformed
 
     private void EstractoselectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstractoselectActionPerformed
-        // TODO add your handling code here:
+        if (modo.isSelected()) {
+            
+        } else {
+                casillaestracto();
+        }
+    
     }//GEN-LAST:event_EstractoselectActionPerformed
 
     private void desempeñomatematica1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desempeñomatematica1ActionPerformed
@@ -1656,8 +1602,8 @@ int cont = 0;
     }//GEN-LAST:event_desempeñoinglesActionPerformed
 
     private void ManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManualActionPerformed
-       libro obj = new libro();
-       obj.setVisible(true);
+        libro obj = new libro();
+        obj.setVisible(true);
     }//GEN-LAST:event_ManualActionPerformed
 
     private void Barra1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Barra1MousePressed
@@ -1678,6 +1624,16 @@ int cont = 0;
     private void radioaño2020ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioaño2020ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_radioaño2020ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        ElementosCheck [5] = 0;
+        grafica_check_barras();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       ElementosCheck [6] = 0;
+        grafica_check_barras();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1715,12 +1671,10 @@ int cont = 0;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AccionJornada;
-    private javax.swing.JButton Accionestracto;
     private javax.swing.ButtonGroup AreaColegio;
     private javax.swing.JCheckBox AreaRural;
-    private javax.swing.JCheckBox AreaTodos;
     private javax.swing.JCheckBox AreaUrbana;
+    private javax.swing.JPanel B1;
     private javax.swing.JPanel Barra1;
     private javax.swing.JButton Bus1;
     private javax.swing.JButton Bus2;
@@ -1733,7 +1687,6 @@ int cont = 0;
     private javax.swing.JCheckBox ColegiogeneroFEMENINO;
     private javax.swing.JCheckBox ColegiogeneroMIXTO;
     private javax.swing.JCheckBox ColegiogeneroMasculino;
-    private javax.swing.JCheckBox ColegiogeneroTODOS;
     private rojerusan.componentes.RSProgressBar DesempeñoIngles;
     private rojerusan.componentes.RSProgressBar Desempeñolectura;
     private rojerusan.componentes.RSProgressBar Desempeñomate;
@@ -1782,8 +1735,6 @@ int cont = 0;
     private javax.swing.JCheckBox TarjetaIdentidad;
     private javax.swing.JLabel Titulo1;
     private javax.swing.JLabel Titulo2;
-    protected javax.swing.JCheckBox TodosGeneros;
-    private javax.swing.JCheckBox TodosTipodeDocumentos;
     public javax.swing.JCheckBox año2018;
     public javax.swing.JCheckBox año2019;
     public javax.swing.JCheckBox año2020;
@@ -1811,6 +1762,8 @@ int cont = 0;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1831,7 +1784,6 @@ int cont = 0;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
@@ -1862,7 +1814,6 @@ int cont = 0;
     public javax.swing.JRadioButton radioañostodos;
     private javax.swing.JLabel registropersonasNaturales;
     private javax.swing.JLabel registropersonasmatematica;
-    protected javax.swing.JCheckBox todosaño;
     // End of variables declaration//GEN-END:variables
 public void grafica_barras_1() {
 
@@ -1943,6 +1894,81 @@ public void grafica_barras_1() {
         // Repinta el contenedor para mostrar el nuevo gráfico
         grafico_barras1.revalidate();
         grafico_barras1.repaint();
+
+    }
+
+    public void grafica_check_barras() {
+        DefaultCategoryDataset datos = new DefaultCategoryDataset();
+
+        int año = ElementosCheck[0];
+        int documento = ElementosCheck[1];
+        int generoestudiantes = ElementosCheck[2];
+        int generocolegio = ElementosCheck[3];
+        int areacolegio = ElementosCheck[4];
+        int calendario = ElementosCheck[5];
+        int estracto = ElementosCheck[6];
+
+        datos.setValue(año, "Años", "Años");
+        datos.setValue(documento, "Tipo de documento", "Identificaciones");
+        datos.setValue(generoestudiantes, "Generos de los estudiantes", "Generos de los estudiantes");
+        datos.setValue(generocolegio, "Genero del colegio", "Genero del colegio");
+        datos.setValue(areacolegio, "Area del colegio", "Area del colegio");
+        datos.setValue(calendario, "Calendario", "Calendario");
+        datos.setValue(estracto, "Estracto del estudiante", "Estracto del estudiante");
+
+        /*
+        datos.setValue(cedula, "Identificacion", "Cedula");
+        datos.setValue(tarjetaIdentidad, "Identificacion", "T.I");
+        datos.setValue(todosID, "identificacion", "todas las identificaciones");
+
+        datos.setValue(Masculino, "Genero", "Masculino");
+        datos.setValue(femenino, "Genero", "Femenino");
+        datos.setValue(TodosGeneros, "Genero", "Todos los generos");
+
+        datos.setValue(mixto, "Genero del colegio", "Mixto");
+        datos.setValue(Masculinocolegio, "Tipo de colegio", "Colegio masculino");
+        datos.setValue(femeninocolegio, "Tipo de colegio", "Colegio femenino");
+        datos.setValue(TodosTiposDeColegio, "Tipo de colegio", "Todo tipo de colegio");
+
+        datos.setValue(rural, "Zona", "Rural");
+        datos.setValue(urbana, "Zona", "Urbana");
+        datos.setValue(todazona, "Zona", "Todas las zonas");
+         */
+        JFreeChart grafiChe = ChartFactory.createBarChart3D(
+                "", // Título del gráfico
+                "", // Etiqueta para el eje de las categorías
+                "", // Etiqueta para el eje de los valores
+                datos, // DatasetVERTICAL
+                PlotOrientation.HORIZONTAL, // Orientación del gráfico
+                true, // Mostrar leyenda
+                true, // Mostrar tooltips (información al pasar el ratón)
+                false // Mostrar URLs (no utilizado)
+        );
+
+        // Personalización de la apariencia del gráfico
+        CategoryPlot plot = grafiChe.getCategoryPlot();
+        BarRenderer renderer = (BarRenderer) plot.getRenderer();
+        renderer.setSeriesPaint(0, Color.BLUE); // Color de las barras
+        plot.setBackgroundPaint(Color.WHITE); // Color de fondo del gráfico
+        plot.setRangeGridlinesVisible(true); // Mostrar líneas de cuadrícula en el eje Y
+        NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
+        //  rangeAxis.setTickLabelsVisible(false);
+
+        ChartPanel chebarras = new ChartPanel(grafiChe);
+        chebarras.setMouseWheelEnabled(true);
+
+        // Ajusta el tamaño y la ubicación del panel del gráfico
+        chebarras.setPreferredSize(new Dimension(800, 600)); // Tamaño del panel
+        chebarras.setVisible(true);
+
+        // Agrega el panel del gráfico al contenedor deseado (por ejemplo, un JPanel llamado grafico_barras1)
+        B1.removeAll(); // Limpia cualquier componente anterior en el contenedor
+        B1.setLayout(new BorderLayout());
+        B1.add(chebarras, BorderLayout.CENTER);
+
+        // Repinta el contenedor para mostrar el nuevo gráfico
+        B1.revalidate();
+        B1.repaint();
 
     }
 
@@ -2063,7 +2089,7 @@ public void grafica_barras_1() {
         año2020.setVisible(false);
         año2019.setVisible(false);
         año2018.setVisible(false);
-        todosaño.setVisible(false);
+        //    todosaño.setVisible(false);
 
         //TIPO DE DOCUMENTO
         RadiodocumentoID1.setVisible(true);
@@ -2072,12 +2098,12 @@ public void grafica_barras_1() {
 
         Cedula.setVisible(false);
         TarjetaIdentidad.setVisible(false);
-        TodosTipodeDocumentos.setVisible(false);
+//        TodosTipodeDocumentos.setVisible(false);
 
         //TIPO DE GENERO 
         Masculino.setVisible(false);
         Femenino.setVisible(false);
-        TodosGeneros.setVisible(false);
+        //   TodosGeneros.setVisible(false);
 
         RadioFemenino1.setVisible(true);
         RadioMasculino1.setVisible(true);
@@ -2087,7 +2113,7 @@ public void grafica_barras_1() {
         ColegiogeneroFEMENINO.setVisible(false);
         ColegiogeneroMIXTO.setVisible(false);
         ColegiogeneroMasculino.setVisible(false);
-        ColegiogeneroTODOS.setVisible(false);
+//        ColegiogeneroTODOS.setVisible(false);
 
         RadioGeneroColegioFemenino.setVisible(true);
         RadioGeneroColegioMasculino.setVisible(true);
@@ -2097,7 +2123,7 @@ public void grafica_barras_1() {
         //AREA (OCULTAR CAJAS)
         AreaRural.setVisible(false);
         AreaUrbana.setVisible(false);
-        AreaTodos.setVisible(false);
+//        AreaTodos.setVisible(false);
 
         RadioRural.setVisible(true);
         RadioUrbana.setVisible(true);
@@ -2115,13 +2141,13 @@ public void grafica_barras_1() {
         año2020.setVisible(true);
         año2019.setVisible(true);
         año2018.setVisible(true);
-        todosaño.setVisible(true);
+//        todosaño.setVisible(true);
 
         //TIPO DE DOCUMEMTNO
         Cedula.setVisible(true);
         TarjetaIdentidad.setVisible(true);
-        TodosTipodeDocumentos.setVisible(true);
-
+//        TodosTipodeDocumentos.setVisible(true);
+        RadiodocumentoTodos.setVisible(false);
         RadiodocumentoID1.setVisible(false);
         RadiodocumentoTodos.setVisible(false);
         Radiodocumentocedula.setVisible(false);
@@ -2133,13 +2159,13 @@ public void grafica_barras_1() {
 
         Masculino.setVisible(true);
         Femenino.setVisible(true);
-        TodosGeneros.setVisible(true);
+//        TodosGeneros.setVisible(true);
 
         //COLEGIO GENERO (MOSTRAR CAJAS DE TEXTO)
         ColegiogeneroFEMENINO.setVisible(true);
         ColegiogeneroMIXTO.setVisible(true);
         ColegiogeneroMasculino.setVisible(true);
-        ColegiogeneroTODOS.setVisible(true);
+        //      ColegiogeneroTODOS.setVisible(true);
 
         RadioGeneroColegioFemenino.setVisible(false);
         RadioGeneroColegioMasculino.setVisible(false);
@@ -2149,7 +2175,7 @@ public void grafica_barras_1() {
         //AREA (MOSTRAR CAJAS)
         AreaRural.setVisible(true);
         AreaUrbana.setVisible(true);
-        AreaTodos.setVisible(true);
+//        AreaTodos.setVisible(true);
 
         RadioRural.setVisible(false);
         RadioUrbana.setVisible(false);
@@ -2210,11 +2236,12 @@ public void grafica_barras_1() {
                 System.out.println(obj.getAño2018());
 
             }
+            /*
             if (todosaño.isSelected()) {
                 obj.setTodosaños();
                 System.out.println(obj.getTodosaños());
 
-            }
+            }*/
         }
     }
 
@@ -2269,11 +2296,11 @@ public void grafica_barras_1() {
                 System.out.println(obj.getID());
 
             }
-            if (TodosTipodeDocumentos.isSelected()) {
+            /*            if (TodosTipodeDocumentos.isSelected()) {
                 obj.setIDtodos();
                 System.out.println(obj.getIDtodos());
 
-            }
+            }*/
         }
 
     }
@@ -2334,11 +2361,11 @@ public void grafica_barras_1() {
 
             }
 
-            if (TodosGeneros.isSelected()) {
+            /*            if (TodosGeneros.isSelected()) {
                 obj.setTodo();
                 System.out.println(obj.getTodo());
 
-            }
+            }*/
         }
 
     }
@@ -2404,11 +2431,11 @@ public void grafica_barras_1() {
                 System.out.println(obj.getColfemenino());
 
             }
-            if (ColegiogeneroTODOS.isSelected()) {
+            /*            if (ColegiogeneroTODOS.isSelected()) {
                 obj.setColtodos();
                 System.out.println(obj.getColtodos());
 
-            }
+            }*/
             if (ColegiogeneroMIXTO.isSelected()) {
                 obj.setMixto();
                 System.out.println(obj.getMixto());
@@ -2461,12 +2488,12 @@ public void grafica_barras_1() {
                 System.out.println(obj.getRural());
 
             }
-            if (AreaTodos.isSelected()) {
+            /*            if (AreaTodos.isSelected()) {
 
                 obj.setZonatodos();
                 System.out.println(obj.getZonatodos());
 
-            }
+            }*/
             if (AreaUrbana.isSelected()) {
                 obj.setUrbana();
                 System.out.println(obj.getUrbana());
@@ -2565,23 +2592,23 @@ public void grafica_barras_1() {
             switch (select) {
                 case "1":
                     Desempeñolectura.setValue(cantidad);
-                    jLabel11.setText(""+cantidad);
-                    Infolectura.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en lectua critica");
+                    jLabel11.setText("" + cantidad);
+                    Infolectura.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + " en lectua critica");
                     break;
                 case "2":
                     Desempeñolectura.setValue(cantidad);
-                    jLabel11.setText(""+cantidad);
-                    Infolectura.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en lectua critica");
+                    jLabel11.setText("" + cantidad);
+                    Infolectura.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + " en lectua critica");
                     break;
                 case "3":
                     Desempeñolectura.setValue(cantidad);
-                    jLabel11.setText(""+cantidad);
-                    Infolectura.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en lectua critica");
+                    jLabel11.setText("" + cantidad);
+                    Infolectura.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + " en lectua critica");
                     break;
                 case "4":
                     Desempeñolectura.setValue(cantidad);
-                    jLabel11.setText(""+cantidad);
-                    Infolectura.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en lectua critica");
+                    jLabel11.setText("" + cantidad);
+                    Infolectura.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + " en lectua critica");
                     break;
                 default:
                     throw new AssertionError();
@@ -2601,23 +2628,23 @@ public void grafica_barras_1() {
             switch (select) {
                 case "1":
                     Desempeñomate.setValue(cantidad);
-                    LabelDesMate.setText(""+cantidad);
-                    InfoImate.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en matematica");
+                    LabelDesMate.setText("" + cantidad);
+                    InfoImate.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + " en matematica");
                     break;
                 case "2":
                     Desempeñomate.setValue(cantidad);
-                    LabelDesMate.setText(""+cantidad);
-                    InfoImate.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en matematica");
+                    LabelDesMate.setText("" + cantidad);
+                    InfoImate.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + " en matematica");
                     break;
                 case "3":
                     Desempeñomate.setValue(cantidad);
-                    LabelDesMate.setText(""+cantidad);
-                    InfoImate.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en matematica");
+                    LabelDesMate.setText("" + cantidad);
+                    InfoImate.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + " en matematica");
                     break;
                 case "4":
                     Desempeñomate.setValue(cantidad);
-                    LabelDesMate.setText(""+cantidad);
-                    InfoImate.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en matematica");
+                    LabelDesMate.setText("" + cantidad);
+                    InfoImate.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + " en matematica");
                     break;
                 default:
                     throw new AssertionError();
@@ -2637,23 +2664,23 @@ public void grafica_barras_1() {
             switch (select) {
                 case "1":
                     Desempeñonaturales.setValue(cantidad);
-                    LabelDesNaturales.setText(""+cantidad);
-                     InfoInnaturales.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+" en naturales");
+                    LabelDesNaturales.setText("" + cantidad);
+                    InfoInnaturales.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + " en naturales");
                     break;
                 case "2":
                     Desempeñonaturales.setValue(cantidad);
-                    LabelDesNaturales.setText(""+cantidad);
-                    InfoInnaturales.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+"  en naturales");
+                    LabelDesNaturales.setText("" + cantidad);
+                    InfoInnaturales.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + "  en naturales");
                     break;
                 case "3":
                     Desempeñonaturales.setValue(cantidad);
-                    LabelDesNaturales.setText(""+cantidad);
-                    InfoInnaturales.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+"  en naturales");
+                    LabelDesNaturales.setText("" + cantidad);
+                    InfoInnaturales.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + "  en naturales");
                     break;
                 case "4":
                     Desempeñonaturales.setValue(cantidad);
-                    LabelDesNaturales.setText(""+cantidad);
-                    InfoInnaturales.setText("<html>existen "+cantidad+" Personas<br> con un desempeño de <br> "+select+"  en naturales");
+                    LabelDesNaturales.setText("" + cantidad);
+                    InfoInnaturales.setText("<html>existen " + cantidad + " Personas<br> con un desempeño de <br> " + select + "  en naturales");
                     break;
                 default:
                     throw new AssertionError();
@@ -2670,49 +2697,49 @@ public void grafica_barras_1() {
         desempeñoingles.addActionListener(e -> {
             String select = (String) desempeñoingles.getSelectedItem();
             int cantidad;
-        switch (select) {
+            switch (select) {
                 case "A-":
 
                     cantidad = llenarBarraInteractiva(select, posicion);
                     //calcular al 100% cuanto seria 
                     DesempeñoIngles.setValue(cantidad);
-                    LabelDesIngles.setText(""+cantidad);
-                     InfoIngles.setText("<html>existen "+cantidad+" Personas<br> con una calificacion de <br> "+select+" en ingles");
-                    
+                    LabelDesIngles.setText("" + cantidad);
+                    InfoIngles.setText("<html>existen " + cantidad + " Personas<br> con una calificacion de <br> " + select + " en ingles");
+
                     break;
                 case "A1":
                     cantidad = llenarBarraInteractiva(select, posicion);
                     //calcular al 100% cuanto seria 
                     DesempeñoIngles.setValue(cantidad);
-                    LabelDesIngles.setText(""+cantidad);
-                     InfoIngles.setText("<html>existen "+cantidad+" Personas<br> con una calificacion de <br> "+select+" en ingles");
-                    
+                    LabelDesIngles.setText("" + cantidad);
+                    InfoIngles.setText("<html>existen " + cantidad + " Personas<br> con una calificacion de <br> " + select + " en ingles");
+
                     break;
                 case "A2":
                     cantidad = llenarBarraInteractiva(select, posicion);
                     //calcular al 100% cuanto seria 
                     DesempeñoIngles.setValue(cantidad);
-                    LabelDesIngles.setText(""+cantidad);
-                     InfoIngles.setText("<html>existen "+cantidad+" Personas<br> con una calificacion de <br> "+select+" en ingles");
+                    LabelDesIngles.setText("" + cantidad);
+                    InfoIngles.setText("<html>existen " + cantidad + " Personas<br> con una calificacion de <br> " + select + " en ingles");
 
                     break;
                 case "B+":
                     cantidad = llenarBarraInteractiva(select, posicion);
                     //calcular al 100% cuanto seria 
                     DesempeñoIngles.setValue(cantidad);
-                    LabelDesIngles.setText(""+cantidad);
-                     InfoIngles.setText("<html>existen "+cantidad+" Personas<br> con una calificacion de <br> "+select+" en ingles");
+                    LabelDesIngles.setText("" + cantidad);
+                    InfoIngles.setText("<html>existen " + cantidad + " Personas<br> con una calificacion de <br> " + select + " en ingles");
                     break;
                 case "B1":
                     cantidad = llenarBarraInteractiva(select, posicion);
                     //calcular al 100% cuanto seria 
                     DesempeñoIngles.setValue(cantidad);
-                    LabelDesIngles.setText(""+cantidad);
-                     InfoIngles.setText("<html>existen "+cantidad+" Personas<br> con una calificacion de <br> "+select+" en ingles");
+                    LabelDesIngles.setText("" + cantidad);
+                    InfoIngles.setText("<html>existen " + cantidad + " Personas<br> con una calificacion de <br> " + select + " en ingles");
                     break;
                 default:
                     throw new AssertionError();
-                    
+
             }
         });
     }
@@ -2884,6 +2911,9 @@ public void grafica_barras_1() {
     public void refresco() {
         for (int i = 0; i < Elementos.length; i++) {
             Elementos[i] = 0;
+        }
+        for (int i = 0; i < ElementosCheck.length; i++) {
+            ElementosCheck[i] = 0;
 
         }
 
@@ -2906,6 +2936,7 @@ public void grafica_barras_1() {
         AccionDesempeñoNaturales();
         AccionDesempeñoMatematica();
         AccionDesempeñoLectura();
+          casillaestracto();
     }
 
     public void imprimir() {
@@ -2948,52 +2979,318 @@ public void grafica_barras_1() {
     }
 
     //calculo de casiilas
-    
-     int valor = 0;
-    public void casillasAños2020(){
-        
-        int mandarValor=0;
-       
+    int informacio2020Seleccionado;
+    int informacio2019Seleccionado;
+    int informacio2018Seleccionado;
+
+    int informaciocedula;
+    int informacioTarjetaIdentidad;
+
+    int informaciongeneromasculino;
+    int informaciongenerofemenino;
+
+    int informaciongeneromasculinocolegio;
+    int informaciongenerofemeninocolegio;
+    int informaciongeneromixtocolegio;
+
+    int informacionarearutal;
+    int informacionareaurbana;
+
+    int informacioncalendarioA;
+    int informacioncalendarioB;
+    int informacioncalendarioOtro;
+
+    int estracto1;
+    int estracto2;
+    int estracto3;
+    int estracto4;
+    int estracto5;
+    int estracto6;
+    int sinestracto;
+
+//AÑO
+    public void casillasAños2020() {
         if (año2020.isSelected()) {
-            mandarValor =  informacio2020.size();
-   
-            
-            informe1.setValue(mandarValor);
-            
+            informacio2020Seleccionado = informacio2020.size();
         } else {
-              informe1.setValue(mandarValor-valor);
+            informacio2020Seleccionado = 0;
         }
-        
-        
-        
+        actualizarTotalesaños();
     }
-    public void casillasAños2019(){
-         int mandarValor=0;
-   if (año2019.isSelected()) {
-             mandarValor = valor+ informacio2020.size();
-            
-            
-            informe1.setValue(valor);
-            
+
+    public void casillasAños2019() {
+        if (año2019.isSelected()) {
+            informacio2019Seleccionado = informacio2019.size();
         } else {
-              informe1.setValue(valor-0);
+            informacio2019Seleccionado = 0;
         }
-    
+        actualizarTotalesaños();
     }
-    
+
+    public void casillasAños2018() {
+        if (año2018.isSelected()) {
+            informacio2018Seleccionado = informacio2018.size();
+        } else {
+            informacio2018Seleccionado = 0;
+        }
+        actualizarTotalesaños();
+    }
+
+    private void actualizarTotalesaños() {
+        ElementosCheck[0] = informacio2020Seleccionado + informacio2019Seleccionado + informacio2018Seleccionado;
+        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        grafica_check_barras();
+    }
+//ID
+
+    public void casillasCedula() {
+        if (Cedula.isSelected()) {
+            int cedula2020 = calculos.Contador(informacio2020, "CC", 0);
+            int cedula2019 = calculos.Contador(informacio2019, "CC", 0);
+            int cedula2018 = calculos.Contador(informacio2018, "CC", 0);
+            informaciocedula = cedula2020 + cedula2019 + cedula2018;
+
+        } else {
+            informaciocedula = 0;
+        }
+        actualizarTotalesID();
+
+    }
+
+    public void casillasTI() {
+        if (TarjetaIdentidad.isSelected()) {
+            int cedula2020 = calculos.Contador(informacio2020, "TI", 0);
+            int cedula2019 = calculos.Contador(informacio2019, "TI", 0);
+            int cedula2018 = calculos.Contador(informacio2018, "TI", 0);
+            informacioTarjetaIdentidad = cedula2020 + cedula2019 + cedula2018;
+
+        } else {
+            informacioTarjetaIdentidad = 0;
+        }
+        actualizarTotalesID();
+
+    }
+
+    private void actualizarTotalesID() {
+        ElementosCheck[1] = informaciocedula + informacioTarjetaIdentidad;
+        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        
+        grafica_check_barras();
+    }
+
+    //GENERO
+    public void casillasmasculio() {
+        if (Masculino.isSelected()) {
+            int hombre2020 = calculos.Contador(informacio2020, "M", 2);
+            int hombre2019 = calculos.Contador(informacio2019, "M", 2);
+            int hombre2018 = calculos.Contador(informacio2018, "M", 2);
+            informaciongeneromasculino = hombre2020 + hombre2018 + hombre2019;
+
+        } else {
+            informaciongeneromasculino = 0;
+        }
+        actualizarTotalesgeneros();
+
+    }
+
+    public void casillasfemenino() {
+        if (Femenino.isSelected()) {
+            int mujer2020 = calculos.Contador(informacio2020, "F", 2);
+            int mujer2019 = calculos.Contador(informacio2019, "F", 2);
+            int mujer2018 = calculos.Contador(informacio2018, "F", 2);
+            informaciongenerofemenino = mujer2020 + mujer2019 + mujer2018;
+
+        } else {
+            informaciongenerofemenino = 0;
+        }
+        actualizarTotalesgeneros();
+
+    }
+
+    private void actualizarTotalesgeneros() {
+        ElementosCheck[2] = informaciongenerofemenino + informaciongeneromasculino;
+        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        grafica_check_barras();
+    }
+
+    //INFORMACION GENERO COLEGIO
+    public void casillasgenerocolegiomasculino() {
+        if (ColegiogeneroMasculino.isSelected()) {
+            int colegiomasculino2020 = calculos.Contador(informacio2020, "MASCULINO", 10);
+            int colegiomasculino2019 = calculos.Contador(informacio2019, "MASCULINO", 10);
+            int colegiomasculino2018 = calculos.Contador(informacio2018, "MASCULINO", 10);
+            informaciongeneromasculinocolegio = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
+
+        } else {
+            informaciongeneromasculinocolegio = 0;
+        }
+        actualizarTotalescasillasgenerocolegio();
+
+    }
+
+    public void casillasgenerocolegiofemenino() {
+        if (ColegiogeneroFEMENINO.isSelected()) {
+            int colegiomasculino2020 = calculos.Contador(informacio2020, "FEMENINO", 10);
+            int colegiomasculino2019 = calculos.Contador(informacio2019, "FEMENINO", 10);
+            int colegiomasculino2018 = calculos.Contador(informacio2018, "FEMENINO", 10);
+            informaciongenerofemeninocolegio = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
+
+        } else {
+            informaciongenerofemeninocolegio = 0;
+        }
+        actualizarTotalescasillasgenerocolegio();
+
+    }
+
+    public void casillasgenerocolegiomixto() {
+        if (ColegiogeneroMIXTO.isSelected()) {
+            int colegiomasculino2020 = calculos.Contador(informacio2020, "MIXTO", 10);
+            int colegiomasculino2019 = calculos.Contador(informacio2019, "MIXTO", 10);
+            int colegiomasculino2018 = calculos.Contador(informacio2018, "MIXTO", 10);
+            informaciongeneromixtocolegio = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
+
+        } else {
+            informaciongeneromixtocolegio = 0;
+        }
+        actualizarTotalescasillasgenerocolegio();
+
+    }
+
+    private void actualizarTotalescasillasgenerocolegio() {
+        ElementosCheck[3] = informaciongeneromasculinocolegio + informaciongenerofemeninocolegio + informaciongeneromixtocolegio;
+         informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        grafica_check_barras();
+    }
+
+    //AREA
+    public void casillasareaurbana() {
+        if (AreaUrbana.isSelected()) {
+            int colegiomasculino2020 = calculos.Contador(informacio2020, "URBANO", 12);
+            int colegiomasculino2019 = calculos.Contador(informacio2019, "URBANO", 12);
+            int colegiomasculino2018 = calculos.Contador(informacio2018, "URBANO", 12);
+            informacionareaurbana = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
+
+        } else {
+            informacionareaurbana = 0;
+        }
+        actualizarTotalescasillasarea();
+
+    }
+
+    public void casillasarearural() {
+        if (AreaRural.isSelected()) {
+            int colegioRURAL2020 = calculos.Contador(informacio2020, "RURAL", 12);
+            int colegioRURAL2019 = calculos.Contador(informacio2019, "RURAL", 12);
+            int colegioRURAL2018 = calculos.Contador(informacio2018, "RURAL", 12);
+            informacionarearutal = colegioRURAL2020 + colegioRURAL2019 + colegioRURAL2018;
+
+        } else {
+            informacionarearutal = 0;
+        }
+        actualizarTotalescasillasarea();
+
+    }
+
+    private void actualizarTotalescasillasarea() {
+        ElementosCheck[4] = informacionareaurbana + informacionarearutal;
+        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        grafica_check_barras();
+    }
+
+    //CALENDARIO
+    public void casillacalendario() {
+        JornadaSelec.addActionListener(e -> {
+            String BuscarJornada = (String) JornadaSelec.getSelectedItem();
+
+            int elemento1 = calculos.Contador(informacio2020, BuscarJornada, 11);
+            int elemento2 = calculos.Contador(informacio2019, BuscarJornada, 11);
+            int elemento3 = calculos.Contador(informacio2018, BuscarJornada, 11);
+            switch (BuscarJornada) {
+                case "A":
+                    informacioncalendarioA = elemento1 + elemento2 + elemento3;
+                    actualizarTotalescalendarios();
+                    ;
+                    break;
+                case "B":
+                    informacioncalendarioB = elemento1 + elemento2 + elemento3;
+                    actualizarTotalescalendarios();
+                    break;
+                case "OTRO":
+                    informacioncalendarioOtro = elemento1 + elemento2 + elemento3;
+                    actualizarTotalescalendarios();
+                    break;
+
+                default:
+                    throw new AssertionError();
+            }
+
+        });
+
+    }
+
+    private void actualizarTotalescalendarios() {
+        ElementosCheck[5] = informacioncalendarioA + informacioncalendarioB + informacioncalendarioOtro;
+         informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        grafica_check_barras();
+
+
+    }
+        //ESTRACTO
+    public void casillaestracto() {
+        Estractoselect.addActionListener(e -> {
+            String select = (String) Estractoselect.getSelectedItem();
+
+            int elemento1 = calculos.Contador(informacio2020, select, 6);
+            int elemento2 = calculos.Contador(informacio2019, select, 6);
+            int elemento3 = calculos.Contador(informacio2018, select, 6);
+            switch (select) {
+                case "Estrato 1":
+                    estracto1 = elemento1 + elemento2 + elemento3;
+                          actualizarTotalesestracto();
+                    ;
+                    break;
+                case "Estrato 2":
+                    estracto2 = elemento1 + elemento2 + elemento3;
+                          actualizarTotalesestracto();
+                    ;
+                    break;
+                case "Estrato 3":
+                  estracto3 = elemento1 + elemento2 + elemento3;
+                        actualizarTotalesestracto();
+                    ;
+                    break;
+                case "Estrato 4":
+                   estracto4 = elemento1 + elemento2 + elemento3;
+                         actualizarTotalesestracto();
+                    ;
+                    break;
+                case "Estrato 5":
+                   estracto5 = elemento1 + elemento2 + elemento3;
+                         actualizarTotalesestracto();
+                    ;
+                    break;
+                case "Estrato 6":
+                   estracto6 = elemento1 + elemento2 + elemento3;
+                         actualizarTotalesestracto();
+                    ;
+                    break;
+
+                default:
+                    throw new AssertionError();
+            }
+        } );
+  
+    }
+        private void actualizarTotalesestracto() {
+        ElementosCheck[6] = estracto1 + estracto2 + estracto3 + estracto4 + estracto5 + estracto6 + sinestracto;
+        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        grafica_check_barras();
+
       
+
+    }
         
-        
-        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
+
 }//Fin del programa
 
