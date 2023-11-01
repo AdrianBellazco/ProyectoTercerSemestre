@@ -1627,11 +1627,14 @@ int cont = 0;
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         ElementosCheck [5] = 0;
+        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         grafica_check_barras();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        ElementosCheck [6] = 0;
+       resetestracto();
+       informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         grafica_check_barras();
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -2936,6 +2939,7 @@ public void grafica_barras_1() {
         AccionDesempeñoNaturales();
         AccionDesempeñoMatematica();
         AccionDesempeñoLectura();
+        casillacalendario();
           casillaestracto();
     }
 
@@ -3236,6 +3240,15 @@ public void grafica_barras_1() {
 
     }
         //ESTRACTO
+    public void resetestracto(){
+        estracto1 =0;
+        estracto2 =0;
+        estracto3 =0;
+        estracto4 =0;
+        estracto5 =0;
+     
+    }
+    
     public void casillaestracto() {
         Estractoselect.addActionListener(e -> {
             String select = (String) Estractoselect.getSelectedItem();
@@ -3282,13 +3295,13 @@ public void grafica_barras_1() {
   
     }
         private void actualizarTotalesestracto() {
-        ElementosCheck[6] = estracto1 + estracto2 + estracto3 + estracto4 + estracto5 + estracto6 + sinestracto;
-        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        ElementosCheck[6] = estracto1 + estracto2 + estracto3 + estracto4 + estracto5 + estracto6;
+        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         grafica_check_barras();
 
-      
-
     }
+        
+       
         
   
 
