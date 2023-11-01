@@ -3042,7 +3042,7 @@ public void grafica_barras_1() {
 
     private void actualizarTotalesaños() {
         ElementosCheck[0] = informacio2020Seleccionado + informacio2019Seleccionado + informacio2018Seleccionado;
-        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         grafica_check_barras();
     }
 //ID
@@ -3077,7 +3077,7 @@ public void grafica_barras_1() {
 
     private void actualizarTotalesID() {
         ElementosCheck[1] = informaciocedula + informacioTarjetaIdentidad;
-        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         
         grafica_check_barras();
     }
@@ -3113,7 +3113,7 @@ public void grafica_barras_1() {
 
     private void actualizarTotalesgeneros() {
         ElementosCheck[2] = informaciongenerofemenino + informaciongeneromasculino;
-        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         grafica_check_barras();
     }
 
@@ -3162,7 +3162,7 @@ public void grafica_barras_1() {
 
     private void actualizarTotalescasillasgenerocolegio() {
         ElementosCheck[3] = informaciongeneromasculinocolegio + informaciongenerofemeninocolegio + informaciongeneromixtocolegio;
-         informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+          informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         grafica_check_barras();
     }
 
@@ -3197,7 +3197,7 @@ public void grafica_barras_1() {
 
     private void actualizarTotalescasillasarea() {
         ElementosCheck[4] = informacionareaurbana + informacionarearutal;
-        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+         informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         grafica_check_barras();
     }
 
@@ -3234,7 +3234,7 @@ public void grafica_barras_1() {
 
     private void actualizarTotalescalendarios() {
         ElementosCheck[5] = informacioncalendarioA + informacioncalendarioB + informacioncalendarioOtro;
-         informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+         informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         grafica_check_barras();
 
 
@@ -3294,16 +3294,22 @@ public void grafica_barras_1() {
         } );
   
     }
+    /*
         private void actualizarTotalesestracto() {
         ElementosCheck[6] = estracto1 + estracto2 + estracto3 + estracto4 + estracto5 + estracto6;
         informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         grafica_check_barras();
 
     }
+        */
+               private void actualizarTotalesestracto() {
+        ElementosCheck[6] = estracto1 + estracto2 + estracto3 + estracto4 + estracto5 + estracto6;
+        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        grafica_check_barras();
         
-       
-        
+               }
   
+   
 
 }//Fin del programa
 
