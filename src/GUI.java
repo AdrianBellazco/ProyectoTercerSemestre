@@ -37,6 +37,7 @@ public class GUI extends javax.swing.JFrame {
     ArrayList<String> informacio2020;
     ArrayList<String> informacio2019;
     ArrayList<String> informacio2018;
+    DatosPorSeparado datos = new DatosPorSeparado();
 
     ArrayList<Integer> EstadisticaCasillas;
 
@@ -212,7 +213,14 @@ public class GUI extends javax.swing.JFrame {
         B1 = new javax.swing.JPanel();
         añoe = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        informe1 = new rojerusan.componentes.RSProgressCircle();
+        graft2019 = new rojerusan.componentes.RSProgressCircle();
+        graft2018 = new rojerusan.componentes.RSProgressCircle();
+        graft2020 = new rojerusan.componentes.RSProgressCircle();
+        lab2018 = new javax.swing.JLabel();
+        lab2019 = new javax.swing.JLabel();
+        lab2020 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
         grafico_barras1 = new javax.swing.JPanel();
         progreso1 = new javax.swing.JPanel();
         etiquetavalorlectura3 = new javax.swing.JLabel();
@@ -712,6 +720,11 @@ public class GUI extends javax.swing.JFrame {
         RadioTodosGeneros.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         RadioTodosGeneros.setForeground(new java.awt.Color(255, 255, 255));
         RadioTodosGeneros.setText("Todos");
+        RadioTodosGeneros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioTodosGenerosActionPerformed(evt);
+            }
+        });
         Filtrador.add(RadioTodosGeneros, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 750, -1, -1));
 
         Generos.add(RadioMasculino1);
@@ -1010,36 +1023,56 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(B1Layout.createSequentialGroup()
                 .addGap(207, 207, 207)
                 .addComponent(añoe, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Check1.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 0, 830, 340));
+        Check1.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 0, 830, 260));
 
-        jPanel4.setBackground(new java.awt.Color(51, 0, 204));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        informe1.setForeground(new java.awt.Color(255, 102, 0));
-        informe1.setMaximum(558593);
+        graft2019.setForeground(new java.awt.Color(0, 102, 102));
+        graft2019.setMaximum(30000);
+        graft2019.setColorText(new java.awt.Color(255, 102, 0));
+        jPanel4.add(graft2019, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(informe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(592, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(informe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
+        graft2018.setBackground(new java.awt.Color(102, 102, 0));
+        graft2018.setForeground(new java.awt.Color(255, 102, 0));
+        graft2018.setMaximum(19799);
+        graft2018.setColorText(new java.awt.Color(255, 255, 255));
+        jPanel4.add(graft2018, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
-        Check1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 780, 190));
+        graft2020.setForeground(new java.awt.Color(255, 102, 0));
+        graft2020.setMaximum(30000);
+        jPanel4.add(graft2020, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 120, -1, -1));
 
-        Info.add(Check1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 850, 560));
+        lab2018.setBackground(new java.awt.Color(255, 102, 0));
+        lab2018.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lab2018.setForeground(new java.awt.Color(255, 102, 0));
+        lab2018.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel4.add(lab2018, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 130, 50));
+
+        lab2019.setBackground(new java.awt.Color(0, 51, 51));
+        lab2019.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lab2019.setForeground(new java.awt.Color(0, 51, 51));
+        lab2019.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel4.add(lab2019, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 130, 50));
+
+        lab2020.setBackground(new java.awt.Color(255, 102, 0));
+        lab2020.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        lab2020.setForeground(new java.awt.Color(255, 102, 0));
+        lab2020.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel4.add(lab2020, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 120, 60));
+
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel4.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, 20, 220));
+
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel4.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 20, 220));
+
+        Check1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 800, 270));
+
+        Info.add(Check1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 850, 570));
 
         grafico_barras1.setBackground(new java.awt.Color(204, 204, 204));
         grafico_barras1.setForeground(new java.awt.Color(255, 255, 255));
@@ -1320,27 +1353,34 @@ int cont = 0;
     }//GEN-LAST:event_LimpiarActionPerformed
 
     private void año2020ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2020ActionPerformed
-        casillasAños2020();
+       // casillasAños2020();
+       nosehpta();
+      
     }//GEN-LAST:event_año2020ActionPerformed
 
     private void MasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasculinoActionPerformed
-        casillasmasculio();
+       // casillasmasculio();
+       
+     
     }//GEN-LAST:event_MasculinoActionPerformed
 
     private void año2019ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2019ActionPerformed
-        casillasAños2019();
+      //  casillasAños2019();
+     nosehpta();
+
     }//GEN-LAST:event_año2019ActionPerformed
 
     private void año2018ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_año2018ActionPerformed
-        casillasAños2018();
+      //  casillasAños2018();
+     nosehpta();
     }//GEN-LAST:event_año2018ActionPerformed
 
     private void CedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CedulaActionPerformed
-        casillasCedula();
+       casillasCedula();
     }//GEN-LAST:event_CedulaActionPerformed
 
     private void TarjetaIdentidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TarjetaIdentidadActionPerformed
-        casillasTI();
+       casillasTI();
     }//GEN-LAST:event_TarjetaIdentidadActionPerformed
 
     private void FemeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FemeninoActionPerformed
@@ -1574,7 +1614,7 @@ int cont = 0;
         if (modo.isSelected()) {
             
         } else {
-            casillacalendario();
+//            casillacalendario();
         }
         
 
@@ -1588,7 +1628,7 @@ int cont = 0;
         if (modo.isSelected()) {
             
         } else {
-                casillaestracto();
+//                casillaestracto();
         }
     
     }//GEN-LAST:event_EstractoselectActionPerformed
@@ -1627,16 +1667,20 @@ int cont = 0;
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         ElementosCheck [5] = 0;
-        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+        graft2019.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         grafica_check_barras();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        ElementosCheck [6] = 0;
-       resetestracto();
-       informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
+//       resetestracto();
+       graft2019.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
         grafica_check_barras();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void RadioTodosGenerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioTodosGenerosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RadioTodosGenerosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1757,9 +1801,11 @@ int cont = 0;
     private javax.swing.JLabel glop;
     private javax.swing.JPanel grafico_barras1;
     private javax.swing.JPanel graficopastelbarra;
+    private rojerusan.componentes.RSProgressCircle graft2018;
+    private rojerusan.componentes.RSProgressCircle graft2019;
+    private rojerusan.componentes.RSProgressCircle graft2020;
     private javax.swing.ButtonGroup grupo1;
     private javax.swing.ButtonGroup grupoAños;
-    private rojerusan.componentes.RSProgressCircle informe1;
     private javax.swing.JLabel ing;
     private javax.swing.JSlider inglees;
     private javax.swing.JButton jButton1;
@@ -1796,10 +1842,15 @@ int cont = 0;
     private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator18;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JLabel lab2018;
+    private javax.swing.JLabel lab2019;
+    private javax.swing.JLabel lab2020;
     private javax.swing.JLabel lectorpersonas;
     private javax.swing.JSlider lectura;
     private javax.swing.JLabel mate;
@@ -2939,8 +2990,8 @@ public void grafica_barras_1() {
         AccionDesempeñoNaturales();
         AccionDesempeñoMatematica();
         AccionDesempeñoLectura();
-        casillacalendario();
-          casillaestracto();
+//        casillacalendario();
+//          casillaestracto();
     }
 
     public void imprimir() {
@@ -2983,6 +3034,7 @@ public void grafica_barras_1() {
     }
 
     //calculo de casiilas
+     //calculo de casiilas
     int informacio2020Seleccionado;
     int informacio2019Seleccionado;
     int informacio2018Seleccionado;
@@ -3012,304 +3064,37 @@ public void grafica_barras_1() {
     int estracto6;
     int sinestracto;
 
-//AÑO
-    public void casillasAños2020() {
-        if (año2020.isSelected()) {
-            informacio2020Seleccionado = informacio2020.size();
-        } else {
-            informacio2020Seleccionado = 0;
-        }
-        actualizarTotalesaños();
-    }
-
-    public void casillasAños2019() {
-        if (año2019.isSelected()) {
-            informacio2019Seleccionado = informacio2019.size();
-        } else {
-            informacio2019Seleccionado = 0;
-        }
-        actualizarTotalesaños();
-    }
-
-    public void casillasAños2018() {
-        if (año2018.isSelected()) {
-            informacio2018Seleccionado = informacio2018.size();
-        } else {
-            informacio2018Seleccionado = 0;
-        }
-        actualizarTotalesaños();
-    }
-
-    private void actualizarTotalesaños() {
-        ElementosCheck[0] = informacio2020Seleccionado + informacio2019Seleccionado + informacio2018Seleccionado;
-        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
-        grafica_check_barras();
-    }
-//ID
-
-    public void casillasCedula() {
-        if (Cedula.isSelected()) {
-            int cedula2020 = calculos.Contador(informacio2020, "CC", 0);
-            int cedula2019 = calculos.Contador(informacio2019, "CC", 0);
-            int cedula2018 = calculos.Contador(informacio2018, "CC", 0);
-            informaciocedula = cedula2020 + cedula2019 + cedula2018;
-
-        } else {
-            informaciocedula = 0;
-        }
-        actualizarTotalesID();
-
-    }
-
-    public void casillasTI() {
-        if (TarjetaIdentidad.isSelected()) {
-            int cedula2020 = calculos.Contador(informacio2020, "TI", 0);
-            int cedula2019 = calculos.Contador(informacio2019, "TI", 0);
-            int cedula2018 = calculos.Contador(informacio2018, "TI", 0);
-            informacioTarjetaIdentidad = cedula2020 + cedula2019 + cedula2018;
-
-        } else {
-            informacioTarjetaIdentidad = 0;
-        }
-        actualizarTotalesID();
-
-    }
-
-    private void actualizarTotalesID() {
-        ElementosCheck[1] = informaciocedula + informacioTarjetaIdentidad;
-        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
-        
-        grafica_check_barras();
-    }
-
-    //GENERO
-    public void casillasmasculio() {
-        if (Masculino.isSelected()) {
-            int hombre2020 = calculos.Contador(informacio2020, "M", 2);
-            int hombre2019 = calculos.Contador(informacio2019, "M", 2);
-            int hombre2018 = calculos.Contador(informacio2018, "M", 2);
-            informaciongeneromasculino = hombre2020 + hombre2018 + hombre2019;
-
-        } else {
-            informaciongeneromasculino = 0;
-        }
-        actualizarTotalesgeneros();
-
-    }
-
-    public void casillasfemenino() {
-        if (Femenino.isSelected()) {
-            int mujer2020 = calculos.Contador(informacio2020, "F", 2);
-            int mujer2019 = calculos.Contador(informacio2019, "F", 2);
-            int mujer2018 = calculos.Contador(informacio2018, "F", 2);
-            informaciongenerofemenino = mujer2020 + mujer2019 + mujer2018;
-
-        } else {
-            informaciongenerofemenino = 0;
-        }
-        actualizarTotalesgeneros();
-
-    }
-
-    private void actualizarTotalesgeneros() {
-        ElementosCheck[2] = informaciongenerofemenino + informaciongeneromasculino;
-        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
-        grafica_check_barras();
-    }
-
-    //INFORMACION GENERO COLEGIO
-    public void casillasgenerocolegiomasculino() {
-        if (ColegiogeneroMasculino.isSelected()) {
-            int colegiomasculino2020 = calculos.Contador(informacio2020, "MASCULINO", 10);
-            int colegiomasculino2019 = calculos.Contador(informacio2019, "MASCULINO", 10);
-            int colegiomasculino2018 = calculos.Contador(informacio2018, "MASCULINO", 10);
-            informaciongeneromasculinocolegio = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
-
-        } else {
-            informaciongeneromasculinocolegio = 0;
-        }
-        actualizarTotalescasillasgenerocolegio();
-
-    }
-
-    public void casillasgenerocolegiofemenino() {
-        if (ColegiogeneroFEMENINO.isSelected()) {
-            int colegiomasculino2020 = calculos.Contador(informacio2020, "FEMENINO", 10);
-            int colegiomasculino2019 = calculos.Contador(informacio2019, "FEMENINO", 10);
-            int colegiomasculino2018 = calculos.Contador(informacio2018, "FEMENINO", 10);
-            informaciongenerofemeninocolegio = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
-
-        } else {
-            informaciongenerofemeninocolegio = 0;
-        }
-        actualizarTotalescasillasgenerocolegio();
-
-    }
-
-    public void casillasgenerocolegiomixto() {
-        if (ColegiogeneroMIXTO.isSelected()) {
-            int colegiomasculino2020 = calculos.Contador(informacio2020, "MIXTO", 10);
-            int colegiomasculino2019 = calculos.Contador(informacio2019, "MIXTO", 10);
-            int colegiomasculino2018 = calculos.Contador(informacio2018, "MIXTO", 10);
-            informaciongeneromixtocolegio = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
-
-        } else {
-            informaciongeneromixtocolegio = 0;
-        }
-        actualizarTotalescasillasgenerocolegio();
-
-    }
-
-    private void actualizarTotalescasillasgenerocolegio() {
-        ElementosCheck[3] = informaciongeneromasculinocolegio + informaciongenerofemeninocolegio + informaciongeneromixtocolegio;
-          informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
-        grafica_check_barras();
-    }
-
-    //AREA
-    public void casillasareaurbana() {
-        if (AreaUrbana.isSelected()) {
-            int colegiomasculino2020 = calculos.Contador(informacio2020, "URBANO", 12);
-            int colegiomasculino2019 = calculos.Contador(informacio2019, "URBANO", 12);
-            int colegiomasculino2018 = calculos.Contador(informacio2018, "URBANO", 12);
-            informacionareaurbana = colegiomasculino2020 + colegiomasculino2019 + colegiomasculino2018;
-
-        } else {
-            informacionareaurbana = 0;
-        }
-        actualizarTotalescasillasarea();
-
-    }
-
-    public void casillasarearural() {
-        if (AreaRural.isSelected()) {
-            int colegioRURAL2020 = calculos.Contador(informacio2020, "RURAL", 12);
-            int colegioRURAL2019 = calculos.Contador(informacio2019, "RURAL", 12);
-            int colegioRURAL2018 = calculos.Contador(informacio2018, "RURAL", 12);
-            informacionarearutal = colegioRURAL2020 + colegioRURAL2019 + colegioRURAL2018;
-
-        } else {
-            informacionarearutal = 0;
-        }
-        actualizarTotalescasillasarea();
-
-    }
-
-    private void actualizarTotalescasillasarea() {
-        ElementosCheck[4] = informacionareaurbana + informacionarearutal;
-         informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
-        grafica_check_barras();
-    }
-
-    //CALENDARIO
-    public void casillacalendario() {
-        JornadaSelec.addActionListener(e -> {
-            String BuscarJornada = (String) JornadaSelec.getSelectedItem();
-
-            int elemento1 = calculos.Contador(informacio2020, BuscarJornada, 11);
-            int elemento2 = calculos.Contador(informacio2019, BuscarJornada, 11);
-            int elemento3 = calculos.Contador(informacio2018, BuscarJornada, 11);
-            switch (BuscarJornada) {
-                case "A":
-                    informacioncalendarioA = elemento1 + elemento2 + elemento3;
-                    actualizarTotalescalendarios();
-                    ;
-                    break;
-                case "B":
-                    informacioncalendarioB = elemento1 + elemento2 + elemento3;
-                    actualizarTotalescalendarios();
-                    break;
-                case "OTRO":
-                    informacioncalendarioOtro = elemento1 + elemento2 + elemento3;
-                    actualizarTotalescalendarios();
-                    break;
-
-                default:
-                    throw new AssertionError();
-            }
-
-        });
-
-    }
-
-    private void actualizarTotalescalendarios() {
-        ElementosCheck[5] = informacioncalendarioA + informacioncalendarioB + informacioncalendarioOtro;
-         informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
-        grafica_check_barras();
-
-
-    }
-        //ESTRACTO
-    public void resetestracto(){
-        estracto1 =0;
-        estracto2 =0;
-        estracto3 =0;
-        estracto4 =0;
-        estracto5 =0;
-     
-    }
     
-    public void casillaestracto() {
-        Estractoselect.addActionListener(e -> {
-            String select = (String) Estractoselect.getSelectedItem();
-
-            int elemento1 = calculos.Contador(informacio2020, select, 6);
-            int elemento2 = calculos.Contador(informacio2019, select, 6);
-            int elemento3 = calculos.Contador(informacio2018, select, 6);
-            switch (select) {
-                case "Estrato 1":
-                    estracto1 = elemento1 + elemento2 + elemento3;
-                          actualizarTotalesestracto();
-                    ;
-                    break;
-                case "Estrato 2":
-                    estracto2 = elemento1 + elemento2 + elemento3;
-                          actualizarTotalesestracto();
-                    ;
-                    break;
-                case "Estrato 3":
-                  estracto3 = elemento1 + elemento2 + elemento3;
-                        actualizarTotalesestracto();
-                    ;
-                    break;
-                case "Estrato 4":
-                   estracto4 = elemento1 + elemento2 + elemento3;
-                         actualizarTotalesestracto();
-                    ;
-                    break;
-                case "Estrato 5":
-                   estracto5 = elemento1 + elemento2 + elemento3;
-                         actualizarTotalesestracto();
-                    ;
-                    break;
-                case "Estrato 6":
-                   estracto6 = elemento1 + elemento2 + elemento3;
-                         actualizarTotalesestracto();
-                    ;
-                    break;
-
-                default:
-                    throw new AssertionError();
-            }
-        } );
-  
-    }
-    /*
-        private void actualizarTotalesestracto() {
-        ElementosCheck[6] = estracto1 + estracto2 + estracto3 + estracto4 + estracto5 + estracto6;
-        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
-        grafica_check_barras();
-
-    }
-        */
-               private void actualizarTotalesestracto() {
-        ElementosCheck[6] = estracto1 + estracto2 + estracto3 + estracto4 + estracto5 + estracto6;
-        informe1.setValue(ElementosCheck[0]+ElementosCheck[1]+ElementosCheck[2] + ElementosCheck[3]+ElementosCheck[4]+ElementosCheck[5]+ElementosCheck[6]);
-        grafica_check_barras();
+    public void nosehpta(){
+        if (año2020.isSelected()) {
+            informacio2020Seleccionado = datos.get_año2020(informacio2020);
+       //     System.out.println(datos.get_año2020(informacio2020));
+        }else{
+            informacio2020Seleccionado=0;
+        }
+        if(año2019.isSelected()){
+            informacio2019Seleccionado = datos.get_año2019(informacio2019);
+        //    System.out.println(datos.get_año2019(informacio2019));
+        }else{
+           informacio2019Seleccionado=0;
+        }
+        if (año2018.isSelected()) {
+            
+           informacio2018Seleccionado= datos.get_año2018(informacio2018);
         
-               }
-  
-   
+        //    System.out.println(datos.get_año2018(informacio2018));
+        } else {
+         informacio2018Seleccionado=0;
+        }
+       
+        graft2019.setValue(informacio2019Seleccionado);
+        graft2018.setValue(informacio2018Seleccionado);
+        graft2020.setValue(informacio2020Seleccionado);
+        lab2020.setText("<html><center>Año 2020:<br>"+informacio2020Seleccionado+" Personas registradas");
+             lab2018.setText("<html>Año 2018:<br>"+informacio2018Seleccionado+" Personas registradas");
+             lab2019.setText("<html>Año 2019: <br>"+informacio2019Seleccionado+" Personas registradas");
+    }
 
+    
 }//Fin del programa
 
