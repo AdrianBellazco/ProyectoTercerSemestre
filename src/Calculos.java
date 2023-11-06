@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Calculos {
     
      public int Contador(ArrayList<String> dataArrayList, String buscar, int toks) {
+         
     int contador = 0;
 
     for (String registro : dataArrayList) {
@@ -15,7 +16,6 @@ public class Calculos {
             contador++;
         }
     }
-
     return contador;
 }
 }
