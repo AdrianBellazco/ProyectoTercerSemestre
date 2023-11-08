@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
 
-public class DatosPorSeparado {
+public  class DatosPorSeparado {
     Calculos calculos = new Calculos();
     
     
