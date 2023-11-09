@@ -65,7 +65,7 @@ public class GUI extends javax.swing.JFrame {
         ImageIcon icon = new ImageIcon("estadisticas.png");
         Image image = icon.getImage();
         setIconImage(image);
-
+  
         Valores.add(0);
         Valores.add(0);
 
@@ -84,7 +84,7 @@ public class GUI extends javax.swing.JFrame {
 
         grafico_barras1.setVisible(false);
         graficopastelbarra.setVisible(false);
-        progreso1.setVisible(false);
+      //  progreso1.setVisible(false);
         grafica_check_barras();
         Bus1.setVisible(false);
         Bus2.setVisible(false);
@@ -209,9 +209,12 @@ public class GUI extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         Info = new javax.swing.JPanel();
-        Check1 = new javax.swing.JPanel();
         B1 = new javax.swing.JPanel();
         añoe = new javax.swing.JLabel();
+        rSProgressBarAnimated1 = new rojerusan.componentes.RSProgressBarAnimated();
+        rSProgressBarAnimated2 = new rojerusan.componentes.RSProgressBarAnimated();
+        rSProgressBarAnimated3 = new rojerusan.componentes.RSProgressBarAnimated();
+        Check1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         graft2019 = new rojerusan.componentes.RSProgressCircle();
         graft2018 = new rojerusan.componentes.RSProgressCircle();
@@ -1000,33 +1003,27 @@ public class GUI extends javax.swing.JFrame {
         Info.setForeground(new java.awt.Color(255, 255, 255));
         Info.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Check1.setBackground(new java.awt.Color(255, 255, 255));
-        Check1.setForeground(new java.awt.Color(255, 255, 255));
-        Check1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         B1.setBackground(new java.awt.Color(255, 255, 255));
+        B1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         añoe.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         añoe.setForeground(new java.awt.Color(255, 102, 0));
+        B1.add(añoe, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 207, 186, 54));
 
-        javax.swing.GroupLayout B1Layout = new javax.swing.GroupLayout(B1);
-        B1.setLayout(B1Layout);
-        B1Layout.setHorizontalGroup(
-            B1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(B1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(añoe, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(618, Short.MAX_VALUE))
-        );
-        B1Layout.setVerticalGroup(
-            B1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(B1Layout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(añoe, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        rSProgressBarAnimated1.setForeground(new java.awt.Color(255, 102, 0));
+        B1.add(rSProgressBarAnimated1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 38, -1, -1));
 
-        Check1.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 0, 830, 260));
+        rSProgressBarAnimated2.setForeground(new java.awt.Color(0, 102, 102));
+        B1.add(rSProgressBarAnimated2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 114, -1, -1));
+
+        rSProgressBarAnimated3.setForeground(new java.awt.Color(255, 102, 0));
+        B1.add(rSProgressBarAnimated3, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 183, -1, -1));
+
+        Info.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 310, 250));
+
+        Check1.setBackground(new java.awt.Color(255, 255, 255));
+        Check1.setForeground(new java.awt.Color(255, 255, 255));
+        Check1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1070,9 +1067,9 @@ public class GUI extends javax.swing.JFrame {
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel4.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 20, 220));
 
-        Check1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 800, 270));
+        Check1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 800, 270));
 
-        Info.add(Check1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 850, 570));
+        Info.add(Check1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 860, 300));
 
         grafico_barras1.setBackground(new java.awt.Color(204, 204, 204));
         grafico_barras1.setForeground(new java.awt.Color(255, 255, 255));
@@ -1424,10 +1421,10 @@ int cont = 0;
             Check1.setVisible(false);
             grafico_barras1.setVisible(true);
             graficopastelbarra.setVisible(true);
-            progreso1.setVisible(true);
+            //progreso1.setVisible(true);
             LimpiarActionPerformed(null);
             SeleccionarComboBox();
-
+            B1.setVisible(false);
             grafico_pastel();
             grafica_barras_1();
             LimpiarActionPerformed(null);
@@ -1449,12 +1446,12 @@ int cont = 0;
             Bus4ActionPerformed(null);
             Bus5ActionPerformed(null);
             Lamalaaños();
-
+             B1.setVisible(true);
             //mostrar paneles
             Check1.setVisible(true);
             grafico_barras1.setVisible(false);
             graficopastelbarra.setVisible(false);
-            progreso1.setVisible(false);
+        //    progreso1.setVisible(false);
             LimpiarActionPerformed(null);
             //  casillaestracto();
             Bus1.setVisible(false);
@@ -1860,6 +1857,9 @@ int cont = 0;
     private javax.swing.JSlider percentilbarra;
     private javax.swing.JPanel progreso1;
     private javax.swing.JSlider putajeglobalbarra;
+    private rojerusan.componentes.RSProgressBarAnimated rSProgressBarAnimated1;
+    private rojerusan.componentes.RSProgressBarAnimated rSProgressBarAnimated2;
+    private rojerusan.componentes.RSProgressBarAnimated rSProgressBarAnimated3;
     protected javax.swing.JRadioButton radioaño2018;
     protected javax.swing.JRadioButton radioaño2019;
     protected javax.swing.JRadioButton radioaño2020;
@@ -2014,13 +2014,13 @@ public void grafica_barras_1() {
         chebarras.setVisible(true);
 
         // Agrega el panel del gráfico al contenedor deseado (por ejemplo, un JPanel llamado grafico_barras1)
-        B1.removeAll(); // Limpia cualquier componente anterior en el contenedor
-        B1.setLayout(new BorderLayout());
-        B1.add(chebarras, BorderLayout.CENTER);
+  //      B1.removeAll(); // Limpia cualquier componente anterior en el contenedor
+    //    B1.setLayout(new BorderLayout());
+     //   B1.add(chebarras, BorderLayout.CENTER);
 
         // Repinta el contenedor para mostrar el nuevo gráfico
-        B1.revalidate();
-        B1.repaint();
+    //    B1.revalidate();
+    //    B1.repaint();
 
     }
 
