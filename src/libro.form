@@ -647,7 +647,7 @@
               <Color blue="0" green="0" red="33" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;&lt;html&gt;Que es EduCompu?&lt;br&gt;&lt;br&gt;Es una aplicacion que permite realizar&lt;br&gt;busquedas de varios tipos, estas &lt;br&gt; pueden ser fijas o compuestas, cada busqueda debe retornar un valor que se vera&lt;br&gt;representado en una grafica&lt;html&gt;&quot;" type="code"/>
+              <Connection code="&quot;&lt;html&gt;Que es EduCompu?&lt;br&gt;&lt;br&gt;Es una aplicacion que permite realizar&lt;br&gt;busquedas de varios tipos, estas &lt;br&gt; pueden ser fijas o compuestas, cada busqueda debe retornar un valor que se vera&lt;br&gt;representado en una grafica&lt;br&gt;&lt;br&gt;En este caso todo esta relacionado con la educacion&lt;html&gt;&quot;" type="code"/>
             </Property>
             <Property name="verticalAlignment" type="int" value="1"/>
             <Property name="horizontalTextPosition" type="int" value="2"/>
@@ -663,27 +663,39 @@
         </Component>
         <Component class="javax.swing.JLabel" name="texto2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="segunda pagina"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Minecraft" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;&lt;html&gt;Comenzando por la parte de arriba tendremos un boton de apagado y encendido, estos seran sus unicos dos estados Cuando esta encendido tendremos activas las busquedas fijas al lado izquierdo de la aplicacion, y al lado derecho tendremos el apartado de las graficas donde veremos de forma grafica el resultado de nuestra busqueda&quot;" type="code"/>
+            </Property>
+            <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="texto2.setVisible(false);"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="220" width="-1" height="20"/>
+              <AbsoluteConstraints x="80" y="140" width="430" height="460"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="texto3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="tercer pagina"/>
+            <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="texto3.setVisible(false);"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="250" width="230" height="20"/>
+              <AbsoluteConstraints x="80" y="140" width="440" height="440"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -733,27 +745,24 @@
         </Component>
         <Component class="javax.swing.JLabel" name="texto4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="cuarta pagina"/>
+            <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="texto4.setVisible(false);"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="270" width="230" height="20"/>
+              <AbsoluteConstraints x="80" y="130" width="430" height="470"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="texto5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="quinta pagina"/>
-          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="texto5.setVisible(false);"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="310" width="230" height="20"/>
+              <AbsoluteConstraints x="80" y="140" width="430" height="450"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -781,14 +790,14 @@
         </Component>
         <Component class="javax.swing.JLabel" name="texto6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="sexta pagina"/>
+            <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="texto6.setVisible(false);"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="340" width="230" height="20"/>
+              <AbsoluteConstraints x="80" y="140" width="430" height="450"/>
             </Constraint>
           </Constraints>
         </Component>

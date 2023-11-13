@@ -432,18 +432,22 @@ public class libro extends javax.swing.JFrame {
         jEditorPane1.setBackground(new java.awt.Color(51, 0, 0));
         jEditorPane1.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jEditorPane1.setForeground(new java.awt.Color(51, 0, 0));
-        jEditorPane1.setText("<html>Que es EduCompu?<br><br>Es una aplicacion que permite realizar<br>busquedas de varios tipos, estas <br> pueden ser fijas o compuestas, cada busqueda debe retornar un valor que se vera<br>representado en una grafica<html>");
+        jEditorPane1.setText("<html>Que es EduCompu?<br><br>Es una aplicacion que permite realizar<br>busquedas de varios tipos, estas <br> pueden ser fijas o compuestas, cada busqueda debe retornar un valor que se vera<br>representado en una grafica<br><br>En este caso todo esta relacionado con la educacion<html>");
         jEditorPane1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jEditorPane1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel1.add(jEditorPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 430, 450));
         jEditorPane1.setVisible(true);
 
-        texto2.setText("segunda pagina");
-        jPanel1.add(texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, 20));
+        texto2.setBackground(new java.awt.Color(51, 0, 0));
+        texto2.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
+        texto2.setForeground(new java.awt.Color(51, 0, 0));
+        texto2.setText("<html>Comenzando por la parte de arriba tendremos un boton de apagado y encendido, estos seran sus unicos dos estados Cuando esta encendido tendremos activas las busquedas fijas al lado izquierdo de la aplicacion, y al lado derecho tendremos el apartado de las graficas donde veremos de forma grafica el resultado de nuestra busqueda");
+        texto2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 430, 460));
         texto2.setVisible(false);
 
-        texto3.setText("tercer pagina");
-        jPanel1.add(texto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 230, 20));
+        texto3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(texto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 440, 440));
         texto3.setVisible(false);
 
         xd.setBackground(new java.awt.Color(255, 255, 255));
@@ -460,12 +464,10 @@ public class libro extends javax.swing.JFrame {
         jPanel1.add(textobasura8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 150, 70));
         jEditorPane1.setVisible(true);
 
-        texto4.setText("cuarta pagina");
-        jPanel1.add(texto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 230, 20));
+        texto4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(texto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 430, 470));
         texto4.setVisible(false);
-
-        texto5.setText("quinta pagina");
-        jPanel1.add(texto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 230, 20));
+        jPanel1.add(texto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 430, 450));
         texto5.setVisible(false);
 
         textobasura9.setBackground(new java.awt.Color(51, 0, 0));
@@ -475,8 +477,8 @@ public class libro extends javax.swing.JFrame {
         jPanel1.add(textobasura9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 50, 70));
         jEditorPane1.setVisible(true);
 
-        texto6.setText("sexta pagina");
-        jPanel1.add(texto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 230, 20));
+        texto6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(texto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 430, 450));
         texto6.setVisible(false);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salida (1).png"))); // NOI18N
