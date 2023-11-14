@@ -647,7 +647,7 @@
               <Color blue="0" green="0" red="33" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;&lt;html&gt;Que es EduCompu?&lt;br&gt;&lt;br&gt;Es una aplicacion que permite realizar&lt;br&gt;busquedas de varios tipos, estas &lt;br&gt; pueden ser fijas o compuestas, cada busqueda debe retornar un valor que se vera&lt;br&gt;representado en una grafica&lt;br&gt;&lt;br&gt;En este caso todo esta relacionado con la educacion&lt;html&gt;&quot;" type="code"/>
+              <Connection code="&quot;&lt;html&gt;Que es EduCompu?&lt;br&gt;&lt;br&gt;Es una aplicacion tipo dashboard que permite realizar&lt;br&gt;busquedas de varios tipos, estas &lt;br&gt; pueden ser fijas o compuestas, cada busqueda debe retornar un valor que se vera&lt;br&gt;representado en una grafica&lt;br&gt;&lt;br&gt;En este caso todo esta relacionado con los resultados de las pruebas saber de los a&#xf1;os 2018/2019/2020.&lt;html&gt;&quot;" type="code"/>
             </Property>
             <Property name="verticalAlignment" type="int" value="1"/>
             <Property name="horizontalTextPosition" type="int" value="2"/>
@@ -673,7 +673,7 @@
               <Color blue="0" green="0" red="33" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;&lt;html&gt;Comenzando por la parte de arriba tendremos un boton de apagado y encendido, estos seran sus unicos dos estados Cuando esta encendido tendremos activas las busquedas fijas al lado izquierdo de la aplicacion, y al lado derecho tendremos el apartado de las graficas donde veremos de forma grafica el resultado de nuestra busqueda&quot;" type="code"/>
+              <Connection code="&quot;&lt;html&gt;&lt;u&gt;&lt;b&gt;Boton de prendido y apagado&lt;/b&gt;&lt;/u&gt;&lt;br&gt;&lt;br&gt;Comenzando por la parte de arriba tendremos un boton de apagado y encendido, estos seran sus unicos dos estados Cuando esta encendido tendremos activas las busquedas fijas en el panel de color azul aguamarina, y al lado izquierdo de la aplicacion, y al lado derecho, un panel de color blanco tendremos el apartado de las graficas donde veremos de forma grafica el resultado de nuestra busqueda&lt;br&gt;&lt;br&gt;&lt;br&gt;Al pasar de estado en estado nuestras consultas y graficas se reiniciaran haciendo que todo vuelva a su valor original (null) asi este boton tiene otra funcion que es la de refrescar las graficas y selecciones.&quot;" type="code"/>
             </Property>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
@@ -688,6 +688,18 @@
         </Component>
         <Component class="javax.swing.JLabel" name="texto3">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Minecraft" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;&lt;html&gt;&lt;u&gt;Boton LIMPIAR general y LIMPIAR de busquedas fijas&lt;/u&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Como el mismo dice, este se encarga de refrescar las graficas de las busquedas fijas, las primeras en las primeras &lt;u&gt;7&lt;/u&gt; categorias de las busqueda fija existe un boton son simbolo de una brocha, este sirve para limpiar la seleccion junto con su representacion grafica en las tablas donde este aparece.&lt;/html&gt;&quot;" type="code"/>
+            </Property>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
           <AuxValues>
@@ -745,6 +757,18 @@
         </Component>
         <Component class="javax.swing.JLabel" name="texto4">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Minecraft" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;&lt;html&gt;&lt;u&gt;Busquedas fijas activadas&lt;/u&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Cuanto tengamos las busquedas compuestas activadas vamos a tener un total de &lt;u&gt;17&lt;/u&gt; secciones separadas por titulos de color naranja, las 7 primeras corresponden a:&lt;br&gt;A&#xf1;o&lt;br&gt;Tipo de documento&lt;br&gt;Genero&lt;br&gt;Genero del colegio&lt;br&gt;Area del colegio&lt;br&gt;Estractp&lt;br&gt;Estas seran graficadas en la parte superior &lt;u&gt;(grafico de lineas)&lt;/u&gt; y en la parte inferior izquiera&lt;u&gt; (grafico pastel)&lt;/u&gt;&lt;br&gt;&lt;br&gt;Mientras que las secciones restantes seran graficadas en la parte inferior derecha, estas seran representadas por barra de porsentajes y estas tambien seran visibles tanto en las busquedas compuestas como en las busquedas fijas, estas secciones restantes todas representan puntajes de desempe&#xf1;o, los iconos que existen en esa seccion facilitaran la compresion de los graficos ya que si dejas el puntero del mouse encima de los iconos vas a saber que significa cada simbolo y que se hace en esa parte, existen porcentajes en esa seccion que nos indica el porcentaje de personas que tienen la nota solicitada.&lt;/html&gt;&quot;" type="code"/>
+            </Property>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
           <AuxValues>
@@ -752,17 +776,32 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="130" width="430" height="470"/>
+              <AbsoluteConstraints x="80" y="110" width="430" height="490"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="texto5">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Minecraft" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;&lt;html&gt;&lt;u&gt;Consultas fijas desactivadas&lt;/u&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Al tener las consultar fijas desactivadas vamos a tener acceso a las busquedas conpuestas, esto afecta a las primeras 7 secciones de nuesta area de busquedas, cambiando los radiobuttons a checkbox, ocacionando que pueda realizar multiples selecciones, al pasar a este estados tambien se nos cambiara nuestra area de graficos, desaparecera el grafico de barras y el grafico pastel y seran reemplazados por graficos de porcentaje, donde veremos los porsentajes separados por a&#xf1;os, en este caso la app tiene registro de los a&#xf1;os 2018/2019/2020&lt;br&gt;&lt;br&gt;al filtrar busquedas compuestas podremos buscar de forma mas flexible informacion mas general, por ejemplo, mujeres en el a&#xf1;o 2018 con calendario B, se nos graficara la cantidad de registros que se encontraron.&lt;br&gt;&lt;br&gt;&lt;br&gt;Ademas, ademas no se modificara el grafico de la parte inferior derecha ya que esa corresponde a los porsentajes de las demas busquedas, seran permanenetemente fijas y estas siempre se van a visualizar en los dos modos.&lt;br&gt;&lt;br&gt;ADVERTENCIA: este modo todavia sigue en desarrollo asi que esta incompleto.&lt;html&gt;&quot;" type="code"/>
+            </Property>
+            <Property name="verticalAlignment" type="int" value="1"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="texto5.setVisible(false);"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="140" width="430" height="450"/>
+              <AbsoluteConstraints x="80" y="110" width="430" height="480"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -790,6 +829,18 @@
         </Component>
         <Component class="javax.swing.JLabel" name="texto6">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Minecraft" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;&lt;html&gt;Eso es todo! disfruta de la aplicacion :D!&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Desarrolladores:&lt;br&gt;Jolmer Viedma&lt;br&gt;Alejandro Hernandez&lt;br&gt;Adrian Saavedra&lt;/html&gt;&quot;" type="code"/>
+            </Property>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
           <AuxValues>
@@ -819,7 +870,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="440" y="60" width="80" height="50"/>
+              <AbsoluteConstraints x="460" y="40" width="60" height="30"/>
             </Constraint>
           </Constraints>
         </Component>

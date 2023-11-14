@@ -432,7 +432,7 @@ public class libro extends javax.swing.JFrame {
         jEditorPane1.setBackground(new java.awt.Color(51, 0, 0));
         jEditorPane1.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jEditorPane1.setForeground(new java.awt.Color(51, 0, 0));
-        jEditorPane1.setText("<html>Que es EduCompu?<br><br>Es una aplicacion que permite realizar<br>busquedas de varios tipos, estas <br> pueden ser fijas o compuestas, cada busqueda debe retornar un valor que se vera<br>representado en una grafica<br><br>En este caso todo esta relacionado con la educacion<html>");
+        jEditorPane1.setText("<html>Que es EduCompu?<br><br>Es una aplicacion tipo dashboard que permite realizar<br>busquedas de varios tipos, estas <br> pueden ser fijas o compuestas, cada busqueda debe retornar un valor que se vera<br>representado en una grafica<br><br>En este caso todo esta relacionado con los resultados de las pruebas saber de los años 2018/2019/2020.<html>");
         jEditorPane1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jEditorPane1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jPanel1.add(jEditorPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 430, 450));
@@ -441,11 +441,15 @@ public class libro extends javax.swing.JFrame {
         texto2.setBackground(new java.awt.Color(51, 0, 0));
         texto2.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         texto2.setForeground(new java.awt.Color(51, 0, 0));
-        texto2.setText("<html>Comenzando por la parte de arriba tendremos un boton de apagado y encendido, estos seran sus unicos dos estados Cuando esta encendido tendremos activas las busquedas fijas al lado izquierdo de la aplicacion, y al lado derecho tendremos el apartado de las graficas donde veremos de forma grafica el resultado de nuestra busqueda");
+        texto2.setText("<html><u><b>Boton de prendido y apagado</b></u><br><br>Comenzando por la parte de arriba tendremos un boton de apagado y encendido, estos seran sus unicos dos estados Cuando esta encendido tendremos activas las busquedas fijas en el panel de color azul aguamarina, y al lado izquierdo de la aplicacion, y al lado derecho, un panel de color blanco tendremos el apartado de las graficas donde veremos de forma grafica el resultado de nuestra busqueda<br><br><br>Al pasar de estado en estado nuestras consultas y graficas se reiniciaran haciendo que todo vuelva a su valor original (null) asi este boton tiene otra funcion que es la de refrescar las graficas y selecciones.");
         texto2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel1.add(texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 430, 460));
         texto2.setVisible(false);
 
+        texto3.setBackground(new java.awt.Color(51, 0, 0));
+        texto3.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
+        texto3.setForeground(new java.awt.Color(51, 0, 0));
+        texto3.setText("<html><u>Boton LIMPIAR general y LIMPIAR de busquedas fijas</u><br><br><br>Como el mismo dice, este se encarga de refrescar las graficas de las busquedas fijas, las primeras en las primeras <u>7</u> categorias de las busqueda fija existe un boton son simbolo de una brocha, este sirve para limpiar la seleccion junto con su representacion grafica en las tablas donde este aparece.</html>");
         texto3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel1.add(texto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 440, 440));
         texto3.setVisible(false);
@@ -464,10 +468,20 @@ public class libro extends javax.swing.JFrame {
         jPanel1.add(textobasura8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 150, 70));
         jEditorPane1.setVisible(true);
 
+        texto4.setBackground(new java.awt.Color(51, 0, 0));
+        texto4.setFont(new java.awt.Font("Minecraft", 1, 12)); // NOI18N
+        texto4.setForeground(new java.awt.Color(51, 0, 0));
+        texto4.setText("<html><u>Busquedas fijas activadas</u><br><br><br>Cuanto tengamos las busquedas compuestas activadas vamos a tener un total de <u>17</u> secciones separadas por titulos de color naranja, las 7 primeras corresponden a:<br>Año<br>Tipo de documento<br>Genero<br>Genero del colegio<br>Area del colegio<br>Estractp<br>Estas seran graficadas en la parte superior <u>(grafico de lineas)</u> y en la parte inferior izquiera<u> (grafico pastel)</u><br><br>Mientras que las secciones restantes seran graficadas en la parte inferior derecha, estas seran representadas por barra de porsentajes y estas tambien seran visibles tanto en las busquedas compuestas como en las busquedas fijas, estas secciones restantes todas representan puntajes de desempeño, los iconos que existen en esa seccion facilitaran la compresion de los graficos ya que si dejas el puntero del mouse encima de los iconos vas a saber que significa cada simbolo y que se hace en esa parte, existen porcentajes en esa seccion que nos indica el porcentaje de personas que tienen la nota solicitada.</html>");
         texto4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel1.add(texto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 430, 470));
+        jPanel1.add(texto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 430, 490));
         texto4.setVisible(false);
-        jPanel1.add(texto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 430, 450));
+
+        texto5.setBackground(new java.awt.Color(51, 0, 0));
+        texto5.setFont(new java.awt.Font("Minecraft", 1, 12)); // NOI18N
+        texto5.setForeground(new java.awt.Color(51, 0, 0));
+        texto5.setText("<html><u>Consultas fijas desactivadas</u><br><br><br>Al tener las consultar fijas desactivadas vamos a tener acceso a las busquedas conpuestas, esto afecta a las primeras 7 secciones de nuesta area de busquedas, cambiando los radiobuttons a checkbox, ocacionando que pueda realizar multiples selecciones, al pasar a este estados tambien se nos cambiara nuestra area de graficos, desaparecera el grafico de barras y el grafico pastel y seran reemplazados por graficos de porcentaje, donde veremos los porsentajes separados por años, en este caso la app tiene registro de los años 2018/2019/2020<br><br>al filtrar busquedas compuestas podremos buscar de forma mas flexible informacion mas general, por ejemplo, mujeres en el año 2018 con calendario B, se nos graficara la cantidad de registros que se encontraron.<br><br><br>Ademas, ademas no se modificara el grafico de la parte inferior derecha ya que esa corresponde a los porsentajes de las demas busquedas, seran permanenetemente fijas y estas siempre se van a visualizar en los dos modos.<br><br>ADVERTENCIA: este modo todavia sigue en desarrollo asi que esta incompleto.<html>");
+        texto5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(texto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 430, 480));
         texto5.setVisible(false);
 
         textobasura9.setBackground(new java.awt.Color(51, 0, 0));
@@ -477,6 +491,10 @@ public class libro extends javax.swing.JFrame {
         jPanel1.add(textobasura9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 50, 70));
         jEditorPane1.setVisible(true);
 
+        texto6.setBackground(new java.awt.Color(51, 0, 0));
+        texto6.setFont(new java.awt.Font("Minecraft", 1, 18)); // NOI18N
+        texto6.setForeground(new java.awt.Color(51, 0, 0));
+        texto6.setText("<html>Eso es todo! disfruta de la aplicacion :D!<br><br><br><br><br>Desarrolladores:<br>Jolmer Viedma<br>Alejandro Hernandez<br>Adrian Saavedra</html>");
         texto6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel1.add(texto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 430, 450));
         texto6.setVisible(false);
@@ -489,7 +507,7 @@ public class libro extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 80, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 60, 30));
 
         P_siguiente_1.setBackground(new java.awt.Color(255, 255, 255));
         P_siguiente_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));

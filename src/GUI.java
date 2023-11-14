@@ -65,7 +65,7 @@ public class GUI extends javax.swing.JFrame {
         ImageIcon icon = new ImageIcon("estadisticas.png");
         Image image = icon.getImage();
         setIconImage(image);
-  
+
         Valores.add(0);
         Valores.add(0);
 
@@ -84,7 +84,7 @@ public class GUI extends javax.swing.JFrame {
 
         grafico_barras1.setVisible(false);
         graficopastelbarra.setVisible(false);
-      //  progreso1.setVisible(false);
+        //  progreso1.setVisible(false);
         grafica_check_barras();
         Bus1.setVisible(false);
         Bus2.setVisible(false);
@@ -206,8 +206,8 @@ public class GUI extends javax.swing.JFrame {
         InfoImate = new javax.swing.JLabel();
         Infolectura = new javax.swing.JLabel();
         Manual = new MiBoton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jButton4 = new MiBoton();
+        jButton5 = new MiBoton();
         Info = new javax.swing.JPanel();
         B1 = new javax.swing.JPanel();
         añoe = new javax.swing.JLabel();
@@ -979,7 +979,8 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(Manual, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 70, 90));
 
-        jButton4.setText("jButton4");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
+        jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -987,7 +988,8 @@ public class GUI extends javax.swing.JFrame {
         });
         Filtrador.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 1490, -1, -1));
 
-        jButton5.setText("jButton5");
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mediolim.png"))); // NOI18N
+        jButton5.setContentAreaFilled(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -1355,7 +1357,7 @@ int cont = 0;
     }//GEN-LAST:event_año2020ActionPerformed
 
     private void MasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasculinoActionPerformed
-       nosehpta();
+        nosehpta();
 
 
     }//GEN-LAST:event_MasculinoActionPerformed
@@ -1376,7 +1378,7 @@ int cont = 0;
     }//GEN-LAST:event_CedulaActionPerformed
 
     private void TarjetaIdentidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TarjetaIdentidadActionPerformed
-       nosehpta();
+        nosehpta();
     }//GEN-LAST:event_TarjetaIdentidadActionPerformed
 
     private void FemeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FemeninoActionPerformed
@@ -1388,7 +1390,7 @@ int cont = 0;
     }//GEN-LAST:event_ColegiogeneroMIXTOActionPerformed
 
     private void ColegiogeneroFEMENINOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColegiogeneroFEMENINOActionPerformed
-       nosehpta();
+        nosehpta();
     }//GEN-LAST:event_ColegiogeneroFEMENINOActionPerformed
 
     private void ColegiogeneroMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColegiogeneroMasculinoActionPerformed
@@ -1396,7 +1398,7 @@ int cont = 0;
     }//GEN-LAST:event_ColegiogeneroMasculinoActionPerformed
 
     private void AreaRuralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AreaRuralActionPerformed
-       nosehpta();
+        nosehpta();
     }//GEN-LAST:event_AreaRuralActionPerformed
 
     private void AreaUrbanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AreaUrbanaActionPerformed
@@ -1446,12 +1448,12 @@ int cont = 0;
             Bus4ActionPerformed(null);
             Bus5ActionPerformed(null);
             Lamalaaños();
-             B1.setVisible(true);
+            B1.setVisible(true);
             //mostrar paneles
             Check1.setVisible(true);
             grafico_barras1.setVisible(false);
             graficopastelbarra.setVisible(false);
-        //    progreso1.setVisible(false);
+            //    progreso1.setVisible(false);
             LimpiarActionPerformed(null);
             //  casillaestracto();
             Bus1.setVisible(false);
@@ -1661,16 +1663,11 @@ int cont = 0;
     }//GEN-LAST:event_radioaño2020ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        ElementosCheck[5] = 0;
-        graft2019.setValue(ElementosCheck[0] + ElementosCheck[1] + ElementosCheck[3] + ElementosCheck[4] + ElementosCheck[5] + ElementosCheck[6]);
-        grafica_check_barras();
+        refrescocasilla1();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        ElementosCheck[6] = 0;
-//       resetestracto();
-        graft2019.setValue(ElementosCheck[0] + ElementosCheck[1] + ElementosCheck[3] + ElementosCheck[4] + ElementosCheck[5] + ElementosCheck[6]);
-        grafica_check_barras();
+        refrescocasilla2();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void RadioTodosGenerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioTodosGenerosActionPerformed
@@ -2014,14 +2011,12 @@ public void grafica_barras_1() {
         chebarras.setVisible(true);
 
         // Agrega el panel del gráfico al contenedor deseado (por ejemplo, un JPanel llamado grafico_barras1)
-  //      B1.removeAll(); // Limpia cualquier componente anterior en el contenedor
-    //    B1.setLayout(new BorderLayout());
-     //   B1.add(chebarras, BorderLayout.CENTER);
-
+        //      B1.removeAll(); // Limpia cualquier componente anterior en el contenedor
+        //    B1.setLayout(new BorderLayout());
+        //   B1.add(chebarras, BorderLayout.CENTER);
         // Repinta el contenedor para mostrar el nuevo gráfico
-    //    B1.revalidate();
-    //    B1.repaint();
-
+        //    B1.revalidate();
+        //    B1.repaint();
     }
 
     public void grafico_pastel() {
@@ -2971,6 +2966,27 @@ public void grafica_barras_1() {
 
     }
 
+    public void refrescocasilla1() {
+        Elementos[18] = 0;
+        Elementos[19] = 0;
+        Elementos[20] = 0;
+        Elementos[21] = 0;
+        Elementos[22] = 0;
+        Elementos[23] = 0;
+        grafico_pastel();
+    }
+
+    public void refrescocasilla2() {
+        Elementos[24]= 0;
+        Elementos[25]= 0;
+        Elementos[26]= 0;
+        Elementos[27]= 0;
+        Elementos[28]= 0;
+        Elementos[29]= 0;
+        Elementos[31]= 0;
+        grafico_pastel();
+    }
+
     public int llenarBarraInteractiva(String dato, int posicion) {
         int respuesta;
         int lectura2020 = calculos.Contador(informacio2020, dato, posicion);
@@ -3065,8 +3081,7 @@ public void grafica_barras_1() {
     public void nosehpta() {
         if (año2020.isSelected()) {
             informacio2020Seleccionado = datos.get_año2020(informacio2020);
-          
-   
+
             //     System.out.println(datos.get_año2020(informacio2020));
         } else {
             informacio2020Seleccionado = 0;
@@ -3085,88 +3100,82 @@ public void grafica_barras_1() {
         } else {
             informacio2018Seleccionado = 0;
         }
-      
+
         lab2020.setText("<html><center>Año 2020:<br>" + informacio2020Seleccionado + " Personas registradas");
         lab2018.setText("<html>Año 2018:<br>" + informacio2018Seleccionado + " Personas registradas");
         lab2019.setText("<html>Año 2019: <br>" + informacio2019Seleccionado + " Personas registradas");
-        informacio2020Seleccionado=getCant2020();
-        informacio2018Seleccionado=0;
-         informacio2019Seleccionado=0;
+        informacio2020Seleccionado = getCant2020();
+        informacio2018Seleccionado = 0;
+        informacio2019Seleccionado = 0;
         graft2019.setValue(informacio2019Seleccionado);
         graft2018.setValue(informacio2018Seleccionado);
         graft2020.setValue(informacio2020Seleccionado);
     }
 
-    private int  getCant2020() {
+    private int getCant2020() {
         int cantidad = 0;
         DatosPorSeparado datos = new DatosPorSeparado();
-        
-        
+
         if (Cedula.isSelected()) {
             ElementosCheck[1] = datos.get_cedula_2020(informacio2020);
-            
-        }else{
-            ElementosCheck[1] =0;
+
+        } else {
+            ElementosCheck[1] = 0;
         }
         if (TarjetaIdentidad.isSelected()) {
             ElementosCheck[2] = datos.get_tarjetaID_2020(informacio2020);
-        }else{
-            ElementosCheck[2] =0;
+        } else {
+            ElementosCheck[2] = 0;
         }
 
         if (Masculino.isSelected()) {
             ElementosCheck[3] = datos.get_hombre_2020(informacio2020);
-        }else{
-            ElementosCheck[3] =0;
+        } else {
+            ElementosCheck[3] = 0;
         }
         if (Femenino.isSelected()) {
             ElementosCheck[4] = datos.get_mujer_2020(informacio2020);
-        }else{
-            ElementosCheck[4] =0;
+        } else {
+            ElementosCheck[4] = 0;
         }
 
         if (ColegiogeneroMIXTO.isSelected()) {
             ElementosCheck[5] = datos.get_Colmixto_2020(informacio2020);
-        }else{
-            ElementosCheck[5] =0;
+        } else {
+            ElementosCheck[5] = 0;
         }
         if (ColegiogeneroFEMENINO.isSelected()) {
             ElementosCheck[6] = datos.get_Colmujer_2020(informacio2020);
-        }else{
-            ElementosCheck[6] =0;
+        } else {
+            ElementosCheck[6] = 0;
         }
         if (ColegiogeneroMasculino.isSelected()) {
             ElementosCheck[7] = datos.get_Colhombre_2020(informacio2020);
-        }else{
-            ElementosCheck[7] =0;
+        } else {
+            ElementosCheck[7] = 0;
         }
 
         if (AreaRural.isSelected()) {
             ElementosCheck[8] = datos.get_areaRural_2020(informacio2020);
-        }else{
-            ElementosCheck[8] =0;
+        } else {
+            ElementosCheck[8] = 0;
         }
         if (AreaUrbana.isSelected()) {
             ElementosCheck[9] = datos.get_areaUrbana_2020(informacio2020);
-        }else{
-            ElementosCheck[9] =0;
+        } else {
+            ElementosCheck[9] = 0;
         }
-       
 
+        //  calculo(cantidad, año);
+        cantidad = calculo(ElementosCheck);
+        System.out.println(cantidad);
+        return cantidad;
 
-      //  calculo(cantidad, año);
-      
-      cantidad = calculo(ElementosCheck);
-       System.out.println(cantidad);
-      return cantidad;
-        
     }
-    
-    public int calculo(int Array[]){
-        int calculo= Array[1] + Array[2] + Array[3] + Array[4]+ Array[5]+ Array[6];
-        
-        
-        
+
+    public int calculo(int Array[]) {
+        int calculo = Array[1] + Array[2] + Array[3] + Array[4] + Array[5] + Array[6];
+
         return calculo;
     }
 
