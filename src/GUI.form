@@ -1961,39 +1961,32 @@
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="rojerusan.componentes.RSProgressBarAnimated" name="rSProgressBarAnimated1">
+                <Component class="rojerusan.componentes.RSProgressBar" name="grafTotal">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="66" red="ff" type="rgb"/>
-                    </Property>
+                    <Property name="maximum" type="int" value="79979"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="48" y="38" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="50" y="110" width="210" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
-                <Component class="rojerusan.componentes.RSProgressBarAnimated" name="rSProgressBarAnimated2">
+                <Component class="javax.swing.JLabel" name="LabelTotal">
                   <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="66" green="66" red="0" type="rgb"/>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="33" green="33" red="0" type="rgb"/>
                     </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Century Gothic" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="33" green="33" red="0" type="rgb"/>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="48" y="114" width="-1" height="-1"/>
-                    </Constraint>
-                  </Constraints>
-                </Component>
-                <Component class="rojerusan.componentes.RSProgressBarAnimated" name="rSProgressBarAnimated3">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="66" red="ff" type="rgb"/>
-                    </Property>
-                  </Properties>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="48" y="183" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="90" y="160" width="140" height="50"/>
                     </Constraint>
                   </Constraints>
                 </Component>

@@ -95,6 +95,7 @@ public class GUI extends javax.swing.JFrame {
         RadioTodosArea.setVisible(false);
         RadioTodosGeneros.setVisible(false);
         RadioGeneroColegioTodos.setVisible(false);
+      
     }
 
     /**
@@ -211,9 +212,8 @@ public class GUI extends javax.swing.JFrame {
         Info = new javax.swing.JPanel();
         B1 = new javax.swing.JPanel();
         añoe = new javax.swing.JLabel();
-        rSProgressBarAnimated1 = new rojerusan.componentes.RSProgressBarAnimated();
-        rSProgressBarAnimated2 = new rojerusan.componentes.RSProgressBarAnimated();
-        rSProgressBarAnimated3 = new rojerusan.componentes.RSProgressBarAnimated();
+        grafTotal = new rojerusan.componentes.RSProgressBar();
+        LabelTotal = new javax.swing.JLabel();
         Check1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         graft2019 = new rojerusan.componentes.RSProgressCircle();
@@ -1012,14 +1012,14 @@ public class GUI extends javax.swing.JFrame {
         añoe.setForeground(new java.awt.Color(255, 102, 0));
         B1.add(añoe, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 207, 186, 54));
 
-        rSProgressBarAnimated1.setForeground(new java.awt.Color(255, 102, 0));
-        B1.add(rSProgressBarAnimated1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 38, -1, -1));
+        grafTotal.setMaximum(79979);
+        B1.add(grafTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 210, -1));
 
-        rSProgressBarAnimated2.setForeground(new java.awt.Color(0, 102, 102));
-        B1.add(rSProgressBarAnimated2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 114, -1, -1));
-
-        rSProgressBarAnimated3.setForeground(new java.awt.Color(255, 102, 0));
-        B1.add(rSProgressBarAnimated3, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 183, -1, -1));
+        LabelTotal.setBackground(new java.awt.Color(0, 51, 51));
+        LabelTotal.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        LabelTotal.setForeground(new java.awt.Color(0, 51, 51));
+        LabelTotal.setToolTipText("");
+        B1.add(LabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 140, 50));
 
         Info.add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 310, 250));
 
@@ -1745,6 +1745,7 @@ int cont = 0;
     private javax.swing.JLabel LabelDesIngles;
     private javax.swing.JLabel LabelDesMate;
     private javax.swing.JLabel LabelDesNaturales;
+    private javax.swing.JLabel LabelTotal;
     private javax.swing.JButton Limpiar;
     private javax.swing.JButton Manual;
     protected javax.swing.JCheckBox Masculino;
@@ -1791,6 +1792,7 @@ int cont = 0;
     private javax.swing.JLabel etiquetavalorlectura;
     private javax.swing.JLabel etiquetavalorlectura3;
     private javax.swing.JLabel glop;
+    private rojerusan.componentes.RSProgressBar grafTotal;
     private javax.swing.JPanel grafico_barras1;
     private javax.swing.JPanel graficopastelbarra;
     private rojerusan.componentes.RSProgressCircle graft2018;
@@ -1854,9 +1856,6 @@ int cont = 0;
     private javax.swing.JSlider percentilbarra;
     private javax.swing.JPanel progreso1;
     private javax.swing.JSlider putajeglobalbarra;
-    private rojerusan.componentes.RSProgressBarAnimated rSProgressBarAnimated1;
-    private rojerusan.componentes.RSProgressBarAnimated rSProgressBarAnimated2;
-    private rojerusan.componentes.RSProgressBarAnimated rSProgressBarAnimated3;
     protected javax.swing.JRadioButton radioaño2018;
     protected javax.swing.JRadioButton radioaño2019;
     protected javax.swing.JRadioButton radioaño2020;
@@ -3080,97 +3079,339 @@ public void grafica_barras_1() {
 
     public void nosehpta() {
         if (año2020.isSelected()) {
-            informacio2020Seleccionado = datos.get_año2020(informacio2020);
-
-            //     System.out.println(datos.get_año2020(informacio2020));
+            //informacio2020Seleccionado = datos.get_año2020(informacio2020);
+            Cant2020Total();
+            informacio2020Seleccionado = getCant2020();
+            //graft2020.setValue(informacio2020Seleccionado);
         } else {
             informacio2020Seleccionado = 0;
         }
         if (año2019.isSelected()) {
-            informacio2019Seleccionado = datos.get_año2019(informacio2019);
+            //informacio2019Seleccionado = datos.get_año2019(informacio2019);
             //    System.out.println(datos.get_año2019(informacio2019));
+           // graft2019.setValue(informacio2019Seleccionado);
+            Cant2019Total();
+            informacio2019Seleccionado = getCant2019();
+            
         } else {
             informacio2019Seleccionado = 0;
         }
         if (año2018.isSelected()) {
-
-            informacio2018Seleccionado = datos.get_año2018(informacio2018);
-
+            //informacio2018Seleccionado = datos.get_año2018(informacio2018);
+            //graft2018.setValue(informacio2018Seleccionado);
+            Cant2018Total();    
+            informacio2018Seleccionado = getCant2018();
             //    System.out.println(datos.get_año2018(informacio2018));
+            
         } else {
             informacio2018Seleccionado = 0;
         }
 
-        lab2020.setText("<html><center>Año 2020:<br>" + informacio2020Seleccionado + " Personas registradas");
-        lab2018.setText("<html>Año 2018:<br>" + informacio2018Seleccionado + " Personas registradas");
-        lab2019.setText("<html>Año 2019: <br>" + informacio2019Seleccionado + " Personas registradas");
-        informacio2020Seleccionado = getCant2020();
-        informacio2018Seleccionado = 0;
-        informacio2019Seleccionado = 0;
+        //lab2020.setText("<html><center>Año 2020:<br>" + informacio2020Seleccionado + " Personas registradas");
+        //lab2018.setText("<html>Año 2018:<br>" + informacio2018Seleccionado + " Personas registradas");
+        //lab2019.setText("<html>Año 2019: <br>" + informacio2019Seleccionado + " Personas registradas");
+        // = getCant2020();
+        //informacio2018Seleccionado = getCant2018();
+        //informacio2019Seleccionado = getCant2019
+        int total =  informacio2019Seleccionado + informacio2018Seleccionado + informacio2020Seleccionado;
+        LabelTotal.setText("<html>Hay: <br>" + total + " Personas registradas");
+         
         graft2019.setValue(informacio2019Seleccionado);
         graft2018.setValue(informacio2018Seleccionado);
         graft2020.setValue(informacio2020Seleccionado);
+        grafTotal.setValue(total);
     }
 
-    private int getCant2020() {
-        int cantidad = 0;
-        DatosPorSeparado datos = new DatosPorSeparado();
-
-        if (Cedula.isSelected()) {
-            ElementosCheck[1] = datos.get_cedula_2020(informacio2020);
-
-        } else {
-            ElementosCheck[1] = 0;
-        }
-        if (TarjetaIdentidad.isSelected()) {
-            ElementosCheck[2] = datos.get_tarjetaID_2020(informacio2020);
-        } else {
-            ElementosCheck[2] = 0;
-        }
-
-        if (Masculino.isSelected()) {
-            ElementosCheck[3] = datos.get_hombre_2020(informacio2020);
-        } else {
-            ElementosCheck[3] = 0;
-        }
-        if (Femenino.isSelected()) {
-            ElementosCheck[4] = datos.get_mujer_2020(informacio2020);
-        } else {
-            ElementosCheck[4] = 0;
-        }
-
-        if (ColegiogeneroMIXTO.isSelected()) {
-            ElementosCheck[5] = datos.get_Colmixto_2020(informacio2020);
-        } else {
-            ElementosCheck[5] = 0;
-        }
-        if (ColegiogeneroFEMENINO.isSelected()) {
-            ElementosCheck[6] = datos.get_Colmujer_2020(informacio2020);
-        } else {
-            ElementosCheck[6] = 0;
-        }
-        if (ColegiogeneroMasculino.isSelected()) {
-            ElementosCheck[7] = datos.get_Colhombre_2020(informacio2020);
-        } else {
-            ElementosCheck[7] = 0;
-        }
-
-        if (AreaRural.isSelected()) {
-            ElementosCheck[8] = datos.get_areaRural_2020(informacio2020);
-        } else {
-            ElementosCheck[8] = 0;
-        }
-        if (AreaUrbana.isSelected()) {
-            ElementosCheck[9] = datos.get_areaUrbana_2020(informacio2020);
-        } else {
-            ElementosCheck[9] = 0;
-        }
-
-        //  calculo(cantidad, año);
-        cantidad = calculo(ElementosCheck);
-        System.out.println(cantidad);
+    private int Cant2020Total(){
+        int cantidad = datos.get_año2020(informacio2020);
+        ElementosCheck[1] = cantidad;
+        lab2020.setText("<html><center>Año 2020:<br>" + cantidad + " Personas registradas");
         return cantidad;
+    }
+    
+    private int Cant2019Total(){
+        int cantidad = datos.get_año2019(informacio2019);
+        ElementosCheck[1] = cantidad;
+        lab2019.setText("<html><center>Año 2019:<br>" + cantidad + " Personas registradas");
+        return cantidad;
+    }
+    
+    private int Cant2018Total(){
+        int cantidad = datos.get_año2018(informacio2018);
+        ElementosCheck[1] = cantidad;
+        lab2018.setText("<html><center>Año 2018:<br>" + cantidad + " Personas registradas");
+        return cantidad;
+    }
+    
+    private int  getCant2020() {
+        int cantidad = 0;
+        
+        DatosPorSeparado datos = new DatosPorSeparado();
+        
+        //Apartir de aquí están las consulas compuestas
+        if (Cedula.isSelected()) {
+            TarjetaIdentidad.setEnabled(false);
+            CedulaXGenero(datos);
+        
+        }else{
+            TarjetaIdentidad.setEnabled(true);
+        }
+        
+        if(TarjetaIdentidad.isSelected()){ 
+            Cedula.setEnabled(false);
+            TIXGenero(datos);
+        
+        }else{
+            Cedula.setEnabled(true);
+        }
+        
+        cantidad = calculo(ElementosCheck);
+        return cantidad;
+    }
+    
+    private void CedulaXGenero(DatosPorSeparado datos) {
+        int cantidad = datos.get_cedula_2020(informacio2020);
+        lab2020.setText("<html><center>Año 2020:<br>" + cantidad + " Personas encontradas");
+        
+        if (Masculino.isSelected()) {
+            //Femenino.setEnabled(false);
+            cantidad = cantTipoDocXGenero(informacio2020, datos, "M", "CC");
+        
+        }else{
+            //Femenino.setEnabled(true);
+            ElementosCheck[1] = datos.get_cedula_2020(informacio2020);
+        }
+        
+        if (Femenino.isSelected() ) {
+            //Masculino.setEnabled(false);
+            cantidad = cantTipoDocXGenero(informacio2020, datos, "F", "CC");
+            
+        }else{
+            //Masculino.setEnabled(true);
+            ElementosCheck[1] = datos.get_cedula_2020(informacio2020);
+        }
+        if(Masculino.isSelected() && Femenino.isSelected()){
+            cantidad = cantTipoDocXGenero(informacio2020, datos, "F", "CC") + cantTipoDocXGenero(informacio2020, datos, "M", "CC");
+        }
+        
+        ElementosCheck[1] = cantidad;
+        lab2020.setText("<html><center>Año 2020:<br>" +cantidad+ " Personas encontradas");
+    }
+    
+    private void TIXGenero(DatosPorSeparado datos) {
+        int cantidad = datos.get_tarjetaID_2020(informacio2020);
+        lab2020.setText("<html><center>Año 2020:<br>" + cantidad + " Personas encontradas");
+        
+        if (Masculino.isSelected() && TarjetaIdentidad.isSelected()) {
+            //Femenino.setEnabled(false);
+            cantidad = cantTipoDocXGenero(informacio2020, datos, "M", "TI");
+        
+        }else{
+            //Femenino.setEnabled(true);
+            ElementosCheck[1] = datos.get_tarjetaID_2020(informacio2020);
+        }
+        
+        if (Femenino.isSelected() ) {
+            //Masculino.setEnabled(false);
+            
+            cantidad = cantTipoDocXGenero(informacio2020, datos, "F", "TI");
+            
+        }else{
+            //Masculino.setEnabled(true);
+            ElementosCheck[1] = datos.get_tarjetaID_2020(informacio2020);
+        }
+        if(Masculino.isSelected() && Femenino.isSelected()){
+            cantidad = cantTipoDocXGenero(informacio2020, datos, "F", "TI") + cantTipoDocXGenero(informacio2020, datos, "M", "TI");
+        }
+        
+        ElementosCheck[1] = cantidad;
+        lab2020.setText("<html><center>Año 2020:<br>" +cantidad+ " Personas encontradas");
+    }
+    
+    private int  getCant2019() {
+        int cantidad = 0;
+        
+        DatosPorSeparado datos = new DatosPorSeparado();
+        
+        //Apartir de aquí están las consulas compuestas
+        if (Cedula.isSelected()) {
+            TarjetaIdentidad.setEnabled(false);
+            CedulaXGenero2019(datos);
+        
+        }else{
+            TarjetaIdentidad.setEnabled(true);
+        }
+        
+        if(TarjetaIdentidad.isSelected()){ 
+            Cedula.setEnabled(false);
+            TIXGenero2019(datos);
+        
+        }else{
+            Cedula.setEnabled(true);
+        }
+        
+        cantidad = calculo(ElementosCheck);
+        return cantidad;
+    }
+    
+    private void CedulaXGenero2019(DatosPorSeparado datos) {
+        int cantidad = datos.get_cedula_2020(informacio2019);
+        lab2019.setText("<html><center>Año 2020:<br>" + cantidad + " Personas encontradas");
+        
+        if (Masculino.isSelected() && Cedula.isSelected()) {
+            //Femenino.setEnabled(false);
+            cantidad = cantTipoDocXGenero(informacio2019, datos, "M", "CC");
+        
+        }else{
+            //Femenino.setEnabled(true);
+            ElementosCheck[1] = datos.get_cedula_2020(informacio2019);
+        }
+        
+        if (Femenino.isSelected() ) {
+            //Masculino.setEnabled(false);
+            
+            cantidad = cantTipoDocXGenero(informacio2019, datos, "F", "CC");
+            
+        }else{
+            //Masculino.setEnabled(true);
+            ElementosCheck[1] = datos.get_cedula_2020(informacio2019);
+        }
+        
+        if(Masculino.isSelected() && Femenino.isSelected()){
+            cantidad = cantTipoDocXGenero(informacio2019, datos, "F", "CC") + cantTipoDocXGenero(informacio2019, datos, "M", "CC");
+        }
+        
+        ElementosCheck[1] = cantidad;
+        lab2019.setText("<html><center>Año 2020:<br>" +cantidad+ " Personas encontradas");
+    }
+    
+    private void TIXGenero2019(DatosPorSeparado datos) {
+        int cantidad = datos.get_tarjetaID_2020(informacio2019);
+        lab2019.setText("<html><center>Año 2020:<br>" + cantidad + " Personas encontradas");
+        
+        if (Masculino.isSelected() && TarjetaIdentidad.isSelected()) {
+            //Femenino.setEnabled(false);
+            cantidad = cantTipoDocXGenero(informacio2019, datos, "M", "TI");
+        
+        }else{
+            //Femenino.setEnabled(true);
+            ElementosCheck[1] = datos.get_tarjetaID_2020(informacio2019);
+        }
+        
+        if (Femenino.isSelected() ) {
+            //Masculino.setEnabled(false);
+            
+            cantidad = cantTipoDocXGenero(informacio2019, datos, "F", "TI");
+            
+        }else{
+            //Masculino.setEnabled(true);
+            ElementosCheck[1] = datos.get_tarjetaID_2020(informacio2019);
+        }
+        if(Masculino.isSelected() && Femenino.isSelected()){
+            cantidad = cantTipoDocXGenero(informacio2019, datos, "F", "TI") + cantTipoDocXGenero(informacio2019, datos, "M", "TI");
+        }
+        
+        
+        ElementosCheck[1] = cantidad;
+        lab2019.setText("<html><center>Año 2020:<br>" +cantidad+ " Personas encontradas");
+    }
+    
+    private int  getCant2018() {
+        int cantidad = 0;
+        
+        DatosPorSeparado datos = new DatosPorSeparado();
+        
+        //Apartir de aquí están las consulas compuestas
+        if (Cedula.isSelected()) {
+            TarjetaIdentidad.setEnabled(false);
+            CedulaXGenero2018(datos);
+        
+        }else{
+            TarjetaIdentidad.setEnabled(true);
+        }
+        
+        if(TarjetaIdentidad.isSelected()){ 
+            Cedula.setEnabled(false);
+            TIXGenero2018(datos);
+        
+        }else{
+            Cedula.setEnabled(true);
+        }
+        
+        cantidad = calculo(ElementosCheck);
+        return cantidad;
+    }
+    
+    private void CedulaXGenero2018(DatosPorSeparado datos) {
+        int cantidad = datos.get_cedula_2020(informacio2018);
+        lab2018.setText("<html><center>Año 2020:<br>" + cantidad + " Personas encontradas");
+        
+        if (Masculino.isSelected() && Cedula.isSelected()) {
+            //Femenino.setEnabled(false);
+            cantidad = cantTipoDocXGenero(informacio2018, datos, "M", "CC");
+        
+        }else{
+            //Femenino.setEnabled(true);
+            ElementosCheck[1] = datos.get_cedula_2020(informacio2018);
+        }
+        
+        if (Femenino.isSelected() ) {
+            //Masculino.setEnabled(false);
+            
+            cantidad = cantTipoDocXGenero(informacio2018, datos, "F", "CC");
+            
+        }else{
+            //Masculino.setEnabled(true);
+            ElementosCheck[1] = datos.get_cedula_2020(informacio2018);
+        }
+        if(Masculino.isSelected() && Femenino.isSelected()){
+            cantidad = cantTipoDocXGenero(informacio2018, datos, "F", "CC") + cantTipoDocXGenero(informacio2018, datos, "M", "CC");
+        }
+        
+        ElementosCheck[1] = cantidad;
+        lab2018.setText("<html><center>Año 2020:<br>" +cantidad+ " Personas encontradas");
+    }
+    
+    private void TIXGenero2018(DatosPorSeparado datos) {
+        int cantidad = datos.get_tarjetaID_2020(informacio2018);
+        lab2018.setText("<html><center>Año 2020:<br>" + cantidad + " Personas encontradas");
+        
+        if (Masculino.isSelected() && TarjetaIdentidad.isSelected()) {
+            //Femenino.setEnabled(false);
+            cantidad = cantTipoDocXGenero(informacio2018, datos, "M", "TI");
+        
+        }else{
+            //Femenino.setEnabled(true);
+            ElementosCheck[1] = datos.get_tarjetaID_2020(informacio2018);
+        }
+        
+        if (Femenino.isSelected() ) {
+            //Masculino.setEnabled(false);
+            
+            cantidad = cantTipoDocXGenero(informacio2018, datos, "F", "TI");
+            
+        }else{
+            //Masculino.setEnabled(true);
+            ElementosCheck[1] = datos.get_tarjetaID_2020(informacio2018);
+        }
+        if(Masculino.isSelected() && Femenino.isSelected()){
+            cantidad = cantTipoDocXGenero(informacio2018, datos, "F", "TI") + cantTipoDocXGenero(informacio2018, datos, "M", "TI");
+        }
+        
+        ElementosCheck[1] = cantidad;
+        lab2018.setText("<html><center>Año 2020:<br>" +cantidad+ " Personas encontradas");
+    }
+    
+    private int cantTipoDocXGenero(ArrayList<String> informacion, DatosPorSeparado datos, String genero, String doctipo) {
+        int count = 0;
 
+        for (String dato : informacion) {
+            String[] partes = dato.split(";");
+            if (partes.length >= 3 && partes[0].equals(doctipo) && partes[2].equals(genero)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public int calculo(int Array[]) {
